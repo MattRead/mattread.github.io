@@ -1,0 +1,20 @@
+@import url(tables.css);
+
+header, section, article, footer, nav {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+time {
+    display: inline;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font: normal 1em/175% sans-serif;
+    word-spacing: 0.1em;
+    color: #222;
+    background: #fff;
+}
