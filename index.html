@@ -9,7 +9,7 @@ title: Matt Read, Notes
             {% for post in site.posts %}
             {% assign day_now = 'now' | date: "%j" %}
             {% assign day_post = post.date | date: "%j" %}
-            {% if day_post >= day_now - 10 %}
+            {% if day_post.to_i >= day_now.to_i - 10 %}
                 {% assign new_class = ' new' %}
             {% endif %}
             <li class="{{ post.categories | first }}{{ new_class }}">
