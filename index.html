@@ -12,6 +12,8 @@ title: Matt Read, Notes
             {% if day_post.to_i >= day_now.to_i - 10 %}
                 {% assign new_class = ' new' %}
             {% endif %}
+
+            {{ day_post.to_i }} : {{ day_now.to_i - 10 }}
             <li class="{{ post.categories | first }}{{ new_class }}">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     {{ post.date | date_to_string }}  &raquo;
