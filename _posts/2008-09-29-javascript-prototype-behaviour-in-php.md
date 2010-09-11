@@ -24,7 +24,7 @@ inherited by all instances of that class.
 
 Let's look at the following "normal" PHP code.
 
-{% highlight htmlphp %}
+{% highlight php %}
 class Person extends Prototype
 {
     public $name;
@@ -52,7 +52,7 @@ However, you see that the Person class is actually a child of the Prototype clas
 us to do some of that "neat" Javascript stuff. Using Prototype, let us expand the Person class to
 add an `$age` property and an `age()` method to output a nice string. Like so:
 
-{% highlight htmlphp %}
+{% highlight php %}
 Person::add_property('age');
 Person::add_method('age', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
@@ -65,7 +65,7 @@ $matt->age();
 Now all instances of Person inherit the `$age` property and `age()` method. So we can create a new
 Person, Susie, and this object will now have the age stuff.
 
-{% highlight htmlphp %}
+{% highlight php %}
 $susie = new Person;
 $susie->name = 'Susie';
 $susie->gender = 'female';
@@ -79,7 +79,7 @@ One limitation of the Prototype class though, is you cannot overload a current m
 following code, that attempts to overload the <code class="highlight php">gender()</code> method,
 will not work.
 
-{% highlight htmlphp %}
+{% highlight php %}
 Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
 $matt->gender();
