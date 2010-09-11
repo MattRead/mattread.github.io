@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Why Playoff Hockey is Better Than Sex
-date:       Sep 10, 2010
+date:       Aug 6, 2010
 ---
 
 I always knew Hockey was important, just never realized how important; It's better than sex!
