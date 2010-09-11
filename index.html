@@ -7,9 +7,9 @@ title: Matt Read, Notes
         <header><h1>Notes</h1></header>
         <ul class="posts">
             {% for post in site.posts %}
-            {% assign day_now = 'now -10 days' | date: %j %}
+            {% assign day_now = 'now' | date: %j %}
             {% assign day_post = post.date | date_to_string | date: %j %}
-            {% if day_post >= day_now %}
+            {% if day_post >= day_now -10 %}
                 {% assign new_class = ' new' %}
             {% endif %}
             <li class="{{ post.categories | first }}{{ new_class }}">
