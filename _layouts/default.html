@@ -18,7 +18,12 @@
 {{ content }}
 
 <footer>
-    <address>Matt Read &lt;matt@mattread.com&gt; &copy;2010</address>
+    <address>
+        Matt Read &lt;matt@mattread.com&gt; &copy;2010 -
+        <time datetime="{{ site.time | date_to_xmlschema }}" pubdate="true">
+            {{ site.time | date_to_string }}
+        </time>
+    </address>
     <a href="http://github.com/MattRead/mattread.github.com">
         <img style="position: absolute; top: 0; right: 0; border: 0;"
              src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
