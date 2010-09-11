@@ -53,20 +53,16 @@ pre {
     white-space:-moz-pre-wrap; white-space:-hp-pre-wrap; white-space:-o-pre-wrap; white-space:-pre-wrap; word-wrap:break-word;
 }
 
-ul.posts {
-    list-style-type: none;
-}
-ul.posts li.snippets {
-    list-style: square outside url(/images/clip.png);
-}
+ul.posts { list-style-type: none; }
+ul.posts { margin: 1em 0; }
+ul.posts li.snippets { list-style: square outside url(/images/clip.png); }
+
 ul.posts time {
     color: #999;
     font-size: .8em;
 }
 
-section {
-    margin: 3em 0 1em;
-}
+section.social { margin: 4em 0 1em; }
 
 section.social a {
     display: block;
