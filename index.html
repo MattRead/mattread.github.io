@@ -8,7 +8,7 @@ title: Matt Read, Notes
         <ul class="posts">
             {% for post in site.posts %}
             {% assign day_now = 'now -10 days' | date: %j %}
-            {% assign day_post = post.date | date: %j %}
+            {% assign day_post = post.date | date_to_string | date: %j %}
             {% if day_post >= day_now %}
                 {% assign new_class = ' new' %}
             {% endif %}
