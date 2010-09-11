@@ -25,6 +25,8 @@ inherited by all instances of that class.
 Let's look at the following "normal" PHP code.
 
 {% highlight php5 %}
+<?php
+
 class Person extends Prototype
 {
     public $name;
@@ -42,6 +44,8 @@ $matt->gender = 'male';
 $matt->gender();
 
 // Matt is male
+
+?>
 {% endhighlight %}
 
 Now, there is nothing magical or out-of-the-ordinary going on here. We just instantiate the Person
@@ -53,6 +57,8 @@ us to do some of that "neat" Javascript stuff. Using Prototype, let us expand th
 add an `$age` property and an `age()` method to output a nice string. Like so:
 
 {% highlight php5 %}
+<?php
+
 Person::add_property('age');
 Person::add_method('age', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
@@ -60,12 +66,16 @@ $matt->age = 28;
 $matt->age();
 
 // Matt is a 28 year old male
+
+?>
 {% endhighlight %}
 
 Now all instances of Person inherit the `$age` property and `age()` method. So we can create a new
 Person, Susie, and this object will now have the age stuff.
 
 {% highlight php5 %}
+<?php
+
 $susie = new Person;
 $susie->name = 'Susie';
 $susie->gender = 'female';
@@ -73,6 +83,8 @@ $susie->age = 21;
 $susie->age();
 
 // Susie is a 21 year old female
+
+?>
 {% endhighlight %}
 
 One limitation of the Prototype class though, is you cannot overload a current method. So the
@@ -80,11 +92,15 @@ following code, that attempts to overload the <code class="highlight php">gender
 will not work.
 
 {% highlight php5 %}
+<?php
+
 Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
 $matt->gender();
 
 // Matt is male
+
+?>
 {% endhighlight %}
 
 There are also many, many, many other problems with this Prototype class. Some of which are:
