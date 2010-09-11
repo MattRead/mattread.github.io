@@ -5,7 +5,10 @@ date:       Sep 10, 2010
 categories: [snippets, seed]
 ---
 
-{% highlight javascript %}
+[Download](http://gist.github.com/567799/download) |
+[Raw](http://gist.github.com/raw/567799/bd755f98ab9d83cbb1cfd35bd7726702350deb6b/epiphany-add_to_toolbar.js)
+
+{% highlight javascript linenos %}
 // create the tomboy icon
 var f = new Gtk.IconFactory();
 f.add('tomboy', new Gtk.IconSet.from_pixbuf(
