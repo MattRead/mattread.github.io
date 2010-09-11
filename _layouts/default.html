@@ -11,7 +11,9 @@
 <body>
 
 <nav>
-    <a href="/">Notes</a> /
+    <a href="/">Notes</a> |
+    <a href="/about.html">About</a> :
+    {{page.categories | join: " / " }}
     <a href="{{ page.url }}">{{ page.title }}</a>
 </nav>
   
