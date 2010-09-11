@@ -46,10 +46,9 @@ h5 { font-size: .8em; }
 pre {
     margin: 2em 0;
     padding: 1em;
-    border: 1px solid #f9f9f9;
-    color: #333;
+    border: 1px solid #ddd;
     font-size: 1em;
-    line-height: 1em;
+    line-height: 1.2em;
     overflow: auto;
     white-space: pre-wrap;
     white-space:-moz-pre-wrap; white-space:-hp-pre-wrap; white-space:-o-pre-wrap; white-space:-pre-wrap; word-wrap:break-word;
