@@ -53,8 +53,8 @@ us to do some of that "neat" Javascript stuff. Using Prototype, let us expand th
 add an `$age` property and an `age()` method to output a nice string. Like so:
 
 {% highlight php %}
-Person::add\_property('age');
-Person::add\_method('age', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
+Person::add_property('age');
+Person::add_method('age', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
 $matt->age = 28;
 $matt->age();
@@ -80,7 +80,7 @@ following code, that attempts to overload the <code class="highlight php">gender
 will not work.
 
 {% highlight php %}
-Person::add\_method('gender', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
+Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this->name, $this->age, $this->gender);');
 
 $matt->gender();
 
