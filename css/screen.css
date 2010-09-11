@@ -56,7 +56,7 @@ pre {
 ul.posts {
     list-style-type: none;
 }
-ul.posts.snippets {
+ul.posts li.snippets {
     list-style: square outside url(/images/clip.png);
 }
 ul.posts time {
