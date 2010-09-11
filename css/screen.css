@@ -12,8 +12,7 @@ time {
 }
 
 body {
-    width: 50%;
-    min-width: 400px;
+    width: 700px;
     margin: 0 auto;
     padding: .2em;
     font: normal 1em/155% sans-serif;
@@ -54,7 +53,7 @@ pre {
 }
 
 ul.posts { list-style-type: none; }
-ul.posts { margin: 1em 0; }
+ul.posts { margin: 1.3em 0; }
 ul.posts li.snippets { list-style: square outside url(/images/clip.png); }
 ul.posts li.new { list-style: square outside url(/images/new.png); }
 
