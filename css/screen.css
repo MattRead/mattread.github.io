@@ -29,6 +29,8 @@ footer {
     font-size: .8em;
 }
 
+footer address { text-align: right; }
+
 header time {
     color: #999;
     font-size: .8em;
