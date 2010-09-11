@@ -7,13 +7,13 @@ title: Matt Read, Notes
         <header><h1>Notes</h1></header>
         <ul class="posts">
             {% for post in site.posts %}
-            {% assign day_now = 'now' | date: "%j" %}
-            {% assign day_post = post.date | date: "%j" %}
-            {% if day_post.to_i >= day_now.to_i - 10 %}
+            {% assign day_now = 'now' | date %}
+            {% assign day_span = post.date - day_now %}
+            {% if day_span.to_i > 10 %}
                 {% assign new_class = ' new' %}
             {% endif %}
 
-            {{ day_post.to_i }} : {{ day_now.to_i - 10 }}
+            {{ day_span }} : {{ day_span.to_i }}
             <li class="{{ post.categories | first }}{{ new_class }}">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     {{ post.date | date_to_string }}  &raquo;
