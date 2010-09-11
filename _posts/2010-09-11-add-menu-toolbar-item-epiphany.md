@@ -8,11 +8,11 @@ categories: [snippets, seed]
 [Download](http://gist.github.com/567799/download) |
 [Raw](http://gist.github.com/raw/567799/bd755f98ab9d83cbb1cfd35bd7726702350deb6b/epiphany-add_to_toolbar.js)
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 // create the tomboy icon
 var f = new Gtk.IconFactory();
 f.add('tomboy', new Gtk.IconSet.from_pixbuf(
-      new GdkPixbuf.Pixbuf.from_file('/usr/share/icons/hicolor/scalable/apps/tomboy.svg')
+      new GdkPixbuf.Pixbuf.from_file('icon.svg')
 ));
 f.add_default();
 
@@ -30,8 +30,8 @@ group.add_action(action);
 var ui_manager = window.get_ui_manager();
 ui_manager.insert_action_group(group, 0);
 var merge_id = ui_manager.new_merge_id();
-ui_manager.add_ui(merge_id, "/menubar/ToolsMenu", "TomboyNoteMenu", "TomboyNote",
-    Gtk.UIManagerItemType.MENUITEM, false);
+ui_manager.add_ui(merge_id, "/menubar/ToolsMenu", "TomboyNoteMenu",
+                  "TomboyNote", Gtk.UIManagerItemType.MENUITEM, false);
 
 // store everything so we can remove it on detach
 window._tomboy_menu = {

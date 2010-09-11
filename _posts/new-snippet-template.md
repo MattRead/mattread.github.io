@@ -8,7 +8,7 @@ categories: [snippets, seed]
 [Download](/download) |
 [Raw]()
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 
 //code
 
