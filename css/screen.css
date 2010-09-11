@@ -22,6 +22,12 @@ body {
 
 }
 
+footer {
+    margin: 3em 0 0;
+    color: #999;
+    font-size: .8em;
+}
+
 header time {
     color: #999;
     font-size: .8em;
