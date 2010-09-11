@@ -7,7 +7,7 @@ title: Matt Read, Notes
         <header><h1>Notes</h1></header>
         <ul class="posts">
             {% for post in site.posts %}
-            {{ 'now -10 days' | date: "%j" }}
+            {{ 'now' | date: "%j" }}
             {% assign day_post = post.date | date: "%j" %}
             <li class="{{ post.categories | first }}{{ new_class }}">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
