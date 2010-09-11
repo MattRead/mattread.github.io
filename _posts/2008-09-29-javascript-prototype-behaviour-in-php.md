@@ -2,7 +2,7 @@
 layout:     post
 title:      Javascript Prototype Behaviour in PHP
 date:       Sep 9, 2010
-category:   note
+category:   notes
 ---
 
 One of the "neat" things in Javascript is you are able to dynamically add or change methods of a

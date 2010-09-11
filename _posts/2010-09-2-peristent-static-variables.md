@@ -2,7 +2,7 @@
 layout:     post
 title:      Persistent Static Variables
 date:       Sep 2, 2010
-category:   note
+category:   notes
 ---
 
 Wait, What? Yeah that's what I thought too. Still no Idea what I'm talking about? Well, let's take a
