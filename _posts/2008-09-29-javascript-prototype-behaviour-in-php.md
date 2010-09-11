@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Ephyboy, The Epiphany Tomboy Extension
+title:  Javascript Prototype Behaviour in PHP
 date:   Sep 9, 2010
 ---
 
