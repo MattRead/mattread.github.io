@@ -16,10 +16,8 @@ Eventually, though, I got tired of [Firefox][], especially it's load times, and 
 
 [Epiphany][] extensions are now done with [Seed][], the GTK javascript bindings, making it really
 easy to write new extensions. Plus, it has almost a complete GTK implementation via GObject
-Introspection. So getting my tomboy note maker dohicky back was really not that hard --aside from
-the lack of documentation ;).
-
-And thus, [Ephyboy][] is born. It's really quite simple:
+Introspection. So getting my tomboy note maker dohicky back was really not that hard -- aside from
+the lack of documentation. And thus, [Ephyboy][] is born; It's really quite simple:
 
  1. [Download][] the tarball, or zip.
  2. [Install][] the extension.

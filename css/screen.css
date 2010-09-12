@@ -21,7 +21,10 @@ body {
     background: #fcfcfc;
 }
 
-nav.site { font-size: .8em; }
+nav.site {
+    font-size: .8em;
+    color: #999;
+}
 
 footer {
     margin: 3em 0 0;
