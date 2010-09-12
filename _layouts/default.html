@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="site">
+<nav id="top" class="site">
     <a href="/">Home</a> |
     <a href="/about.html">About</a> |
     <a href="/gpg.html">GPG</a> :
@@ -24,11 +24,8 @@
         &mdash; Matt Read &lt;matt@mattread.com&gt;
     </address>
      <p>
-        Copyright &copy; 2010 Matt Read<br>
-        Last Modified:
-        <time datetime="{{ site.time | date_to_xmlschema }}" pubdate="true">
-            {{ site.time | date_to_string }}
-        </time>
+        <a href="#top">&uarr; Back to top</a><br>
+        Copyright &copy; 2010 Matt Read
     </p>
     <a href="http://github.com/MattRead/mattread.github.com">
         <img style="position: absolute; top: 0; right: 0; border: 0;"
