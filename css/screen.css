@@ -22,8 +22,11 @@ body {
 }
 
 nav.site {
+    padding: .2em 1em;
     font-size: .8em;
     color: #999;
+    background: #f3f3f3;
+    border: 1px dotted #ccc;
 }
 
 footer {
