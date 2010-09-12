@@ -30,12 +30,11 @@ footer {
 }
 
 footer address { text-align: right; }
-
 article > header { text-align: center; }
 
 article > header:after {
     content: "\2761";
-    margin-top:0
+    margin: 1em 0;
 }
 
 header time {
