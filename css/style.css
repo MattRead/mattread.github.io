@@ -81,6 +81,11 @@ blockquote { font-style: italic; }
 q:before { content: open-quote; }
 q:after { content: close-quote; }
 
+abbr {
+    letter-spacing: .05em;
+    font-size: 1.7ex;
+}
+
 p.gist {
     font-size: .8em;
     text-align: right;
