@@ -66,6 +66,8 @@ pre {
     white-space:-moz-pre-wrap; white-space:-hp-pre-wrap; white-space:-o-pre-wrap; white-space:-pre-wrap; word-wrap:break-word;
 }
 
+ul.posts { list-style-type: square; }
+
 ul.posts { list-style-type: none; }
 ul.posts { margin: 1.3em 0; }
 ul.posts li.snippets { list-style: square outside url(/images/clip.png); }

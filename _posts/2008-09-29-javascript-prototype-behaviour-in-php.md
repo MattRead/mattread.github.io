@@ -21,9 +21,7 @@ String.prototype.trim = function() {
 Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour
 to a certain extent using my "neat" little [Prototype](http://pastoid.com/9n+) class. With this
 Prototype class we can dynamically add properties and methods to any class, and they will be
-inherited by all instances of that class.
-
-Let's look at the following "normal" PHP code.
+inherited by all instances of that class. Let's look at the following "normal" PHP code.
 
 {% highlight php5 %}
 <?php
