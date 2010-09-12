@@ -12,10 +12,10 @@ time {
 }
 
 body {
-    width: 700px;
+    width: 650px;
     margin: 0 auto;
     padding: .2em;
-    font: normal 1em/155% sans-serif;
+    font: normal 1em/150% sans-serif;
     word-spacing: 0.1em;
     color: #222;
     background: #fcfcfc;
@@ -31,19 +31,35 @@ footer {
 
 footer address { text-align: right; }
 
+article > header { text-align: center; }
+
+article > header:after {
+    content: "\2761";
+    margin-top:0
+}
+
 header time {
     color: #999;
     font-size: .8em;
 }
 
 h1, h2, h3, h4, h5 {
-    font: normal 1.5em/175% sans-serif;
+    font-weight: normal;
 }
 
+h1 { font-size: 1.5em; }
 h2 { font-size: 1.3em; }
 h3 { font-size: 1.1em; }
 h4 { font-size: 1em; }
 h5 { font-size: .8em; }
+
+/*
+p { margin: 1em 0 0; }
+p + p {
+    margin-top: 0;
+    text-indent: 2.2em;
+}
+*/
 
 pre {
     margin: 2em 0;
