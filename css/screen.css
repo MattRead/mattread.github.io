@@ -35,6 +35,7 @@ footer {
 footer address { text-align: right; }
 article > header { text-align: center; }
 article > header:after { content: "\2761"; }
+article > header p { margin: 1em 0; }
 
 
 header time {
@@ -44,6 +45,7 @@ header time {
 
 h1, h2, h3, h4, h5 {
     font-weight: normal;
+    word-spacing: -0.125em;
 }
 
 h1 { font-size: 1.5em; }
@@ -52,7 +54,11 @@ h3 { font-size: 1.1em; }
 h4 { font-size: 1em; }
 h5 { font-size: .8em; }
 
-p + p { text-indent: 2em; }
+p { margin-bottom: 0; }
+p + p {
+    text-indent: 2em;
+    margin-top: 0;
+}
 
 pre {
     margin: 2em 0;
@@ -65,8 +71,12 @@ pre {
     white-space:-moz-pre-wrap; white-space:-hp-pre-wrap; white-space:-o-pre-wrap; white-space:-pre-wrap; word-wrap:break-word;
 }
 
-ul { list-style-type: square; }
-ol, ul { margin-left: 2em; }
+ul { list-style-type: circle; }
+ol, ul { list-style-position: outside; }
+ol, ul, blockquote { margin: 1.5em 1em 1.5em 2em; }
+blockquote { font-style: italic; }
+q:before { content: open-quote; }
+q:after { content: close-quote; }
 
 ul.posts { list-style-type: none; }
 ul.posts { margin: 1.3em 0; }
