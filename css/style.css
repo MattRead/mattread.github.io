@@ -33,10 +33,13 @@ footer {
 }
 
 footer address { text-align: right; }
-article > header { text-align: center; }
+article > header {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
 article > header:after { content: "\2761"; }
-article > header p { margin: 1em 0; }
-
+article > header h1 { margin-bottom: 0; }
+article > header p { margin: .5em 0 1.5em; }
 
 header time {
     color: #999;
@@ -93,6 +96,7 @@ p.gist + div.highlight pre { margin-top: 0; }
 ul.posts { list-style-type: none; }
 ul.posts { margin: 1.3em 0; }
 ul.posts li.snippets { list-style: square outside url(/images/clip.png); }
+ul.posts li.new { list-style: square outside url(/images/new.png); }
 
 ul.posts time {
     color: #999;
@@ -118,6 +122,9 @@ section.social a {
 .social a.lastfm {
     background: transparent url(../images/social/lastfm_32.png) no-repeat;
 }
+.social a.delicious {
+    background: transparent url(../images/social/delicious_32.png) no-repeat;
+}
 .social a.rss {
     background: transparent url(../images/social/rss_32.png) no-repeat;
 }
@@ -126,6 +133,9 @@ section.social a {
 }
 .social a.facebook {
     background: transparent url(../images/social/facebook_32.png) no-repeat;
+}
+.social a.email {
+    background: transparent url(../images/social/email_32.png) no-repeat;
 }
 .social a.googletalk {
     background: transparent url(../images/social/googletalk_32.png) no-repeat;
