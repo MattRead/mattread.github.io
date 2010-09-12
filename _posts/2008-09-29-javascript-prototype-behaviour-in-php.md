@@ -19,7 +19,8 @@ String.prototype.trim = function() {
 {% endhighlight %}
 
 Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour
-to a certain extent using my "neat" little [Prototype](http://pastoid.com/9n+) class. With this
+to a certain extent using my "neat" little
+[Prototype](http://mattread.org/snippets/php/php-prototype-class.html) class. With this
 Prototype class we can dynamically add properties and methods to any class, and they will be
 inherited by all instances of that class. Let's look at the following "normal" PHP code.
 
@@ -105,8 +106,8 @@ $matt->gender();
 There are also many, many, many other problems with this Prototype class. Some of which are:
 
 - The '$this' keyword is reserved, so it actually does a string replace and uses '$self' instead.
-- You cannot access/add new methods or properties statically (until PHP 5.3 with \_\_callStatic()).
-- It uses create\_function, so every "method" is actually defined in the global namespace.
+- You cannot access/add new methods or properties statically (until PHP 5.3 with `__callStatic()`).
+- It uses `create_function`, so every "method" is actually defined in the global namespace.
 - Iteration does not work, although it could possibly be done with Iterator, Countable, et al.
 - You cannot reference static variables/methods in your add method.
 - You cannot share methods between classes.
@@ -115,6 +116,4 @@ There are also many, many, many other problems with this Prototype class. Some o
 This class was just an experiment to see if it was at all possible to implement something like
 Javascript's prototype behaviour in PHP with out using the
 [Runkit PECL extension](http://pecl.php.net/package/runkit). I had no intention of actually making
-this usable in production, for many reasons ;), although it was fun. If you have any improvements or
-additions to Protoype please add them to the [wiki page](http://mattread.org/PHPPrototype), or paste
-them in comment.
+this usable in production, for many reasons; Although it was fun.
