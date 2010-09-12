@@ -81,6 +81,12 @@ blockquote { font-style: italic; }
 q:before { content: open-quote; }
 q:after { content: close-quote; }
 
+p.gist {
+    font-size: .8em;
+    text-align: right;
+    margin: 1em 2em -1.875em
+}
+
 ul.posts { list-style-type: none; }
 ul.posts { margin: 1.3em 0; }
 ul.posts li.snippets { list-style: square outside url(/images/clip.png); }
