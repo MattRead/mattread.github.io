@@ -86,6 +86,8 @@ abbr {
     font-size: 1.7ex;
 }
 
+img { margin: 1em; }
+
 p.gist {
     font-size: .8em;
     text-align: right;
