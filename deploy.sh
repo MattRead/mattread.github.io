@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-jekyll && rsync -avz --delete _site/ mattread.com:/var/www/mattread/htdocs/jekyll
+
+./compress
+jekyll
+rsync -avz --delete _site/ mattread.com:/var/www/mattread/htdocs/jekyll
+git push
