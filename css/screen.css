@@ -111,7 +111,7 @@ article > header {
     text-align: center;
     margin-bottom: 1.5em;
 }
-article > header:after { content: "\2761"; }
+article > header:after { content: "\2766"; font-size: 1.2em; }
 article > header h1 { margin-bottom: 0; }
 article > header p { margin: .5em 0 1.5em; }
 
