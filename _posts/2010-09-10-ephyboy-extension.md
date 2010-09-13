@@ -10,11 +10,11 @@ allowed you to create a new [Tomboy][] note using the currently selected text of
 were browsing, using the title for the title of the note and referencing the url as the source. This
 was great for me to document all the code and Linux commands I'd find scattered around the net.
 
-Eventually, though, I got tired of [Firefox][], especially it's load times, and switched to
-[Chromium][]. You guessed it, [Chromium][] sucked too. So back to [Epiphany][] I went, and with the
+Eventually, though, I got tired of Firefox, especially it's load times, and switched to
+[Chromium][]. You guessed it, Chromium sucked too. So back to [Epiphany][] I went, and with the
 2.30 version it is really quite a nice little browser.
 
-[Epiphany][] extensions are now done with [Seed][], the GTK javascript bindings, making it really
+Epiphany extensions are now done with [Seed][], the GTK javascript bindings, making it really
 easy to write new extensions. Plus, it has almost a complete GTK implementation via GObject
 Introspection. So getting my tomboy note maker dohicky back was really not that hard -- aside from
 the lack of documentation. And thus, [Ephyboy][] is born; It's really quite simple:
@@ -34,6 +34,7 @@ as I have Tomboy start on log in.
 
 [Firefox]:http://getfirefox.com
 [Tomboy]:http://projects.gnome.org/tomboy/
+[Chromium]:http://www.chromium.org/
 [Tomfox extension]:https://addons.mozilla.org/en-US/firefox/addon/8276/
 [Epiphany]:http://projects.gnome.org/epiphany/
 [Seed]:http://live.gnome.org/Seed

@@ -1,0 +1,8 @@
+
+[project]
+name=mattread.github.com
+description=
+base_path=./
+run_cmd=
+regenerate=true
+type=All
