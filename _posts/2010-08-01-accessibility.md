@@ -4,8 +4,8 @@ title:      Accessibility Statement
 date:       Aug 1, 2010
 ---
 
-This is the official accessibility statement for [Matt Read, Notes?](http://www.mattread.com/).  If
-you have any questions or comments, feel free to [contact me](/about.html#contact).
+This is the official accessibility statement for Matt Read, Notes?. If you have any questions or
+comments, feel free to [contact me](/about.html#contact).
 
 ##Access keys
 
