@@ -8,8 +8,8 @@ rm screen.tmp.css
 cd ..
 echo "compressed CSS to screen-min.css"
 
-echo "compressing CSS"
+echo "compressing JS"
 cd js/
 yui-compressor --type js site.js > site-min.js
 cd ..
-echo "compressed CSS to screen-min.css"
+echo "compressed JS to site-min.css"
