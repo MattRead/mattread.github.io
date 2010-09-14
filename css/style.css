@@ -12,7 +12,7 @@ body {
     width: 650px;
     margin: 0 auto;
     padding: .2em;
-    font: normal 1em/150% DejaVuSerif DejaVuSerifBook serif;
+    font: normal 1em/150% "DejaVu Serif", DejaVuSerifBook, serif;
     word-spacing: 0.1em;
     color: #222;
     background: #fcfcfc;
