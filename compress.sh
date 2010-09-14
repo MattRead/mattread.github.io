@@ -7,3 +7,9 @@ yui-compressor --type css screen.tmp.css > screen-min.css
 rm screen.tmp.css
 cd ..
 echo "compressed CSS to screen-min.css"
+
+echo "compressing CSS"
+cd js/
+yui-compressor --type js site.js > site-min.js
+cd ..
+echo "compressed CSS to screen-min.css"
