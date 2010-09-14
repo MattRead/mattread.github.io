@@ -1,4 +1,5 @@
 permalink:  none
 pygments:   true
 paginate:   20
-url:        http://mattread.org
+url:        http://mattread.com
+cdn:        http://mattread.org

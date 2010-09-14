@@ -102,7 +102,7 @@ p.gist + div.highlight pre { margin-top: 0; }
 
 ul.posts { list-style-type: none; }
 ul.posts { margin: 1.3em 0; }
-ul.posts li.snippets { list-style: square outside url(/images/clip.png); }
+ul.posts li.snippets { list-style: square outside url(http://mattread.org/images/clip.png); }
 
 ul.posts time {
     color: #999;
@@ -123,26 +123,26 @@ section.social a {
 }
 
 .social a.twitter {
-    background: transparent url(../images/social/twitter_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/twitter_32.png) no-repeat;
 }
 .social a.lastfm {
-    background: transparent url(../images/social/lastfm_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/lastfm_32.png) no-repeat;
 }
 .social a.rss {
-    background: transparent url(../images/social/rss_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/rss_32.png) no-repeat;
 }
 .social a.viddler {
-    background: transparent url(../images/social/viddler_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/viddler_32.png) no-repeat;
 }
 .social a.facebook {
-    background: transparent url(../images/social/facebook_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/facebook_32.png) no-repeat;
 }
 .social a.googletalk {
-    background: transparent url(../images/social/googletalk_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/googletalk_32.png) no-repeat;
 }
 .social a.flickr {
-    background: transparent url(../images/social/flickr_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/flickr_32.png) no-repeat;
 }
 .social a.skype {
-    background: transparent url(../images/social/skype_32.png) no-repeat;
+    background: transparent url(http://mattread.org/images/social/skype_32.png) no-repeat;
 }
