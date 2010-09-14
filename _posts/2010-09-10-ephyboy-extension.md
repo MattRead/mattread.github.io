@@ -3,6 +3,7 @@ layout:     post
 title:      Ephyboy, The Epiphany Tomboy Extension
 date:       Sep 10, 2010
 category:   notes
+tag:        ephyboy
 ---
 
 Back in the day when I used to use [Firefox][], I fell in love with the [Tomfox extension][]. It
