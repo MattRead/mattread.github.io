@@ -4,64 +4,64 @@
 
 @font-face {
 	font-family: 'DejaVuSerifBook';
-	src: url('/css/fonts/DejaVuSerif-webfont.eot');
-	src: local('☺'), url('/css/fonts//css/fonts/DejaVuSerif-webfont.woff') format('woff'), url('/css/fonts/DejaVuSerif-webfont.ttf') format('truetype'), url('/css/fonts/DejaVuSerif-webfont.svg#webfontCFu7RF0I') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerif-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerif-webfont.woff') format('woff'), url('/css/fonts/dejavu_serif/DejaVuSerif-webfont.ttf') format('truetype'), url('/css/fonts/dejavu_serif/DejaVuSerif-webfont.svg#webfontCFu7RF0I') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifItalic';
-	src: url('/css/fonts/DejaVuSerif-Italic-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerif-Italic-webfont.woff') format('woff'), url('DejaVuSerif-Italic-webfont.ttf') format('truetype'), url('DejaVuSerif-Italic-webfont.svg#webfontaLa5SnEz') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerif-Italic-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerif-Italic-webfont.woff') format('woff'), url('DejaVuSerif-Italic-webfont.ttf') format('truetype'), url('DejaVuSerif-Italic-webfont.svg#webfontaLa5SnEz') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifBold';
-	src: url('/css/fonts/DejaVuSerif-Bold-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerif-Bold-webfont.woff') format('woff'), url('DejaVuSerif-Bold-webfont.ttf') format('truetype'), url('DejaVuSerif-Bold-webfont.svg#webfontghjTfi8K') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerif-Bold-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerif-Bold-webfont.woff') format('woff'), url('DejaVuSerif-Bold-webfont.ttf') format('truetype'), url('DejaVuSerif-Bold-webfont.svg#webfontghjTfi8K') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifBoldItalic';
-	src: url('/css/fonts/DejaVuSerif-BoldItalic-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerif-BoldItalic-webfont.woff') format('woff'), url('DejaVuSerif-BoldItalic-webfont.ttf') format('truetype'), url('DejaVuSerif-BoldItalic-webfont.svg#webfontQAewh7pf') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerif-BoldItalic-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerif-BoldItalic-webfont.woff') format('woff'), url('DejaVuSerif-BoldItalic-webfont.ttf') format('truetype'), url('DejaVuSerif-BoldItalic-webfont.svg#webfontQAewh7pf') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifCondensed';
-	src: url('/css/fonts/DejaVuSerifCondensed-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerifCondensed-webfont.woff') format('woff'), url('DejaVuSerifCondensed-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-webfont.svg#webfont8lcfJXWm') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-webfont.woff') format('woff'), url('DejaVuSerifCondensed-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-webfont.svg#webfont8lcfJXWm') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifCondensed';
-	src: url('/css/fonts/DejaVuSerifCondensed-Italic-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerifCondensed-Italic-webfont.woff') format('woff'), url('DejaVuSerifCondensed-Italic-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-Italic-webfont.svg#webfontlqoFimKm') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-Italic-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-Italic-webfont.woff') format('woff'), url('DejaVuSerifCondensed-Italic-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-Italic-webfont.svg#webfontlqoFimKm') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifCondensedBold';
-	src: url('/css/fonts/DejaVuSerifCondensed-Bold-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerifCondensed-Bold-webfont.woff') format('woff'), url('DejaVuSerifCondensed-Bold-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-Bold-webfont.svg#webfontPy4O4mGP') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-Bold-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-Bold-webfont.woff') format('woff'), url('DejaVuSerifCondensed-Bold-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-Bold-webfont.svg#webfontPy4O4mGP') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'DejaVuSerifCondensedBoldItali';
-	src: url('/css/fonts/DejaVuSerifCondensed-BoldItalic-webfont.eot');
-	src: local('☺'), url('/css/fonts/DejaVuSerifCondensed-BoldItalic-webfont.woff') format('woff'), url('DejaVuSerifCondensed-BoldItalic-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-BoldItalic-webfont.svg#webfontMhrc3pX0') format('svg');
+	src: url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-BoldItalic-webfont.eot');
+	src: local('☺'), url('/css/fonts/dejavu_serif/DejaVuSerifCondensed-BoldItalic-webfont.woff') format('woff'), url('DejaVuSerifCondensed-BoldItalic-webfont.ttf') format('truetype'), url('DejaVuSerifCondensed-BoldItalic-webfont.svg#webfontMhrc3pX0') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
