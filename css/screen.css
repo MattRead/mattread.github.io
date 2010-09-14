@@ -76,8 +76,11 @@ pre {
 
 ul { list-style-type: circle; }
 ol, ul { list-style-position: outside; }
-ol, ul, blockquote { margin: 1.5em }
-blockquote { font-style: italic; }
+ol, ul { margin: 1.5em 1em }
+blockquote {
+    font-style: italic;
+    margin: 1.5em 1.5em 1.5em 2em;
+}
 q:before { content: open-quote; }
 q:after { content: close-quote; }
 
