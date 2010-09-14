@@ -1,6 +1,9 @@
 // this is a placeholder for now
 
 var populate_dents = function(tag) {
+    if (!tag)
+        return false;
+
     $.ajax({
         url: "http://identi.ca/api/statusnet/tags/timeline/" + tag + ".json",
         dataType: 'json',
@@ -21,9 +24,9 @@ var populate_dents = function(tag) {
                 }
             }
             else {
-                $('.related').before('<p>Reply to this post on <a href="http://identi.ca">' +
+                $('.related').before('<aside><p>Reply to this post on <a href="http://identi.ca">' +
                                      'identi.ca</a> using the hash tag <strong>#' + tag +
-                                     '</strong></p>');
+                                     '</strong></p></aside>');
             }
         }
     });
