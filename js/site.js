@@ -9,10 +9,10 @@ var populate_dents = function(tag) {
         dataType: 'json',
         success: function(data){
             if (data.length > 0) {
-                $('.related').before('<h2>Dents  in Reply to This Post</h2><p>You can reply to' +
-                                     'this post on identi.ca using the has tag <a' +
-                                     'href="http://identi.ca/tag/' + tag + '">#' + tag +
-                                     '</a></p><ol class="dents"></ol>');
+                $('.related').before('<h2>Replies to This Post</h2><p>&clubs; Reply to ' +
+                                     'this post on <a href="http://identi.ca">' +
+                                     'identi.ca</a> using the hash tag <strong>#' + tag +
+                                     '</strong></p><ol class="dents"></ol>');
                  $('.dents').css('font-size', '.9em');
                 var dent = [];
                 for (i in data) {
@@ -24,7 +24,7 @@ var populate_dents = function(tag) {
                 }
             }
             else {
-                $('.related').before('<aside><p>&hearts; Reply to this post on <a href="http://identi.ca">' +
+                $('.related').before('<aside><p>&clubs; Reply to this post on <a href="http://identi.ca">' +
                                      'identi.ca</a> using the hash tag <strong>#' + tag +
                                      '</strong></p></aside>');
             }
