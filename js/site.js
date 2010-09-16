@@ -10,7 +10,7 @@ var populate_dents = function(tag) {
         success: function(data){
             if (data.length > 0) {
                 $('.related').before('<h2 id="replies">Replies to This Post</h2>');
-                $('#replies').after('<p>&clubs; Reply to this post on <a href="http://identi.ca">' +
+                $('#replies').after('<p>&#x272A; Reply to this post on <a href="http://identi.ca">' +
                                     'identi.ca</a> using the hash tag <strong>#' + tag +
                                     '</strong></p><ol class="dents"></ol>');
                 $('.dents').css('font-size', '.9em');
