@@ -19,10 +19,9 @@ var populate_dents = function(tag) {
                 for (i in data) {
                     dent = data[i];
                     var date = dent.created_at.replace(/\d\d:\d\d:\d\d \+0000/g, '');
-                    $('.dents').append('<li>&#x231A; <time>' + date + '</time><br>'
+                    $('.dents').append('<li>&#x231A; <time>' + date + '</time><br>' +
                                        '<a href="http://identi.ca/notice/' + dent.id + '">' +
-                                       dent.user.name + "</a> " + dent.statusnet_html +
-                                       '</li>');
+                                       dent.user.name + "</a> " + dent.statusnet_html + '</li>');
                 }
             }
             else {
