@@ -25,7 +25,7 @@ var populate_dents = function(tag) {
                 }
             }
             else {
-                $('.related').before('<aside><p style="margin-top:2em;">&clubs; Reply to this' +
+                $('.related').before('<aside><p style="margin-top:2em;">&#x272A; Reply to this' +
                                      'post on <a href="http://identi.ca">' +
                                      'identi.ca</a> using the hash tag <strong>#' + tag +
                                      '</strong></p></aside>');
