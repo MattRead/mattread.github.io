@@ -3,7 +3,7 @@ layout: default
 ---
 
     <section>
-        <header><h1>Topic: {{ page.category }}</h1></header>
+        <header><h1>{{ page.category }}</h1></header>
         <ul class="posts">
             {% for post in site.categories[page.category] %}
             <li class="{{ post.categories | first }}">
