@@ -3,5 +3,5 @@
 ./compress.sh
 git add .
 git ci -m"deployment: compress CSS and JS"
-jekyll
+ejekyll
 rsync -avz _site/ mattread.com:/var/www/mattread/htdocs
