@@ -2,6 +2,7 @@
 layout:     post
 title:      Accessibility Statement
 date:       Aug 1, 2010
+category:   about
 ---
 
 This is the official accessibility statement for Matt Read, Notes?. If you have any questions or

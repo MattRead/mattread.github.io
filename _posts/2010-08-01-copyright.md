@@ -2,6 +2,7 @@
 layout:     post
 title:      Copyright Information
 date:       Aug 1, 2010
+category:   about
 ---
 
 All written content of this site is licensed under a
