@@ -35,6 +35,9 @@ module Jekyll
         self.categories.keys.each do |category|
           self.write_category_index(File.join(dir, category), category)
         end
+        self.config['base_cats'].each do |category|
+          self.write_category_index(File.join('', category), category)
+        end
       end
     end
   end

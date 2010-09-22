@@ -4,3 +4,4 @@ paginate:   20
 url:        http://mattread.com
 cdn:        http://mattread.org
 category_dir: topics
+base_cats:  notes, snippets
