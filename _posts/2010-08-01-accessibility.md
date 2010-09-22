@@ -6,7 +6,7 @@ category:   about
 ---
 
 This is the official accessibility statement for Matt Read, Notes?. If you have any questions or
-comments, feel free to [contact me](/about.html#contact).
+comments, feel free to [contact me](/about/about.html#contact).
 
 ##Access keys
 
