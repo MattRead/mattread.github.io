@@ -31,12 +31,9 @@ module Jekyll
 
     def write_category_indexes
       if self.layouts.key? 'category_index'
-        dir = self.config['category_dir'] || 'categories'
         self.categories.keys.each do |category|
-          self.write_category_index(File.join(dir, category), category)
+          self.write_category_index(category, category)
         end
-        self.write_category_index('notes', 'notes')
-        self.write_category_index('snippets', 'snippets')
       end
     end
   end

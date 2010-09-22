@@ -2,7 +2,7 @@
 layout:     post
 title:      PHP Prototype Class
 date:       Sep 8, 2010
-categories: [snippets, php]
+categories: snippets
 gist:       576295
 ---
 
