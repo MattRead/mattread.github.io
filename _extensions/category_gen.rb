@@ -1,5 +1,5 @@
 module Jekyll
-  
+
   class CategoryIndex < Page
     # Initialize a new CategoryIndex.
     #   +base+ is the String path to the <source>
@@ -18,7 +18,7 @@ module Jekyll
       self.data['title'] = "#{category_title_prefix}#{category}"
     end
   end
-  
+
   class Site
     # Write each category page
     #
@@ -31,14 +31,14 @@ module Jekyll
 
     def write_category_indexes
       if self.layouts.key? 'category_index'
-        dir = self.config['category_dir'] || 'categories'
+        dir = self.config['category_dir'] || ''
         self.categories.keys.each do |category|
           self.write_category_index(File.join(dir, category), category)
         end
       end
     end
   end
-  
+
   AOP.after(Site, :write) do |site_instance, result, args|
     site_instance.write_category_indexes
   end
