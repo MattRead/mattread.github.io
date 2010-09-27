@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "Grabbing Projects from GitHub"
 ./githubprojects.php
 ./compress.sh
 git add .

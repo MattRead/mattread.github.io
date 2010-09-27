@@ -18,9 +18,9 @@ title: Matt Read, Notes
     </section>
 
     <section>
-        <header><h1>Code Snippets</h1></header>
+        <header><h1>Colophon</h1></header>
         <ul class="posts">
-            {% for post in site.categories.snippets %}
+            {% for post in site.categories.about %}
             <li>
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     {{ post.date | date_to_string }}  &raquo;
@@ -32,14 +32,14 @@ title: Matt Read, Notes
     </section>
 
     <section>
-        <header><h1>Projects on <a href="http://github.com/MattRead">GitHub</a></h1></header>
+        <header><h1>Projects</h1></header>
         {% include projects.html %}
     </section>
 
     <section>
-        <header><h1>Colophon</h1></header>
+        <header><h1>Code Snippets</h1></header>
         <ul class="posts">
-            {% for post in site.categories.about %}
+            {% for post in site.categories.snippets %}
             <li>
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     {{ post.date | date_to_string }}  &raquo;
