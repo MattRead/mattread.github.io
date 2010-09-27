@@ -15,7 +15,7 @@ foreach ($repos_data->repositories as $repo) {
     $out .= <<<OUT
         <li>
             <time datetime="$datetime">
-                $date
+                $date &raquo;
             </time>
             <a href="{$repo->url}">{$repo->name}</a>
         </li>
