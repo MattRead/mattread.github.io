@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+./projects.php
 ./compress.sh
 git add .
 git ci -m"deployment: compress CSS and JS"
