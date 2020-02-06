@@ -2,7 +2,7 @@
 <html lang="en-ca">
 
 
-<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:25 GMT -->
+<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 18:09:37 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 	<title>Free MP3 Encoding on Windows Media Player XP - Matt Read, Weblog</title>
@@ -12,7 +12,7 @@
 
 	<script>
 		var HABARI_URL = "index.html";
-		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_URL = "https://mattread.com/user/themes/conquistador";
 		var CONQUISTADOR_USE_FANCYBOX = true;
 	</script>
 	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
@@ -35,7 +35,7 @@
 <meta name="robots" content="index, follow" >
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="free-mp3-encoding-wmp/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
 <link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
-<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+<link type="text/css" media="screen" rel="stylesheet" href="https://mattread.com/user/themes/conquistador/css/screen-min.css">
 
 <!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
 <![endif]--></head>
@@ -133,23 +133,23 @@
 
 <p>Now navigate to <code>HKEY_LOCAL_MACHINE/Software/Microsoft/MediaPlayer/Settings</code>, just like exploring your folders, and create a new key in that folder called &#8220;MP3Encoding&#8221;. To create a new key click on the settings folder then go, Edit -> new -> key, and name it &#8220;MP3Encoding&#8221;.</p>
 
-<p><img src="user/files/Freemp3_key.html" class="center"></p>
+<p><img src="https://mattread.com/user/files/Freemp3_key.jpg" class="center"></p>
 
 <h4>Creating The DWORD Values</h4>
 
 <p>Now open the folder &#8220;MP3Encoding&#8221; and create a &#8220;DWORD value&#8221; named &#8220;LowRate&#8221;. Create it the same way as the &#8220;key&#8221; but go, Edit -> new -> DWORD value. Also create a &#8220;DWORD value&#8221; named LowRateSample the same way. </p>
 
-<p><img src="user/files/Freemp3_dword.jpg" class="center"></p>
+<p><img src="https://mattread.com/user/files/Freemp3_dword.jpg" class="center"></p>
 
-<div><figure><img src="user/files/Freemp3_both.html" class="center"><figcaption>both are entered</figcaption></figure></div>
+<div><figure><img src="https://mattread.com/user/files/Freemp3_both.jpg" class="center"><figcaption>both are entered</figcaption></figure></div>
 
 <p>Now Double Click on the LowRate DWORD value, and set the value data to the lowest bit rate you selected earlier. ie. if you chose 96 kBps then enter 96000 in value data. Everything you enter is in terms of Bps. And enter it as a Decimal NOT Hexadecimal.</p>
 
-<p><img src="user/files/Freemp3_rate.jpg" class="center"></p>
+<p><img src="https://mattread.com/user/files/Freemp3_rate.jpg" class="center"></p>
 
 <p>Now repeat the same process for the &#8220;LowRateSample&#8221; using 48000 as your value data. Everything you enter is in terms of Hz. And again as a Decimal NOT Hexadecimal.</p>
 
-<p><img src="user/files/Freemp3_sample.jpg" class="center"></p>
+<p><img src="https://mattread.com/user/files/Freemp3_sample.jpg" class="center"></p>
 
 <p>Now repeat the same for MediumRate, MediumRateSample, MediumHighRate, MediumHighRateSample, HighRate and HighRateSample.</p>
 
@@ -157,7 +157,7 @@
 
 <p>Now you have to create two strings &#8220;PreferredCodecName&#8221; and &#8220;PreferredCodecPath&#8221;. You should know how to create a string now, same as DWORD but choose string. The PreferredCodecName is the name of the encoder that will show on Windows Media Player. You use what ever you want. The PreferredCodecPath must be set to &#8220;C:&#92;WINDOWS&#92;system32&#92;L3CODECP.ACM&#8221;, or what ever the filename of your codec is.</p>
 
-<div><figure><img src="user/files/Freemp3_done.jpg" class="center"><figcaption>you should have something like this when your done</figcaption></figure></div>
+<div><figure><img src="https://mattread.com/user/files/Freemp3_done.jpg" class="center"><figcaption>you should have something like this when your done</figcaption></figure></div>
 
 <p class="note"><strong>Note </strong>that the value for PreferredCodec is limited to 255 characters. The PreferredCodecPath key must contain the fully-qualified path to the location of the codec as well as the file name of the codec. </p>
 
@@ -166,7 +166,7 @@
 <p>Just go in to the Windows Media Player options, were you are able to choose the encoder (ie. WMA Losless &#8230; ), and you should see your new encoder there with the bitrate settings your setup earlier.</p>
 
 <ul class="download">
-<li><a href="user/files/l3codecp.zip">L3CODECP <i class="icon-box-add"></i></a> </li>
+<li><a href="https://mattread.com/user/files/l3codecp.zip">L3CODECP <i class="icon-box-add"></i></a> </li>
 </ul>
 	</div>
 
@@ -536,7 +536,7 @@ TL</p>
 		</p>
 	</header>
 	<div itemprop="text">
-					<p>thank you worked great   <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+					<p>thank you worked great   <img class="habari-smiley" alt="hahahah" src="https://mattread.com/user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
 			</div>
 </article>
 <article id="comment-2308"
@@ -1055,7 +1055,7 @@ I’m new at all this and so I was just wondering, does this procedure also appl
 		</p>
 	</header>
 	<div itemprop="text">
-					<p> <img class="habari-smiley" alt=":lol:" src="user/plugins/tabasamu/tango/face-grin.png">  Awesome explanation!  Worked great. Thank you.  You might want to add the \ into the path in case someone who is less familar with path names tries to paste the path in the part below.</p>
+					<p> <img class="habari-smiley" alt=":lol:" src="https://mattread.com/user/plugins/tabasamu/tango/face-grin.png">  Awesome explanation!  Worked great. Thank you.  You might want to add the \ into the path in case someone who is less familar with path names tries to paste the path in the part below.</p>
 
 <p>“Windows Media Player. You use what ever you want. The PreferredCodecPath must be set to “C:WINDOWSsystem32L3CODECP.ACM”, or what ever the filename of your codec is.”</p>
 			</div>
@@ -1086,7 +1086,7 @@ I’m new at all this and so I was just wondering, does this procedure also appl
 
 <p>Yes - this also works with WMP9.</p>
 
-<p> <img class="habari-smiley" alt=":s" src="user/plugins/tabasamu/tango/face-plain.png"> hock:</p>
+<p> <img class="habari-smiley" alt=":s" src="https://mattread.com/user/plugins/tabasamu/tango/face-plain.png"> hock:</p>
 			</div>
 </article>
 <article id="comment-2634"
@@ -1111,7 +1111,7 @@ I’m new at all this and so I was just wondering, does this procedure also appl
 		</p>
 	</header>
 	<div itemprop="text">
-					<p>dude, you’re the best. thanks a million for your contribution  <img class="habari-smiley" alt=":razz:" src="user/plugins/tabasamu/tango/face-grin.png"> </p>
+					<p>dude, you’re the best. thanks a million for your contribution  <img class="habari-smiley" alt=":razz:" src="https://mattread.com/user/plugins/tabasamu/tango/face-grin.png"> </p>
 			</div>
 </article>
 <article id="comment-2646"
@@ -1166,7 +1166,7 @@ It works perfectly.</p>
 		</p>
 	</header>
 	<div itemprop="text">
-					<p>You are the dogs bollocks <img class="habari-smiley" alt=":-)" src="user/plugins/tabasamu/tango/face-smile.png"> </p>
+					<p>You are the dogs bollocks <img class="habari-smiley" alt=":-)" src="https://mattread.com/user/plugins/tabasamu/tango/face-smile.png"> </p>
 
 <p>Fantastic little hack. Truly an inspired article!</p>
 
@@ -1184,42 +1184,22 @@ Dave (UK)</p>
 	<section>
 		<h2>Related Posts</h2>
 			<ul class="posts" id="post-list">
-		<li id="post-347" class="post post-347 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+		<li id="post-368" class="post post-368 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
     itemtype="http://schema.org/BlogPosting">
-	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
-<time itemprop="datePublished" datetime="2005-03-11T15:43:42-05:00">
-	11 Mar 2005</time>
+	<meta itemprop="dateModified" content="2013-04-23T16:33:23-04:00">
+<time itemprop="datePublished" datetime="2004-09-13T08:26:31-04:00">
+	13 Sep 2004</time>
 
 	<span itemprop="name">
 		
 	<i class="icon-blog" title="Type: Entry"></i>
-		<a href="wp-admin-bar-20.html" itemprop="url"
-							title="Entry: WP Admin Bar 2.2">
-			WP Admin Bar 2.2</a>
+		<a href="wp-admin-bar.html" itemprop="url"
+							title="Entry: WordPress Admin Bar Plugin vo.5">
+			WordPress Admin Bar Plugin vo.5</a>
 	</span>
-			<a itemprop="interactionCount" class="comment-count" href="wp-admin-bar-20.html#comments"
-		   title="66 Comments">
-			<span class="icon-bubble"></span> 66		</a>
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-	<meta itemprop="name" content="Matt Read">
-</span>
-</li>
-<li id="post-349" class="post post-349 type-entry status-published tag-wordpress tag-web-applications tag-articles" itemprop="blogPost" itemscope
-    itemtype="http://schema.org/BlogPosting">
-	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
-<time itemprop="datePublished" datetime="2005-03-02T15:34:18-05:00">
-	02 Mar 2005</time>
-
-	<span itemprop="name">
-		
-	<i class="icon-blog" title="Type: Entry"></i>
-		<a href="rk-stats.html" itemprop="url"
-							title="Entry: Referrer Karma Stats 1.3">
-			Referrer Karma Stats 1.3</a>
-	</span>
-			<a itemprop="interactionCount" class="comment-count" href="rk-stats.html#comments"
-		   title="18 Comments">
-			<span class="icon-bubble"></span> 18		</a>
+			<a itemprop="interactionCount" class="comment-count" href="wp-admin-bar.html#comments"
+		   title="24 Comments">
+			<span class="icon-bubble"></span> 24		</a>
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 	<meta itemprop="name" content="Matt Read">
 </span>
@@ -1244,6 +1224,46 @@ Dave (UK)</p>
 	<meta itemprop="name" content="Matt Read">
 </span>
 </li>
+<li id="post-333" class="post post-333 type-entry status-published tag-web-design tag-web-applications tag-articles tag-internet" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-22T10:58:33-04:00">
+<time itemprop="datePublished" datetime="2005-10-12T11:32:32-04:00">
+	12 Oct 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="faking-two-column-text.html" itemprop="url"
+							title="Entry: Faking Two Column Text">
+			Faking Two Column Text</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="faking-two-column-text.html#comments"
+		   title="1 Comment">
+			<span class="icon-bubble"></span> 1		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-346" class="post post-346 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:34-05:00">
+<time itemprop="datePublished" datetime="2005-03-13T16:52:35-05:00">
+	13 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="custom-query-string-plugin.html" itemprop="url"
+							title="Entry: Custom Query String Plugin 2.2">
+			Custom Query String Plugin 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="custom-query-string-plugin.html#comments"
+		   title="65 Comments">
+			<span class="icon-bubble"></span> 65		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
 <li id="post-339" class="post post-339 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
     itemtype="http://schema.org/BlogPosting">
 	<meta itemprop="dateModified" content="2013-03-08T22:58:32-05:00">
@@ -1260,26 +1280,6 @@ Dave (UK)</p>
 			<a itemprop="interactionCount" class="comment-count" href="auto-links-discovery-plugin.html#comments"
 		   title="11 Comments">
 			<span class="icon-bubble"></span> 11		</a>
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-	<meta itemprop="name" content="Matt Read">
-</span>
-</li>
-<li id="post-366" class="post post-366 type-entry status-published tag-articles tag-hardware" itemprop="blogPost" itemscope
-    itemtype="http://schema.org/BlogPosting">
-	<meta itemprop="dateModified" content="2013-03-08T23:02:08-05:00">
-<time itemprop="datePublished" datetime="2004-01-06T07:37:54-05:00">
-	06 Jan 2004</time>
-
-	<span itemprop="name">
-		
-	<i class="icon-blog" title="Type: Entry"></i>
-		<a href="ps2-disc-read-error-fix.html" itemprop="url"
-							title="Entry: Playstation 2 Disc Read Error Fix">
-			Playstation 2 Disc Read Error Fix</a>
-	</span>
-			<a itemprop="interactionCount" class="comment-count" href="ps2-disc-read-error-fix.html#comments"
-		   title="239 Comments">
-			<span class="icon-bubble"></span> 239		</a>
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 	<meta itemprop="name" content="Matt Read">
 </span>
@@ -1310,9 +1310,9 @@ Dave (UK)</p>
 	</div>
 
 	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script  src="user/themes/conquistador/js/site-min.js"></script>
+<script  src="https://mattread.com/user/themes/conquistador/js/site-min.js"></script>
 </footer>
 </div></body>
 
-<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:27 GMT -->
+<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 18:09:37 GMT -->
 </html>
