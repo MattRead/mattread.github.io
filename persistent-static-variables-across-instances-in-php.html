@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/persistent-static-variables-across-instances-in-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Persistent Static Variables - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="jambo-on-habari-extras.html"><link rel="next" href="javascript-prototype-behaviour-in-php.html"><link rel="home" href="index.html">
+<meta name="keywords" content="code, php">
+<meta name="description" content="Wait, What? Yeah that's what I thought too. Still no Idea what I'm talking about? Well, let's take a look at the following code. Let's call it &quot;fred&quot;.   class foo { 	…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="persistent-static-variables-across-instances-in-php/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-496" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-496" class="post post-496 type-entry status-published tag-code tag-php">
+		<h1 itemprop="name">Persistent Static Variables</h1>
+		<meta content="https://mattread.com/persistent-static-variables-across-instances-in-php" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:0">
+		<p>
+			<meta itemprop="dateModified" content="2013-03-22T10:57:47-04:00">
+<time itemprop="datePublished" datetime="2008-06-12T01:26:40-04:00">
+	Published June 12<sup>th</sup>, 2008</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>Wait, What? Yeah that&#8217;s what I thought too. Still no Idea what I&#8217;m talking about? Well, let&#8217;s take a look at the following code. Let&#8217;s call it &#8220;fred&#8221;.</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> foo <span style="color: #009900;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">function</span> bar<span style="color: #009900;">&#40;</span> <span style="color: #000088;">$b</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span> <span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#123;</span>
+        static <span style="color: #000088;">$a</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span> <span style="color: #000088;">$b</span> <span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+            <span style="color: #000088;">$a</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$b</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span>   
+         <span style="color: #b1b100;">echo</span> <span style="color: #000088;">$a</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #000088;">$faz</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> foo<span style="color: #339933;">;</span>
+<span style="color: #000088;">$faz</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">bar</span><span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">3</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$baz</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> foo<span style="color: #339933;">;</span>
+<span style="color: #000088;">$baz</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">bar</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+foo<span style="color: #339933;">::</span><span style="color: #004000;">bar</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+foo<span style="color: #339933;">:</span>bar<span style="color: #009900;">&#40;</span><span style="color: #cc66cc;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> 
+<span style="color: #000088;">$faz</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">bar</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
+
+<p>The code above, named &#8220;fred&#8221;, basically creates a static variable <code>$a</code> inside the function <code>foo()</code>. When you call <code>foo(0)</code> it outputs the value of <code>$a</code>. When you call <code>foo('x')</code> , where x can be anything, it updates the value of <code>$a</code> with <code>'x'</code>, and outputs the new result.</p>
+
+<p>Now, what would expect &#8220;fred&#8221; to output? If your like me, then you are completely wrong. &#8220;fred&#8221; will actually output the following code.</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">/*
+Actual Outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 3
+foo::bar();      ==&gt; 3
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 1
+&nbsp;
+Expected outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 0
+foo::bar();      ==&gt; 0
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 3
+*/</span></pre>
+
+<p>Yes, that&#8217;s what I said at the start, &#8220;Persistent Static Variables Across Instances&#8221;. The static variable <code>$a</code> actually persists across the two instances of foo that &#8220;fred&#8221; created, and even into the static method call. This was completely unexpected, at least by me. So I&#8217;ll ask, does anyone know if this is actually the expected behaviour, and why it is or is not?</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Persistent Static Variables was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/code.html" rel="tag">code</a> and <a href="tag/php.html" rel="tag">php</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="javascript-prototype-behaviour-in-php.html"
+			   title="Javascript Prototype Behaviour in PHP"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="jambo-on-habari-extras.html"
+			   title="Jambo On Habari-Extras">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+	
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-497" class="post post-497 type-entry status-published tag-code tag-php tag-javascript tag-prototype" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-20T12:43:28-04:00">
+<time itemprop="datePublished" datetime="2008-09-29T02:01:57-04:00">
+	29 Sep 2008</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="javascript-prototype-behaviour-in-php.html" itemprop="url"
+							title="Entry: Javascript Prototype Behaviour in PHP">
+			Javascript Prototype Behaviour in PHP</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-662" class="post post-662 type-entry status-published tag-code tag-epiphany tag-tomboy" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-24T09:08:09-04:00">
+<time itemprop="datePublished" datetime="2010-09-10T21:36:02-04:00">
+	10 Sep 2010</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="ephyboy-the-epiphany-tomboy-extension-1.html" itemprop="url"
+							title="Entry: Ephyboy, The Epiphany Tomboy Extension">
+			Ephyboy, The Epiphany Tomboy Extension</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-462" class="post post-462 type-entry status-published tag-drunken-monkey tag-projects tag-code" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:19-05:00">
+<time itemprop="datePublished" datetime="2007-04-07T14:01:22-04:00">
+	07 Apr 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="drunken-monkey-labs.html" itemprop="url"
+							title="Entry: Drunken Monkey Labs">
+			Drunken Monkey Labs</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-683" class="post post-683 type-entry status-published tag-habari tag-code" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2014-10-07T20:20:34-04:00">
+<time itemprop="datePublished" datetime="2013-10-02T14:54:06-04:00">
+	02 Oct 2013</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="hconsole-a-live-habari-debugging-console.html" itemprop="url"
+							title="Entry: hConsole: A Live Habari Console">
+			hConsole: A Live Habari Console</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-497" class="post post-497 type-entry status-published tag-code tag-php tag-javascript tag-prototype" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-20T12:43:28-04:00">
+<time itemprop="datePublished" datetime="2008-09-29T02:01:57-04:00">
+	29 Sep 2008</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="javascript-prototype-behaviour-in-php.html" itemprop="url"
+							title="Entry: Javascript Prototype Behaviour in PHP">
+			Javascript Prototype Behaviour in PHP</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/persistent-static-variables-across-instances-in-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:41 GMT -->
+</html>

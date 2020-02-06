@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Find My Easter Egg</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/find-my-easter-egg"/><link rel="edit" href="https://mattread.com/find-my-easter-egg/atom"/><id>http://mattread.com/archives/2005/12/find-my-easter-egg/</id><updated>2008-05-08T23:28:12-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-20T19:57:12-04:00</app:edited><published>2005-12-01T16:33:22-05:00</published><category term="web-applications"/><content type="html">&lt;p&gt;A while ago I remember reading about an easter egg in &lt;a href="http://haveamint.com"&gt;Mint&lt;/a&gt;. You type in a secret code and receive a special prize, or something.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I thought it sounded neat. And we all know neat stuff is, well, neat. Anyway, I started to create my own easter egg, and came up with this &lt;a href="https://gist.github.com/MattRead/5209607"&gt;"neat" little script&lt;/a&gt;.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;HINT: jibby&lt;/p&gt;</content></entry>

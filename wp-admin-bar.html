@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/wp-admin-bar by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>WordPress Admin Bar Plugin vo.5 - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="remeber-the-good-old-days.html"><link rel="next" href="10random-xmms-tracks.html"><link rel="home" href="index.html">
+<meta name="keywords" content="wordpress, articles">
+<meta name="description" content="This plugin will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in and have a user level eq…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="wp-admin-bar/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-368" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-368" class="post post-368 type-entry status-published tag-wordpress tag-articles">
+		<h1 itemprop="name">WordPress Admin Bar Plugin vo.5</h1>
+		<meta content="https://mattread.com/wp-admin-bar" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:24">
+		<p>
+			<meta itemprop="dateModified" content="2013-04-23T16:33:23-04:00">
+<time itemprop="datePublished" datetime="2004-09-13T08:26:31-04:00">
+	Published September 13<sup>th</sup>, 2004</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>This plugin will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in and have a user level equal to, or above 1.<!--more--></p>
+
+<p class="note"><strong>Note:</strong> <a href="archives/2005/03/wp-admin-bar-20/index.html">Version 2</a> of this plugin is now available for WordPress 1.5. For WordPress 1.2 use this version.</p>
+
+<h3>Installation</h3>
+
+<p>To install the script just unpack the archive (link below) and upload the file <code>admin-bar.php</code> to the plugins folder. Then activate the plugin in the admin area. Then add the following code JUST AFTER THE <code>&lt;body&gt;</code> tag in your template (<code>index.php</code>):</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> admin_bar<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
+
+<p>That&#8217;s it, easy isn&#8217;t? Damn, WordPress is good.</p>
+
+<p>Actually, that&#8217;s not quite it. If you have removed the <code>wp_head();</code> function from the <code>&lt;head&gt;</code> of your XHTML, then read read the following Style Sheet section, if not skip the Style Sheet section.</p>
+
+<h3>Style Sheet</h3>
+
+<p>To get the admin bar to display properly, I have added some CSS to the plugin. If you have removed the <code>wp_head();</code> function from the <code>&lt;head&gt;</code> however, the CSS won&#8217;t be added. So you will have to add it yourself. The admin bar is contained in a list, <code>&lt;ul&gt;</code> and has the id <code>#admin</code>. So you could write your own CSS or use, or modify, the following default CSS:</p>
+
+<pre class="css geshicode" style="font-family:monospace;"><span style="color: #cc00cc;">#admin</span> <span style="color: #00AA00;">&#123;</span>
+<span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">20</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span> <span style="color: #933;">100%</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">margin</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">background</span><span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#666</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">border-bottom</span><span style="color: #00AA00;">:</span> <span style="color: #933;">2px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#fff</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">color</span><span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#fff</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">font-size</span><span style="color: #00AA00;">:</span> <span style="color: #933;">12px</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">font-family</span><span style="color: #00AA00;">:</span> verdana<span style="color: #00AA00;">,</span> <span style="color: #993333;">sans-serif</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">text-align</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">center</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+<span style="color: #cc00cc;">#admin</span> li <span style="color: #00AA00;">&#123;</span>
+<span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">inline</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">padding</span><span style="color: #00AA00;">:</span> <span style="color: #933;">5px</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+<span style="color: #cc00cc;">#admin</span> li a <span style="color: #00AA00;">&#123;</span>
+<span style="color: #000000; font-weight: bold;">color</span><span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#eee</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">text-decoration</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">none</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">letter-spacing</span><span style="color: #00AA00;">:</span> <span style="color: #933;">1px</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span>
+&nbsp;
+<span style="color: #cc00cc;">#admin</span> li a<span style="color: #3333ff;">:hover </span><span style="color: #00AA00;">&#123;</span>
+<span style="color: #000000; font-weight: bold;">color</span><span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#bbb</span><span style="color: #00AA00;">;</span>
+<span style="color: #000000; font-weight: bold;">text-decoration</span><span style="color: #00AA00;">:</span> <span style="color: #993333;">none</span><span style="color: #00AA00;">;</span>
+<span style="color: #00AA00;">&#125;</span></pre>
+
+<p>And after adding that CSS your done and ready to use the plugin. Have fun.</p>
+
+<h3>Features</h3>
+
+<p>The following is a list of links shown for the different user levels.</p>
+
+<ul>
+<li>level 10: Write, Edit, Links, Users, Profile, Options and Admin Area</li>
+<li>level 5: Write, Edit, Links, Users, Profile and Admin Area</li>
+<li>level 4: Write, Edit, Users, Profile and Admin Area</li>
+<li>level 1: Write, Edit, Profile and Admin Area</li>
+</ul>
+
+<p>When you are view a single post the &#8220;Edit&#8221; link will appear as &#8220;Edit This Post&#8221; and take you to the edit section for that post. &#8220;Admin Area&#8221; is just a link to the default section, Write.</p>
+
+<h3>Future Plans</h3>
+
+<p>I&#8217;m thinking that I will add a link to the Categories admin, and when your are viewing posts in a category, link to the edit category. I&#8217;m also thinking of adding a notice for when new comments have been made.</p>
+
+<p>If you have any ideas for the admin bar please leave a comment below. Thanks.</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">WordPress Admin Bar Plugin vo.5 was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/wordpress.html" rel="tag">wordpress</a> and <a href="tag/articles.html" rel="tag">articles</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="10random-xmms-tracks.html"
+			   title="10 Random XMMS Tracks"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="remeber-the-good-old-days.html"
+			   title="Remember The Good Old Days">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-1668"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/b650e7c96fd6cb97c6007179e74d4300?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Palindrome">
+				<span itemprop="name"><a href="http://trevorsnyder.info/">Palindrome</a></span>
+			</span>
+			<small>(<a href="#comment-1668"
+			           title="Permanent link to this comment">#1668</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-01-04T18:54:44-05:00">January 4<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Very useful plugin. Thanks sir! Link from my site to yours is the only payback I can currently offer.</p>
+			</div>
+</article>
+<article id="comment-1673"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/593543750c226fa39f60cb2bf83f46fc?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Adam">
+				<span itemprop="name"><a href="http://www.big-dork.com/">Adam</a></span>
+			</span>
+			<small>(<a href="#comment-1673"
+			           title="Permanent link to this comment">#1673</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-01-12T13:45:40-05:00">January 12<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Ditto!!!  Great Plugin  !! Awesome work my friend…</p>
+			</div>
+</article>
+<article id="comment-1697"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/677121f971819d0957427ad50de05251?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for muchacho loco">
+				<span itemprop="name"><a href="http://www.muchacholoco.com.ar/">muchacho loco</a></span>
+			</span>
+			<small>(<a href="#comment-1697"
+			           title="Permanent link to this comment">#1697</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-09T13:34:10-05:00">February 9<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>may I ask you which is the code that I should add just after the  tag. because I ca´’t make this plugin work because I don’t know what should I do next. please help me. thanx</p>
+			</div>
+</article>
+<article id="comment-1696"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.johnhesch.com/2005/02/09/creating-my-personal-information-manager-using-wordpress-part-iii/" rel="external">
+			John Hesch &raquo; Creating My Personal Information Manager Using WordPress Part III &sect; johnhesch.com		</a><br>
+		<time class="meta"
+		      datetime="2005-02-10T03:42:44-05:00">February 10<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1690"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d1637f9991f83482f8d3aed59a0912f5?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alejandro">
+				<span itemprop="name"><a href="http://weblog.homelinux.org/">Alejandro</a></span>
+			</span>
+			<small>(<a href="#comment-1690"
+			           title="Permanent link to this comment">#1690</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-11T12:46:29-05:00">February 11<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>What is the code I have to add? there is nothing there  <img class="habari-smiley" alt=":S" src="user/plugins/tabasamu/tango/face-plain.png"> 
+Saludos</p>
+			</div>
+</article>
+<article id="comment-1691"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt Read">
+				<span itemprop="name">Matt Read</span>
+			</span>
+			<small>(<a href="#comment-1691"
+			           title="Permanent link to this comment">#1691</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-11T16:53:19-05:00">February 11<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Sorry about that guys, I re-added the code you need to add. Should make sense now.</p>
+			</div>
+</article>
+<article id="comment-1698"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d1637f9991f83482f8d3aed59a0912f5?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alejandro">
+				<span itemprop="name"><a href="http://weblog.homelinux.org/">Alejandro</a></span>
+			</span>
+			<small>(<a href="#comment-1698"
+			           title="Permanent link to this comment">#1698</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-13T12:28:02-05:00">February 13<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Great, now it works. Really helpful <img class="habari-smiley" alt=";)" src="user/plugins/tabasamu/tango/face-wink.png"> </p>
+			</div>
+</article>
+<article id="comment-1708"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d1637f9991f83482f8d3aed59a0912f5?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alejandro">
+				<span itemprop="name"><a href="http://weblog.homelinux.org/">Alejandro</a></span>
+			</span>
+			<small>(<a href="#comment-1708"
+			           title="Permanent link to this comment">#1708</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-15T20:58:49-05:00">February 15<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Hi!, its me again <img class="habari-smiley" alt=":P" src="user/plugins/tabasamu/tango/face-grin.png">  I just upgraded to 1.5 and I’m using the default theme and the adminbar doesn’t fit in there. I wanted to let you know that as 1.5 is now official  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> 
+Saludos
+Alejandro</p>
+			</div>
+</article>
+<article id="comment-1726"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d1637f9991f83482f8d3aed59a0912f5?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alejandro">
+				<span itemprop="name"><a href="http://weblog.homelinux.org/">Alejandro</a></span>
+			</span>
+			<small>(<a href="#comment-1726"
+			           title="Permanent link to this comment">#1726</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-15T21:26:58-05:00">February 15<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>sorry, but I made it look better  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width="">  to put it in the header.php file of the current theme hehe
+PS: How did you get the “preview” plugin?, is really cool!)</p>
+			</div>
+</article>
+<article id="comment-1712"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/61c711bd2369016499a2bc2712bbf44f?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Joe Edmon">
+				<span itemprop="name"><a href="http://genealogyblog.com/">Joe Edmon</a></span>
+			</span>
+			<small>(<a href="#comment-1712"
+			           title="Permanent link to this comment">#1712</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-18T05:03:06-05:00">February 18<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Very cool. We’re using WP1.5, so I installed the line of code into the header file and it worked fine. I also modified the code to:</p>
+
+<p>&lt;?php if (function_exists(‘admin_bar’)) admin_bar(); ?&gt;</p>
+
+<p>This will prevent an error if we ever deactivate the plug-in</p>
+			</div>
+</article>
+<article id="comment-1718"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://angel.knigh7s.net/index.php?p=34" rel="external">
+			http://angel.knigh7s.net/index.php?p=34		</a><br>
+		<time class="meta"
+		      datetime="2005-02-19T02:24:49-05:00">February 19<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1719"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt Read">
+				<span itemprop="name"><a href="index.html">Matt Read</a></span>
+			</span>
+			<small>(<a href="#comment-1719"
+			           title="Permanent link to this comment">#1719</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-19T04:18:40-05:00">February 19<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Joe Edmond, yeah, that’s a good idea. I usually do that with all my plugin template functions. Also, the next Version of Admin Bar will soon be out  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width="">  just a heads up.</p>
+			</div>
+</article>
+<article id="comment-1725"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/beb1fb31ccad102fea59b184d214a43b?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Collin">
+				<span itemprop="name"><a href="http://collingrady.com/">Collin</a></span>
+			</span>
+			<small>(<a href="#comment-1725"
+			           title="Permanent link to this comment">#1725</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-24T00:27:21-05:00">February 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I’ll probably have to update my version when you release the new one, but I made my copy have dropdowns for each section, just like the different areas in wp-admin:</p>
+
+<p><a href="http://collingrady.wordpress.com/">http://collingrady.com/wp-content/admin-bar/admin-bar.gif</a></p>
+			</div>
+</article>
+<article id="comment-1722"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/348a3fd05f893f514edc49da1e3c1110?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Sean Langlands">
+				<span itemprop="name"><a href="http://www.pixelinsanity.com/">Sean Langlands</a></span>
+			</span>
+			<small>(<a href="#comment-1722"
+			           title="Permanent link to this comment">#1722</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-02-24T02:04:42-05:00">February 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Very Nice. Great Job man!</p>
+
+<p>I will be using this for my new version of my site. Keep a look out for it and I will mention your site too. : )</p>
+			</div>
+</article>
+<article id="comment-1728"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/ba34fca949dc5476d18ce476d7a6edd8?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Josiah">
+				<span itemprop="name"><a href="http://www.whollyhis.net/">Josiah</a></span>
+			</span>
+			<small>(<a href="#comment-1728"
+			           title="Permanent link to this comment">#1728</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-03-04T03:42:04-05:00">March 4<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Will you be releasing an updated version for 1.5?  I loved it on 1.2!</p>
+			</div>
+</article>
+<article id="comment-1731"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.listlesslawyer.com/blog/?p=44" rel="external">
+			The Listless Lawyer &raquo; Installing Wordpress 1.5 plugins		</a><br>
+		<time class="meta"
+		      datetime="2005-03-07T21:54:58-05:00">March 7<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1733"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/ba34fca949dc5476d18ce476d7a6edd8?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Josiah">
+				<span itemprop="name"><a href="http://www.whollyhis.net/">Josiah</a></span>
+			</span>
+			<small>(<a href="#comment-1733"
+			           title="Permanent link to this comment">#1733</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-03-08T22:19:21-05:00">March 8<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>In the menu array section of your plugin, what does the number represent?  I see write is “1”, links is “5”, users “3”, etc.</p>
+
+<p>Thanks.</p>
+			</div>
+</article>
+<article id="comment-1734"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.whollyhis.net/archives/2005/03/08/josiah-digest-where-have-i-been/" rel="external">
+			Wholly His &raquo; Josiah Digest: Where Have I Been?		</a><br>
+		<time class="meta"
+		      datetime="2005-03-09T02:07:28-05:00">March 9<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1958"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wrap.yourtrap.com/?p=22" rel="external">
+			wrap.yourtrap.com  &raquo; Blog Archive   &raquo;  WordPress Admin Bar plugin		</a><br>
+		<time class="meta"
+		      datetime="2005-05-19T18:37:18-04:00">May 19<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2053"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/0fb80da7997856970d374b526f46105e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Joseph Becher">
+				<span itemprop="name"><a href="http://www.jwebnet.net/">Joseph Becher</a></span>
+			</span>
+			<small>(<a href="#comment-2053"
+			           title="Permanent link to this comment">#2053</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-07-17T18:47:09-04:00">July 17<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Can’t find the download file, is the link broken?</p>
+			</div>
+</article>
+<article id="comment-2154"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/89212c8bd7fb7bc7492ab2b882c49637?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for jheremy">
+				<span itemprop="name">jheremy</span>
+			</span>
+			<small>(<a href="#comment-2154"
+			           title="Permanent link to this comment">#2154</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-12-11T05:10:02-05:00">December 11<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>ok im serously confused i added the code after dleing the wp_head (); but i cant finr were to put the css code, and i dont know which file to put the whole thing in i cant figure out were it goes admin wide. anyway its probobly my own stupidity, but i would really appriciate it if you could help me figure this out.</p>
+			</div>
+</article>
+<article id="comment-2357"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/438906c4848c67b8c6ef1110f45b5436?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for pete watch">
+				<span itemprop="name"><a href="http://www.jewelrywatch.info/">pete watch</a></span>
+			</span>
+			<small>(<a href="#comment-2357"
+			           title="Permanent link to this comment">#2357</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-04-22T19:22:44-04:00">April 22<sup>nd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Update would really appreciated, thanks for your work anyway <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-2404"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d433c0d4b82c9f0ef0d5f1f71259d8c2?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Work From Home">
+				<span itemprop="name"><a href="http://www.wealthontap.com/">Work From Home</a></span>
+			</span>
+			<small>(<a href="#comment-2404"
+			           title="Permanent link to this comment">#2404</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-05-23T08:41:26-04:00">May 23<sup>rd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Second that, an update would be awesome. Cheers  <img class="habari-smiley" alt=";)" src="user/plugins/tabasamu/tango/face-wink.png"> </p>
+			</div>
+</article>
+<article id="comment-2590"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress Admin Bar Plugin vo.5">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2590"
+			           title="Permanent link to this comment">#2590</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-08-27T22:17:05-04:00">August 27<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I meet it,I find it.</p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-349" class="post post-349 type-entry status-published tag-wordpress tag-web-applications tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
+<time itemprop="datePublished" datetime="2005-03-02T15:34:18-05:00">
+	02 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="rk-stats.html" itemprop="url"
+							title="Entry: Referrer Karma Stats 1.3">
+			Referrer Karma Stats 1.3</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="rk-stats.html#comments"
+		   title="18 Comments">
+			<span class="icon-bubble"></span> 18		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-347" class="post post-347 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
+<time itemprop="datePublished" datetime="2005-03-11T15:43:42-05:00">
+	11 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="wp-admin-bar-20.html" itemprop="url"
+							title="Entry: WP Admin Bar 2.2">
+			WP Admin Bar 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="wp-admin-bar-20.html#comments"
+		   title="66 Comments">
+			<span class="icon-bubble"></span> 66		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-337" class="post post-337 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:32-05:00">
+<time itemprop="datePublished" datetime="2005-06-14T19:50:52-04:00">
+	14 Jun 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="preview-drafts-plugin.html" itemprop="url"
+							title="Entry: Preview Drafts Plugin 1.1">
+			Preview Drafts Plugin 1.1</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-341" class="post post-341 type-entry status-published tag-web-design tag-wordpress tag-web-applications tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-05-02T14:50:25-04:00">
+<time itemprop="datePublished" datetime="2005-04-21T17:47:55-04:00">
+	21 Apr 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="wordpress-is-not-php.html" itemprop="url"
+							title="Entry: WordPress is not PHP">
+			WordPress is not PHP</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="wordpress-is-not-php.html#comments"
+		   title="122 Comments">
+			<span class="icon-bubble"></span> 122		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-346" class="post post-346 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:34-05:00">
+<time itemprop="datePublished" datetime="2005-03-13T16:52:35-05:00">
+	13 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="custom-query-string-plugin.html" itemprop="url"
+							title="Entry: Custom Query String Plugin 2.2">
+			Custom Query String Plugin 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="custom-query-string-plugin.html#comments"
+		   title="65 Comments">
+			<span class="icon-bubble"></span> 65		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/wp-admin-bar by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:24 GMT -->
+</html>

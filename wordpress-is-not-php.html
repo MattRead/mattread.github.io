@@ -1,0 +1,2675 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/wordpress-is-not-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>WordPress is not PHP - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="more-smilies-plugin.html"><link rel="next" href="happy-birthday-to-me.html"><link rel="home" href="index.html">
+<meta name="keywords" content="web-design, wordpress, web-applications, articles">
+<meta name="description" content="There have many concerns and question about the template system used in WordPress. Mostly the concerns are with n00bs and the complications of PHP. “I want to …" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="wordpress-is-not-php/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-341" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-341" class="post post-341 type-entry status-published tag-web-design tag-wordpress tag-web-applications tag-articles">
+		<h1 itemprop="name">WordPress is not PHP</h1>
+		<meta content="https://mattread.com/wordpress-is-not-php" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:122">
+		<p>
+			<meta itemprop="dateModified" content="2013-05-02T14:50:25-04:00">
+<time itemprop="datePublished" datetime="2005-04-21T17:47:55-04:00">
+	Published April 21<sup>st</sup>, 2005</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>There have many concerns and question about the template system used in <a href="http://wordpress.org/">WordPress</a>. Mostly the concerns are with n00bs and the complications of PHP. “I want to change this and that, but don&#8217;t know PHP”. I hear this a lot. But the thing is, you don&#8217;t need to know PHP to change the <a href="http://codex.wordpress.org/Templates">Templates</a> in <a href="http://wordpress.org/">WordPress</a>. <!--more--></p>
+
+<h2>The Template System</h2>
+
+<p>Lets&#8217; start with “<a href="http://codex.wordpress.org/The_Loop">the Loop</a>” as we call it. Probably the most confusing part of the <a href="http://codex.wordpress.org/Templates">Template</a> for a non-programmer. The Loop looks like this:</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> the_post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&nbsp;
+     //Template Section 1: post content Template Tags go here
+&nbsp;
+<span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endwhile</span><span style="color: #339933;">;</span> <span style="color: #b1b100;">else</span><span style="color: #339933;">:</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>;
+&nbsp;
+    //Template Section2: no posts found stuff here.
+&nbsp;
+<span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endif</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
+
+<p>It may look complicated, but it&#8217;s actually quite simple. In <a href="#ex1">Template Section 1</a>, all the posts information will be displayed. Within that section we will put all the posts <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>, and our HTML to format them. In <a href="#ex1">Template Section 2</a>, we will display a message telling the user no posts were found, if we find none to meet their criteria. </p>
+
+<h3>Template Section 1: The Posts</h3>
+
+<p>We&#8217;ll start with outputting the post tile. Simply add in the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_title() ?&gt;</code>. That will output the title of the post. </p>
+
+<p>Now let&#8217;s output the date of the post. Simply add the date&#8217;s <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_date() ?&gt;</code>. That outputs the date of the post.</p>
+
+<p>We will also, of coarse, need the content of the actual post. Simply, again, add the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_content() ?&gt;</code>.</p>
+
+<p>Now let&#8217;s put it all together with some HTML:</p>
+
+<pre class="php geshicode" style="font-family:monospace;">&lt;div class=&quot;post&quot;&gt;
+    &lt;h2&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_title<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/h2&gt;
+    &lt;p&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/p&gt;
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_content<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&lt;/div&gt;</pre>
+
+<p>And there&#8217;s our simple template. Now let&#8217;s add some more.</p>
+
+<p>First let&#8217;s add a link to the post, permalink as it&#8217;s called, on the title. We get the actual URL, something like <code class="html">http://mysite.com/archives/2004/09/post-title/</code>, with the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_permalink() ?&gt;</code>. We will need to put that in our <code class="html">&lt;a href=””&gt;</code> HTML tag.</p>
+
+<p>We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>, <code class="html">&lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;</code>. Now here&#8217;s another confusion people have. We&#8217;ve added in, what programmers would call, arguments to our <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>. That is, we&#8217;ve added in <code class="html">'&lt;p&gt;', '&lt;/p&gt;'</code> to the brackets of the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>. In this case we are just saying, if there are pages to link, output the page links with a <code class="html">&lt;p&gt;</code> at the start, and a <code class="html">&lt;/p&gt;</code> at the end. Hence, enclosing it all in HTML paragraph tags. Most <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> have different arguments you can pass to them, causing them to format their output differently.</p>
+
+<p>Now let&#8217;s add in our new tags.</p>
+
+<pre class="php geshicode" style="font-family:monospace;">&lt;div class=”post”&gt;
+  &lt;h2&gt; &lt;a href=”<span style="color: #000000; font-weight: bold;">&lt;?php</span> the_permalink<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>”&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_title<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/a&gt; &lt;/h2&gt;
+  &lt;p&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/p&gt;
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_content<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&nbsp;
+  <span style="color: #000000; font-weight: bold;">&lt;?php</span> link_pages<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'&lt;p&gt;'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'&lt;/p&gt;'</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&lt;/div&gt;</pre>
+
+<p>Now we have a fully functional Posts section, <a href="#ex1">Template Section 1</a>. Let&#8217;s move on to <a href="#ex1">Template Section 2</a>.</p>
+
+<h3>Template Section 2: No Posts Found</h3>
+
+<p>For our <a href="#ex1">Template Section 2</a>, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&#8217;s use the following simple HTML:</p>
+
+<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>Sorry, no posts could be found to match your criteria.<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span></pre>
+
+<p>Now let&#8217;s put it all together.</p>
+
+<h3>Complete Template</h3>
+
+<p>Putting all we learned above together, we get a nice simple <a href="http://codex.wordpress.org/The_Loop">Loop</a> <a href="http://codex.wordpress.org/Templates">Template</a>.</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> the_post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&nbsp;
+    &lt;div class=”post”&gt;
+        &lt;h2&gt; &lt;a href=”<span style="color: #000000; font-weight: bold;">&lt;?php</span> the_permalink<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>”&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_title<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/a&gt; &lt;/h2&gt;
+        &lt;p&gt; <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_date<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span> &lt;/p&gt;
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">&lt;?php</span> the_content<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">&lt;?php</span> link_pages<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'&lt;p&gt;'</span><span style="color: #339933;">,</span><span style="color: #0000ff;">'&lt;/p&gt;'</span><span style="color: #009900;">&#41;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+    &lt;/div&gt;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endwhile</span><span style="color: #339933;">;</span> <span style="color: #b1b100;">else</span><span style="color: #339933;">:</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
+&nbsp;
+    &lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+&nbsp;
+<span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endif</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
+
+<p>As you can see, we have done no PHP coding, just some simple HTML with <a href="http://wordpress.org/">WordPress</a> Template Tags added in.</p>
+
+<p>Obviously this is not a complete template, as we have no header and footer containing all the <code class="html">&lt;html&gt;&lt;head&gt;&lt;body&gt;</code> tags. But with some simple HTML and more <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>, and no PHP, we can easily add all that is needed for a complete HTML document. That&#8217;s right, an HTML document, not a PHP script.</p>
+
+<p>As we can see <a href="http://wordpress.org/">WordPress</a> is not PHP. <a href="http://wordpress.org/">WordPress</a> is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&#8217;t know why, <a href="http://wordpress.org/">WordPress</a> has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> is extremely easy and requires no knowledge of PHP at all.</p>
+
+<p>Changing the format and style of your <a href="http://codex.wordpress.org/Templates">Template</a> is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. </p>
+
+<p>However, as with any software, there is room for improvement.</p>
+
+<h2>Improving Templates</h2>
+
+<p>One of the problems with the <a href="http://wordpress.org/">WordPress</a> <a href="http://codex.wordpress.org/Templates">Template System</a>, in my opinion, is the default <a href="http://codex.wordpress.org/Templates">Template</a>, or theme, itself. Specifically the sidebar, with all the <code class="html">is_*()</code> functions. We shouldn&#8217;t expect a novice <a href="http://wordpress.org/">WordPress</a> user to understand what these functions mean. I would suggest removing all the <code class="html">if(is_*())</code> statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.</p>
+
+<p>Another problem I see with the default <a href="http://codex.wordpress.org/Templates">Template</a> is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.</p>
+
+<p>Another problem I see is with some of the <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>. Such as <code class="html">&lt;?php bloginfo() ?&gt;</code>. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, <code class="html">&lt;?php blog_name() ?&gt;</code>, <code class="html">&lt;?php blog_description() ?&gt;</code>, <code class="html">&lt;?php blog_url() ?&gt;</code>, etc., to maintain consistency. For some of the less used information, charset, version, etc., the <code class="html">&lt;?php bloginfo() ?&gt;</code> tag would be fine.</p>
+
+<p>And some of the other advanced <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> in use in the default <a href="http://codex.wordpress.org/Templates">Templates</a>, like <code class="html">&lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&gt;</code>, should be simplified to not contain all those arguments. Maybe use <code class="html">&lt;?php wp_list_cats() ?&gt;</code> where all those settings would be set in the admin area.</p>
+
+<p>It would also be nice to try to simplify the loop, although I can&#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.</p>
+
+<p>The point I&#8217;m trying making is to take the PHP out of the <a href="http://codex.wordpress.org/Templates">Templates</a>, as much as possible, so users don&#8217;t get confused and think they need PHP skills to modify the <a href="http://codex.wordpress.org/Templates">Templates</a>.</p>
+
+<p>Those are just my thoughts on the matter.</p>
+
+<p>If you need any help with your templates, or would like to learn more about the monkey, I&#8217;d be glad to help out. Just <a href="contact/index.html">drop me a line</a>.</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">WordPress is not PHP was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/web-design.html" rel="tag">web-design</a>, <a href="tag/wordpress.html" rel="tag">wordpress</a>, <a href="tag/web-applications.html" rel="tag">web-applications</a> and <a href="tag/articles.html" rel="tag">articles</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="happy-birthday-to-me.html"
+			   title="Happy Birthday To Me"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="more-smilies-plugin.html"
+			   title="More Smilies Plugin 1.2">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-24171"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/17c53d8ff21d8cfac0be9ab9ee313f2c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Kyle J Tomka">
+				<span itemprop="name"><a href="http://www.doccenterinc.com/">Kyle J Tomka</a></span>
+			</span>
+			<small>(<a href="#comment-24171"
+			           title="Permanent link to this comment">#24171</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="1969-12-31T19:00:00-05:00">December 31<sup>st</sup>, 1969</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Good Post. A lot of information some of which I put to use matching my company’s website to our blog. Thanks!</p>
+			</div>
+</article>
+<article id="comment-1830"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://photomatt.net/2005/04/21/not-php/" rel="external">
+			Photo Matt &raquo; Not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T01:38:43-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1831"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/4ba51bca9dcc94af549b917d274d6801?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Mark J">
+				<span itemprop="name"><a href="http://txfx.net/">Mark J</a></span>
+			</span>
+			<small>(<a href="#comment-1831"
+			           title="Permanent link to this comment">#1831</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T01:55:24-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Mega, mega kudos.  Required reading for people new to WordPress.</p>
+			</div>
+</article>
+<article id="comment-1832"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/2901348998f0c6827bfd439c6e07aa23?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Robert Deaton">
+				<span itemprop="name"><a href="http://somethingunpredictable.com/">Robert Deaton</a></span>
+			</span>
+			<small>(<a href="#comment-1832"
+			           title="Permanent link to this comment">#1832</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T01:55:25-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Its about time someone posted something like this. If you ask me, theme developers need to stop their bitching and sit down for a minute and look at what they’re doing before saying “ohgodidontknowhtisicandoitbetterstartbitching”</p>
+			</div>
+</article>
+<article id="comment-1833"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d35b8d4f5ac35e8ad85e28d5e3ae57b9?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Erik">
+				<span itemprop="name">Erik</span>
+			</span>
+			<small>(<a href="#comment-1833"
+			           title="Permanent link to this comment">#1833</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T02:06:08-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Just wanted to say thank you!</p>
+
+<p>That sweet tutorial really helped me start working on my wordpress site. Thanks!</p>
+
+<p>Gorgeous site by the way…   <img class="habari-smiley" alt="8)" src="user/plugins/tabasamu/tango/face-glasses.png"> </p>
+			</div>
+</article>
+<article id="comment-1834"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.clydeshome.net/wordpress/wordpress-is-not-php/" rel="external">
+			Colorado Contemplations - Journal  &raquo; Blog Archive   &raquo; WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T02:27:19-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1835"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-1835"
+			           title="Permanent link to this comment">#1835</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T03:21:30-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>M.P.R.D</strong></p>
+			</div>
+</article>
+<article id="comment-1836"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/5f89d3df08b8dedac1a0fde900a586db?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Roger Benningfield">
+				<span itemprop="name"><a href="http://admin.support.journurl.com/">Roger Benningfield</a></span>
+			</span>
+			<small>(<a href="#comment-1836"
+			           title="Permanent link to this comment">#1836</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T03:25:56-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I dunno… I think you’re greatly underestimating how intimidating this stuff is.</p>
+
+<p>Those aren’t “template tags”, after all; they’re function calls with pointy brackets around them, and thus bear only the most trivial resemblance to something more familiar, like HTML.</p>
+
+<p>Now, I’ll grant you, if you’ve got a user who doesn’t even grasp HTML, WP’s templates may be no more complicated that anything else. But is such a user going to monkeying with her templates in the first place?</p>
+			</div>
+</article>
+<article id="comment-1837"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt Read">
+				<span itemprop="name"><a href="index.html">Matt Read</a></span>
+			</span>
+			<small>(<a href="#comment-1837"
+			           title="Permanent link to this comment">#1837</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T03:46:14-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Roger, you’re right, technically there are function calls. But technically a stop sign is a piece of sheet metal with paint on it, yet it’s a stop sign. In this case those function calls are Template Tags.</p>
+
+<p>If we look at any template system, technically all the template tags are function calls. They just get replaced with the content using some regex. So whether we’re using <code>{$the_title}</code> or , they are both template tags. The fact that the later is actual PHP is simply superficial. It’s a template tag that just looks different than others, but effectively is the same.</p>
+
+<p>I’ll I’m saying is that let’s stop thinking of it as PHP, and start thinking in terms of templates. It’s just an HTML document with some WP tags in it. There is no PHP coding required. Thinking like that, and helping people out by using generic &quot;template tag&quot; terminology, instead of using programming terminology, will help reduce the amount intimidation.</p>
+			</div>
+</article>
+<article id="comment-1838"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/9c3a444649c030ce5b8a4be6ea608291?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for BoBB">
+				<span itemprop="name"><a href="http://myeurotrip.org/">BoBB</a></span>
+			</span>
+			<small>(<a href="#comment-1838"
+			           title="Permanent link to this comment">#1838</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T03:50:57-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Awesoem write up Matt, This would have been incredibly useful when I started using wordpress because I just could not figure out how it mixed in the content with the formatting. Its come a loooong way since then  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-1839"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for centripetalforces.com">
+				<span itemprop="name"><a href="http://centripetalforces.com/2005/04/22/unleashing-the-power-of-wordpress/">centripetalforces.com</a></span>
+			</span>
+			<small>(<a href="#comment-1839"
+			           title="Permanent link to this comment">#1839</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T04:24:16-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>Unleashing the power of WordPress</strong></p>
+
+<p>It’s interesting what happens when one metaphorically “looks under the hood” at the code of WP.</p>
+
+<p>I’ve discovered that WP has one fatal flaw in it’s presentation to the world. It’s billed as a blog, when in actual fac…</p>
+			</div>
+</article>
+<article id="comment-1840"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/a8527fa4be0bc9af18d31c3f9616d938?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Indranil">
+				<span itemprop="name"><a href="http://troidus.com/">Indranil</a></span>
+			</span>
+			<small>(<a href="#comment-1840"
+			           title="Permanent link to this comment">#1840</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T04:36:44-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Bravo, really well explained.
+You’ve done a great job.  <img class="habari-smiley" alt=":D" src="user/plugins/tabasamu/tango/face-smile-big.png"> </p>
+			</div>
+</article>
+<article id="comment-1841"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d4deec9d7e3dd1898b193ac47efb8ccb?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Florian Jung">
+				<span itemprop="name"><a href="http://www.bistr-o-mathik.org/">Florian Jung</a></span>
+			</span>
+			<small>(<a href="#comment-1841"
+			           title="Permanent link to this comment">#1841</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T04:48:09-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Remember that PHP was originally <em>designed as a template system</em> for use with HTML. Only later it advanced to a full blown programming language.</p>
+
+<p>What I like in WP is that you can start in a very simple way, only using some of the template tags, but if you really need it, you can use the full power of PHP to do some magic without learning another <em>easy</em> (but also <em>proprietary</em>) language.</p>
+			</div>
+</article>
+<article id="comment-1842"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/c6fe9759d2b8d6cba6789e9b4d30ad0c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jeff">
+				<span itemprop="name">Jeff</span>
+			</span>
+			<small>(<a href="#comment-1842"
+			           title="Permanent link to this comment">#1842</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T05:23:25-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Matt,</p>
+
+<p>I think your dismissal of MT templates’ perceived ease-of-use as pure “marketing” smoke and mirrors is incorrect.  MT indeed has a full separate and well-documented <a href="http://www.sixapart.com/movabletype/docs/mtmanual_tags.html#template%20tags">template “language”</a>.  An MT user could go his entire life, creating and customizing templates, without ever encountering Perl or even knowing Perl is under the hood.</p>
+
+<p>Yes, MT templates have <a href="http://www.sixapart.com/movabletype/docs/mttags#tag%20syntax">a syntax of their own</a> that may need to be picked up, but it’s like HTML: angle brackets and attributes.  (example: )  Not hard for HTML authors to see the similarity between this and html tags.  And that’s why it’s easier to learn.</p>
+
+<p>As mentioned earlier, the WordPress template tags <em>are</em> function calls.  For a novice user who’s never programmed before, the syntax is completely alien.  Open and close parens, commas between arguments,  what an ‘argument’ even is, if statements.</p>
+			</div>
+</article>
+<article id="comment-1843"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/33ae983c72db97d93df45a6290d3f436?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ozh">
+				<span itemprop="name"><a href="http://planetozh.com/">Ozh</a></span>
+			</span>
+			<small>(<a href="#comment-1843"
+			           title="Permanent link to this comment">#1843</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T05:40:49-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Nice article, I’ll keep it in mind to redirect here n00bies asking for support about templates.
+Time permitting you could extend it to a more complete series of tutorials, don’t you think ?  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-1844"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-1844"
+			           title="Permanent link to this comment">#1844</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T07:57:29-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thank you Matt, i have a question about the navigation system in your site, how did you assigned an id for archives link? i tried to do that in wordpress but i don’t know how, so i hope you can write something about it.</p>
+
+<p>And sorry for my poor english  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-1845"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for The NEW Powell3D Weblog">
+				<span itemprop="name"><a href="http://powell3d.com/wp/wordpress/2005/04/22/cloudy-layer-over-the-blogosphere/">The NEW Powell3D Weblog</a></span>
+			</span>
+			<small>(<a href="#comment-1845"
+			           title="Permanent link to this comment">#1845</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T08:26:33-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>Cloudy Layer Over the Blogosphere</strong></p>
+
+<p>Studying the Codex, from the very first: “What is a Blog?”, and muddling through the cloudy issue of Pingbacks and Trackbacks, I’m making notes as I go, hoping that I can understand some of these things….</p>
+			</div>
+</article>
+<article id="comment-1846"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.derbumi.de/?p=21" rel="external">
+			:) derBumi.de :: Michael Bumann  &raquo; Templates for Wordpress		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T09:42:15-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1847"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.bloggingpro.com/archives/2005/04/22/wordpress-is-not-php-help-for-beginners/" rel="external">
+			&nbsp; WordPress Is Not PHP, Help For Beginners&nbsp;by&nbsp;Blogging Pro		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T11:18:52-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1848"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.40annibuttati.it/index.php/archives/2005/04/22/wordpress-php/" rel="external">
+			40 anni buttati  &raquo; Blog Archive   &raquo; WordPress &#38; PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T11:39:41-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1849"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for befuzled">
+				<span itemprop="name">befuzled</span>
+			</span>
+			<small>(<a href="#comment-1849"
+			           title="Permanent link to this comment">#1849</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T11:41:47-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I suppose I am one of the n00bs, you speak of. Learned html then CSS several years ago. I know enough to have all my pages validate properly, yet have no ability explain what part of the language is what (ex: selector, element, property etc.).. I just know how to make it work. ..So I decide to use WP.. Oi vey, find it very confusing to change the template. Those “template tags” are making my head swim! I appreciate your suggetion to think of them as HTMl with WP Temp Tags… After many searchs to attempt to understand how to change my layouts, this has been the most benifitial. Still struggling to understand what I have to do to make it all work, but your words have at least given me the confidence that I might yet still be able to “get it”.</p>
+			</div>
+</article>
+<article id="comment-1850"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Dougal Campbell">
+				<span itemprop="name"><a href="http://dougal.gunters.org/">Dougal Campbell</a></span>
+			</span>
+			<small>(<a href="#comment-1850"
+			           title="Permanent link to this comment">#1850</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T12:05:16-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>If you haven’t already, how about throwing this little tutorial up on the Codex?</p>
+			</div>
+</article>
+<article id="comment-1851"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://eachman.com/2005/04/22/back-away-from-the-keyboard/" rel="external">
+			eachman.com  &raquo; Archive   &raquo; Back away from the keyboard		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T12:06:48-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1852"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.everytomorrow.org/archives/2005/04/22/but-i-dont-know-any-php/" rel="external">
+			Every Tomorrow &raquo; But I don&#8217;t know any PHP!		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T12:30:40-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1853"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/ebb27f9ee0883c03767d38c17db41aee?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for rob">
+				<span itemprop="name"><a href="http://pwnt.co.uk/blog/">rob</a></span>
+			</span>
+			<small>(<a href="#comment-1853"
+			           title="Permanent link to this comment">#1853</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T12:48:01-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Meh, I still think that WP should use something like Smarty. Separating template logic from programming logic is much nicer.</p>
+			</div>
+</article>
+<article id="comment-1854"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/4a995d76463c3fb25e589f29b9ebc9aa?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Andy">
+				<span itemprop="name"><a href="http://www.cssdev.com/">Andy</a></span>
+			</span>
+			<small>(<a href="#comment-1854"
+			           title="Permanent link to this comment">#1854</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T12:55:12-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Great work Matt, this will be very beneficial to lot’s of new users.  <img class="habari-smiley" alt="8)" src="user/plugins/tabasamu/tango/face-glasses.png"> </p>
+			</div>
+</article>
+<article id="comment-1855"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.norbeck.org/lyle/technical/?p=15" rel="external">
+			Lyle Schofield Technical Journal  &raquo; Blog Archive   &raquo; WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T13:25:30-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1857"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.viewfinderdesign.co.uk/archive/23/templates-for-beginners/" rel="external">
+			Viewfinder Design  &raquo; Blog Archive   &raquo; Templates for Beginners		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T14:04:04-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1861"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/80d5eba682d2090e8e7bcbf8047cec9c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Mark">
+				<span itemprop="name">Mark</span>
+			</span>
+			<small>(<a href="#comment-1861"
+			           title="Permanent link to this comment">#1861</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T15:53:06-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>If WordPress Templates are not PHP, then why use the confusing <code>&lt;?php ... ?&gt;</code> tag convention?</p>
+
+<p>Surely <code>&lt;? the_title(); ?&gt;</code> would be less confusing for new users.</p>
+			</div>
+</article>
+<article id="comment-1862"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jemima">
+				<span itemprop="name">Jemima</span>
+			</span>
+			<small>(<a href="#comment-1862"
+			           title="Permanent link to this comment">#1862</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T16:27:28-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>My biggest problem with Wordpress when I installed it was the insane range of places from which to get information about doing the most simple things with the templates. I’ll follow instructions and use a template system, regardless of syntax, but please please please don’t make me check pages and pages of Codex, all named for people who know what they’re looking for, a support forum, some old documentation, a plugin library, another plugin library, lots of individual homepages about plugins, articles like this… All just to work out how to get something that may or may not require a plugin but comes out of the box in MT. And none of the documents in these places consistently say which version of WP they refer to, so you can spend ages barking up the wrong tree. At least with MT, which I used to use, there’s one page for how templates work. Full stop. As it happens, I know php and am committed to the idea of open source and a robust architecture, but the frustration of the documentation really made me think twice about it. And now the disclaimer: I like WP, I use WP, I gripe because I care.</p>
+			</div>
+</article>
+<article id="comment-1863"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/afe7acd32d014da2efcd6ee49d29ecc9?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for the absent student">
+				<span itemprop="name"><a href="http://not-that-ugly.co.uk/">the absent student</a></span>
+			</span>
+			<small>(<a href="#comment-1863"
+			           title="Permanent link to this comment">#1863</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T16:46:09-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>This is great, and I wholeheartedly support all your suggestions for simplifying the template system further. I’d add that given the amount of PHP in the default template, the ‘classic’ theme is nearly always a better model for people wanting to build their own templates; it may not be as full-featured, but that makes it a lot easier to reverse-engineer.</p>
+			</div>
+</article>
+<article id="comment-1865"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.robinsblog.com/?p=89" rel="external">
+			Take My Advice - I&#8217;m Not Using It!  &raquo; Blog Archive   &raquo; CSS Three Column Liquid Layout		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T17:05:37-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1866"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Shayne">
+				<span itemprop="name">Shayne</span>
+			</span>
+			<small>(<a href="#comment-1866"
+			           title="Permanent link to this comment">#1866</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-22T17:15:21-04:00">April 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Well, it still is PHP. I understand what you are doing. But, honestly, I would have chosen a different title. Maybe, something that’s more like, “you don’t need to know PHP to modify a Wordpress template.”</p>
+
+<p>Hrm … any thought?</p>
+			</div>
+</article>
+<article id="comment-1867"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wrc.os42.com/?p=177" rel="external">
+			WordPress Reference Centre &raquo; WP and PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-22T19:50:37-04:00">April 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1870"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://netzgeschaedigt.de/?p=398" rel="external">
+			weblog_netzgeschaedigt v2.1 &raquo; WordPress individualisieren		</a><br>
+		<time class="meta"
+		      datetime="2005-04-23T04:01:09-04:00">April 23<sup>rd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1871"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://log.mapendoz.com/2005/04/23/word-press-is-not-a-php/" rel="external">
+			Echalicious &raquo; Word Press is not a PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-23T08:10:22-04:00">April 23<sup>rd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1872"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt">
+				<span itemprop="name"><a href="http://photomatt.net/">Matt</a></span>
+			</span>
+			<small>(<a href="#comment-1872"
+			           title="Permanent link to this comment">#1872</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-23T13:56:01-04:00">April 23<sup>rd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Mark, the reason we don’t use the short opening tags (without the ?php) is that they don’t work as reliably cross-platform</p>
+			</div>
+</article>
+<article id="comment-1873"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.daveschalkboard.com/index.php/archives/2005/04/23/expressionengine-maintanence-subscription/" rel="external">
+			Dave&#8217;s Chalkboard &raquo; ExpressionEngine Maintanence Subscription		</a><br>
+		<time class="meta"
+		      datetime="2005-04-23T14:58:38-04:00">April 23<sup>rd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1874"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.netlexfrance.com/wordpress/?p=11" rel="external">
+			Netlex News &raquo;  WordPress Theme : tutorials		</a><br>
+		<time class="meta"
+		      datetime="2005-04-23T15:21:12-04:00">April 23<sup>rd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1875"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt Read">
+				<span itemprop="name"><a href="index.html">Matt Read</a></span>
+			</span>
+			<small>(<a href="#comment-1875"
+			           title="Permanent link to this comment">#1875</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-23T18:20:32-04:00">April 23<sup>rd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Jeff, I didn’t mean to say MT template were not easy, cause they are very easy. I was just pointing out that eventhough the syntax is, as you say, alien to some, it is still easy to use.</p>
+
+<p>Jemima, I agree with you, the documentation is all over the place right now. But there are many great people working on making that better.</p>
+
+<p>Shayne, That would prolly have been a better title, but I like the sound of mine better.</p>
+
+<p>Anonymous, the navigation is using PhotoMatt’s <a href="http://photomatt.net/scripts/intellimenu">Intelligent Menus</a> Script. It’s quite lovely.</p>
+			</div>
+</article>
+<article id="comment-1877"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://tsb.blogdns.org/?p=11" rel="external">
+			Tech.Sports.Beer &raquo; WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-24T02:03:03-04:00">April 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1878"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ben's Blog">
+				<span itemprop="name"><a href="http://www.franske.com/blogs/bensblog.php/2005/04/24/learn_to_write_templates_for_wordpress">Ben's Blog</a></span>
+			</span>
+			<small>(<a href="#comment-1878"
+			           title="Permanent link to this comment">#1878</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-24T03:37:00-04:00">April 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>Learn to write templates for WordPress</strong></p>
+
+<p>One of the major complaints with the two b2/cafelog derived blogging packages (b2evolution and WordPress) is that the template system is much harder to use than the MovableType template system. While there are some inaccuracies with the article which d…</p>
+			</div>
+</article>
+<article id="comment-1879"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/605ef287fca1ba24fe1eef490b1b0fdd?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for jerome">
+				<span itemprop="name"><a href="http://vapourtrails.ca/">jerome</a></span>
+			</span>
+			<small>(<a href="#comment-1879"
+			           title="Permanent link to this comment">#1879</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-24T05:52:22-04:00">April 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I’ve supported several people trying to make sense of their templates and I have to disagree with you:  WordPress “template tags” are PHP functions, plain and simple.</p>
+
+<p>The two biggest causes of frustration:
+1. passing arguments to WP functions <em>requires</em> knowledge of PHP.  Do you use single quotes?  Double quotes?  Include the parameter name?  The average HTML/CSS coder isn’t going to know this right off the bat.
+2. too many WP functions output their own HTML tags, leaving users struggling to understand what the end result will look like.</p>
+
+<p>As a final note, you really shouldn’t start off your article referring to new users as “n00bs” — it’s demeaning and deters your target audience.</p>
+			</div>
+</article>
+<article id="comment-1880"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://home.jumpb.com/bBlog/?p=32" rel="external">
+			Life @ 15 Frames / Second  &raquo; Blog Archive   &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-24T06:52:03-04:00">April 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1881"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://arteliance.blogsome.com/2005/04/24/top-links-050416-23/" rel="external">
+			Arteliance  :: Top Links 05.04.16 - 23 :: April :: 2005		</a><br>
+		<time class="meta"
+		      datetime="2005-04-24T16:50:54-04:00">April 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1883"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.teeth.com.pk/blog/2005/04/25/guide-how-to-tweak-wordpress-template/" rel="external">
+			Teeth Maestro &raquo; Guide : How to tweak WordPress Template		</a><br>
+		<time class="meta"
+		      datetime="2005-04-24T18:34:31-04:00">April 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1884"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/6724823440e4e98014f91f07911bbab9?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for b">
+				<span itemprop="name"><a href="http://www.borru.c-f-h.com/sl">b</a></span>
+			</span>
+			<small>(<a href="#comment-1884"
+			           title="Permanent link to this comment">#1884</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-24T22:30:28-04:00">April 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>i think its still PHP!  <img class="habari-smiley" alt=":P" src="user/plugins/tabasamu/tango/face-grin.png"> </p>
+			</div>
+</article>
+<article id="comment-1885"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt Read">
+				<span itemprop="name"><a href="index.html">Matt Read</a></span>
+			</span>
+			<small>(<a href="#comment-1885"
+			           title="Permanent link to this comment">#1885</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-24T23:42:35-04:00">April 24<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><a href="#comment-1879">@jerome</a>,</p>
+
+<ol>
+<li>You’re right they are PHP functions, but they are used as template tags. It does take time to learn, but it’s not PHP. Well, technically it is, but it’s also the way the WP Template Tags work. So I would say it’s not learning PHP, it’s learning the WP Template syntax. That’s why I say it’s not PHP.</li>
+<li>I agree completely. They can cause problems in outputting their own HTML. But most info they output is semantically proper. Not all, but most.</li>
+</ol>
+
+<p>&quot;n00bs&quot; I don’t see as demeaning. I know I’m certainly a n00b in many many things. But yes, some may find it demeaning, bad choice on my part. Thanks for the input.</p>
+
+<p><a href="#comment-1884">@b</a>, I don’t. <img class="habari-smiley" alt=":D" src="user/plugins/tabasamu/tango/face-smile-big.png"> </p>
+			</div>
+</article>
+<article id="comment-1887"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://benjoblog.weblogs.us/2005/04/24/a-busy-weekend/" rel="external">
+			The Benjo Blog  &raquo; Blog Archive   &raquo; A Busy Weekend		</a><br>
+		<time class="meta"
+		      datetime="2005-04-25T03:15:17-04:00">April 25<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1888"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/84d47c318f70d217b0f5940a06635312?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for James">
+				<span itemprop="name"><a href="http://groupofzero.com/">James</a></span>
+			</span>
+			<small>(<a href="#comment-1888"
+			           title="Permanent link to this comment">#1888</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-25T09:13:28-04:00">April 25<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Is there a “complete” manual for Wordpress”? I read tutotial here and ther. I could not find a more systematic “howto”. Am I missing something?</p>
+			</div>
+</article>
+<article id="comment-1893"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://ree.blogsome.com/2005/04/25/links-for-2005-04-25/" rel="external">
+			Ree&#8217;s geekblog  :: links for 2005-04-25 :: April :: 2005		</a><br>
+		<time class="meta"
+		      datetime="2005-04-26T17:37:14-04:00">April 26<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1895"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.jarkolicious.com/probes/2005/04/27/wordpress-is-not-php/" rel="external">
+			jarkolicious  &raquo; probes   &raquo; Wordpress Is Not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-26T23:42:26-04:00">April 26<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1896"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/670fa1550ec985667c0ef1c75f4c5ae2?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jauhari">
+				<span itemprop="name"><a href="http://nurtria.info/">Jauhari</a></span>
+			</span>
+			<small>(<a href="#comment-1896"
+			           title="Permanent link to this comment">#1896</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-27T07:19:06-04:00">April 27<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>This Tutorial so Incridible for me, I learn something new from this Post</p>
+
+<p>Thanks  <img class="habari-smiley" alt=":P" src="user/plugins/tabasamu/tango/face-grin.png"> </p>
+			</div>
+</article>
+<article id="comment-1897"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/db19573fc388ff9e1a88f7f1d3aeb874?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Root">
+				<span itemprop="name"><a href="http://atthe404.com/">Root</a></span>
+			</span>
+			<small>(<a href="#comment-1897"
+			           title="Permanent link to this comment">#1897</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-27T11:14:33-04:00">April 27<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>This is awqesome. Beautifully written, very stylishly presented, and putting really useful but technical info in front of the end user in an accessible way. You have a gift my friend.</p>
+
+<p>The real joy is that you have articulated clearly what many of us in our stuttering way have been trying to say. For that I thank you. It is not surprising that all the usual suspects <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width="">  are here in a supportive way. You deserve it.</p>
+			</div>
+</article>
+<article id="comment-1898"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wp-blogger.com/blog/?p=12" rel="external">
+			Nothing fancy &raquo; WP not PHP ?		</a><br>
+		<time class="meta"
+		      datetime="2005-04-27T11:18:51-04:00">April 27<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1902"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d077048a6ef73cda47b26d59dc83e78f?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Dante">
+				<span itemprop="name"><a href="http://dantecubed.com/">Dante</a></span>
+			</span>
+			<small>(<a href="#comment-1902"
+			           title="Permanent link to this comment">#1902</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-28T00:36:21-04:00">April 28<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Great article, terrible title. I suggest changing the title to “WordPress is not Programming”.</p>
+			</div>
+</article>
+<article id="comment-1908"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.burningriverstudio.com/2005/04/28/more-wordpress-goodness/" rel="external">
+			Burning River Studio  &raquo; Blog Archive   &raquo; More WordPress Goodness		</a><br>
+		<time class="meta"
+		      datetime="2005-04-28T10:59:01-04:00">April 28<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1914"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for A Whole Lotta Nothing">
+				<span itemprop="name"><a href="http://a.wholelottanothing.org/2005/04/links_for_20050_94.html">A Whole Lotta Nothing</a></span>
+			</span>
+			<small>(<a href="#comment-1914"
+			           title="Permanent link to this comment">#1914</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-04-29T06:18:37-04:00">April 29<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>links for 2005-04-29</strong></p>
+
+<p>Picking Designer Homes Off the Rack | Business &amp; Economics | Deutsche Welle | World Famous designers are doing pre-fab plans. That italian one with the pool looks incredible. (tags: modernhomes ecofriendly prefab architecture) easter pig roast A frien…</p>
+			</div>
+</article>
+<article id="comment-1919"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://heybate.com/wp/index.php?p=104" rel="external">
+			Heybate.com - As Regular As Fibre &raquo; WordPress and PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-04-30T00:23:38-04:00">April 30<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1921"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://trevorsnyder.info/?p=103" rel="external">
+			the will to exist &raquo; Blog Archive  &raquo; WordPress templates demystified		</a><br>
+		<time class="meta"
+		      datetime="2005-05-02T14:10:38-04:00">May 2<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1929"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/dac9aed2406b1673027d7fb6291a5482?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Petros Dimitriadis">
+				<span itemprop="name"><a href="http://www.petrosdimitriadis.com/">Petros Dimitriadis</a></span>
+			</span>
+			<small>(<a href="#comment-1929"
+			           title="Permanent link to this comment">#1929</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-05-03T13:08:17-04:00">May 3<sup>rd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>this article is quite useful as well <a href="http://www.urbangiraffe.com/category/software/wordpress/">http://www.urbangiraffe.com/category/software/wordpress/</a></p>
+			</div>
+</article>
+<article id="comment-1941"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.leonieke.net/2005/05/08/no-1/" rel="external">
+			[MoK] leonieke.net  &raquo; Blog Archive   &raquo; No. 1		</a><br>
+		<time class="meta"
+		      datetime="2005-05-08T17:47:17-04:00">May 8<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1944"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/9d272b6ed628adfd7abec004d398ab32?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Denis de Bernardy">
+				<span itemprop="name"><a href="http://www.semiologic.com/">Denis de Bernardy</a></span>
+			</span>
+			<small>(<a href="#comment-1944"
+			           title="Permanent link to this comment">#1944</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-05-10T10:52:58-04:00">May 10<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>WordPress is way too complicated for the average user. I tend to second Jerome’s comment… No user in his right mind should ever need to configure a function to customize his WordPress install.</p>
+
+<p>Consider these <a href="http://www.semiologic.com/2005/04/22/10-free-tips-to-make-wordpress-more-usable/">insights on improving WordPress’ usability</a>.</p>
+			</div>
+</article>
+<article id="comment-1948"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.webmercial.dk/hvad-nu.htm" rel="external">
+			Webmercial.dk - Pushing the envelope of connectivity since 2001		</a><br>
+		<time class="meta"
+		      datetime="2005-05-11T14:55:07-04:00">May 11<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1951"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://s87381935.onlinehome.us/?p=21" rel="external">
+			SeattleBound  &raquo; Blog Archive   &raquo; Upgrade/Downgrade		</a><br>
+		<time class="meta"
+		      datetime="2005-05-12T05:05:31-04:00">May 12<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1960"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://bingu.net/blog/?p=122" rel="external">
+			冰古Blog  &raquo; Blog Archive   &raquo; 有关wordpress theme的Tips 和 hack		</a><br>
+		<time class="meta"
+		      datetime="2005-05-13T07:25:41-04:00">May 13<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1969"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/102a95e30e0ffaedd8122264edadb195?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ron Pemberton">
+				<span itemprop="name"><a href="http://ronpemberton.com/">Ron Pemberton</a></span>
+			</span>
+			<small>(<a href="#comment-1969"
+			           title="Permanent link to this comment">#1969</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-05-23T02:05:11-04:00">May 23<sup>rd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Please write more tutorials. You have a talent for it, and I would gratfully appreciate someone with the moxy to do it with panache. Please pickup where Podz left off, with your presentation skills ou would most definately become famous for it. Thank you for your help. Kudos!!!!</p>
+			</div>
+</article>
+<article id="comment-1977"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for templaterie blog">
+				<span itemprop="name"><a href="http://blog.templaterie.de/wordpress/?p=10">templaterie blog</a></span>
+			</span>
+			<small>(<a href="#comment-1977"
+			           title="Permanent link to this comment">#1977</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-05-26T14:42:49-04:00">May 26<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>Für Wordpress braucht es keine PHP-Kenntniss</strong></p>
+
+<p>Das behauptet zumindest der ursprüngliche Autor dieses Templates … das ich übrigens an irgendeiner Stelle für den Opera unbrauchbar gemacht habe …   Nun gut, wird auch wieder gerichtet, sobald ich den Übeltäter habe.  Aber zum Templ…</p>
+			</div>
+</article>
+<article id="comment-1986"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.hotelblues.com/wp/2005/06/02/wp-link/" rel="external">
+			Hotelblues.com  &raquo; Blog Archive   &raquo; WP Link		</a><br>
+		<time class="meta"
+		      datetime="2005-06-02T07:38:57-04:00">June 2<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-1989"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/ce749e7ad26c869f3efaa52d1206bc8a?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Fish Cakes">
+				<span itemprop="name"><a href="http://boilerhouseblog.com/fishcakes/">Fish Cakes</a></span>
+			</span>
+			<small>(<a href="#comment-1989"
+			           title="Permanent link to this comment">#1989</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-06-04T20:56:35-04:00">June 4<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Goddammit, this is exactly what I needed. The way people talk about (insert scary voice here) <em>the loop</em> makes it seem like some kind of monster that lives in a lair. But when you break it down like that, it seems much more simple. Thanks, at least now I partly understand what powers my blog!</p>
+			</div>
+</article>
+<article id="comment-2000"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://kawebspy.kawebspynet.com/2005/06/blog/wordpress-template-basic-tutorial.html" rel="external">
+			Ka Webspy Personal Blog &raquo; WordPress Template Basic Tutorial		</a><br>
+		<time class="meta"
+		      datetime="2005-06-08T03:15:31-04:00">June 8<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2017"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://blog.ekjl.com/?p=7" rel="external">
+			ee-kay-jay-el		</a><br>
+		<time class="meta"
+		      datetime="2005-06-22T11:56:08-04:00">June 22<sup>nd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2044"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.lukemcomber.com/?p=66" rel="external">
+			Luke McOmber  &raquo; Blog Archive   &raquo; Wordpress 1.5 cont.		</a><br>
+		<time class="meta"
+		      datetime="2005-07-04T01:41:31-04:00">July 4<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2046"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://studyweb.blogsome.com/2005/06/20/referrence-for-studying-vietwordpress/" rel="external">
+			study web first days  :: referrence for studying VietWordpress :: June :: 2005		</a><br>
+		<time class="meta"
+		      datetime="2005-07-06T00:13:44-04:00">July 6<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2048"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://jolene.moved.in/blog/?p=3" rel="external">
+			Whatever the Pink Marshmallow says&#8230;.. &raquo; Goory brains.		</a><br>
+		<time class="meta"
+		      datetime="2005-07-12T04:12:45-04:00">July 12<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2057"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Dgold">
+				<span itemprop="name">Dgold</span>
+			</span>
+			<small>(<a href="#comment-2057"
+			           title="Permanent link to this comment">#2057</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-07-22T05:53:06-04:00">July 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks for the write-up.  Now if you could explain how CSS fits in, using equally simple terms and clear color-coded examples, I’d be most appreciative!  I’ve figured out how to move and place “chunks” of data on my site inside HTML (these template tags), and even how to write the arguments properly (whoo hoo I guess I did some PHP).  But now I’ve got CSS div span class scattered around, that I don’t know where to start, or even what program to open it with for making changes (Notepad? Firefox extension?).</p>
+			</div>
+</article>
+<article id="comment-2060"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/b2c58fe50a1dfa565db5577cc9824330?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Tim">
+				<span itemprop="name"><a href="http://tim.textdriven.com/">Tim</a></span>
+			</span>
+			<small>(<a href="#comment-2060"
+			           title="Permanent link to this comment">#2060</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-07-25T21:51:39-04:00">July 25<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I thought it was PHP till I really started editing some of the actual php files that run WP. It was then I realized what PHP was. codex.wordpress.org is key. Thank you Matt R. for this post.</p>
+			</div>
+</article>
+<article id="comment-2065"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for will the brand noobian">
+				<span itemprop="name">will the brand noobian</span>
+			</span>
+			<small>(<a href="#comment-2065"
+			           title="Permanent link to this comment">#2065</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-08-05T11:16:37-04:00">August 5<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Please put this on the codex.  I’ve been trying understand that for 2 days.  2 long days.  Great article.  thanks.</p>
+
+<p>Is there a model anywhere?  what connects to what…  what the hell are all those folders…</p>
+			</div>
+</article>
+<article id="comment-2066"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/fd28e3112b554ca5b04a6bfe0002f30c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Andr">
+				<span itemprop="name"><a href="http://neodrom.ru/">Andr</a></span>
+			</span>
+			<small>(<a href="#comment-2066"
+			           title="Permanent link to this comment">#2066</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-08-12T07:02:59-04:00">August 12<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>FINE! I’ll just delete your sig. boooo!</p>
+			</div>
+</article>
+<article id="comment-2070"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/b78d9c180e0b8a2550b0a49feb091ed2?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Quy">
+				<span itemprop="name">Quy</span>
+			</span>
+			<small>(<a href="#comment-2070"
+			           title="Permanent link to this comment">#2070</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-08-22T02:05:53-04:00">August 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>It seems that you know alot about wordpress. What is the php line of code that makes list. I want to put links to other site on my sidebar however I don’t know the code to make the list expand. I have seem them in other wordpress sites. 
+Please email me back a.s.a.p.
+                                          Thank You,
+                                         Quy</p>
+			</div>
+</article>
+<article id="comment-2073"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.tuning.co.in/15/done-messing-up-wp-design" rel="external">
+			Fine tuning the world :) &raquo; Done messing up Wp design. ;-)		</a><br>
+		<time class="meta"
+		      datetime="2005-08-26T13:52:48-04:00">August 26<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2076"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wrc.os42.com/?p=200" rel="external">
+			WordPress Reference Centre &raquo; WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-08-31T17:19:33-04:00">August 31<sup>st</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2082"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wordpr.ectio.us/tutorials/wordpress-is-not-php/" rel="external">
+			WordPress is not PHP at WordPr.ectio.us		</a><br>
+		<time class="meta"
+		      datetime="2005-09-26T12:01:23-04:00">September 26<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2083"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://toskae.naezip.net/wordpress/?p=5" rel="external">
+			twisted.. 5th &raquo; Blog Archive &raquo; 템플릿 태그		</a><br>
+		<time class="meta"
+		      datetime="2005-09-28T09:22:23-04:00">September 28<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2089"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://wordpress.eekhout.net/2005/10/17/matte28099s-googly-site-wordpress-is-not-php/" rel="external">
+			Skate fate! &raquo; Blog Archive &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-10-17T05:51:33-04:00">October 17<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2090"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.poluz.net/blog/2005/10/in-dirittura-darrivo/" rel="external">
+			poluz live? &raquo; In dirittura d&#8217;arrivo		</a><br>
+		<time class="meta"
+		      datetime="2005-10-26T13:30:55-04:00">October 26<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2128"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://shadows.os42.com/index.php/archives/wordpress-is-not-php" rel="external">
+			Shadows &raquo; Blog Archive &raquo; WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-11-24T16:52:14-05:00">November 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2127"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://shadows.os42.com/index.php/archives/wp-and-php" rel="external">
+			Shadows &raquo; Blog Archive &raquo; WP and PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-11-24T17:13:43-05:00">November 24<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2145"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.dlbaobei.com/?p=9" rel="external">
+			编程猪鸡的Geek生活 &raquo; The Loop		</a><br>
+		<time class="meta"
+		      datetime="2005-11-30T11:27:32-05:00">November 30<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2157"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Valery">
+				<span itemprop="name">Valery</span>
+			</span>
+			<small>(<a href="#comment-2157"
+			           title="Permanent link to this comment">#2157</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-12-12T08:57:03-05:00">December 12<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Very straight to the point and it answered my doubts!!  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-2162"
+		class="comment type-trackback status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for ECTIO">
+				<span itemprop="name"><a href="http://ectio.us/node/138447">ECTIO</a></span>
+			</span>
+			<small>(<a href="#comment-2162"
+			           title="Permanent link to this comment">#2162</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-12-14T00:22:41-05:00">December 14<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p><strong>HOW TO: Customize Wordpress Part 1…</strong></p>
+
+<p>There are two main ways that I can see to go about customising themes in WP. I’m not really a theme user, as I tend to build from scratch, so it’s difficult for me to say which way would be easier for everyone. One way is to customise the functionali…</p>
+			</div>
+</article>
+<article id="comment-2163"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://incoherently.net/archives/2005/04/22/unleashing-the-power-of-wordpress/" rel="external">
+			incoherently surreal | Unleashing the power of WordPress		</a><br>
+		<time class="meta"
+		      datetime="2005-12-16T14:41:23-05:00">December 16<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2173"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://birderboy.wordpress.com/2005/12/23/links-for-2005-12-23/" rel="external">
+			Nothing&#8217;s Sound &raquo; Blog Archive &raquo; links for 2005-12-23		</a><br>
+		<time class="meta"
+		      datetime="2005-12-23T04:19:39-05:00">December 23<sup>rd</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2183"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://stevelim.com/blog/?p=168" rel="external">
+			The Musings of Supersteve3d &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
+		<time class="meta"
+		      datetime="2005-12-30T07:39:17-05:00">December 30<sup>th</sup>, 2005</time>
+	</p>
+</article>
+
+
+<article id="comment-2191"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for SenorKaffee">
+				<span itemprop="name">SenorKaffee</span>
+			</span>
+			<small>(<a href="#comment-2191"
+			           title="Permanent link to this comment">#2191</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-05T13:55:16-05:00">January 5<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Phew, this article encouraged me to get going. All I want to do is using the blogging functionality of WP as a better news script on small webpage of otherwise static pages. After all that confusion it looks like it is actually not hard to do it. Just design the webpage in Dreamweaver as always and add the WP tags where they are needed. No need to implement the whole site navigation and static sites in WP.  :mrgreen:</p>
+			</div>
+</article>
+<article id="comment-2206"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/1efdefbd4714412193d806176ae579e3?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Neebone">
+				<span itemprop="name"><a href="http://www.neebone.co.uk/">Neebone</a></span>
+			</span>
+			<small>(<a href="#comment-2206"
+			           title="Permanent link to this comment">#2206</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-11T08:08:51-05:00">January 11<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>People are getting hung up on semantics. Anything can be construed as anything. Ok we get that it’s actually PHP but it’s PHP templates so we can just say templates. And like Matt said, it’s easier for beginners to understand that way.</p>
+
+<p>I don’t really like the lack of docs on the themes that come with WP. I can get around on my own but I dont really have that much time and would rather read a code map or something.</p>
+
+<p>Useful article though…well done.</p>
+			</div>
+</article>
+<article id="comment-2217"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.12il.net/?p=165" rel="external">
+			12iL &raquo; Blog Archive &raquo; wordpress theme		</a><br>
+		<time class="meta"
+		      datetime="2006-01-18T01:48:24-05:00">January 18<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2234"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.emilyrobbins.com/how-to-blog/wordpress-20-problems-for-google-adsense-users-and-a-workaround-314.htm" rel="external">
+			WordPress 2.0 problems for google adsense users, and a workaround | How to Blog		</a><br>
+		<time class="meta"
+		      datetime="2006-01-30T20:49:53-05:00">January 30<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2247"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d794cf06e1e7acf07ab37db162fbce77?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Louis">
+				<span itemprop="name"><a href="http://www.ax697.org/">Louis</a></span>
+			</span>
+			<small>(<a href="#comment-2247"
+			           title="Permanent link to this comment">#2247</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-06T11:48:06-05:00">February 6<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I couldn’t figure out how to install MT and I gave up before even trying very much. I tried Wordpress and I was hooked. It keeps getting better all the time. This tutorial is great. I have been monkeying around with template tags, for me it is fun to do. On the codex you can find all of the template tags, you can do copy and paste and just change the variables and you are set, in a way it is easier than doing html.</p>
+
+<p>Thanks for helping me see things in a little easier light.</p>
+			</div>
+</article>
+<article id="comment-2250"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://kawebspy.kawebspynet.com/2005/06/08/wordpress-template-basic-tutorial/" rel="external">
+			Ka Webspy &raquo; WordPress Template Basic Tutorial		</a><br>
+		<time class="meta"
+		      datetime="2006-02-07T02:20:48-05:00">February 7<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2253"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/558975c958f46a26e9c5d6973c91ee4c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ivan Minic">
+				<span itemprop="name"><a href="http://www.burek.co.yu/">Ivan Minic</a></span>
+			</span>
+			<small>(<a href="#comment-2253"
+			           title="Permanent link to this comment">#2253</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-08T16:05:06-05:00">February 8<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>very nicely written… will give it a try</p>
+			</div>
+</article>
+<article id="comment-2265"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/4112998cbbae06e2ee953c0ac1027dbd?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for r.boylan">
+				<span itemprop="name">r.boylan</span>
+			</span>
+			<small>(<a href="#comment-2265"
+			           title="Permanent link to this comment">#2265</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-17T01:40:22-05:00">February 17<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I ran across <a href="http://www.alistapart.com/articles/holygrail">The Holy Grail of Layout</a> and want to use it to create a WordPress theme. I can handle the CSS but I’m really frustrated by the lack of a foundation of template pages to begin the customization. I can see that starting with the Default theme or the Classic theme will eventually lead to what I want but my question is: Isn’t there a set of foundation pages for developing a new theme? The Default theme is a double column within a single column and the Classic theme is the same. At many of the CSS sample sites, there are one column layouts, two column layouts, etc. Is there anything like that for WordPress? If so, where? Thanks, by the way, this was a marvelous article! (I have used PHP for some of my web sites so it does not scare me but your theme of it is NOT PHP was intriguing and you point was VERY well made.)</p>
+			</div>
+</article>
+<article id="comment-2270"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/5efa5991725149ecf514bc51ee90e2f6?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Robert">
+				<span itemprop="name"><a href="http://robertnelsononline.com/blog/">Robert</a></span>
+			</span>
+			<small>(<a href="#comment-2270"
+			           title="Permanent link to this comment">#2270</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-20T18:02:37-05:00">February 20<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Great article. Thank you very much.</p>
+			</div>
+</article>
+<article id="comment-2288"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+			지스토리 스튜디오 &raquo; Blog Archive &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
+		<time class="meta"
+		      datetime="2006-03-11T02:24:11-05:00">March 11<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2291"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.gstory.com/2006/03/11/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+			지스토리 스튜디오 &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
+		<time class="meta"
+		      datetime="2006-03-11T05:13:01-05:00">March 11<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2292"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+			지스토리 스튜디오 &raquo; Blog Archive &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
+		<time class="meta"
+		      datetime="2006-03-11T06:15:17-05:00">March 11<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2295"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/f5df720e198d9b89d87a9548c0d39cce?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Natali">
+				<span itemprop="name"><a href="http://search.911cams.com/">Natali</a></span>
+			</span>
+			<small>(<a href="#comment-2295"
+			           title="Permanent link to this comment">#2295</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-14T03:23:15-05:00">March 14<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks so much for the good advice !</p>
+			</div>
+</article>
+<article id="comment-2302"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/bedfee5ef390015888a11d71a43664bf?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for USTommyMC">
+				<span itemprop="name"><a href="http://ustommymc.net/">USTommyMC</a></span>
+			</span>
+			<small>(<a href="#comment-2302"
+			           title="Permanent link to this comment">#2302</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-16T03:43:14-05:00">March 16<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I don’t know who’s intelligence got insulted by this awesome tutorial but I think you did a great job. The WordPress Codex is next to useless when it comes to us “noobee” or whatever it is you people call us.</p>
+
+<p>I understand “The Loop” a hell of a lot better now after reading this than I ever did reading the Codex over and over and over. Thank you for taking the time to put this together.</p>
+			</div>
+</article>
+<article id="comment-2306"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://ustommymc.net/2006/03/16/links-for-2006-03-17/" rel="external">
+			USTommyMC &raquo; Links: 2006-03-17		</a><br>
+		<time class="meta"
+		      datetime="2006-03-17T01:32:14-05:00">March 17<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2311"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/f9cb67cda0dc3319e86e8ac7dec5716c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alan">
+				<span itemprop="name"><a href="http://www.musicismyworld.com/">Alan</a></span>
+			</span>
+			<small>(<a href="#comment-2311"
+			           title="Permanent link to this comment">#2311</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-18T23:09:37-05:00">March 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Hi dude, I really wish to thank you for your knowledge and how you explain very well all the things…</p>
+
+<p>I’m quite new in php, I’m a dj but for my site I use WP. The problem is that I wish to modify my template, split the design, or for explain better have more pages into one page.</p>
+
+<p>Btw, your explain to how work WP was very useful and interesting and I’m writing to you to thank you for your great work. Best wishes and greetz…</p>
+
+<p>Alan</p>
+			</div>
+</article>
+<article id="comment-2315"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2315"
+			           title="Permanent link to this comment">#2315</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-21T06:08:29-05:00">March 21<sup>st</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks man, you just helped me to integrate worpress in my website layout.   <img class="habari-smiley" alt=":lol:" src="user/plugins/tabasamu/tango/face-grin.png"> </p>
+			</div>
+</article>
+<article id="comment-2395"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.irakrakow.com/wptips/2006/05/12/wordpress-is-not-php/" rel="external">
+			Stupid Wordpress Tricks &raquo; Wordpress Is Not PHP		</a><br>
+		<time class="meta"
+		      datetime="2006-05-14T15:02:21-04:00">May 14<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2397"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://rukawa.name/wp/?p=985" rel="external">
+			지난 여름 &raquo; 워드프레스 스킨 수정		</a><br>
+		<time class="meta"
+		      datetime="2006-05-16T16:45:10-04:00">May 16<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2399"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://iface.wordpress.com/2006/05/10/a-look-at-movable-type-vs-wordpress/" rel="external">
+			Abhijit Nadgouda @ iface &raquo; Blog Archive &raquo; A Look At Movable Type v/s Wordpress		</a><br>
+		<time class="meta"
+		      datetime="2006-05-17T15:23:37-04:00">May 17<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2425"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://sanjeevn.wordpress.com/2006/06/07/links-for-2006-06-07/" rel="external">
+			Sanjeev.NET &raquo; Blog Archive &raquo; links for 2006-06-07		</a><br>
+		<time class="meta"
+		      datetime="2006-06-12T03:23:20-04:00">June 12<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2430"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://www.alldugg.info/diggs/newbie-guide-to-changing-wordpress-templates/" rel="external">
+			Newbie Guide to Changing WordPress Templates - The Digg Effect - Search for Diggs or get Dugg		</a><br>
+		<time class="meta"
+		      datetime="2006-06-14T05:09:32-04:00">June 14<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2470"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/558975c958f46a26e9c5d6973c91ee4c?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ivan Minic">
+				<span itemprop="name"><a href="http://www.burek.co.yu/">Ivan Minic</a></span>
+			</span>
+			<small>(<a href="#comment-2470"
+			           title="Permanent link to this comment">#2470</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-07-01T18:39:38-04:00">July 1<sup>st</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I get this stuff all the time.. almost every serious sofware has similar template system and all people look is extension..</p>
+			</div>
+</article>
+<article id="comment-2525"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://llqoli.lifevine.org/?p=79" rel="external">
+			憐惜·零星 &raquo; 向导: 自定义 Wordpress 第一部分 [翻译]		</a><br>
+		<time class="meta"
+		      datetime="2006-07-18T22:19:39-04:00">July 18<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2556"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://de.eugens-web.de/free-online-web-hosting/" rel="external">
+			Blog &raquo; Blog Archive &raquo; Free Online - Web - Hosting		</a><br>
+		<time class="meta"
+		      datetime="2006-08-02T18:50:33-04:00">August 2<sup>nd</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2623"
+         class="comment type-pingback status-approved">
+	
+	<p>
+		<a href="http://llqoli.lifevine.org/?p=166" rel="external">
+			Qoli's Blog		</a><br>
+		<time class="meta"
+		      datetime="2006-09-15T07:27:46-04:00">September 15<sup>th</sup>, 2006</time>
+	</p>
+</article>
+
+
+<article id="comment-2633"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/55c9cf715a2f706dca466f8a3e7951f3?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Clair">
+				<span itemprop="name"><a href="http://clair.pinoyweb.net/">Clair</a></span>
+			</span>
+			<small>(<a href="#comment-2633"
+			           title="Permanent link to this comment">#2633</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-21T06:36:41-04:00">September 21<sup>st</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I need some help with templates in Pages. I have been using WP as a CMS and would like particular pages and their children/child pages to use certain templates.  The thing is that I’d like to find a way to set the templates at one go and not set them for each page.  Is that possible?  How?  Thanks  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-2636"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="WordPress is not PHP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/1ccde4fde4e2796a74c3307730389c73?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for j4s0n">
+				<span itemprop="name"><a href="http://www.j4s0n.com/">j4s0n</a></span>
+			</span>
+			<small>(<a href="#comment-2636"
+			           title="Permanent link to this comment">#2636</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-22T08:19:55-04:00">September 22<sup>nd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I don’t understand. Wordpress is PHP and will be, and it’s just great to have the templates in PHP compare to other CMS/Blogs around there. I aint catching this.</p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-342" class="post post-342 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:32-05:00">
+<time itemprop="datePublished" datetime="2005-04-18T17:32:40-04:00">
+	18 Apr 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="more-smilies-plugin.html" itemprop="url"
+							title="Entry: More Smilies Plugin 1.2">
+			More Smilies Plugin 1.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="more-smilies-plugin.html#comments"
+		   title="37 Comments">
+			<span class="icon-bubble"></span> 37		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-347" class="post post-347 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
+<time itemprop="datePublished" datetime="2005-03-11T15:43:42-05:00">
+	11 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="wp-admin-bar-20.html" itemprop="url"
+							title="Entry: WP Admin Bar 2.2">
+			WP Admin Bar 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="wp-admin-bar-20.html#comments"
+		   title="66 Comments">
+			<span class="icon-bubble"></span> 66		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-316" class="post post-316 type-entry status-published tag-wordpress tag-wordpress-plugin tag-web-applications" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:22-05:00">
+<time itemprop="datePublished" datetime="2006-02-04T20:24:39-05:00">
+	04 Feb 2006</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="introducing-installer-the-plugin-2.html" itemprop="url"
+							title="Entry: Introducing Installer, the Plugin">
+			Introducing Installer, the Plugin</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="introducing-installer-the-plugin-2.html#comments"
+		   title="3 Comments">
+			<span class="icon-bubble"></span> 3		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-367" class="post post-367 type-entry status-published tag-articles tag-hardware" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-05-02T14:48:31-04:00">
+<time itemprop="datePublished" datetime="2004-06-05T08:31:45-04:00">
+	05 Jun 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="blurry-monitor-fix.html" itemprop="url"
+							title="Entry: Fix Your Blurry Monitor or TV">
+			Fix Your Blurry Monitor or TV</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="blurry-monitor-fix.html#comments"
+		   title="9 Comments">
+			<span class="icon-bubble"></span> 9		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-371" class="post post-371 type-entry status-published tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-10-09T14:14:07-04:00">
+<time itemprop="datePublished" datetime="2004-03-04T21:04:22-05:00">
+	04 Mar 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="free-mp3-encoding-wmp.html" itemprop="url"
+							title="Entry: Free MP3 Encoding on Windows Media Player XP">
+			Free MP3 Encoding on Windows Media Player XP</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="free-mp3-encoding-wmp.html#comments"
+		   title="37 Comments">
+			<span class="icon-bubble"></span> 37		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/wordpress-is-not-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:00 GMT -->
+</html>

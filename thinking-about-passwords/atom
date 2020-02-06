@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Thinking About Passwords</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/thinking-about-passwords"/><link rel="edit" href="https://mattread.com/thinking-about-passwords/atom"/><id>tag:www.mattread.com,2012:thinking-about-passwords/1352935899</id><updated>2012-11-15T13:00:18-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-18T10:57:23-04:00</app:edited><published>2012-11-14T18:25:12-05:00</published><category term="email"/><category term="security"/><category term="password"/><content type="html">The other day I was thinking about passwords and the "forgot password" links that are common on websites today. I got to thinking just how many passwords I have and how many I forget.&#xD;
+&#xD;
+I use a different password for pretty much every site I belong to. I have a simple algorithm I can do in my head to remember that password (usually). But does it matter? Do multiple passwords really provide you with any added security?&#xD;
+&#xD;
+&lt;p class="pull-quote"&gt;Your entire online life is protected only by your email password, and identified by your email address&lt;/p&gt;&#xD;
+&#xD;
+With the advent of the "forgot password link" that will email you a reset link, there is really only one password that is the key to every account you have. Your email password. If you got my email password you could gain access to **all** my accounts on the internet. All you have to do is reset my password, check my email, and bob's your uncle.&#xD;
+&#xD;
+Email addresses today are actually used as the single point of identification, if you really think about it. But at the same time, your email address is your &lt;abbr title="Single Sign On"&gt;SSO&lt;/abbr&gt; security key. With access to your email you have access to all accounts that implement the "forgot password link".&#xD;
+&#xD;
+Any site that I've seen that implements the "forgot password" feature, only requires you to click a link in your email. There is no other stage of identification required, with the exception of my online banking. The bank requires I call in and identify myself via my address, my Date of Birth, etc.&#xD;
+&#xD;
+So why aren't other sites doing this? Obviously you can't have a call in to an agent, too many expenses for that. But why not have some other personal information stored to identify the person that clicked that link. As I wrote that last sentence, I realized how much of a privacy concern that would be. Especially after reading about so many DB dumps on [Ars](http://arstechnica.com/) recently.&#xD;
+&#xD;
+It comes down to a single password, a single email address. Your entire online life is protected only by your email password, and identified by your email address. The two most important things you have online.&#xD;
+&#xD;
+Would you be willing to provide additional personal information to some random site? If you think about it, you already provide your email address, the thing that identifies you to each and every site out there. How much more info is required to properly secure your identification? Is a single email address enough?&#xD;
+&#xD;
+I think I'll go change my email password right now.</content></entry>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/faking-two-column-text by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Faking Two Column Text - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="apology.html"><link rel="next" href="puppies-and-daffodils.html"><link rel="home" href="index.html">
+<meta name="keywords" content="web-design, web-applications, articles, Internet">
+<meta name="description" content="One of the many exciting features of CSS 3 is the ability to create columnar text. In this article I will show you a way to fake two column text with a little Javascript.   F…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="faking-two-column-text/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-333" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-333" class="post post-333 type-entry status-published tag-web-design tag-web-applications tag-articles tag-internet">
+		<h1 itemprop="name">Faking Two Column Text</h1>
+		<meta content="https://mattread.com/faking-two-column-text" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:1">
+		<p>
+			<meta itemprop="dateModified" content="2013-03-22T10:58:33-04:00">
+<time itemprop="datePublished" datetime="2005-10-12T11:32:32-04:00">
+	Published October 12<sup>th</sup>, 2005</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>One of the many exciting features of CSS 3 is the ability to create columnar text. In this article I will show you a way to fake two column text with a little Javascript. </p>
+
+<!--more-->
+
+<p>First off we need to stipulate that this hack will only work with textual information contained in HTML paragraph tags (&#060;p&#062;&#060;/p&#062;).</p>
+
+<p>To use the script all you need to do is <a href="#download">download the script</a> and include it in the head of your document.</p>
+
+<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/javascript&quot;</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;two-col.js&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/script.html"><span style="color: #000000; font-weight: bold;">script</span></a>&gt;</span></pre>
+
+<p>To designate which text will be columnar we will put it in a layer with an id attribute of &#8220;two-col&#8221; like below. And that&#8217;s all you need to do to use the script.</p>
+
+<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">id</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;two-col&quot;</span>&gt;</span>
+    <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>The information here will be displayed as two columns.
+    This will be the first of two Paragraphs<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>
+    <span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>Here is the second paragraph in our columnar
+    data.<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span></pre>
+
+<h3>The Script And The Problems</h3>
+
+<p>The script works by grabbing all the HTML inside the &#8220;two-col&#8221; element and splitting into an array, by spaces, using javascripts built in split function. Then we loop through our new array and place half the words in the left column and the other half in the right column. Of coarse splitting the HTML in half causes a few problems. </p>
+
+<p>First, if a tag is located in the middle of the data, it can split that tag in two. This is quite bad but can be overcome by formatting the content so it doesn&#8217;t occur. Maybe in a latter version of the script I&#8217;ll try to address this problem.</p>
+
+<p>Second, because we are spiltting the content into two, we end up spiltting a paragraph into two paragraphs, creating a new paragraph out of part of the original. This is unfortunate but necessary for proper styling with CSS.</p>
+
+<p>But if everything works right we get our two column text.</p>
+
+<h3>Example of Two Column Text</h3>
+
+<div id="two-col">
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse imperdiet, erat quis tempus euismod, mi quam faucibus nibh, ac ullamcorper erat velit in nisl. In eget elit. Sed pede quam, eleifend facilisis, lobortis a, sagittis non, eros. Aliquam erat volutpat.</p>
+
+<p>Praesent mauris magna, laoreet id, venenatis in, suscipit vitae, nisl. Aenean rutrum convallis nunc. Suspendisse pharetra placerat felis. In eget ipsum pretium nunc dignissim aliquet. Nulla ligula. Sed nulla lorem, dapibus in, malesuada sed, ultrices id, nunc. </p>
+
+<p>Proin feugiat neque a orci. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec dolor id neque aliquet mattis. Mauris leo eros, elementum eget, varius ultricies, vehicula non, lorem. Nam eget neque id lacus imperdiet tincidunt. Aliquam eu augue.</p>
+</div>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Faking Two Column Text was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/web-design.html" rel="tag">web-design</a>, <a href="tag/web-applications.html" rel="tag">web-applications</a>, <a href="tag/articles.html" rel="tag">articles</a> and <a href="tag/internet.html" rel="tag">Internet</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="puppies-and-daffodils.html"
+			   title="Puppies and Daffodils"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="apology.html"
+			   title="Apology">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-2668"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Faking Two Column Text">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/a28b16e0689a17fee729b0a80cf3c211?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for raj">
+				<span itemprop="name">raj</span>
+			</span>
+			<small>(<a href="#comment-2668"
+			           title="Permanent link to this comment">#2668</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-10-09T01:26:16-04:00">October 9<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>download link doesn’t wotk.. then whats the point in giving the link? <img class="habari-smiley" alt=":(" src="user/plugins/tabasamu/tango/face-sad.png"> </p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-324" class="post post-324 type-entry status-published tag-web-applications" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-20T19:57:12-04:00">
+<time itemprop="datePublished" datetime="2005-12-01T16:33:22-05:00">
+	01 Dec 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="find-my-easter-egg.html" itemprop="url"
+							title="Entry: Find My Easter Egg">
+			Find My Easter Egg</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-411" class="post post-411 type-entry status-published tag-internet" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T23:00:50-05:00">
+<time itemprop="datePublished" datetime="2004-08-16T16:36:55-04:00">
+	16 Aug 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="call-for-help-is-back.html" itemprop="url"
+							title="Entry: Call for Help is Back">
+			Call for Help is Back</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-350" class="post post-350 type-entry status-published tag-web-design tag-web-applications tag-internet" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-25T14:35:19-04:00">
+<time itemprop="datePublished" datetime="2005-03-01T17:54:38-05:00">
+	01 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="the-canadian-flag-in-css.html" itemprop="url"
+							title="Entry: The Canadian Flag, In CSS">
+			The Canadian Flag, In CSS</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="the-canadian-flag-in-css.html#comments"
+		   title="9 Comments">
+			<span class="icon-bubble"></span> 9		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-341" class="post post-341 type-entry status-published tag-web-design tag-wordpress tag-web-applications tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-05-02T14:50:25-04:00">
+<time itemprop="datePublished" datetime="2005-04-21T17:47:55-04:00">
+	21 Apr 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="wordpress-is-not-php.html" itemprop="url"
+							title="Entry: WordPress is not PHP">
+			WordPress is not PHP</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="wordpress-is-not-php.html#comments"
+		   title="122 Comments">
+			<span class="icon-bubble"></span> 122		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-371" class="post post-371 type-entry status-published tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-10-09T14:14:07-04:00">
+<time itemprop="datePublished" datetime="2004-03-04T21:04:22-05:00">
+	04 Mar 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="free-mp3-encoding-wmp.html" itemprop="url"
+							title="Entry: Free MP3 Encoding on Windows Media Player XP">
+			Free MP3 Encoding on Windows Media Player XP</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="free-mp3-encoding-wmp.html#comments"
+		   title="37 Comments">
+			<span class="icon-bubble"></span> 37		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/faking-two-column-text by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:25 GMT -->
+</html>

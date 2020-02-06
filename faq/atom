@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Frequently Asked Questions</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/faq"/><link rel="edit" href="https://mattread.com/faq/atom"/><id>tag:mattread.com,2007:faq/1183905949</id><updated>2016-02-29T15:23:27-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2016-03-11T23:35:09-05:00</app:edited><published>2007-07-08T03:45:49-04:00</published><category term="about"/><category term="help"/><category term="faq"/><content type="html">Below is a list of the most frequently asked questions I get, and the answers I will give.&#xD;
+&#xD;
+&#xD;
+&#xD;
+How tall are you?&#xD;
+: 6'2".&#xD;
+&#xD;
+What's your middle name?&#xD;
+: In between my first name and last name. I know, it's long.&#xD;
+&#xD;
+Where is your GPG/PGP Key?&#xD;
+: [PGP Public Key](/user/files/matt@mattread.com.asc)  &#xD;
+&lt;code class="meta"&gt;(md5: c0b0c396d8f70bfcddb2f710c0bee336)&lt;/code&gt;&#xD;
+: [S/MIME Public Key](/user/files/matt@mattread.com.p7s)  &#xD;
+&lt;code class="meta"&gt;(md5: 1daa3109a67ef0abfc1988eec6df3205)&lt;/code&gt;</content></entry>

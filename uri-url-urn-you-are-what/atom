@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>URI, URL, URN, You Are What?</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/uri-url-urn-you-are-what"/><link rel="edit" href="https://mattread.com/uri-url-urn-you-are-what/atom"/><id>http://mattread.com/?p=200</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-17T13:43:48-04:00</app:edited><published>2005-06-16T14:55:05-04:00</published><category term="web-design"/><category term="web-applications"/><category term="life"/><content type="html">&lt;p&gt;First off let me state, I have no clue what I'm talking about here. Now that we all know, or already knew, that, let's get started. From what I can figure out, the basics of &lt;a href="http://www.w3.org/Addressing/" title="an official article on URI's from the W3C"&gt;UR* acronyms&lt;/a&gt; goes a little som'n som'n like this:&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;A URI is HOW (the protocol), WHERE (the location of the resource, website, book, etc.), and WHAT (The name of the resource). A URL is HOW and WHERE. Finally, A URN is WHAT. This leads to the URI = URL + URN. &lt;!--more--&gt;&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So how does this relate to say &lt;a href="http://example.com/" title="null"&gt;http://example.com/&lt;/a&gt;? Well, beats the hell out of me. But certainly Machines know how to read the UR* of that thing. &lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So just what is that thing? Um, it's a URL ... NO, it's a URI ... wait it's a URN ... NO NO NO, it's a URI! Because it tells a Machine on the Internet HOW, WHERE, and WHAT about that resource. The resource here being &lt;a href="http://example.com/" title="null"&gt;http://example.com/&lt;/a&gt;.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;"But wait", you say, "I, and everyone else I know, including the side of the bus, say that's a URL!". Why yes it is a URL. But no it's not, cause it's a URI. A URI wouldn't be much without a URL.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Hmmm, now I'm confused. Let me try and explain what I know, or think I know.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;When you go into a library (a big building where they keep books) looking for a book, you head over to the computer, or if you live in the boonies you head to that screwed up box of drawers of cards thingy. But anyway, you look up the book name on the computer, and it gives you the name of the book, the location of the book, and how the book is organized in that location. Yes! it gave you a URI, I think it did anyway. &lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So all together now, &amp;#060;everyone&amp;#062;the URI is HOW (the way the books are sorted in said location), WHERE (the location of the book), and WHAT (the name of the book)&amp;#060;/everyone&amp;#062;.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So in conclusion, what we all call a URL, we should be calling a URI. But everyone calls it a URL, so who cares. Call it a URI if you want to be &lt;a href="w3.org"&gt;W3&lt;/a&gt; l33t, or a URL if you're normal. It all comes down to the fact, in my opinion, all those UR* acronyms are fancy letters to make &lt;a href="w3.org"&gt;W3&lt;/a&gt; documents look "official".&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;And please, if I'm wrong about the above please yell at me by leaving a comment.&lt;/p&gt;</content></entry>

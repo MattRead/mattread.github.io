@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Search Me Baby!</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/search-me-baby"/><link rel="edit" href="https://mattread.com/search-me-baby/atom"/><id>http://mattread.com/?p=220</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:31-05:00</app:edited><published>2005-11-06T15:30:05-05:00</published><category term="announcements"/><category term="wordpress"/><category term="web-applications"/><content type="html">&lt;p&gt;I've intergrated a brand spanking new search into my site. It allows you to search 3 areas; Blog Posts, Static Pages, and Comments. As well as some other options. &lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;&lt;del datetime="2005-11-10T16:14:36+00:00"&gt;The only prob right now is that the pagination does not work correctly&lt;/del&gt;. But do &lt;a href="http://mattread.com/?s=shep&amp;type=all&amp;exact=0&amp;posts_per_page=10"&gt;a search&lt;/a&gt;, then click "Advanced Search" and you will see the new options. &lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I like it, how about you guys? let me know.&lt;/p&gt;</content></entry>

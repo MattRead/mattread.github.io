@@ -1,0 +1,89 @@
+table {
+	overflow: auto;
+	empty-cells: show;
+	border-collapse: collapse;
+	border-bottom: 3px solid #999;
+	margin: -2px 0 33px;
+	width: 100%;
+}
+
+tr {
+	margin: 0;
+	padding: 0;
+}
+
+caption {
+	caption-side: top;
+	margin: 0;
+	padding: .9375em;
+	font-size: .8em;
+	font-weight: 300;
+	border: none;
+	background: rgba(0, 0, 0, 0.08);
+}
+
+th, td {
+	line-height: 33px;
+	vertical-align: top;
+	padding: 16px 1em 16px;
+	border: 1px dotted #222;
+	border-width: 0 0 1px 1px;
+}
+
+tr td:first-child,
+tr th:first-child,
+th.first,
+td.first {
+	border-left: none;
+}
+
+th {
+	text-transform: uppercase;
+	text-align: center;
+	font: 1.2em;
+	font-weight: 300;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+th.first,
+td.first,
+tbody th {
+	border-left: none;
+}
+
+tr:nth-child(odd), tr.alt {
+	background: rgba(0, 0, 0, 0.08);
+}
+
+td[nowrap] {
+	white-space: nowrap;
+}
+
+table.borders,
+table.plain {
+	border-collapse: collapse;
+}
+
+table.borders,
+table.borders tr,
+table.borders td,
+table.borders th {
+	border: 1px solid #ccc;
+}
+
+table.plain,
+table.plain th {
+	border: none;
+	background: none;
+}
+
+table.plain tr:nth-child(odd), table.plain tr.alt {
+	background: none;
+}
+
+table.plain tr,
+table.plain td,
+table.plain th {
+	border: none;
+	padding: 0 .5em;
+}

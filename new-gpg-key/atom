@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>New PGP/GnuPG Key</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/new-gpg-key"/><link rel="edit" href="https://mattread.com/new-gpg-key/atom"/><id>tag:mattread.com,2016:new-gpg-key/1457757554</id><updated>2016-03-11T23:43:40-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2016-03-23T19:21:23-04:00</app:edited><published>2016-03-11T23:37:11-05:00</published><content type="html">I revoked my previous [old key](http://pgp.mit.edu/pks/lookup?op=get&amp;search=0xD404D2C00676CEF9) and generate a [new one](http://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x9B8E27DC9A5F62E1). You can download my new PGP Public Key below. While you're at it, send me an email to &lt;matt@mattread.com&gt; with your public key and/or certificate.&#xD;
+&#xD;
+&lt;ul class="download"&gt;&#xD;
+&lt;li&gt;&lt;a href="/user/files/matt@mattread.com.asc"&gt;GPG Public Key &lt;i class="icon-key"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;/ul&gt;&#xD;
+&#xD;
+md5sum: `c0b0c396d8f70bfcddb2f710c0bee336  matt@mattread.com.asc`</content></entry>

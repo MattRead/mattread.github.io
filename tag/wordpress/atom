@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:wordpress/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2008-04-19T23:57:01-04:00</updated><link rel="alternate" href="https://mattread.com/tag/wordpress"/><link rel="self" href="https://mattread.com/tag/wordpress/atom"/><entry><title>WordPress is not PHP</title><link rel="alternate" href="https://mattread.com/wordpress-is-not-php"/><link rel="edit" href="https://mattread.com/wordpress-is-not-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=193</id><updated>2008-04-19T23:57:01-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:50:25-04:00</app:edited><published>2005-04-21T17:47:55-04:00</published><category term="web-design"/><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;There have many concerns and question about the template system used in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. Mostly the concerns are with n00bs and the complications of PHP. &#x201C;I want to change this and that, but don&amp;#8217;t know PHP&#x201D;. I hear this a lot. But the thing is, you don&amp;#8217;t need to know PHP to change the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt; in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2&gt;The Template System&lt;/h2&gt;
+
+&lt;p&gt;Lets&amp;#8217; start with &#x201C;&lt;a href="http://codex.wordpress.org/The_Loop"&gt;the Loop&lt;/a&gt;&#x201D; as we call it. Probably the most confusing part of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; for a non-programmer. The Loop looks like this:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+     //Template Section 1: post content Template Tags go here
+
+&lt;?php endwhile; else: ?&gt;;
+
+    //Template Section2: no posts found stuff here.
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It may look complicated, but it&amp;#8217;s actually quite simple. In &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;, all the posts information will be displayed. Within that section we will put all the posts &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and our HTML to format them. In &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, we will display a message telling the user no posts were found, if we find none to meet their criteria. &lt;/p&gt;
+
+&lt;h3&gt;Template Section 1: The Posts&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#8217;ll start with outputting the post tile. Simply add in the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_title() ?&amp;gt;&lt;/code&gt;. That will output the title of the post. &lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s output the date of the post. Simply add the date&amp;#8217;s &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_date() ?&amp;gt;&lt;/code&gt;. That outputs the date of the post.&lt;/p&gt;
+
+&lt;p&gt;We will also, of coarse, need the content of the actual post. Simply, again, add the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_content() ?&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together with some HTML:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;div class="post"&gt;
+    &lt;h2&gt; &lt;?php the_title() ?&gt; &lt;/h2&gt;
+    &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+    &lt;?php the_content() ?&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And there&amp;#8217;s our simple template. Now let&amp;#8217;s add some more.&lt;/p&gt;
+
+&lt;p&gt;First let&amp;#8217;s add a link to the post, permalink as it&amp;#8217;s called, on the title. We get the actual URL, something like &lt;code class="html"&gt;http://mysite.com/archives/2004/09/post-title/&lt;/code&gt;, with the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_permalink() ?&amp;gt;&lt;/code&gt;. We will need to put that in our &lt;code class="html"&gt;&amp;lt;a href=&#x201D;&#x201D;&amp;gt;&lt;/code&gt; HTML tag.&lt;/p&gt;
+
+&lt;p&gt;We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;, &lt;code class="html"&gt;&amp;lt;?php link_pages('&amp;lt;p&amp;gt;','&amp;lt;/p&amp;gt;') ?&amp;gt;&lt;/code&gt;. Now here&amp;#8217;s another confusion people have. We&amp;#8217;ve added in, what programmers would call, arguments to our &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. That is, we&amp;#8217;ve added in &lt;code class="html"&gt;'&amp;lt;p&amp;gt;', '&amp;lt;/p&amp;gt;'&lt;/code&gt; to the brackets of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. In this case we are just saying, if there are pages to link, output the page links with a &lt;code class="html"&gt;&amp;lt;p&amp;gt;&lt;/code&gt; at the start, and a &lt;code class="html"&gt;&amp;lt;/p&amp;gt;&lt;/code&gt; at the end. Hence, enclosing it all in HTML paragraph tags. Most &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; have different arguments you can pass to them, causing them to format their output differently.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s add in our new tags.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;div class=&#x201D;post&#x201D;&gt;
+  &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+  &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+  &lt;?php the_content() ?&gt;
+
+  &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now we have a fully functional Posts section, &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;. Let&amp;#8217;s move on to &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Template Section 2: No Posts Found&lt;/h3&gt;
+
+&lt;p&gt;For our &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&amp;#8217;s use the following simple HTML:&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together.&lt;/p&gt;
+
+&lt;h3&gt;Complete Template&lt;/h3&gt;
+
+&lt;p&gt;Putting all we learned above together, we get a nice simple &lt;a href="http://codex.wordpress.org/The_Loop"&gt;Loop&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+    &lt;div class=&#x201D;post&#x201D;&gt;
+        &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+        &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+        &lt;?php the_content() ?&gt;
+
+        &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+    &lt;/div&gt;
+
+&lt;?php endwhile; else: ?&gt;
+
+    &lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we have done no PHP coding, just some simple HTML with &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; Template Tags added in.&lt;/p&gt;
+
+&lt;p&gt;Obviously this is not a complete template, as we have no header and footer containing all the &lt;code class="html"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;body&amp;gt;&lt;/code&gt; tags. But with some simple HTML and more &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and no PHP, we can easily add all that is needed for a complete HTML document. That&amp;#8217;s right, an HTML document, not a PHP script.&lt;/p&gt;
+
+&lt;p&gt;As we can see &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is not PHP. &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &amp;#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&amp;#8217;t know why, &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; is extremely easy and requires no knowledge of PHP at all.&lt;/p&gt;
+
+&lt;p&gt;Changing the format and style of your &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. &lt;/p&gt;
+
+&lt;p&gt;However, as with any software, there is room for improvement.&lt;/p&gt;
+
+&lt;h2&gt;Improving Templates&lt;/h2&gt;
+
+&lt;p&gt;One of the problems with the &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template System&lt;/a&gt;, in my opinion, is the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;, or theme, itself. Specifically the sidebar, with all the &lt;code class="html"&gt;is_*()&lt;/code&gt; functions. We shouldn&amp;#8217;t expect a novice &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; user to understand what these functions mean. I would suggest removing all the &lt;code class="html"&gt;if(is_*())&lt;/code&gt; statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see with the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see is with some of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;. Such as &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt;. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, &lt;code class="html"&gt;&amp;lt;?php blog_name() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_description() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_url() ?&amp;gt;&lt;/code&gt;, etc., to maintain consistency. For some of the less used information, charset, version, etc., the &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt; tag would be fine.&lt;/p&gt;
+
+&lt;p&gt;And some of the other advanced &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; in use in the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, like &lt;code class="html"&gt;&amp;lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&amp;gt;&lt;/code&gt;, should be simplified to not contain all those arguments. Maybe use &lt;code class="html"&gt;&amp;lt;?php wp_list_cats() ?&amp;gt;&lt;/code&gt; where all those settings would be set in the admin area.&lt;/p&gt;
+
+&lt;p&gt;It would also be nice to try to simplify the loop, although I can&amp;#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.&lt;/p&gt;
+
+&lt;p&gt;The point I&amp;#8217;m trying making is to take the PHP out of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, as much as possible, so users don&amp;#8217;t get confused and think they need PHP skills to modify the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Those are just my thoughts on the matter.&lt;/p&gt;
+
+&lt;p&gt;If you need any help with your templates, or would like to learn more about the monkey, I&amp;#8217;d be glad to help out. Just &lt;a href="/contact/"&gt;drop me a line&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>The Times, They Are A Changin</title><link rel="alternate" href="https://mattread.com/the-times-they-are-a-changin"/><link rel="edit" href="https://mattread.com/the-times-they-are-a-changin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.ca,2007:the-times-they-are-a-changin/1176136304</id><updated>2007-04-09T10:58:13-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:19-05:00</app:edited><published>2007-04-09T05:31:44-04:00</published><category term="habari"/><category term="wordpress"/><content type="html">&lt;p&gt;You might be wondering what the hell happened to my site. Well, it changed. As you may have noticed I no longer run &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. I&amp;#8217;m now running &lt;a href="http://habariproject.org"&gt;Habari&lt;/a&gt; on this site. It&amp;#8217;s not because Habari is better than WordPress, but simply because I got bored of WordPress and Habari offered a new code base for me to play with. I still highly recomend and support the WordPress project.&lt;/p&gt;
+
+&lt;p&gt;You will also notice that all my current &lt;a href="/projects"&gt;WordPress plugins and themes&lt;/a&gt; are no longer supported. Since I won&amp;#8217;t be keeping up with WordPress anymore I can no longer support them. If you wish to take them on yourself and develop them further, please send me an email, and I&amp;#8217;ll link them to your site.&lt;/p&gt;
+
+&lt;p&gt;Finally I would like to say thank you to the WordPress team and community. It has been a great 4 years. I&amp;#8217;ll miss all the Press ;).&lt;/p&gt;
+</content></entry><entry><title>WordPattern Templates (really!)</title><link rel="alternate" href="https://mattread.com/wordpattern-templates-really"/><link rel="edit" href="https://mattread.com/wordpattern-templates-really/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2006/04/wordpattern-templates-really/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:21-05:00</app:edited><published>2006-04-08T19:54:09-04:00</published><category term="wordpress"/><category term="wordpress-theme"/><content type="html">&lt;p&gt;After looking at &lt;a href="http://textpattern.com"&gt;TextPattern&amp;#8217;s&lt;/a&gt; templates, I thought it might be useful to have the XML style templates in WordPress. So I did a little hacking and came up with the &lt;a href="/projects/wp-themes/wordpattern-templates/"&gt;WordPattern Template&lt;/a&gt; system.&lt;/p&gt;
+
+&lt;p&gt;This is still experimental, and currently has a few draw backs, but it&amp;#8217;s work ok. Let me know what you think, and If it&amp;#8217;s worth it I&amp;#8217;ll continue development on the project. Oh, I can&amp;#8217;t guarantee that the current code will work correctly, so use with caution. ;)&lt;/p&gt;
+</content></entry><entry><title>Introducing Installer, the Plugin</title><link rel="alternate" href="https://mattread.com/introducing-installer-the-plugin-2"/><link rel="edit" href="https://mattread.com/introducing-installer-the-plugin-2/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2006/02/introducing-installer-the-plugin-2/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:22-05:00</app:edited><published>2006-02-04T20:24:39-05:00</published><category term="wordpress"/><category term="wordpress-plugin"/><category term="web-applications"/><content type="html">&lt;p&gt;Time for another plugin. &lt;a href="/projects/wp-plugins/installer-the-plugin/"&gt;Installer, the Plugin&lt;/a&gt; is probably the most useful plugin you&amp;#8217;ll ever use :). Why? Cause it installs plugin and themes for you with one click! It can install almost any theme and/or plugin out there, and even supports remote file installation. You just paste in the URL of the plugin/theme and it grabs it and installs it.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s still in &amp;#8220;beta&amp;#8221; stage so I&amp;#8217;m gonna use you as my testers :). But right now it is pretty stable. The only catch is that you need to have the correct permission set on the plugins and themes diretory for it to work.&lt;/p&gt;
+
+&lt;p&gt;Anyway, let me now of any improvements that need to be made wether code-wise or usability-wise.&lt;/p&gt;
+</content></entry><entry><title>Introducing The Log 404 Plugin</title><link rel="alternate" href="https://mattread.com/introducing-the-log-404-plugin"/><link rel="edit" href="https://mattread.com/introducing-the-log-404-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/12/introducing-the-log-404-plugin/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:26-05:00</app:edited><published>2005-12-03T17:45:58-05:00</published><category term="wordpress"/><category term="web-applications"/><content type="html">&lt;p&gt;WordPress has a very nice Customizable Permalink Structure. Unfortunately with the new rewrite rules (using path info) all 404&amp;#8217;s no longer get sent to the system logger.&lt;/p&gt;
+
+&lt;p&gt;That, my friend, is why you need the lovely &lt;a href="http://mattread.com/projects/wp-plugins/log-404/"&gt;Log 404 Plugin&lt;/a&gt;. Guess what? It sends all 404 requests to PHP&amp;#8217;s system logger, so you&amp;#8217;ll never miss a 404 again. And, it&amp;#8217;s compatible with WordPress 1.5 and 2.0!&lt;/p&gt;
+</content></entry><entry><title>Search Me Baby!</title><link rel="alternate" href="https://mattread.com/search-me-baby"/><link rel="edit" href="https://mattread.com/search-me-baby/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=220</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:31-05:00</app:edited><published>2005-11-06T15:30:05-05:00</published><category term="announcements"/><category term="wordpress"/><category term="web-applications"/><content type="html">&lt;p&gt;I&amp;#8217;ve intergrated a brand spanking new search into my site. It allows you to search 3 areas; Blog Posts, Static Pages, and Comments. As well as some other options. &lt;/p&gt;
+
+&lt;p&gt;&lt;del datetime="2005-11-10T16:14:36+00:00"&gt;The only prob right now is that the pagination does not work correctly&lt;/del&gt;. But do &lt;a href="http://mattread.com/?s=shep&amp;type=all&amp;exact=0&amp;posts_per_page=10"&gt;a search&lt;/a&gt;, then click &amp;#8220;Advanced Search&amp;#8221; and you will see the new options. &lt;/p&gt;
+
+&lt;p&gt;I like it, how about you guys? let me know.&lt;/p&gt;
+</content></entry><entry><title>Auto Links 0.2</title><link rel="alternate" href="https://mattread.com/auto-links-02"/><link rel="edit" href="https://mattread.com/auto-links-02/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=210</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:31-05:00</app:edited><published>2005-06-26T17:32:34-04:00</published><category term="announcements"/><category term="wordpress"/><content type="html">&lt;p&gt;I Just released Auto Links plugin 0.2. This version fixes the problem in IE as well as some JS issues. So it should now work in Internet Exploder  6.&lt;/p&gt;
+</content></entry><entry><title>Preview Drafts Plugin 1.1</title><link rel="alternate" href="https://mattread.com/preview-drafts-plugin"/><link rel="edit" href="https://mattread.com/preview-drafts-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=201</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-06-14T19:50:52-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;Introducing the Preview Drafts Plugin version 1.1. This little plugin will allow you preview any Post or Draft in your current theme. The post/draft MUST be saved, as a post or a draft, before you can preview it. I had released this plugin earlier, but never mentioned it here, so I decided to update it a bit.&lt;/p&gt;
+</content></entry><entry><title>Auto Links Discovery Plugin 0.1</title><link rel="alternate" href="https://mattread.com/auto-links-discovery-plugin"/><link rel="edit" href="https://mattread.com/auto-links-discovery-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=199</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-06-06T17:41:31-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will try to automatically fill in the information (title, description, URI&amp;#8217;s) of new sites you add to the WordPress Link Manager. Simply enter in the URI, click go, and the plugin will try to find a RSS feed. From the RSS feed it will get the Site Name, Description, URI, and RSS URI. If it can&amp;#8217;t find the RSS feed, then it will just get the HTML title of the site.&lt;/p&gt;
+</content></entry><entry><title>More Smilies Plugin 1.2</title><link rel="alternate" href="https://mattread.com/more-smilies-plugin"/><link rel="edit" href="https://mattread.com/more-smilies-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/04/more-smilies-plugin/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-04-18T17:32:40-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;I wrote this plug-in because I didn&amp;#8217;t like the default WordPress smilies :-), and thought it would be great if we could have &amp;#8220;packages&amp;#8221; of smilies that you could choose from. So here it is, a plug-in that allows you to choose between different sets of smilies. Hopefully there will be many people that do up some great smilies packages. 8-) &lt;/p&gt;
+</content></entry><entry><title>Spam Karma 2 Stats 1.2</title><link rel="alternate" href="https://mattread.com/spam-karma-2-stats"/><link rel="edit" href="https://mattread.com/spam-karma-2-stats/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/spam-karma-2-stats/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:33-05:00</app:edited><published>2005-03-18T18:41:41-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will add the &lt;a href="http://unknowngenius.com/blog/wordpress/spam-karma/dev/"&gt;Spam Karma 2&lt;/a&gt;  spam count message, as Spam Karma 1 did, to the footer of your page. For the default message, all that is required is the installation of the plugin, but you can customize the message. &lt;/p&gt;
+</content></entry><entry><title>Custom Query String Plugin 2.2</title><link rel="alternate" href="https://mattread.com/custom-query-string-plugin"/><link rel="edit" href="https://mattread.com/custom-query-string-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/custom-query-string-plugin/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:34-05:00</app:edited><published>2005-03-13T16:52:35-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin, only for WP 1.5, will allow you to set the number posts to show for all the different &amp;#8220;query views&amp;#8221; and each your categories in WordPress. You can choose how many posts or days, and what to order them by, for any of the queries and/or categories. All this easily set from an options page within the admin area. &lt;/p&gt;
+
+&lt;p&gt;Find out more at the &lt;a href="http://mattread.com/projects/custom-query-string-plugin/"&gt;project page&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>WP Admin Bar 2.2</title><link rel="alternate" href="https://mattread.com/wp-admin-bar-20"/><link rel="edit" href="https://mattread.com/wp-admin-bar-20/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/wp-admin-bar-20/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:35-05:00</app:edited><published>2005-03-11T15:43:42-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;&lt;a href="/projects/wp-plugins/wp-admin-bar-20/"&gt;This plugin&lt;/a&gt; will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in.&lt;/p&gt;
+</content></entry><entry><title>Referrer Karma Stats 1.3</title><link rel="alternate" href="https://mattread.com/rk-stats"/><link rel="edit" href="https://mattread.com/rk-stats/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/rk-stats/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:35-05:00</app:edited><published>2005-03-02T15:34:18-05:00</published><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;I wrote this small plugin to output the total number of blocked referrers from &lt;a href="http://unknowngenius.com/blog/wordpress/ref-karma/"&gt;Referrer Karma&lt;/a&gt;. It is a very small and easy plugin and will only require the addition of a small template tag. The plugin will also add a link to the RK setup page within the WordPress admin area. &lt;/p&gt;
+</content></entry><entry><title>WordPress Admin Bar Plugin vo.5</title><link rel="alternate" href="https://mattread.com/wp-admin-bar"/><link rel="edit" href="https://mattread.com/wp-admin-bar/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/12/wordpress-admin-bar-plugin-vo5/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-23T16:33:23-04:00</app:edited><published>2004-09-13T08:26:31-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in and have a user level equal to, or above 1.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p class="note"&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;a href="http://mattread.com/archives/2005/03/wp-admin-bar-20/"&gt;Version 2&lt;/a&gt; of this plugin is now available for WordPress 1.5. For WordPress 1.2 use this version.&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;To install the script just unpack the archive (link below) and upload the file &lt;code&gt;admin-bar.php&lt;/code&gt; to the plugins folder. Then activate the plugin in the admin area. Then add the following code JUST AFTER THE &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag in your template (&lt;code&gt;index.php&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;&lt;?php admin_bar(); ?&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s it, easy isn&amp;#8217;t? Damn, WordPress is good.&lt;/p&gt;
+
+&lt;p&gt;Actually, that&amp;#8217;s not quite it. If you have removed the &lt;code&gt;wp_head();&lt;/code&gt; function from the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of your XHTML, then read read the following Style Sheet section, if not skip the Style Sheet section.&lt;/p&gt;
+
+&lt;h3&gt;Style Sheet&lt;/h3&gt;
+
+&lt;p&gt;To get the admin bar to display properly, I have added some CSS to the plugin. If you have removed the &lt;code&gt;wp_head();&lt;/code&gt; function from the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; however, the CSS won&amp;#8217;t be added. So you will have to add it yourself. The admin bar is contained in a list, &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; and has the id &lt;code&gt;#admin&lt;/code&gt;. So you could write your own CSS or use, or modify, the following default CSS:&lt;/p&gt;
+
+&lt;pre class="highlight css"&gt;#admin {
+z-index: 20;
+width: 100%;
+margin: 0;
+background: #666;
+border-bottom: 2px solid #fff;
+color: #fff;
+font-size: 12px;
+font-family: verdana, sans-serif;
+text-align: center;
+}
+
+#admin li {
+display: inline;
+padding: 5px;
+}
+
+#admin li a {
+color: #eee;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+#admin li a:hover {
+color: #bbb;
+text-decoration: none;
+}&lt;/pre&gt;
+
+&lt;p&gt;And after adding that CSS your done and ready to use the plugin. Have fun.&lt;/p&gt;
+
+&lt;h3&gt;Features&lt;/h3&gt;
+
+&lt;p&gt;The following is a list of links shown for the different user levels.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;level 10: Write, Edit, Links, Users, Profile, Options and Admin Area&lt;/li&gt;
+&lt;li&gt;level 5: Write, Edit, Links, Users, Profile and Admin Area&lt;/li&gt;
+&lt;li&gt;level 4: Write, Edit, Users, Profile and Admin Area&lt;/li&gt;
+&lt;li&gt;level 1: Write, Edit, Profile and Admin Area&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you are view a single post the &amp;#8220;Edit&amp;#8221; link will appear as &amp;#8220;Edit This Post&amp;#8221; and take you to the edit section for that post. &amp;#8220;Admin Area&amp;#8221; is just a link to the default section, Write.&lt;/p&gt;
+
+&lt;h3&gt;Future Plans&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#8217;m thinking that I will add a link to the Categories admin, and when your are viewing posts in a category, link to the edit category. I&amp;#8217;m also thinking of adding a notice for when new comments have been made.&lt;/p&gt;
+
+&lt;p&gt;If you have any ideas for the admin bar please leave a comment below. Thanks.&lt;/p&gt;
+</content></entry><entry><title>More Smilies 2.1</title><link rel="alternate" href="https://mattread.com/more-smilies-21"/><link rel="edit" href="https://mattread.com/more-smilies-21/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/blog/2006/09/more-smilies-21</id><updated>2007-04-06T14:58:20-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:20-05:00</app:edited><published>2006-09-23T07:21:11-04:00</published><category term="wordpress"/><category term="wordpress-plugin"/><content type="html">&lt;p&gt;&lt;a href="http://mattread.com/projects/wp-plugins/more-smilies"&gt;More Smilies 2.1&lt;/a&gt; has just been released. There are a couple of bug fixes in this release, as well as some performance improvements. Mainly I removed the sorting of the smilies arrays, which can be rather large. This also addresses the issue that people had while trying to customize the sorting of there smiley packages.&lt;/p&gt;
+
+&lt;p&gt;This version also adds a few more default smiley packages for a grand total of 11 choices, thanks to all those smiley package creators out there. And remember I&amp;#8217;m always looking for new packages, so &lt;a href="/contact"&gt;contact me&lt;/a&gt; if you have some.&lt;/p&gt;
+</content></entry></feed>

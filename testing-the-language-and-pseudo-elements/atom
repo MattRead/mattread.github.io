@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Testing The Language and Pseudo Elements</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/testing-the-language-and-pseudo-elements"/><link rel="edit" href="https://mattread.com/testing-the-language-and-pseudo-elements/atom"/><id>http://www.mattread.com/weblog/testing-the-language-and-pseudo-elements/</id><updated>2007-04-06T14:58:22-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:00:20-05:00</app:edited><published>2004-09-20T10:57:33-04:00</published><category term="announcements"/><content type="html">&lt;p&gt;This post is a test of my new CSS pseudo elements. I have added special quotes for English, Francais and German (only seems to work in Gecko, hmm). I have also added a neat hack to show the &lt;code&gt;cite&lt;/code&gt; attribute right after a &lt;code&gt;blockquote&lt;/code&gt;, to show the source of that &lt;code&gt;blockquote&lt;/code&gt;, as well as language markers for the given &lt;code&gt;lang&lt;/code&gt; attribute. Anyway, this post is just to test them out. Note that this will not work in IE, so go get &lt;a href="http://www.mozilla.org/firefox/"&gt;FireFox&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;q&gt;This is a quote in &lt;q&gt;English&lt;/q&gt;, using normal quotes and since the main language of this site is english there is no extra language identifier.&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;q lang="fr"&gt;Se c'est un quote en &lt;q&gt;Francais&lt;/q&gt;, et i'll y a un marker pour language. Je ne parler pas francais.&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;q lang="de"&gt;Vis is ze quote en &lt;q&gt;German&lt;/q&gt;, but I von't speken ze German, but anyvay, vere is an extra language marker.&lt;/q&gt;&lt;/p&gt;
+
+&lt;blockquote cite="http://mattread.com/" lang="en"&gt;&lt;p&gt;This is a test blockquote and has a cite attribute of http://mattread.com/ and a lang attribute of en. You will notice the nice Source thing at the bottom of this blockquote, and the [en] language marker, which is done entirely in CSS. Pretty cool isn't it?&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p lang="fr"&gt;Now lets test a paragraph in French, &lt;q&gt;with a quote in french&lt;/q&gt; and &lt;q lang="en"&gt;a quote in english&lt;/q&gt;. Notice the language marker before this paragraph. Ya ya, I know this isn't French but like I said earlier, I don't speak French very well. Again, all CSS.&lt;/p&gt;
+
+&lt;p&gt;I have also added a &lt;a href="/c/print.css"&gt;print CSS file&lt;/a&gt;, so do a print preview to see the print style of this site. Have fun, and let me know what you think. Have a look at my main &lt;a href="/c/lang.css"&gt;language CSS file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Inspired by &lt;a href="http://www.no2.org.uk/"&gt;James&lt;/a&gt;.&lt;/p&gt;
+</content></entry>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/javascript-prototype-behaviour-in-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Javascript Prototype Behaviour in PHP - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="persistent-static-variables-across-instances-in-php.html"><link rel="next" href="a-bold-move-to-openid.html"><link rel="home" href="index.html">
+<meta name="keywords" content="code, php, javascript, prototype">
+<meta name="description" content="One of the &quot;neat&quot; things in Javascript is you are able to dynamically add or change methods of a class and automatically update every instance of that class. Some of the things I usually find usefu…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="javascript-prototype-behaviour-in-php/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-497" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-497" class="post post-497 type-entry status-published tag-code tag-php tag-javascript tag-prototype">
+		<h1 itemprop="name">Javascript Prototype Behaviour in PHP</h1>
+		<meta content="https://mattread.com/javascript-prototype-behaviour-in-php" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:0">
+		<p>
+			<meta itemprop="dateModified" content="2013-04-20T12:43:28-04:00">
+<time itemprop="datePublished" datetime="2008-09-29T02:01:57-04:00">
+	Published September 29<sup>th</sup>, 2008</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>One of the &#8220;neat&#8221; things in Javascript is you are able to dynamically add or change methods of a class and automatically update every instance of that class. Some of the things I usually find useful are adding to the String class, like so:</p>
+
+<pre class="javascript geshicode" style="font-family:monospace;">String.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">htmlSpecialChars</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #009966; font-style: italic;">/\&lt;/g</span><span style="color: #339933;">,</span><span style="color: #3366CC;">'&lt;'</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #009966; font-style: italic;">/\&gt;/g</span><span style="color: #339933;">,</span><span style="color: #3366CC;">'&gt;'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span>
+String.<span style="color: #660066;">prototype</span>.<span style="color: #660066;">trim</span> <span style="color: #339933;">=</span> <span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    <span style="color: #000066; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">this</span>.<span style="color: #660066;">replace</span><span style="color: #009900;">&#40;</span><span style="color: #009966; font-style: italic;">/^\s+|\s+$/g</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre>
+
+<p>Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour to a certain extent using my &#8220;neat&#8221; little <a href="https://gist.github.com/576295">Prototype</a> class. With this Prototype class we can dynamically add properties and methods to any class, and they will be inherited by all instances of that class.</p>
+
+<p>Let&#8217;s look at the following &#8220;normal&#8221; PHP code.</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">class</span> Person <span style="color: #000000; font-weight: bold;">extends</span> Prototype
+<span style="color: #009900;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$name</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000088;">$gender</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">function</span> gender<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>
+    <span style="color: #009900;">&#123;</span>
+        <a href="http://www.php.net/printf"><span style="color: #990000;">printf</span></a><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">&quot;<span style="color: #009933; font-weight: bold;">%s</span> is <span style="color: #009933; font-weight: bold;">%s</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">,</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">name</span><span style="color: #339933;">,</span> <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">gender</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #000088;">$matt</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Person<span style="color: #339933;">;</span>
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">name</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'Matt'</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">gender</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'male'</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">gender</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Matt is male</span></pre>
+
+<p>Now, there is nothing magical or out-of-the-ordinary going on here. We just instantiate the Person class and setup some properties. Calling the <code>gender()</code> method outputs a nice little string for us.</p>
+
+<p>However, you see that the Person class is actually a child of the Prototype class. This will allow us to do some of that &#8220;neat&#8221; Javascript stuff. Using Prototype, let us expand the Person class to add an <code>$age</code> property and an <code>age()</code> method to output a nice string. Like so:</p>
+
+<pre class="php geshicode" style="font-family:monospace;">Person<span style="color: #339933;">::</span><span style="color: #004000;">add_property</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'age'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+Person<span style="color: #339933;">::</span><span style="color: #004000;">add_method</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'age'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'printf(&quot;%s is a %d year old %s\n&quot;, $this-&gt;name, $this-&gt;age, $this-&gt;gender);'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">age</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">28</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">age</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Matt is a 28 year old male</span></pre>
+
+<p>Now all instances of Person inherit the <code>$age</code> property and <code>age()</code> method. So we can create a new Person, Susie, and this object will now have the age stuff.</p>
+
+<pre class="php geshicode" style="font-family:monospace;"><span style="color: #000088;">$susie</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Person<span style="color: #339933;">;</span>
+<span style="color: #000088;">$susie</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">name</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'Susie'</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$susie</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">gender</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'female'</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$susie</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">age</span> <span style="color: #339933;">=</span> <span style="color: #cc66cc;">21</span><span style="color: #339933;">;</span>
+<span style="color: #000088;">$susie</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">age</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Susie is a 21 year old female</span></pre>
+
+<p>One limitation of the Prototype class though, is you cannot overload a current method. So the following code, that attempts to overload the <code>gender()</code> method, will not work.</p>
+
+<pre class="php geshicode" style="font-family:monospace;">Person<span style="color: #339933;">::</span><span style="color: #004000;">add_method</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'gender'</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'printf(&quot;%s is a %d year old %s\n&quot;, $this-&gt;name, $this-&gt;age, $this-&gt;gender);'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000088;">$matt</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">gender</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;">// Matt is male</span></pre>
+
+<p>There are also many, many, many other problems with this Prototype class. Some of which are:</p>
+
+<ul>
+<li>The &#8216;$this&#8217; keyword is reserved, so it actually does a string replace and uses &#8216;$self&#8217; instead.</li>
+<li>You cannot access/add new methods or properties statically (until PHP 5.3 with __callStatic()).</li>
+<li>It uses create_function, so every &#8220;method&#8221; is actually defined in the global namespace.</li>
+<li>Iteration does not work, although it could possibly be done with Iterator, Countable, et al.</li>
+<li>You cannot reference static variables/methods in your add method.</li>
+<li>You cannot share methods between classes.</li>
+<li>And so on and so forth&#8230;</li>
+</ul>
+
+<p>This class was just an experiment to see if it was at all possible to implement something like Javascript&#8217;s prototype behaviour in PHP with out using the <a href="http://pecl.php.net/package/runkit">Runkit PECL extension</a>. I had no intention of actually making this usable in production, for many reasons <img class="habari-smiley" alt=";)" src="user/plugins/tabasamu/tango/face-wink.png"> , although it was fun.</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Javascript Prototype Behaviour in PHP was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/code.html" rel="tag">code</a>, <a href="tag/php.html" rel="tag">php</a>, <a href="tag/javascript.html" rel="tag">javascript</a> and <a href="tag/prototype.html" rel="tag">prototype</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="a-bold-move-to-openid.html"
+			   title="A Bold Move To OpenID"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="persistent-static-variables-across-instances-in-php.html"
+			   title="Persistent Static Variables">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+	
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-496" class="post post-496 type-entry status-published tag-code tag-php" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-22T10:57:47-04:00">
+<time itemprop="datePublished" datetime="2008-06-12T01:26:40-04:00">
+	12 Jun 2008</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="persistent-static-variables-across-instances-in-php.html" itemprop="url"
+							title="Entry: Persistent Static Variables">
+			Persistent Static Variables</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-462" class="post post-462 type-entry status-published tag-drunken-monkey tag-projects tag-code" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:19-05:00">
+<time itemprop="datePublished" datetime="2007-04-07T14:01:22-04:00">
+	07 Apr 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="drunken-monkey-labs.html" itemprop="url"
+							title="Entry: Drunken Monkey Labs">
+			Drunken Monkey Labs</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-496" class="post post-496 type-entry status-published tag-code tag-php" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-22T10:57:47-04:00">
+<time itemprop="datePublished" datetime="2008-06-12T01:26:40-04:00">
+	12 Jun 2008</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="persistent-static-variables-across-instances-in-php.html" itemprop="url"
+							title="Entry: Persistent Static Variables">
+			Persistent Static Variables</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-683" class="post post-683 type-entry status-published tag-habari tag-code" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2014-10-07T20:20:34-04:00">
+<time itemprop="datePublished" datetime="2013-10-02T14:54:06-04:00">
+	02 Oct 2013</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="hconsole-a-live-habari-debugging-console.html" itemprop="url"
+							title="Entry: hConsole: A Live Habari Console">
+			hConsole: A Live Habari Console</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-662" class="post post-662 type-entry status-published tag-code tag-epiphany tag-tomboy" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-24T09:08:09-04:00">
+<time itemprop="datePublished" datetime="2010-09-10T21:36:02-04:00">
+	10 Sep 2010</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="ephyboy-the-epiphany-tomboy-extension-1.html" itemprop="url"
+							title="Entry: Ephyboy, The Epiphany Tomboy Extension">
+			Ephyboy, The Epiphany Tomboy Extension</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/javascript-prototype-behaviour-in-php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:49 GMT -->
+</html>

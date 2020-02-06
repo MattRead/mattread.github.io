@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Ephyboy, The Epiphany Tomboy&#xA0;Extension</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1"/><link rel="edit" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1/atom"/><id>tag:mattread.com,2010:ephyboy-the-epiphany-tomboy-extension/1284168962</id><updated>2011-12-27T01:12:10-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-24T09:08:09-04:00</app:edited><published>2010-09-10T21:36:02-04:00</published><category term="code"/><category term="epiphany"/><category term="tomboy"/><content type="html">Back in the day when I used to use [Firefox][], I fell in love with the [Tomfox extension][]. It&#xD;
+allowed you to create a new [Tomboy][] note using the currently selected text of the webpage you&#xD;
+were browsing, using the title for the title of the note and referencing the url as the source. This&#xD;
+was great for me to document all the code and Linux commands I'd find scattered around the net.&#xD;
+&#xD;
+Eventually, though, I got tired of [Firefox][], especially it's load times, and switched to&#xD;
+[Chromium][]. You guessed it, [Chromium][] sucked too. So back to [Epiphany][] I went, and with the&#xD;
+2.30 version it is really quite a nice little browser.&#xD;
+&#xD;
+[Epiphany][] extensions are now done with [Seed][], the GTK javascript bindings, making it really&#xD;
+easy to write new extensions. Plus, it has almost a complete GTK implementation via GObject&#xD;
+Introspection. So getting my tomboy note maker dohicky back was really not that hard --aside from&#xD;
+the lack of documentation. And thus, [Ephyboy][] is born. It's really quite simple:&#xD;
+&#xD;
+ 1. [Download][] the tarball, or zip.&#xD;
+ 2. [Install][] the extension.&#xD;
+ 3. Enable the extension (*no restart required!*).&#xD;
+ 4. Select some text to add in your note.&#xD;
+ 5. Hit &lt;kbd&gt;CTRL+Shift+B&lt;/kbd&gt;; Or, add the Tomboy Note button to the toolbar and click the button.&#xD;
+&#xD;
+The extension will then create your note and open your note in [Tomboy][] for review and/or further&#xD;
+editing.&#xD;
+&#xD;
+There is one thing to note. The extension works by making a DBus call to Tomboy to create the note&#xD;
+so you have to have Tomboy open and connected to the bus for this to work. Usually not a problem&#xD;
+as I have Tomboy start on log in.&#xD;
+&#xD;
+[Firefox]:http://getfirefox.com&#xD;
+[Tomboy]:http://projects.gnome.org/tomboy/&#xD;
+[Tomfox extension]:https://addons.mozilla.org/en-US/firefox/addon/8276/&#xD;
+[Epiphany]:http://projects.gnome.org/epiphany/&#xD;
+[Seed]:http://live.gnome.org/Seed&#xD;
+[Ephyboy]:http://github.com/MattRead/Ephyboy&#xD;
+[Download]:http://github.com/MattRead/Ephyboy/downloads&#xD;
+[Install]:http://github.com/MattRead/Ephyboy/wiki&#xD;
+[Chromium]:http://www.chromium.org/</content></entry>

@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:web-design/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2008-04-19T23:57:01-04:00</updated><link rel="alternate" href="https://mattread.com/tag/web-design"/><link rel="self" href="https://mattread.com/tag/web-design/atom"/><entry><title>WordPress is not PHP</title><link rel="alternate" href="https://mattread.com/wordpress-is-not-php"/><link rel="edit" href="https://mattread.com/wordpress-is-not-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=193</id><updated>2008-04-19T23:57:01-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:50:25-04:00</app:edited><published>2005-04-21T17:47:55-04:00</published><category term="web-design"/><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;There have many concerns and question about the template system used in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. Mostly the concerns are with n00bs and the complications of PHP. &#x201C;I want to change this and that, but don&amp;#8217;t know PHP&#x201D;. I hear this a lot. But the thing is, you don&amp;#8217;t need to know PHP to change the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt; in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2&gt;The Template System&lt;/h2&gt;
+
+&lt;p&gt;Lets&amp;#8217; start with &#x201C;&lt;a href="http://codex.wordpress.org/The_Loop"&gt;the Loop&lt;/a&gt;&#x201D; as we call it. Probably the most confusing part of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; for a non-programmer. The Loop looks like this:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+     //Template Section 1: post content Template Tags go here
+
+&lt;?php endwhile; else: ?&gt;;
+
+    //Template Section2: no posts found stuff here.
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It may look complicated, but it&amp;#8217;s actually quite simple. In &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;, all the posts information will be displayed. Within that section we will put all the posts &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and our HTML to format them. In &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, we will display a message telling the user no posts were found, if we find none to meet their criteria. &lt;/p&gt;
+
+&lt;h3&gt;Template Section 1: The Posts&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#8217;ll start with outputting the post tile. Simply add in the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_title() ?&amp;gt;&lt;/code&gt;. That will output the title of the post. &lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s output the date of the post. Simply add the date&amp;#8217;s &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_date() ?&amp;gt;&lt;/code&gt;. That outputs the date of the post.&lt;/p&gt;
+
+&lt;p&gt;We will also, of coarse, need the content of the actual post. Simply, again, add the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_content() ?&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together with some HTML:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;div class="post"&gt;
+    &lt;h2&gt; &lt;?php the_title() ?&gt; &lt;/h2&gt;
+    &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+    &lt;?php the_content() ?&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And there&amp;#8217;s our simple template. Now let&amp;#8217;s add some more.&lt;/p&gt;
+
+&lt;p&gt;First let&amp;#8217;s add a link to the post, permalink as it&amp;#8217;s called, on the title. We get the actual URL, something like &lt;code class="html"&gt;http://mysite.com/archives/2004/09/post-title/&lt;/code&gt;, with the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_permalink() ?&amp;gt;&lt;/code&gt;. We will need to put that in our &lt;code class="html"&gt;&amp;lt;a href=&#x201D;&#x201D;&amp;gt;&lt;/code&gt; HTML tag.&lt;/p&gt;
+
+&lt;p&gt;We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;, &lt;code class="html"&gt;&amp;lt;?php link_pages('&amp;lt;p&amp;gt;','&amp;lt;/p&amp;gt;') ?&amp;gt;&lt;/code&gt;. Now here&amp;#8217;s another confusion people have. We&amp;#8217;ve added in, what programmers would call, arguments to our &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. That is, we&amp;#8217;ve added in &lt;code class="html"&gt;'&amp;lt;p&amp;gt;', '&amp;lt;/p&amp;gt;'&lt;/code&gt; to the brackets of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. In this case we are just saying, if there are pages to link, output the page links with a &lt;code class="html"&gt;&amp;lt;p&amp;gt;&lt;/code&gt; at the start, and a &lt;code class="html"&gt;&amp;lt;/p&amp;gt;&lt;/code&gt; at the end. Hence, enclosing it all in HTML paragraph tags. Most &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; have different arguments you can pass to them, causing them to format their output differently.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s add in our new tags.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;div class=&#x201D;post&#x201D;&gt;
+  &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+  &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+  &lt;?php the_content() ?&gt;
+
+  &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now we have a fully functional Posts section, &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;. Let&amp;#8217;s move on to &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Template Section 2: No Posts Found&lt;/h3&gt;
+
+&lt;p&gt;For our &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&amp;#8217;s use the following simple HTML:&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together.&lt;/p&gt;
+
+&lt;h3&gt;Complete Template&lt;/h3&gt;
+
+&lt;p&gt;Putting all we learned above together, we get a nice simple &lt;a href="http://codex.wordpress.org/The_Loop"&gt;Loop&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+    &lt;div class=&#x201D;post&#x201D;&gt;
+        &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+        &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+        &lt;?php the_content() ?&gt;
+
+        &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+    &lt;/div&gt;
+
+&lt;?php endwhile; else: ?&gt;
+
+    &lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we have done no PHP coding, just some simple HTML with &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; Template Tags added in.&lt;/p&gt;
+
+&lt;p&gt;Obviously this is not a complete template, as we have no header and footer containing all the &lt;code class="html"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;body&amp;gt;&lt;/code&gt; tags. But with some simple HTML and more &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and no PHP, we can easily add all that is needed for a complete HTML document. That&amp;#8217;s right, an HTML document, not a PHP script.&lt;/p&gt;
+
+&lt;p&gt;As we can see &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is not PHP. &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &amp;#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&amp;#8217;t know why, &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; is extremely easy and requires no knowledge of PHP at all.&lt;/p&gt;
+
+&lt;p&gt;Changing the format and style of your &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. &lt;/p&gt;
+
+&lt;p&gt;However, as with any software, there is room for improvement.&lt;/p&gt;
+
+&lt;h2&gt;Improving Templates&lt;/h2&gt;
+
+&lt;p&gt;One of the problems with the &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template System&lt;/a&gt;, in my opinion, is the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;, or theme, itself. Specifically the sidebar, with all the &lt;code class="html"&gt;is_*()&lt;/code&gt; functions. We shouldn&amp;#8217;t expect a novice &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; user to understand what these functions mean. I would suggest removing all the &lt;code class="html"&gt;if(is_*())&lt;/code&gt; statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see with the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see is with some of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;. Such as &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt;. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, &lt;code class="html"&gt;&amp;lt;?php blog_name() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_description() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_url() ?&amp;gt;&lt;/code&gt;, etc., to maintain consistency. For some of the less used information, charset, version, etc., the &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt; tag would be fine.&lt;/p&gt;
+
+&lt;p&gt;And some of the other advanced &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; in use in the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, like &lt;code class="html"&gt;&amp;lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&amp;gt;&lt;/code&gt;, should be simplified to not contain all those arguments. Maybe use &lt;code class="html"&gt;&amp;lt;?php wp_list_cats() ?&amp;gt;&lt;/code&gt; where all those settings would be set in the admin area.&lt;/p&gt;
+
+&lt;p&gt;It would also be nice to try to simplify the loop, although I can&amp;#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.&lt;/p&gt;
+
+&lt;p&gt;The point I&amp;#8217;m trying making is to take the PHP out of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, as much as possible, so users don&amp;#8217;t get confused and think they need PHP skills to modify the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Those are just my thoughts on the matter.&lt;/p&gt;
+
+&lt;p&gt;If you need any help with your templates, or would like to learn more about the monkey, I&amp;#8217;d be glad to help out. Just &lt;a href="/contact/"&gt;drop me a line&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Faking Two Column Text</title><link rel="alternate" href="https://mattread.com/faking-two-column-text"/><link rel="edit" href="https://mattread.com/faking-two-column-text/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=214</id><updated>2008-04-17T21:55:49-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:58:33-04:00</app:edited><published>2005-10-12T11:32:32-04:00</published><category term="web-design"/><category term="web-applications"/><category term="articles"/><category term="internet"/><content type="html">&lt;p&gt;One of the many exciting features of CSS 3 is the ability to create columnar text. In this article I will show you a way to fake two column text with a little Javascript. &lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;First off we need to stipulate that this hack will only work with textual information contained in HTML paragraph tags (&amp;#060;p&amp;#062;&amp;#060;/p&amp;#062;).&lt;/p&gt;
+
+&lt;p&gt;To use the script all you need to do is &lt;a href="#download"&gt;download the script&lt;/a&gt; and include it in the head of your document.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;script type="text/javascript" src="two-col.js"&gt;&lt;/script&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To designate which text will be columnar we will put it in a layer with an id attribute of &amp;#8220;two-col&amp;#8221; like below. And that&amp;#8217;s all you need to do to use the script.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;div id="two-col"&gt;
+    &lt;p&gt;The information here will be displayed as two columns.
+    This will be the first of two Paragraphs&lt;/p&gt;
+    &lt;p&gt;Here is the second paragraph in our columnar
+    data.&lt;/p&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;The Script And The Problems&lt;/h3&gt;
+
+&lt;p&gt;The script works by grabbing all the HTML inside the &amp;#8220;two-col&amp;#8221; element and splitting into an array, by spaces, using javascripts built in split function. Then we loop through our new array and place half the words in the left column and the other half in the right column. Of coarse splitting the HTML in half causes a few problems. &lt;/p&gt;
+
+&lt;p&gt;First, if a tag is located in the middle of the data, it can split that tag in two. This is quite bad but can be overcome by formatting the content so it doesn&amp;#8217;t occur. Maybe in a latter version of the script I&amp;#8217;ll try to address this problem.&lt;/p&gt;
+
+&lt;p&gt;Second, because we are spiltting the content into two, we end up spiltting a paragraph into two paragraphs, creating a new paragraph out of part of the original. This is unfortunate but necessary for proper styling with CSS.&lt;/p&gt;
+
+&lt;p&gt;But if everything works right we get our two column text.&lt;/p&gt;
+
+&lt;h3&gt;Example of Two Column Text&lt;/h3&gt;
+
+&lt;div id="two-col"&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse imperdiet, erat quis tempus euismod, mi quam faucibus nibh, ac ullamcorper erat velit in nisl. In eget elit. Sed pede quam, eleifend facilisis, lobortis a, sagittis non, eros. Aliquam erat volutpat.&lt;/p&gt;
+
+&lt;p&gt;Praesent mauris magna, laoreet id, venenatis in, suscipit vitae, nisl. Aenean rutrum convallis nunc. Suspendisse pharetra placerat felis. In eget ipsum pretium nunc dignissim aliquet. Nulla ligula. Sed nulla lorem, dapibus in, malesuada sed, ultrices id, nunc. &lt;/p&gt;
+
+&lt;p&gt;Proin feugiat neque a orci. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec dolor id neque aliquet mattis. Mauris leo eros, elementum eget, varius ultricies, vehicula non, lorem. Nam eget neque id lacus imperdiet tincidunt. Aliquam eu augue.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>URI, URL, URN, You Are What?</title><link rel="alternate" href="https://mattread.com/uri-url-urn-you-are-what"/><link rel="edit" href="https://mattread.com/uri-url-urn-you-are-what/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=200</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-17T13:43:48-04:00</app:edited><published>2005-06-16T14:55:05-04:00</published><category term="web-design"/><category term="web-applications"/><category term="life"/><content type="html">&lt;p&gt;First off let me state, I have no clue what I&amp;#8217;m talking about here. Now that we all know, or already knew, that, let&amp;#8217;s get started. From what I can figure out, the basics of &lt;a href="http://www.w3.org/Addressing/" title="an official article on URI's from the W3C"&gt;UR* acronyms&lt;/a&gt; goes a little som&amp;#8217;n som&amp;#8217;n like this:&lt;/p&gt;
+
+&lt;p&gt;A URI is HOW (the protocol), WHERE (the location of the resource, website, book, etc.), and WHAT (The name of the resource). A URL is HOW and WHERE. Finally, A URN is WHAT. This leads to the URI = URL + URN. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;So how does this relate to say &lt;a href="http://example.com/" title="null"&gt;http://example.com/&lt;/a&gt;? Well, beats the hell out of me. But certainly Machines know how to read the UR* of that thing. &lt;/p&gt;
+
+&lt;p&gt;So just what is that thing? Um, it&amp;#8217;s a URL &amp;#8230; NO, it&amp;#8217;s a URI &amp;#8230; wait it&amp;#8217;s a URN &amp;#8230; NO NO NO, it&amp;#8217;s a URI! Because it tells a Machine on the Internet HOW, WHERE, and WHAT about that resource. The resource here being &lt;a href="http://example.com/" title="null"&gt;http://example.com/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;But wait&amp;#8221;, you say, &amp;#8220;I, and everyone else I know, including the side of the bus, say that&amp;#8217;s a URL!&amp;#8221;. Why yes it is a URL. But no it&amp;#8217;s not, cause it&amp;#8217;s a URI. A URI wouldn&amp;#8217;t be much without a URL.&lt;/p&gt;
+
+&lt;p&gt;Hmmm, now I&amp;#8217;m confused. Let me try and explain what I know, or think I know.&lt;/p&gt;
+
+&lt;p&gt;When you go into a library (a big building where they keep books) looking for a book, you head over to the computer, or if you live in the boonies you head to that screwed up box of drawers of cards thingy. But anyway, you look up the book name on the computer, and it gives you the name of the book, the location of the book, and how the book is organized in that location. Yes! it gave you a URI, I think it did anyway. &lt;/p&gt;
+
+&lt;p&gt;So all together now, &amp;#060;everyone&amp;#062;the URI is HOW (the way the books are sorted in said location), WHERE (the location of the book), and WHAT (the name of the book)&amp;#060;/everyone&amp;#062;.&lt;/p&gt;
+
+&lt;p&gt;So in conclusion, what we all call a URL, we should be calling a URI. But everyone calls it a URL, so who cares. Call it a URI if you want to be &lt;a href="w3.org"&gt;W3&lt;/a&gt; l33t, or a URL if you&amp;#8217;re normal. It all comes down to the fact, in my opinion, all those UR* acronyms are fancy letters to make &lt;a href="w3.org"&gt;W3&lt;/a&gt; documents look &amp;#8220;official&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;And please, if I&amp;#8217;m wrong about the above please yell at me by leaving a comment.&lt;/p&gt;
+</content></entry><entry><title>The Canadian Flag, In CSS</title><link rel="alternate" href="https://mattread.com/the-canadian-flag-in-css"/><link rel="edit" href="https://mattread.com/the-canadian-flag-in-css/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/the-canadian-flag-in-css/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-25T14:35:19-04:00</app:edited><published>2005-03-01T17:54:38-05:00</published><category term="web-design"/><category term="web-applications"/><category term="internet"/><content type="html">&lt;p&gt;I was over at Stu Nicholls today and saw this really cool &lt;a href="http://www.stunicholls.myby.co.uk/menu/britain.html"&gt;British flag&lt;/a&gt; completely done up in CSS. So I investigated a little futher, figured out how to do &amp;#8220;diagonals&amp;#8221; in CSS, and started work on my own. &lt;/p&gt;
+
+&lt;p&gt;After wasting about an hour and a half, I came up with my version of the Canadian Flag below. Yes that&amp;#8217;s right &lt;em&gt;all&lt;/em&gt; done in CSS, including the maple leaf. The maple leaf is a little &amp;#8230; off, but still, it was fun trying to figure out what triangles go where. And if you have IE, well it probably won&amp;#8217;t work, sorry. But let me know what you think. &amp;#8230;&lt;/p&gt;
+
+&lt;div&gt;
+&lt;style type="text/css"&gt;
+    /* &lt;![CDATA[ */
+      
+    .flag-back {
+    position:absolute;
+    top: 0;
+    left: 65px;
+    width: 200px;
+    height: 160px;
+    border-left: 50px solid #c00;
+    border-right: 50px solid #c00;
+    background-color: #fff;
+    }
+    
+    .main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:42px solid #fff;
+    border-left:42px solid #fff;
+    border-bottom:120px solid #c00;
+    position:absolute;
+    top: 5px;
+    left: 170px;
+    z-index: 3;
+    }
+    
+    .sec-main-tri {
+    display:block;
+    width:25px;
+    height:0;
+    overflow:hidden;
+    border-right:20px solid transparent;
+    border-left:20px solid transparent;
+    border-top:60px solid #c00;
+    position:absolute;
+    top: 45px;
+    left: 180px;
+    z-index: 3;
+    }
+    
+    .right-main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:50px solid transparent;
+    border-top:50px solid #c00;
+    position:absolute;
+    top: 75px;
+    left: 235px;
+    z-index: 5;
+    }
+    
+    .right-top-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:20px solid #c00;
+    border-top:20px solid transparent;
+    position:absolute;
+    top: 55px;
+    left: 235px;
+    z-index: 5;
+    }
+    
+    .right-bot-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:30px solid #c00;
+    border-top:30px solid transparent;
+    position:absolute;
+    top: 82px;
+    left: 250px;
+    z-index: 5;
+    }
+    
+    .left-main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:50px solid transparent;
+    border-top:50px solid #c00;
+    position:absolute;
+    top: 75px;
+    left: 145px;
+    z-index: 5;
+    }
+    
+    .left-top-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:20px solid #c00;
+    border-top:20px solid transparent;
+    position:absolute;
+    top: 55px;
+    left: 170px;
+    z-index: 5;
+    }
+    
+    .left-bot-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:30px solid #c00;
+    border-top:30px solid transparent;
+    position:absolute;
+    top: 82px;
+    left: 150px;
+    z-index: 5;
+    }
+    
+    .stem {
+    display:block;
+    width:10px;
+    height:20px;
+    background-color:#c00;
+    overflow:hidden;
+    position:absolute;
+    top: 125px;
+    left: 206px;
+    z-index: 5;
+    }
+    
+    /* ]]&gt; */
+    &lt;/style&gt;
+
+&lt;h2&gt;CSS Flag&lt;/h2&gt;
+
+&lt;div style="position:relative; height: 200px;"&gt;
+&lt;div class="flag-back"&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class="main-tri"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class="sec-main-tri"&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class="left-top-tri"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class="left-main-tri"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class="left-bot-tri"&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class="right-top-tri"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class="right-main-tri"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div class="right-bot-tri"&gt;&amp;nbsp;&lt;/div&gt;
+
+&lt;div class="stem"&gt;&amp;nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Logo Me This</title><link rel="alternate" href="https://mattread.com/logo-me-this"/><link rel="edit" href="https://mattread.com/logo-me-this/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/blog/2006/11/logo-me-this</id><updated>2007-04-06T14:58:20-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:20-05:00</app:edited><published>2006-11-19T11:21:38-05:00</published><category term="announcements"/><category term="web-design"/><content type="html">&lt;p&gt;I&amp;#8217;ve just realised that I have no logo for my site. So instead of doing it myself I thought I&amp;#8217;d ask for help from you all out there. And so begin Matt&amp;#8217;s Googly Logo Search.&lt;/p&gt;
+
+&lt;p&gt;There really are no rules for the logo, other than the colour scheme you see here on my site. Simplicity is always better, and I like roundish simple logos. So If you have an urge to design a logo for free for some guy from the north, then please do so, eh. ;)&lt;/p&gt;
+
+&lt;p&gt;You can enter your &amp;#8230; entry, by leaving a comment on this post with a link to your logo design. I will also let you guys vote for the best logo, so If you see a logo you like, leave a comment. The logo with the most votes will become my new identity.&lt;/p&gt;
+
+&lt;p&gt;Thanks kindly in advance to all those who participated&lt;/p&gt;
+</content></entry></feed>

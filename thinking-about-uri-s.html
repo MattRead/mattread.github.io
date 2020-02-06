@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/thinking-about-uri-s by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Thinking About URI's - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="merry-christmas.html"><link rel="next" href="drunken-monkey-labs.html"><link rel="home" href="index.html">
+<meta name="keywords" content="habari, design, URI">
+<meta name="description" content="I'm trying to come up with a new URI design for my site. My thinking is to &quot;version&quot; everything by date. So for example, I could have /blog/post-slug/2007-04-01. There might only be one version of …" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="thinking-about-uri-s/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-8" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-8" class="post post-8 type-entry status-published tag-habari tag-design tag-uri">
+		<h1 itemprop="name">Thinking About URI&#8217;s</h1>
+		<meta content="https://mattread.com/thinking-about-uri-s" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:0">
+		<p>
+			<meta itemprop="dateModified" content="2013-03-08T22:58:19-05:00">
+<time itemprop="datePublished" datetime="2007-04-01T05:12:28-04:00">
+	Published April 1<sup>st</sup>, 2007</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>I&#8217;m trying to come up with a new URI design for my site. My thinking is to &#8220;version&#8221; everything by date. So for example, I could have /blog/post-slug/2007-04-01. There might only be one version of most blog posts, but it would allow for &#8220;follow up&#8221; posts on the same topic at a letter date.</p>
+
+<p>My second thought is to use the content-type in the URI, /content-type/post-slug/version; Giving something like, /entry/post-slug/2007-04-01, or /page/about/2007-04-01. A URI without the version would simply be the latest version, /page/about. This also lends well to my projects. I would maybe have a content-type of &#8220;project&#8221;, so I could have /project/tabasamu/2007-04-01 etc.</p>
+
+<p>Thus I could categorize all content by it&#8217;s type and version, then further by tags. I&#8217;m liking this idea, hopefully I can hack around with Habari a bit and see if I can make it work. Here&#8217;s hoping post-slugs are not unique, as they shouldn&#8217;t be (for my case anyway <img class="habari-smiley" alt=";)" src="user/plugins/tabasamu/tango/face-wink.png">  ).</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Thinking About URI&#8217;s was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/habari.html" rel="tag">habari</a>, <a href="tag/design.html" rel="tag">design</a> and <a href="tag/uri.html" rel="tag">URI</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="drunken-monkey-labs.html"
+			   title="Drunken Monkey Labs"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="merry-christmas.html"
+			   title="Merry Christmas!">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+	
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-476" class="post post-476 type-entry status-published tag-design tag-oceanus" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:16-05:00">
+<time itemprop="datePublished" datetime="2007-05-31T13:00:22-04:00">
+	31 May 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="matt-read-the-weblog-version-oceanus.html" itemprop="url"
+							title="Entry: Matt Read, The Weblog: Version Oceanus">
+			Matt Read, The Weblog: Version Oceanus</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-463" class="post post-463 type-entry status-published tag-habari tag-wordpress" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:19-05:00">
+<time itemprop="datePublished" datetime="2007-04-09T05:31:44-04:00">
+	09 Apr 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="the-times-they-are-a-changin.html" itemprop="url"
+							title="Entry: The Times, They Are A Changin">
+			The Times, They Are A Changin</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-480" class="post post-480 type-entry status-published tag-design tag-colour tag-labs" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:15-05:00">
+<time itemprop="datePublished" datetime="2007-07-15T09:47:21-04:00">
+	15 Jul 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="drunken-monkey-labs-now-in-colour.html" itemprop="url"
+							title="Entry: Drunken Monkey Labs, Now In Colour!">
+			Drunken Monkey Labs, Now In Colour!</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-481" class="post post-481 type-entry status-published tag-design tag-paste" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-04-25T22:00:08-04:00">
+<time itemprop="datePublished" datetime="2007-07-16T04:17:19-04:00">
+	16 Jul 2007</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="pasteosaurus.html" itemprop="url"
+							title="Entry: Pasteosaurus">
+			Pasteosaurus</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-492" class="post post-492 type-entry status-published tag-habari tag-plugin tag-jambo tag-tabasamu tag-markdown" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:13-05:00">
+<time itemprop="datePublished" datetime="2008-03-23T12:58:55-04:00">
+	23 Mar 2008</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="jambo-on-habari-extras.html" itemprop="url"
+							title="Entry: Jambo On Habari-Extras">
+			Jambo On Habari-Extras</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/thinking-about-uri-s by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:44 GMT -->
+</html>

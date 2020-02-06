@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>This Site Is Defaced, A Bad Worm</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/this-site-is-defaced"/><link rel="edit" href="https://mattread.com/this-site-is-defaced/atom"/><id>http://www.mattread.com/archives/2004/12/this-site-is-defaced/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:59:26-05:00</app:edited><published>2004-12-22T10:49:43-05:00</published><category term="announcements"/><content type="html">&lt;p&gt;Looks like a lot of sites running phpBB 2.x have been getting hit by the Perl.Santy worm. &lt;a href="http://securityresponse.symantec.com/avcenter/venc/data/perl.santy.html"&gt;Symantec Security Response&lt;/a&gt; says, &lt;q cite="http://securityresponse.symantec.com/avcenter/venc/data/perl.santy.html"&gt;Perl.Santy is a worm written in Perl script that attempts to spread to Web servers running versions of the phpBB 2.x...&lt;/q&gt; .&lt;/p&gt;
+
+&lt;p&gt;So, if like &lt;a href="http://a.trendyname.org/"&gt;cLin&lt;/a&gt;, your running phpBB you should really check the &lt;a href="http://www.phpbb.com/"&gt;phpBB site&lt;/a&gt; to see what measures need to be taken. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;The worm, deletes certain types of files, including &lt;code&gt;.asp .jsp .php&lt;/code&gt;, and puts the following on the site that was compromised:&lt;/p&gt;
+
+&lt;div style="background: #000; padding: 10px; margin: 20px 0;"&gt;&lt;h1 style="color: red;"&gt;This site is defaced!!!&lt;/h1&gt;&lt;hr /&gt;&lt;p style="color: red;"&gt;NeverEverNoSanity WebWorm generation 11.&lt;/p&gt;&lt;/div&gt;
+</content></entry>

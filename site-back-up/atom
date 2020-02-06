@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Site Back Up</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/site-back-up"/><link rel="edit" href="https://mattread.com/site-back-up/atom"/><id>http://www.mattread.com/weblog/site-back-up/</id><updated>2007-04-06T14:58:24-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:00:51-05:00</app:edited><published>2004-08-14T17:07:15-04:00</published><category term="announcements"/><content type="html">&lt;p&gt;Sorry to anyone who tried to visit my on saturday. But my host upgraded their server and my site was down a couple of hours. They also changed the path of my site from /home/ to /home2/ so I had to change a few things. If you see any errors please email me or comment on this post. Thanks.&lt;/p&gt;
+
+&lt;p&gt;I have also implemented mod_rewrite permalinks so any current links you have back to my site, may not work properly. Sorry.&lt;/p&gt;
+</content></entry>

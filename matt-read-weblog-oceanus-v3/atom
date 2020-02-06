@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Matt Read, Weblog: Oceanus v3</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/matt-read-weblog-oceanus-v3"/><link rel="edit" href="https://mattread.com/matt-read-weblog-oceanus-v3/atom"/><id>tag:mattread.com,2010:matt-read-weblog-oceanus-v3/1275956231</id><updated>2010-06-07T20:32:30-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-26T12:54:14-04:00</app:edited><published>2010-06-07T20:32:30-04:00</published><category term="oceanus"/><category term="theme"/><content type="html">Version 3.0 of my theme, Oceanus, is now live. This time I went all out space age with CSS fonts and CSS text effects, like text-shadow and opacity. Inspired mostly by [Chris J. Davis](http://chrisjdavis.org/ "Sillyness Spelled Wrong Intentionally").&#xD;
+&#xD;
+&lt;a href="//www.flickr.com/photos/47293812@N00/4680652414"&gt;&lt;img src="//farm5.static.flickr.com/4010/4680652414_9182a5d55e_m.jpg" class="card right"&gt;&lt;/a&gt;I also went for HTML5, which, obviously, required a little MSIE hack. I found the semantics of HTML5 well thought out; Can't wait till it becomes reality, especially the audio/video stuff. Goodbye Flash!&#xD;
+&#xD;
+You'll notice the pinstripe background, which may make it harder to read, but this time I went for beauty over usability. Yes, I committed a sin, don't hate me please. I've played with some transparent containers for the content,  but I think it looks better as is. Although, I still have a fluid layout and flexible font sizes.&#xD;
+&#xD;
+I've also implemented a "notification area" at the top. Logged out, you will see the extra panes that include the less used stuff, that I would call clutter. Logged in, some additional things appear, like alerts for when you have comments awaiting moderation, etc. Sort of an admin bar built in.&#xD;
+&#xD;
+When I get all the code sorted out, and the options pages going, I plan on releasing this revision of the theme. But don't hold your breath.</content></entry>

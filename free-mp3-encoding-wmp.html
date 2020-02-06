@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Free MP3 Encoding on Windows Media Player XP - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="ps2-disc-read-error-fix.html"><link rel="next" href="links-added.html"><link rel="home" href="index.html">
+<meta name="keywords" content="articles">
+<meta name="description" content="The information in this article applies only to: Microsoft Windows Media Player for Windows XP   Windows Media Player for Windows XP has MP3 encoding plug-in support. To enable the Wind…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="free-mp3-encoding-wmp/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-371" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-371" class="post post-371 type-entry status-published tag-articles">
+		<h1 itemprop="name">Free MP3 Encoding on Windows Media Player XP</h1>
+		<meta content="https://mattread.com/free-mp3-encoding-wmp" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:37">
+		<p>
+			<meta itemprop="dateModified" content="2013-10-09T14:14:07-04:00">
+<time itemprop="datePublished" datetime="2004-03-04T21:04:22-05:00">
+	Published March 4<sup>th</sup>, 2004</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>The information in this article applies only to: Microsoft Windows Media Player for Windows XP </p>
+
+<p>Windows Media Player for Windows XP has MP3 encoding plug-in support. To enable the Windows Media Player to encode MP3 files, you must download and install a compatible MP3 encoder. Windows Media Player supports only Audio Compression Manager (ACM) functions to communicate with the MP3 encoders. Therefore, the codec must be an ACM codec. I use the Fraunhaufer Pro ACM MP3 Codec. you can get it, like all other files, from my site.<!--more--></p>
+
+<p>MP3 Compression Only. Windows Media Player for Windows XP supports only plugging in an MP3 encoder. Using any other compression creates invalid MP3 files. Therefore, the only compression support that is provided by the codec is for MP3. The codec accept only raw data and output-compressed data. </p>
+
+<p>Windows does already come with the Fraunhaufer Standard ACM MP3 Codec (L3CODECA.ACM) but it only supports very low bitrates, unacceptable for music. So get the good one from my site.</p>
+
+<h3>Installation </h3>
+
+<p>Thanks to <a href="http://www.impactmediaworks.com/">Justin Leoni</a> there is now an <a href="http://www.impactmediaworks.com/files/imp3-setup.exe">installer</a> that does all the work for you. Or, to do it the manual way, continue reading.</p>
+
+<p>All you need to do after obtaining the ACM Codec is to copy your Preferred Codec (L3CODECP.ACM, LAMEACM.ACM, etc.) to the windows system32 directory, “c:/windows/system32/”. Thats the simple part, but don&#8217;t worry the rest is easy. Now we edit that registry.</p>
+
+<p>You must have administrator rights on the computer to change any of the registry settings. But before we do that we need to know a few things. </p>
+
+<h3>A Few things about MP3</h3>
+
+<p>Every MP3 files has two settings, the Bit Rate and The Sample Rate.</p>
+
+<p>The Bit Rate is measured in kilobytes per second (KBps). Everyone who has heard of MP3&#8217;s knows about this. Higher quality music has higher bit rates. eg. most MP3&#8217;s on the internet are encoded at 96 - 128 kBps, this is lower quality but has quite small file sizes and is good for sharing over the internet. Higher quality MP3&#8217;s generally use 192 kBps, This is what I like because it gives a good balance between quality and size. And those audiophiles amongst us use 256 kBps or higher.</p>
+
+<p>The second Thing is the Sample Rate. This is the frequency at which the music is recorded. I&#8217;m no audio engineer but the higher this value is, the more &#8220;analog-like&#8221; (better) your music will be. CD&#8217;s are recorded at 44.1 Kilohertz (kHz) (1kHz = 1000 cycles/second). Music off of your DVD Movies is recorded at 48 kHz. And the new DVD Audio is encoded at 96 kHz, and in my opinion sounds just as good as a high quality vinyl record.</p>
+
+<p>Now that we know this lets make a few decisions. If we set our Codec Settings for 96 kHz, it sounds cool, but is a wast since we are using lossy compression and CD&#8217;s are at best recorded at 44.1 kHz. So our first decision is to use a sample rate of 48 kHz. You say, why not 44.1, well, why not 48. Not much difference there.</p>
+
+<p>Our second decision is to choose FOUR bitrates. Windows Media Player XP only supports four different bitrates. I find that the good choice here is 96, 128, 192, and 256 kBps. You&#8217;ll probably only use one, so just pick what you like best, then pick one higher and one lower. You&#8217;ll have to play around here to find out what your codec supports. As I say though, I know the Fraunhaufer supports 128, 192, and 256 kBps @ 48 kHz, it gives a good range.</p>
+
+<p>Also note the following:</p>
+
+<ol>
+  <li>1 kHz = 1000 Hz</li>
+  <li>1 kBps = 1000 Bps</li>
+</ol>
+
+<h3>Editing the Registry</h3>
+
+<p class="warning"><strong>WARNING:</strong> If you use Registry Editor incorrectly, you may cause serious problems that may require you to reinstall your operating system. Microsoft cannot guarantee that you can solve problems that result from using Registry Editor incorrectly. Use Registry Editor at your own risk. Blah, Blah, Blah, Lets Hack&#8230;</p>
+
+<p>The following registry key should be created:</p>
+
+<pre><code>HKEY_LOCAL_MACHINE/Software/Microsoft/MediaPlayer/Settings/MP3Encoding</code></pre>
+
+<p>The following values may be set:</p>
+
+<pre><code> DWORD value: LowRate (datarate)
+ DWORD value: LowRateSample (Sample)
+ DWORD value: MediumRate (datarate)
+ DWORD value: MediumRateSample (Sample)
+ DWORD value: MediumHighRate (datarate)
+ DWORD value: MediumHighRateSample (Sample)
+ DWORD value: HighRate (datarate)
+ DWORD value: HighRateSample (Sample)
+ String: PreferredCodecName (codec name)
+ String: PreferredCodecPath (codec path)</code></pre>
+
+<p>Don&#8217;t worry I&#8217;ll walk you through it. First we need to start the registry editor. Just go the the Start Menu, click Run, the type &#8220;regedit&#8221; and click enter.</p>
+
+<h4>Creating The Key</h4>
+
+<p>Now navigate to <code>HKEY_LOCAL_MACHINE/Software/Microsoft/MediaPlayer/Settings</code>, just like exploring your folders, and create a new key in that folder called &#8220;MP3Encoding&#8221;. To create a new key click on the settings folder then go, Edit -> new -> key, and name it &#8220;MP3Encoding&#8221;.</p>
+
+<p><img src="user/files/Freemp3_key.html" class="center"></p>
+
+<h4>Creating The DWORD Values</h4>
+
+<p>Now open the folder &#8220;MP3Encoding&#8221; and create a &#8220;DWORD value&#8221; named &#8220;LowRate&#8221;. Create it the same way as the &#8220;key&#8221; but go, Edit -> new -> DWORD value. Also create a &#8220;DWORD value&#8221; named LowRateSample the same way. </p>
+
+<p><img src="user/files/Freemp3_dword.jpg" class="center"></p>
+
+<div><figure><img src="user/files/Freemp3_both.html" class="center"><figcaption>both are entered</figcaption></figure></div>
+
+<p>Now Double Click on the LowRate DWORD value, and set the value data to the lowest bit rate you selected earlier. ie. if you chose 96 kBps then enter 96000 in value data. Everything you enter is in terms of Bps. And enter it as a Decimal NOT Hexadecimal.</p>
+
+<p><img src="user/files/Freemp3_rate.jpg" class="center"></p>
+
+<p>Now repeat the same process for the &#8220;LowRateSample&#8221; using 48000 as your value data. Everything you enter is in terms of Hz. And again as a Decimal NOT Hexadecimal.</p>
+
+<p><img src="user/files/Freemp3_sample.jpg" class="center"></p>
+
+<p>Now repeat the same for MediumRate, MediumRateSample, MediumHighRate, MediumHighRateSample, HighRate and HighRateSample.</p>
+
+<h4>Creating The Strings</h4>
+
+<p>Now you have to create two strings &#8220;PreferredCodecName&#8221; and &#8220;PreferredCodecPath&#8221;. You should know how to create a string now, same as DWORD but choose string. The PreferredCodecName is the name of the encoder that will show on Windows Media Player. You use what ever you want. The PreferredCodecPath must be set to &#8220;C:&#92;WINDOWS&#92;system32&#92;L3CODECP.ACM&#8221;, or what ever the filename of your codec is.</p>
+
+<div><figure><img src="user/files/Freemp3_done.jpg" class="center"><figcaption>you should have something like this when your done</figcaption></figure></div>
+
+<p class="note"><strong>Note </strong>that the value for PreferredCodec is limited to 255 characters. The PreferredCodecPath key must contain the fully-qualified path to the location of the codec as well as the file name of the codec. </p>
+
+<h3>Finally</h3>
+
+<p>Just go in to the Windows Media Player options, were you are able to choose the encoder (ie. WMA Losless &#8230; ), and you should see your new encoder there with the bitrate settings your setup earlier.</p>
+
+<ul class="download">
+<li><a href="user/files/l3codecp.zip">L3CODECP <i class="icon-box-add"></i></a> </li>
+</ul>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Free MP3 Encoding on Windows Media Player XP was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/articles.html" rel="tag">articles</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="links-added.html"
+			   title="Links Added"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="ps2-disc-read-error-fix.html"
+			   title="Playstation 2 Disc Read Error Fix">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-1652"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Fred">
+				<span itemprop="name">Fred</span>
+			</span>
+			<small>(<a href="#comment-1652"
+			           title="Permanent link to this comment">#1652</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2004-12-14T15:30:24-05:00">December 14<sup>th</sup>, 2004</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>It even works with W2k! Excellent. Thanks for the tip.</p>
+			</div>
+</article>
+<article id="comment-1738"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for hoAanH">
+				<span itemprop="name">hoAanH</span>
+			</span>
+			<small>(<a href="#comment-1738"
+			           title="Permanent link to this comment">#1738</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-03-12T01:48:18-05:00">March 12<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>works with W2k3 Server Standard! Many thanks 4 the article</p>
+			</div>
+</article>
+<article id="comment-2018"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2018"
+			           title="Permanent link to this comment">#2018</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-06-22T19:26:07-04:00">June 22<sup>nd</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>hey bro,</p>
+
+<p>—the tutorial was pretty frigg’n sweet. it worked like a charm and now i’m ripp’n away! thanks for sharing the know-how dude…</p>
+
+<p>peace,
+  p1zl3</p>
+			</div>
+</article>
+<article id="comment-2054"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/3cf6c82f39e018bbe6898e67741cc56f?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for maunel">
+				<span itemprop="name">maunel</span>
+			</span>
+			<small>(<a href="#comment-2054"
+			           title="Permanent link to this comment">#2054</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2005-07-19T18:45:01-04:00">July 19<sup>th</sup>, 2005</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>you must be tired of hearing this yourea genious!!</p>
+			</div>
+</article>
+<article id="comment-2188"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2188"
+			           title="Permanent link to this comment">#2188</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-01T18:08:40-05:00">January 1<sup>st</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Excellent, just the information I needed.  Saved me a lot of time.</p>
+			</div>
+</article>
+<article id="comment-2210"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Cory">
+				<span itemprop="name"><a href="http://e.domaindlx.com/dimebagdarrell">Cory</a></span>
+			</span>
+			<small>(<a href="#comment-2210"
+			           title="Permanent link to this comment">#2210</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-12T20:45:13-05:00">January 12<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Wow. I dont know what to say. I looked for countless hours and couldn’t find anything! Thanks for this! You are a god among men. lol.</p>
+			</div>
+</article>
+<article id="comment-2216"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2216"
+			           title="Permanent link to this comment">#2216</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-16T22:45:35-05:00">January 16<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>thanks dude, all my registry keys were there, but using your codec as the preferred one made it work!  anyone reading this take the 2 seconds to do it, it solves your problem</p>
+			</div>
+</article>
+<article id="comment-2221"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for mt">
+				<span itemprop="name">mt</span>
+			</span>
+			<small>(<a href="#comment-2221"
+			           title="Permanent link to this comment">#2221</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-19T21:19:20-05:00">January 19<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>In WMP 10 under XP this doesn’t work for me unless I get rid of the …Sample keys.  After that it’s fine - thanks for the help!</p>
+			</div>
+</article>
+<article id="comment-2225"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/6b6a8b033197688bf8bac33c1e48c2d1?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Buddha Bacchan">
+				<span itemprop="name">Buddha Bacchan</span>
+			</span>
+			<small>(<a href="#comment-2225"
+			           title="Permanent link to this comment">#2225</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-01-23T04:05:11-05:00">January 23<sup>rd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>By installing this encoder, would I be able to use it with Windows Media Encoder 9 SDK programatically?  I Wiuld like to write a program to convery lossless WMA file to 192Kbs mp3 files.</p>
+
+<p>Thanks. -BuddhaBacchan</p>
+			</div>
+</article>
+<article id="comment-2259"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for ZZ">
+				<span itemprop="name">ZZ</span>
+			</span>
+			<small>(<a href="#comment-2259"
+			           title="Permanent link to this comment">#2259</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-10T07:49:35-05:00">February 10<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks Matt! Now to see whether I can install it into My SONY Network Walkman.
+BTW, in Windows 10, the codec is already in there, just to modify it to CAPS and get rid of the sample low bit rate thing before it can work. Z
+Z</p>
+			</div>
+</article>
+<article id="comment-2267"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Aaron">
+				<span itemprop="name">Aaron</span>
+			</span>
+			<small>(<a href="#comment-2267"
+			           title="Permanent link to this comment">#2267</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-02-18T03:34:44-05:00">February 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks for creating this! Made it a lot easier for me to encode my stuff to mp3!</p>
+			</div>
+</article>
+<article id="comment-2296"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for tobesonline">
+				<span itemprop="name">tobesonline</span>
+			</span>
+			<small>(<a href="#comment-2296"
+			           title="Permanent link to this comment">#2296</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-14T08:25:36-05:00">March 14<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>thanks matt,
+works a charm with WMP10…
+TL</p>
+			</div>
+</article>
+<article id="comment-2299"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2299"
+			           title="Permanent link to this comment">#2299</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-14T20:47:22-05:00">March 14<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>thank you worked great   <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-2308"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/3ab8b5abb547dfd4a7e5d1d6c1af9826?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for demed">
+				<span itemprop="name">demed</span>
+			</span>
+			<small>(<a href="#comment-2308"
+			           title="Permanent link to this comment">#2308</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-18T09:57:57-05:00">March 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>clear, concise and accurate (I didn’t use the Sample keys) - worked great on my XP SP2 &amp; WMP10 - thank you,</p>
+			</div>
+</article>
+<article id="comment-2316"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/64b0922b05c819d785197120ba4c3e42?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2316"
+			           title="Permanent link to this comment">#2316</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-03-23T03:41:08-05:00">March 23<sup>rd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Wow - I’m amazed and thankful.</p>
+
+<p>[begin verbose mode]
+I just received my new Windows Media Center box and the included Windows Media Player 10 (.3990) would not rip any MP3s, regardless of the bitrate. I was getting quite frustrated before I happened upon your site in my search for a solution - and as others have stated previously - your solution works like a charm.</p>
+
+<p>I already had an existing key and values at HKLM | Softare | Microsoft | MediaPlayer | MP3encoding, so after backing up the original values (just to be safe), I setup the new values per the tutorial, fired up Media Player, and voila! MP3-rippin’ heaven.</p>
+
+<p>Thanks bunches!
+[end verbose mode]</p>
+			</div>
+</article>
+<article id="comment-2349"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for karthik">
+				<span itemprop="name">karthik</span>
+			</span>
+			<small>(<a href="#comment-2349"
+			           title="Permanent link to this comment">#2349</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-04-16T16:14:18-04:00">April 16<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>thanks a lot, man.
+i’ve been trying to figure out how to use wmp to properly rip mp3s for years.</p>
+			</div>
+</article>
+<article id="comment-2390"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Ben">
+				<span itemprop="name">Ben</span>
+			</span>
+			<small>(<a href="#comment-2390"
+			           title="Permanent link to this comment">#2390</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-05-13T12:46:36-04:00">May 13<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Awesome i’ve tried hundreds of different downloads but this is first thing that has worked coupled with ZZ’s comment about changing it to CAPS that helped too. Thanks guys! Ben</p>
+			</div>
+</article>
+<article id="comment-2396"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/f05822d95fdcacaec600ae4605558f4e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jasen">
+				<span itemprop="name"><a href="http://thebonencp.8m.com/">Jasen</a></span>
+			</span>
+			<small>(<a href="#comment-2396"
+			           title="Permanent link to this comment">#2396</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-05-15T13:01:28-04:00">May 15<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks, Microsoft should put this info on the site.</p>
+			</div>
+</article>
+<article id="comment-2398"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Darin">
+				<span itemprop="name">Darin</span>
+			</span>
+			<small>(<a href="#comment-2398"
+			           title="Permanent link to this comment">#2398</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-05-17T11:19:57-04:00">May 17<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks Matt!! I have been pissed at MP10. Keep up the good work!</p>
+			</div>
+</article>
+<article id="comment-2409"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/b37b7c772b5ad510959f7d0a06a75ef5?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jan">
+				<span itemprop="name"><a href="http://www.guardian.be/index.htm">Jan</a></span>
+			</span>
+			<small>(<a href="#comment-2409"
+			           title="Permanent link to this comment">#2409</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-05-20T15:17:26-04:00">May 20<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Yessss! Thanks Matt.</p>
+			</div>
+</article>
+<article id="comment-2423"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for The Mars Hotel">
+				<span itemprop="name">The Mars Hotel</span>
+			</span>
+			<small>(<a href="#comment-2423"
+			           title="Permanent link to this comment">#2423</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-08T06:29:50-04:00">June 8<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Thanks Matt… Worked like a charm. It’s amazing what can be done with the right knowledge!</p>
+			</div>
+</article>
+<article id="comment-2428"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/114d7fdf61955b528237a39c118f09ec?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Samuel Selby">
+				<span itemprop="name">Samuel Selby</span>
+			</span>
+			<small>(<a href="#comment-2428"
+			           title="Permanent link to this comment">#2428</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-13T07:32:38-04:00">June 13<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I am running a windows 2000 machine (I JUST recently upgraded to it from 98se) Not being totally familiar with registry values and such, I was a little hesitant to try this, but after going through it as per your very clear instructions, I’m presently sitting here ripping an OZZY CD to my computer and laughing maniaclly as I look at the stack of CD’s I am gonna rip and use in my    portable MP3 player now! Thanks for the walkthrough and you can bet i’m gonna reccomend other to this page!</p>
+
+<p>Dragon</p>
+			</div>
+</article>
+<article id="comment-2432"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/40cbe1c8052fdc9fe64592904ef89f1b?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Jim">
+				<span itemprop="name">Jim</span>
+			</span>
+			<small>(<a href="#comment-2432"
+			           title="Permanent link to this comment">#2432</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-17T05:34:41-04:00">June 17<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Hi,
+I’m new at all this and so I was just wondering, does this procedure also apply to burning aswell as ripping?? I mean, will this allow me to burn my WMA’s to CDs as MP3?</p>
+			</div>
+</article>
+<article id="comment-2435"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for dave">
+				<span itemprop="name">dave</span>
+			</span>
+			<small>(<a href="#comment-2435"
+			           title="Permanent link to this comment">#2435</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-18T06:41:24-04:00">June 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>i still cant get it to work…nothing shows up in wmp …): ahhhh</p>
+			</div>
+</article>
+<article id="comment-2436"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for dave">
+				<span itemprop="name">dave</span>
+			</span>
+			<small>(<a href="#comment-2436"
+			           title="Permanent link to this comment">#2436</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-18T06:43:06-04:00">June 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>by the way, im using the lame acm mp3 codec.</p>
+			</div>
+</article>
+<article id="comment-2437"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for dave">
+				<span itemprop="name">dave</span>
+			</span>
+			<small>(<a href="#comment-2437"
+			           title="Permanent link to this comment">#2437</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-18T07:16:30-04:00">June 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>so it works fine with the fraunhofer mp3 codec..but not the lame mp3!!?? someone help</p>
+			</div>
+</article>
+<article id="comment-2438"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for dave">
+				<span itemprop="name">dave</span>
+			</span>
+			<small>(<a href="#comment-2438"
+			           title="Permanent link to this comment">#2438</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-06-18T07:18:04-04:00">June 18<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>do you guys know if the fraunhofer codec supports vbr?</p>
+			</div>
+</article>
+<article id="comment-2480"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Nani">
+				<span itemprop="name">Nani</span>
+			</span>
+			<small>(<a href="#comment-2480"
+			           title="Permanent link to this comment">#2480</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-07-04T09:27:08-04:00">July 4<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I was looking into this because I was looking for a way to rip my CD’s to MP3 using Windows Media Player 9. When I got to the part when you had to go to the settings folder, there wasn’t a settings folder. Will this even work for Media Player 9?</p>
+			</div>
+</article>
+<article id="comment-2490"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2490"
+			           title="Permanent link to this comment">#2490</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-07-06T13:36:14-04:00">July 6<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Perfect!!!</p>
+
+<p>I just downloaded WMP111 and these suggestions work perfectly.</p>
+
+<p>Be sure to overwrite the file that needs downloading.</p>
+
+<p>Thank you!!!</p>
+			</div>
+</article>
+<article id="comment-2516"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/31d83ce2f3190017f50b1488e10abf89?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Justin Leoni">
+				<span itemprop="name"><a href="http://www.impactmediaworks.com/">Justin Leoni</a></span>
+			</span>
+			<small>(<a href="#comment-2516"
+			           title="Permanent link to this comment">#2516</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-07-15T16:47:20-04:00">July 15<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I actually took your tutorial and created a windows installer which does all the work for you so for those of you who don’t want to mess with your registry or if your just plain lazy and looking for a FREE mp3 encoding tool for WMP here it is
+<a href="http://www.impactmediaworks.com/files/imp3-setup.exe">iMp3</a> Thanks Matt.</p>
+			</div>
+</article>
+<article id="comment-2575"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2575"
+			           title="Permanent link to this comment">#2575</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-08-16T18:33:08-04:00">August 16<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>I’m not sure I get it.  My WMP10 already has a MP3 encoding feature up to 320K bitrate.  Is there a reason why I should follow this instruction?  Is it for the improvement of sample rate?</p>
+			</div>
+</article>
+<article id="comment-2600"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/156d9f660718e713ef16c93b30676b7f?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Aamir">
+				<span itemprop="name">Aamir</span>
+			</span>
+			<small>(<a href="#comment-2600"
+			           title="Permanent link to this comment">#2600</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-02T20:42:33-04:00">September 2<sup>nd</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>wag1 this page is wikd i used it on my laptop and it worked charms, my teachers were impressed seeing that im only 14 ( i left out the fact i gt it of the internet lol) i just wanted sum help coz on my computer there are no settings folder in media player so wat do i do????</p>
+			</div>
+</article>
+<article id="comment-2622"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Munkey">
+				<span itemprop="name">Munkey</span>
+			</span>
+			<small>(<a href="#comment-2622"
+			           title="Permanent link to this comment">#2622</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-14T18:00:40-04:00">September 14<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p> <img class="habari-smiley" alt=":lol:" src="user/plugins/tabasamu/tango/face-grin.png">  Awesome explanation!  Worked great. Thank you.  You might want to add the \ into the path in case someone who is less familar with path names tries to paste the path in the part below.</p>
+
+<p>“Windows Media Player. You use what ever you want. The PreferredCodecPath must be set to “C:WINDOWSsystem32L3CODECP.ACM”, or what ever the filename of your codec is.”</p>
+			</div>
+</article>
+<article id="comment-2632"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Soren Werk">
+				<span itemprop="name">Soren Werk</span>
+			</span>
+			<small>(<a href="#comment-2632"
+			           title="Permanent link to this comment">#2632</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-20T10:53:35-04:00">September 20<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>To answer Nani:</p>
+
+<p>Yes - this also works with WMP9.</p>
+
+<p> <img class="habari-smiley" alt=":s" src="user/plugins/tabasamu/tango/face-plain.png"> hock:</p>
+			</div>
+</article>
+<article id="comment-2634"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/49cce833227767544ce3a82b99743d67?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for adriana">
+				<span itemprop="name">adriana</span>
+			</span>
+			<small>(<a href="#comment-2634"
+			           title="Permanent link to this comment">#2634</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-21T19:14:54-04:00">September 21<sup>st</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>dude, you’re the best. thanks a million for your contribution  <img class="habari-smiley" alt=":razz:" src="user/plugins/tabasamu/tango/face-grin.png"> </p>
+			</div>
+</article>
+<article id="comment-2646"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/88842a548ddbb6ba6077b748a1992086?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Alex - Denmark">
+				<span itemprop="name">Alex - Denmark</span>
+			</span>
+			<small>(<a href="#comment-2646"
+			           title="Permanent link to this comment">#2646</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-09-29T17:46:54-04:00">September 29<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Damn gooood
+It works perfectly.</p>
+
+<p>I used the autoinstaller: iMP3 and vupti, MP3 coding works</p>
+
+<p>Why don</p>
+			</div>
+</article>
+<article id="comment-2666"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Free MP3 Encoding on Windows Media Player XP">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/203ac3bc083e714ce9eec65c0e19b0a6?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for David Adams">
+				<span itemprop="name">David Adams</span>
+			</span>
+			<small>(<a href="#comment-2666"
+			           title="Permanent link to this comment">#2666</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-10-08T00:00:55-04:00">October 8<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>You are the dogs bollocks <img class="habari-smiley" alt=":-)" src="user/plugins/tabasamu/tango/face-smile.png"> </p>
+
+<p>Fantastic little hack. Truly an inspired article!</p>
+
+<p>Regards,
+Dave (UK)</p>
+
+<p>p.s. Like me, some people may not have C:\ as their boot drive. If I may suggest, use %WINDIR%\SYSTEM32\L3CODECP.ACM in the ‘PreferredCodecPath’ registry value.</p>
+
+<p>HTH.</p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-347" class="post post-347 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
+<time itemprop="datePublished" datetime="2005-03-11T15:43:42-05:00">
+	11 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="wp-admin-bar-20.html" itemprop="url"
+							title="Entry: WP Admin Bar 2.2">
+			WP Admin Bar 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="wp-admin-bar-20.html#comments"
+		   title="66 Comments">
+			<span class="icon-bubble"></span> 66		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-349" class="post post-349 type-entry status-published tag-wordpress tag-web-applications tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:35-05:00">
+<time itemprop="datePublished" datetime="2005-03-02T15:34:18-05:00">
+	02 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="rk-stats.html" itemprop="url"
+							title="Entry: Referrer Karma Stats 1.3">
+			Referrer Karma Stats 1.3</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="rk-stats.html#comments"
+		   title="18 Comments">
+			<span class="icon-bubble"></span> 18		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-367" class="post post-367 type-entry status-published tag-articles tag-hardware" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-05-02T14:48:31-04:00">
+<time itemprop="datePublished" datetime="2004-06-05T08:31:45-04:00">
+	05 Jun 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="blurry-monitor-fix.html" itemprop="url"
+							title="Entry: Fix Your Blurry Monitor or TV">
+			Fix Your Blurry Monitor or TV</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="blurry-monitor-fix.html#comments"
+		   title="9 Comments">
+			<span class="icon-bubble"></span> 9		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-339" class="post post-339 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:32-05:00">
+<time itemprop="datePublished" datetime="2005-06-06T17:41:31-04:00">
+	06 Jun 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="auto-links-discovery-plugin.html" itemprop="url"
+							title="Entry: Auto Links Discovery Plugin 0.1">
+			Auto Links Discovery Plugin 0.1</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="auto-links-discovery-plugin.html#comments"
+		   title="11 Comments">
+			<span class="icon-bubble"></span> 11		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-366" class="post post-366 type-entry status-published tag-articles tag-hardware" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T23:02:08-05:00">
+<time itemprop="datePublished" datetime="2004-01-06T07:37:54-05:00">
+	06 Jan 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="ps2-disc-read-error-fix.html" itemprop="url"
+							title="Entry: Playstation 2 Disc Read Error Fix">
+			Playstation 2 Disc Read Error Fix</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="ps2-disc-read-error-fix.html#comments"
+		   title="239 Comments">
+			<span class="icon-bubble"></span> 239		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/free-mp3-encoding-wmp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:20:27 GMT -->
+</html>

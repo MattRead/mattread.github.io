@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pluggable type="theme" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://schemas.habariproject.org/pluggable/0.8">
+	<name>Conquistador</name>
+	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
+	<guid>2887bf9e-eecd-44fb-aa13-444b8f2d7bef</guid>
+
+	<author url="http://mattread.com/">Matt Read</author>
+	<url>http://mattread.com/</url>
+	<copyright>2012</copyright>
+	<version>1.0</version>
+	<template_engine>rawphpengine</template_engine>
+
+	<description>
+		<![CDATA[Conquistador is a simple, elegant, responsive theme for Habari, that is highly customizable using Blocks, Areas, and Scopes.
+		It is also HTML5 and image lean, and has support for a wide range of plugins.]]>
+	</description>
+
+	<help>
+		<value>
+			<![CDATA[
+<p>The theme provides 5 areas that you can customize with blocks. On activation, default blocks are added to certain areas. The following areas are available:</p>
+
+<ul>
+<li>site_navigation - The top bar where the menu resides. (the search block works well up here)</li>
+<li>head - The top of the page (Above the post title)</li>
+<li>split - The middle of the page (between post content and comments).</li>
+<li>foot - The bottom of the page (after the comments).</li>
+<li>site_footer - The very bottom of the site.</li>
+</ul>
+
+<p>The theme also provides 4 different scopes so you can customize the layout based on the request. These include Homepage, Single Post, Archives, and Default. Default being for everything that is not a Single Post, Homepage, or Archives page.</p>
+
+<p>The Homepage can be completely customized with the "Homepage" scope; Adding any blocks you choose. The core text block comes in handy here. The Homepage scope also provides special styling for the "split" area, which works well with flickrfeed plugin, for example.</p>
+
+<p>There are also some custom blocks included with the theme:</p>
+
+<ul>
+<li>Related Posts - A listing of related posts by tags (added to foot in Single Post scope by default).</li>
+<li>Post Navigation - Previous and Next post links (added to split in Single Post scope by default).</li>
+<li>Post Tags List - A list of the posts tags (added to split in Single Post scope by default)</li>
+<li>Signature Line with Media Icons - Site signature line with configurable Social Media Icons.</li>
+<li>Copyright Declaration - Site copyright notice, with back to top link (added to site_footer area).</li>
+<li>Basic Main Menu - Menu with links for Archives and Home (added to site_navigation).</li>
+<li>Post Listing for Homepage - The default Post Listing that can be moved on the homepage scope.</li>
+</ul>
+
+<p>The "Custom HTML Headers" allows you to output custom HTML tags inside the &lt;head&gt; HTML. For example, you can the the google apps verification header there and avoid messing with the HTML.</p>
+
+<p>The theme also provides an archive listing of all posts available at the URL /archives. This can also be customized with the "Archives" scope.</p>
+
+<p>TIP: To get into the admin area, simply type "goin" on any page.</p>
+		]]>
+		</value>
+	</help>
+
+	<areas>
+		<area name="site_navigation">
+			<description><![CDATA[The navigation area]]></description>
+		</area>
+		<area name="head">
+			<description><![CDATA[The post header area]]></description>
+		</area>
+		<area name="split">
+			<description><![CDATA[The post comments header area]]></description>
+		</area>
+		<area name="foot">
+			<description><![CDATA[The post footer area]]></description>
+		</area>
+		<area name="site_footer">
+			<description><![CDATA[The footer area]]></description>
+		</area>
+	</areas>
+
+	<provides>
+		<feature url="http://wiki.habariproject.org/en/feature/area">area</feature>
+	</provides>
+</pluggable>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:hardware/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2007-04-06T14:58:21-04:00</updated><link rel="alternate" href="https://mattread.com/tag/hardware"/><link rel="self" href="https://mattread.com/tag/hardware/atom"/><entry><title>Playstation 2 Disc Read Error Fix</title><link rel="alternate" href="https://mattread.com/ps2-disc-read-error-fix"/><link rel="edit" href="https://mattread.com/ps2-disc-read-error-fix/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/01/ps2-disc-read-error-fix/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:02:08-05:00</app:edited><published>2004-01-06T07:37:54-05:00</published><category term="articles"/><category term="hardware"/><content type="html">&lt;p&gt;I found this article over at Tweak3D.net. It will guide you through the complete proccess of repairing that annoying disc read error that sometimes happens to older PS2&amp;#8217;s. I&amp;#8217;ve had good results, and so have many others. Let me know how it goes for you&lt;/p&gt;
+
+&lt;blockquote cite="http://www.tweak3d.net/tutorials/hardware-repair/playstation-2-repair"&gt;&lt;p&gt;This guide will walk you through the process of repairing a malfunctioning Playstation 2 or one that gives you Disc Read Errors (called &amp;#8220;DRE&amp;#8221; from here on). I have tested this process on two Playstation 2s now and it completely fixed the errors both were experiencing. The model # was SCPH-30001 on both units, but the process should be the same for others. &lt;!--more--&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;You can read the entire article over at &lt;a href="http://www.tweak3d.net/articles/ps2repair/"&gt;Tweek3D.net&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Fix Your Blurry Monitor or TV</title><link rel="alternate" href="https://mattread.com/blurry-monitor-fix"/><link rel="edit" href="https://mattread.com/blurry-monitor-fix/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/12/blurry-monitor-fix/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:48:31-04:00</app:edited><published>2004-06-05T08:31:45-04:00</published><category term="articles"/><category term="hardware"/><content type="html">&lt;p&gt;I found this article on TweakHardware.com. It will walk you through adjusting the focus on that old computer monitor. It will also help you adjust the color and brightness of your monitor. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;blockquote cite="http://www.tweakhardware.com"&gt;&lt;p&gt;Many monitors display an unnecessarily bad picture quality. Several older monitors suffer from showing a very dark and blurry image. But it doesn&amp;#8217;t have to be this way! With a little knowledge and a couple of screwdrivers, we can make adjustments to achieve a sharper and/or brighter image.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The process is quite simple, but requires you to take the back cover off of your monitor. This is usually very simple and requires only a small screw driver. The guide on Tweak Hardware will walk you through the complete process.&lt;/p&gt;
+
+&lt;p class="warning"&gt;&lt;strong&gt;Warning:&lt;/strong&gt; This tweak, if not done properly, can cause serious injury and possibly &lt;b&gt;death&lt;/b&gt; to you and your monitor. Use at your own risk&lt;/p&gt;
+
+&lt;h2&gt;My Experience&lt;/h2&gt;
+
+&lt;p&gt;I have done this to my old Magitronic monitor and it worked great. My monitor went from a blurry piece of garbage to a monitor that looked almost brand new. The process was a bit different on my monitor, the focus and brightness potentiometers were located in different positions, but worked exactly the same. I would not recommend playing with the color potentiometers unless it&amp;#8217;s really screwed up. &lt;/p&gt;
+
+&lt;p&gt;After fixing my monitor, I thought I would try it on my old TV, and it worked the same way. My TV was really screwed up and the colors were way off, so I adjusted the color potentiometers and finally got it to work. It takes very long to get the color right, since there&amp;#8217;s three adjustments, red, green and blue, so expect to take some time if you plan on adjusting the color. And also try many source for testing the color. ie. DVD, Video Game, VHS, Satellite, Regular TV, etc. &lt;/p&gt;
+
+&lt;p&gt;To just adjust the focus and brightness it took me about 20 minutes, after I figured everything out, so why not fix your broken computer monitor or TV for free. &lt;/p&gt;
+
+&lt;h2&gt;Link to the Article&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://web.archive.org/web/20030217070144/http://www.tweakhardware.com/guide/tweakmonitor/" rel="external"&gt;tweakhardware.com/guide/tweakmonitor/&lt;/a&gt;&lt;/p&gt;
+</content></entry></feed>

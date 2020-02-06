@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>PNG Images, A MSIE Fix</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/png-background-fix"/><link rel="edit" href="https://mattread.com/png-background-fix/atom"/><id>http://www.mattread.com/archives/2004/08/png-background-fix/</id><updated>2007-04-06T14:58:22-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:00:57-05:00</app:edited><published>2004-08-08T21:57:23-04:00</published><category term="articles"/><content type="html">&lt;p&gt;This small and easy script will fix the problem with transparent backgrounds in Portable Network Graphics (PNG) in Microsoft Internet Explorer (MSIE). It uses a small script, which you call in your Cascading Style Sheet (CSS) with a behavior attribute.  Note that this will only work for images defined with the img tag, and will not work for CSS backgrounds.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h3&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;You might be asking yourself, "why would a Linux guy like Matt care about MSIE?". Well, the short answer is, 52% of the viewers of this website use MSIE, so we all have to account for it's shortcomings. &lt;/p&gt;
+
+&lt;p&gt;MSIE has always had problems rendering PNG images properly. The issue is with alpha channels in transparent PNG images. MSIE, in all it's glory, displays the transparent background as a solid gray or black background. &lt;/p&gt;
+
+&lt;p&gt;Microsoft (M$) has been promising to fix this issue for about five years now, but has yet to do so. There is a &lt;a href="http://www.petitiononline.com/msiepng/petition.html"&gt;petition&lt;/a&gt; to force M$ to fix the problem, so please go sign the &lt;a href="http://www.petitiononline.com/msiepng/petition.html"&gt;petition&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, let's get started. &lt;/p&gt;
+
+&lt;h3&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;There is only two small files on the tweak, and some small CSS to implement. &lt;/p&gt;
+
+&lt;p&gt;First, upload the file, &lt;code&gt;blank.gif&lt;/code&gt;, to a directory of your choosing. Now open up &lt;code&gt;pngbehavior.htc&lt;/code&gt; and change the path of &lt;code&gt;blank.gif&lt;/code&gt; to were you uploaded it, and make sure you use an absolute path here. So if you uploaded to the directory /images/ then it would be:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;line 29:    var blankSrc = "/images/blank.gif";
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Second, after saving, upload the file, &lt;code&gt;pngbehavior.htc&lt;/code&gt;, to a directory of your choosing. Remember the directory, because we will need it later. &lt;/p&gt;
+
+&lt;p&gt;Then, we need to set a CSS "class" or "id" for the images, to define them in CSS. Or we can use some other way to define them in our CSS. &lt;/p&gt;
+
+&lt;h3&gt;Using the Script&lt;/h3&gt;
+
+&lt;p&gt;I think the easiest way to show you how to use this tweak is with examples. so here are a four examples to get you started. &lt;/p&gt;
+
+&lt;h4&gt;Example 1&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id="article"&amp;gt; 
+  &amp;lt;img src="image.png" alt="image" width="20" height="20" /&amp;gt; 
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#article img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  } 
+
+NOTE: The #article img CSS will define all images in the "article" &amp;lt;div&amp;gt;.
+Consult your CSS manual for more information.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the behavior attribute. This attribute calls the script which fixes the background problems. I hope you remembered the path to the script, as this is where you put it.  &lt;/p&gt;
+
+&lt;p&gt;Second, notice the padding of 0. YOU NEED TO HAVE THIS, since the script replaces the image with a CSS background, and any padding will cause the image to be enlarged and distorted. &lt;/p&gt;
+
+&lt;p&gt;Finally, notice the XHTML above. The "height" and "width" attribute are defined. YOU ALSO NEED THIS, since without it the script will not know what size the image is, and the image will be distorted. &lt;/p&gt;
+
+&lt;p&gt;Now that I've shown you the basics the next three examples will elaborated on them. &lt;/p&gt;
+
+&lt;h4&gt;Example 2&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" width="20" height="20" class="png" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.png { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The behavior and padding CSS attributes are as before, and the image XHTML has the "height" and "width" defined as well. &lt;/p&gt;
+
+&lt;h4&gt;Example 3&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" width="20" height="20" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example we have not defined any "class" or "id", nor have we got it in a defining &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;. The beauty of this script is that, if the image is not a PNG, such as JPG, GIF, etc., it will not apply anything to the image, just leave it alone. &lt;/p&gt;
+
+&lt;p&gt;So, in our CSS, we will just define all images to use the behavior. Again notice the behavior, padding, height and width as in example 1. &lt;/p&gt;
+
+&lt;h4&gt;Example 4&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" class="png" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.png { 
+  behavior: url( path/to/pngbehavior.htc );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;padding: 0; 
+   height: 20px; 
+   width 20px; 
+   } &lt;/p&gt;
+
+&lt;p&gt;Wait, you say, you told me I needed to have the height and width in the XHTML. Well, I lied, you will notice that I am defining the width and height in the CSS. Either way, CSS or XHTML, will work. This method is good for multiple instances of the same image, like the comment icons on my home page. And notice that the other attributes are the same. &lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Now that I've shown you many ways of using this tweak, you should have no problem's implementing it on your site. Should you have any changes, problems or suggestion, please leave a comment on this post. &lt;/p&gt;
+
+&lt;p&gt;One last thing to note. The behavior attribute is invalid CSS, so it will invalidate your CSS, duh. However, the behavior attribute is only recognized by MSIE, and will not affect your CSS layout in other browsers like FireFox.&lt;/p&gt;
+
+&lt;h3&gt;Download and License&lt;/h3&gt;
+
+&lt;p&gt;See the blue box below for download and license information.&lt;/p&gt;
+</content></entry>

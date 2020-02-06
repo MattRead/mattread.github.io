@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:javascript/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2008-09-29T00:55:09-04:00</updated><link rel="alternate" href="https://mattread.com/tag/javascript"/><link rel="self" href="https://mattread.com/tag/javascript/atom"/><entry><title>Javascript Prototype Behaviour in PHP</title><link rel="alternate" href="https://mattread.com/javascript-prototype-behaviour-in-php"/><link rel="edit" href="https://mattread.com/javascript-prototype-behaviour-in-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:javascript-prototype-behaviour-in-php/1222664109</id><updated>2008-09-29T00:55:09-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-20T12:43:28-04:00</app:edited><published>2008-09-29T02:01:57-04:00</published><category term="code"/><category term="php"/><category term="javascript"/><category term="prototype"/><content type="html">&lt;p&gt;One of the &amp;#8220;neat&amp;#8221; things in Javascript is you are able to dynamically add or change methods of a class and automatically update every instance of that class. Some of the things I usually find useful are adding to the String class, like so:&lt;/p&gt;
+
+&lt;pre class="highlight javascript"&gt;
+&lt;![CDATA[
+String.prototype.htmlSpecialChars = function() {
+    return this.replace(/\&lt;/g,'&lt;').replace(/\&gt;/g,'&gt;');
+}
+String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, '');
+}
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour to a certain extent using my &amp;#8220;neat&amp;#8221; little &lt;a href="https://gist.github.com/576295"&gt;Prototype&lt;/a&gt; class. With this Prototype class we can dynamically add properties and methods to any class, and they will be inherited by all instances of that class.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s look at the following &amp;#8220;normal&amp;#8221; PHP code.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+class Person extends Prototype
+{
+    public $name;
+    public $gender;
+   
+    public function gender()
+    {
+        printf("%s is %s\n", $this-&gt;name, $this-&gt;gender);
+    }
+}
+
+$matt = new Person;
+$matt-&gt;name = 'Matt';
+$matt-&gt;gender = 'male';
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, there is nothing magical or out-of-the-ordinary going on here. We just instantiate the Person class and setup some properties. Calling the &lt;code&gt;gender()&lt;/code&gt; method outputs a nice little string for us.&lt;/p&gt;
+
+&lt;p&gt;However, you see that the Person class is actually a child of the Prototype class. This will allow us to do some of that &amp;#8220;neat&amp;#8221; Javascript stuff. Using Prototype, let us expand the Person class to add an &lt;code&gt;$age&lt;/code&gt; property and an &lt;code&gt;age()&lt;/code&gt; method to output a nice string. Like so:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_property('age');
+Person::add_method('age', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;age = 28;
+$matt-&gt;age();
+
+// Matt is a 28 year old male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now all instances of Person inherit the &lt;code&gt;$age&lt;/code&gt; property and &lt;code&gt;age()&lt;/code&gt; method. So we can create a new Person, Susie, and this object will now have the age stuff.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+$susie = new Person;
+$susie-&gt;name = 'Susie';
+$susie-&gt;gender = 'female';
+$susie-&gt;age = 21;
+$susie-&gt;age();
+
+// Susie is a 21 year old female
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;One limitation of the Prototype class though, is you cannot overload a current method. So the following code, that attempts to overload the &lt;code&gt;gender()&lt;/code&gt; method, will not work.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;There are also many, many, many other problems with this Prototype class. Some of which are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &amp;#8216;$this&amp;#8217; keyword is reserved, so it actually does a string replace and uses &amp;#8216;$self&amp;#8217; instead.&lt;/li&gt;
+&lt;li&gt;You cannot access/add new methods or properties statically (until PHP 5.3 with __callStatic()).&lt;/li&gt;
+&lt;li&gt;It uses create_function, so every &amp;#8220;method&amp;#8221; is actually defined in the global namespace.&lt;/li&gt;
+&lt;li&gt;Iteration does not work, although it could possibly be done with Iterator, Countable, et al.&lt;/li&gt;
+&lt;li&gt;You cannot reference static variables/methods in your add method.&lt;/li&gt;
+&lt;li&gt;You cannot share methods between classes.&lt;/li&gt;
+&lt;li&gt;And so on and so forth&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This class was just an experiment to see if it was at all possible to implement something like Javascript&amp;#8217;s prototype behaviour in PHP with out using the &lt;a href="http://pecl.php.net/package/runkit"&gt;Runkit PECL extension&lt;/a&gt;. I had no intention of actually making this usable in production, for many reasons ;), although it was fun.&lt;/p&gt;
+</content></entry></feed>

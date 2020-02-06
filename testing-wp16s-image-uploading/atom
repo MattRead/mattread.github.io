@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Testing WP1.6's Image Uploading</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/testing-wp16s-image-uploading"/><link rel="edit" href="https://mattread.com/testing-wp16s-image-uploading/atom"/><id>http://mattread.com/archives/2005/11/testing-wp16s-image-uploading/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:27-05:00</app:edited><published>2005-11-15T18:29:10-05:00</published><category term="life"/><content type="html">&lt;p&gt;This is a test of the image uploading capabilities of WordPress 1.6. I upload, then I drag... Let's see if it works.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Well, it worked. I still had to create the &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag my self (I think). But still very very nice.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;@UPDATE&lt;br /&gt; Well, no it did not work the way I expected. After I draged the image to the post it gave me a &lt;a href="http://mattread.com/?subpost_id=225"&gt;subpost URL&lt;/a&gt;, not an image URL as I would have expected.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I confused now. let me play with it some more.&lt;/p&gt;</content></entry>

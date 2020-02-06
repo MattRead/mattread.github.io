@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<title>Canadian Flag in CSS</title>
+<link type="text/css" media="screen" rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro">
+<style>
+	body {
+		margin: 0;
+		padding: 1em 5em;
+		font: 300 20px/1.5 'Source Sans Pro', sans-serif;
+		word-spacing: 0.1em;
+		color: #222;
+		word-wrap: break-word;
+		background: #fcfcfc;
+	}
+
+	nav.navnav {
+		font-size: .8em;
+		color: #777;
+	}
+
+	h1, h2, h3, h4, h5 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: normal;
+	}
+	pre, code {
+		font-family: 'Source Code Pro', monospace;
+		font-size: 16px;
+	}
+</style>
+<nav class="navnav">Navigation:
+	<a href="example-unicode-bullet.html">&larr; Previous
+		Example</a> | 	<a href="examples.html">&uarr; More Examples</a>
+	 | <a href="examplereverse-geocoding.html">Next
+		Example &rarr;</a>	</nav>
+
+<style type="text/css">
+    /* <![CDATA[ */
+    
+    body {background-color:#f9f9f9;}
+    
+    .flag-back {
+    position:absolute;
+    top: 125px;
+    left: 65px;
+    width: 200px;
+    height: 160px;
+    border-left: 50px solid #c00;
+    border-right: 50px solid #c00;
+    background-color: #fff;
+    }
+    
+    .main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:42px solid #fff;
+    border-left:42px solid #fff;
+    border-bottom:120px solid #c00;
+    position:absolute;
+    top: 130px;
+    left: 170px;
+    z-index: 3;
+    }
+    
+    .sec-main-tri {
+    display:block;
+    width:25px;
+    height:0;
+    overflow:hidden;
+    border-right:20px solid transparent;
+    border-left:20px solid transparent;
+    border-top:60px solid #c00;
+    position:absolute;
+    top: 170px;
+    left: 180px;
+    z-index: 3;
+    }
+    
+    .right-main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:50px solid transparent;
+    border-top:50px solid #c00;
+    position:absolute;
+    top: 200px;
+    left: 235px;
+    z-index: 5;
+    }
+    
+    .right-top-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:20px solid #c00;
+    border-top:20px solid transparent;
+    position:absolute;
+    top: 180px;
+    left: 235px;
+    z-index: 5;
+    }
+    
+    .right-bot-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:30px solid #c00;
+    border-top:30px solid transparent;
+    position:absolute;
+    top: 207px;
+    left: 250px;
+    z-index: 5;
+    }
+    
+    .left-main-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:50px solid transparent;
+    border-top:50px solid #c00;
+    position:absolute;
+    top: 200px;
+    left: 145px;
+    z-index: 5;
+    }
+    
+    .left-top-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-left:20px solid #c00;
+    border-top:20px solid transparent;
+    position:absolute;
+    top: 180px;
+    left: 170px;
+    z-index: 5;
+    }
+    
+    .left-bot-tri {
+    display:block;
+    width:0;
+    height:0;
+    overflow:hidden;
+    border-right:30px solid #c00;
+    border-top:30px solid transparent;
+    position:absolute;
+    top: 207px;
+    left: 150px;
+    z-index: 5;
+    }
+    
+    .stem {
+    display:block;
+    width:10px;
+    height:20px;
+    background-color:#c00;
+    overflow:hidden;
+    position:absolute;
+    top: 250px;
+    left: 206px;
+    z-index: 5;
+    }
+    
+    /* ]]> */
+</style>
+
+<h1>Canadian Flag</h1>
+<p>The following Flag is done completely in CSS. Have a look at the source.</p>
+
+<div style="position:relative;  height:290px;">
+<div class="flag-back">&nbsp;</div>
+
+<div class="main-tri">&nbsp;</div>
+<div class="sec-main-tri">&nbsp;</div>
+
+<div class="left-top-tri">&nbsp;</div>
+<div class="left-main-tri">&nbsp;</div>
+<div class="left-bot-tri">&nbsp;</div>
+
+<div class="right-top-tri">&nbsp;</div>
+<div class="right-main-tri">&nbsp;</div>
+<div class="right-bot-tri">&nbsp;</div>
+
+<div class="stem">&nbsp;</div>
+</div>
+
+<h2>The CSS</h2>
+<pre class="css geshicode" style="font-family:monospace;"><span style="color: #6666ff;">.flag-back</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">125px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">65px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span> <span style="color: #933;">200px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span> <span style="color: #933;">160px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span> <span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">background-color</span><span style="color: #00AA00;">:</span> <span style="color: #cc00cc;">#fff</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.main-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span><span style="color: #933;">42px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#fff</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span><span style="color: #933;">42px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#fff</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-bottom</span><span style="color: #00AA00;">:</span><span style="color: #933;">120px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">130px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">170px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">3</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.sec-main-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #933;">25px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">60px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">170px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">180px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">3</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.right-main-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span><span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">200px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">235px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.right-top-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">180px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">235px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.right-bot-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span><span style="color: #933;">30px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">30px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">207px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">250px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.left-main-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span><span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">50px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">200px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">145px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.left-top-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-left</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">180px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">170px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.left-bot-tri</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #cc66cc;">0</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-right</span><span style="color: #00AA00;">:</span><span style="color: #933;">30px</span> <span style="color: #993333;">solid</span> <span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">border-top</span><span style="color: #00AA00;">:</span><span style="color: #933;">30px</span> <span style="color: #993333;">solid</span> <span style="color: #993333;">transparent</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">207px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">150px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span>
+&nbsp;
+    <span style="color: #6666ff;">.stem</span> <span style="color: #00AA00;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">display</span><span style="color: #00AA00;">:</span><span style="color: #993333;">block</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">width</span><span style="color: #00AA00;">:</span><span style="color: #933;">10px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">height</span><span style="color: #00AA00;">:</span><span style="color: #933;">20px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">background-color</span><span style="color: #00AA00;">:</span><span style="color: #cc00cc;">#c00</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">overflow</span><span style="color: #00AA00;">:</span><span style="color: #993333;">hidden</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">position</span><span style="color: #00AA00;">:</span><span style="color: #993333;">absolute</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">top</span><span style="color: #00AA00;">:</span> <span style="color: #933;">250px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">left</span><span style="color: #00AA00;">:</span> <span style="color: #933;">206px</span><span style="color: #00AA00;">;</span>
+    <span style="color: #000000; font-weight: bold;">z-index</span><span style="color: #00AA00;">:</span> <span style="color: #cc66cc;">5</span><span style="color: #00AA00;">;</span>
+    <span style="color: #00AA00;">&#125;</span></pre>
+
+<h2>The html</h2>
+<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">style</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;position:relative;&quot;</span>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;flag-back&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+&nbsp;
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;main-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;sec-main-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+&nbsp;
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;left-top-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;left-main-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;left-bot-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+&nbsp;
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;right-top-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;right-main-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;right-bot-tri&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+&nbsp;
+<span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;stem&quot;</span>&gt;</span><span style="color: #ddbb00;">&amp;nbsp;</span><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span>
+<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/div.html"><span style="color: #000000; font-weight: bold;">div</span></a>&gt;</span></pre>
+</html>

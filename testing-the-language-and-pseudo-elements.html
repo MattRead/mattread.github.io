@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/testing-the-language-and-pseudo-elements by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Testing The Language and Pseudo Elements - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="happy-talk-like-a-pirate-day.html"><link rel="next" href="carp-fair-2004.html"><link rel="home" href="index.html">
+<meta name="keywords" content="announcements">
+<meta name="description" content="This post is a test of my new CSS pseudo elements. I have added special quotes for English, Francais and German (only seems to work in Gecko, hmm). I have also added a neat hack to show the " >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="testing-the-language-and-pseudo-elements/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-392" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-392" class="post post-392 type-entry status-published tag-announcements">
+		<h1 itemprop="name">Testing The Language and Pseudo Elements</h1>
+		<meta content="https://mattread.com/testing-the-language-and-pseudo-elements" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:3">
+		<p>
+			<meta itemprop="dateModified" content="2013-03-08T23:00:20-05:00">
+<time itemprop="datePublished" datetime="2004-09-20T10:57:33-04:00">
+	Published September 20<sup>th</sup>, 2004</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>This post is a test of my new CSS pseudo elements. I have added special quotes for English, Francais and German (only seems to work in Gecko, hmm). I have also added a neat hack to show the <code>cite</code> attribute right after a <code>blockquote</code>, to show the source of that <code>blockquote</code>, as well as language markers for the given <code>lang</code> attribute. Anyway, this post is just to test them out. Note that this will not work in IE, so go get <a href="http://www.mozilla.org/firefox/">FireFox</a>.</p>
+
+<p><q>This is a quote in <q>English</q>, using normal quotes and since the main language of this site is english there is no extra language identifier.</q></p>
+
+<p><q lang="fr">Se c&#8217;est un quote en <q>Francais</q>, et i&#8217;ll y a un marker pour language. Je ne parler pas francais.</q></p>
+
+<p><q lang="de">Vis is ze quote en <q>German</q>, but I von&#8217;t speken ze German, but anyvay, vere is an extra language marker.</q></p>
+
+<blockquote cite="http://mattread.com/" lang="en"><p>This is a test blockquote and has a cite attribute of http://mattread.com/ and a lang attribute of en. You will notice the nice Source thing at the bottom of this blockquote, and the [en] language marker, which is done entirely in CSS. Pretty cool isn&#8217;t it?</p></blockquote>
+
+<p lang="fr">Now lets test a paragraph in French, <q>with a quote in french</q> and <q lang="en">a quote in english</q>. Notice the language marker before this paragraph. Ya ya, I know this isn&#8217;t French but like I said earlier, I don&#8217;t speak French very well. Again, all CSS.</p>
+
+<p>I have also added a <a href="c/print.html">print CSS file</a>, so do a print preview to see the print style of this site. Have fun, and let me know what you think. Have a look at my main <a href="c/lang.html">language CSS file</a>.</p>
+
+<p>Inspired by <a href="http://www.no2.org.uk/">James</a>.</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">Testing The Language and Pseudo Elements was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/announcements.html" rel="tag">announcements</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="carp-fair-2004.html"
+			   title="Carp Fair 2004"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="happy-talk-like-a-pirate-day.html"
+			   title="Happy Talk Like a Pirate Day">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-1613"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Testing The Language and Pseudo Elements">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/2198eb264d12b28c3854bdceaff0b7aa?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for cLin">
+				<span itemprop="name"><a href="http://www.lat3nt.net/">cLin</a></span>
+			</span>
+			<small>(<a href="#comment-1613"
+			           title="Permanent link to this comment">#1613</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2004-09-21T03:22:21-04:00">September 21<sup>st</sup>, 2004</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Hrm, that’s cool. I’ll look at it when I finish my homework  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> </p>
+			</div>
+</article>
+<article id="comment-1615"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Testing The Language and Pseudo Elements">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-1615"
+			           title="Permanent link to this comment">#1615</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2004-09-22T13:09:51-04:00">September 22<sup>nd</sup>, 2004</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Not sure which bit I inspired  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width="">  but your blog is getting better all the time.</p>
+
+<p><a href="http://1976design.com/blog/archive/2003/11/10/updates/">1976design.com</a> has the javascript for taking the cite url and putting it after blockquotes and even using the title attribute as the link text. I need to update my old blockquotes but thankfully I’d been assuming someone would do it and most of them are already working fine.</p>
+			</div>
+</article>
+<article id="comment-1616"
+		class="comment type-comment status-approved author-comment"
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="Testing The Language and Pseudo Elements">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Matt">
+				<span itemprop="name">Matt</span>
+			</span>
+			<small>(<a href="#comment-1616"
+			           title="Permanent link to this comment">#1616</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2004-09-23T01:57:55-04:00">September 23<sup>rd</sup>, 2004</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>Anonymous, It was the image:after thing  <img class="habari-smiley" alt="hahahah" src="user/plugins/tabasamu/tango/face-smile.png" height="" width=""> . Dustan’s blockquote thing is pretty cool, but I’m trying to stay away from JS. Although a linked source would be nicer.</p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-307" class="post post-307 type-entry status-published tag-announcements tag-web-design" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:20-05:00">
+<time itemprop="datePublished" datetime="2006-11-19T11:21:38-05:00">
+	19 Nov 2006</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="logo-me-this.html" itemprop="url"
+							title="Entry: Logo Me This">
+			Logo Me This</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-406" class="post post-406 type-entry status-published tag-announcements" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T23:00:48-05:00">
+<time itemprop="datePublished" datetime="2004-08-29T12:40:02-04:00">
+	29 Aug 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="gmail-x-6.html" itemprop="url"
+							title="Entry: Gmail Gmail Gmail">
+			Gmail Gmail Gmail</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="gmail-x-6.html#comments"
+		   title="4 Comments">
+			<span class="icon-bubble"></span> 4		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-446" class="post post-446 type-entry status-published tag-announcements" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T23:01:20-05:00">
+<time itemprop="datePublished" datetime="2004-06-30T18:33:28-04:00">
+	30 Jun 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="get-your-google-invite.html" itemprop="url"
+							title="Entry: Get Your GMail Invite!">
+			Get Your GMail Invite!</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="get-your-google-invite.html#comments"
+		   title="4 Comments">
+			<span class="icon-bubble"></span> 4		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-335" class="post post-335 type-entry status-published tag-announcements tag-wordpress" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:31-05:00">
+<time itemprop="datePublished" datetime="2005-06-26T17:32:34-04:00">
+	26 Jun 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="auto-links-02.html" itemprop="url"
+							title="Entry: Auto Links 0.2">
+			Auto Links 0.2</a>
+	</span>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-353" class="post post-353 type-entry status-published tag-announcements" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:40-05:00">
+<time itemprop="datePublished" datetime="2005-02-17T16:48:28-05:00">
+	17 Feb 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="change-it-good-for-you.html" itemprop="url"
+							title="Entry: Change, It&#8217;s Good For You">
+			Change, It&#8217;s Good For You</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="change-it-good-for-you.html#comments"
+		   title="9 Comments">
+			<span class="icon-bubble"></span> 9		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/testing-the-language-and-pseudo-elements by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:22 GMT -->
+</html>

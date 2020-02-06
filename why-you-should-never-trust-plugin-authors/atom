@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Why You Should Never Trust Plugins</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/why-you-should-never-trust-plugin-authors"/><link rel="edit" href="https://mattread.com/why-you-should-never-trust-plugin-authors/atom"/><id>tag:mattread.com,2009:why-you-should-never-trust-plugin-authors/1261079779</id><updated>2009-12-18T22:35:23-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:09-05:00</app:edited><published>2009-12-17T14:36:16-05:00</published><category term="security"/><content type="html">I apologize for this, but thought it would be fun. I hacked my own site! I must be good! I did this using an exploit found in a plugin for Habari. I plan on fixing this plugin very soon. If you are worried use my [Contact Form][1] to contact me about it, and I'll let you know which plugin it is. Even better, if you feel like fixing something, let me know and you can fix it for me :D.&#xD;
+&#xD;
+**Update 2:** This has [now been fixed][2] in the [AutoSave plugin][3]. The exploit could allow any cracker to post to the vulnerable site without being an authenticated user. So if any anyone is using AutoSave, you should **[update now][3]**.&#xD;
+&#xD;
+[1]: /contact&#xD;
+[2]: http://habariproject.org/en/potential-security-issue-with-the-autosave-plugin&#xD;
+[3]: http://habariproject.org/dist/plugins/autosave/autosave-0.6-0.1.2.zip</content></entry>

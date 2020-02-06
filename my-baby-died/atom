@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>My Baby Died</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/my-baby-died"/><link rel="edit" href="https://mattread.com/my-baby-died/atom"/><id>http://mattread.com/archives/2006/03/my-baby-died/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:22-05:00</app:edited><published>2006-03-04T08:37:20-05:00</published><category term="life"/><content type="html">&lt;p&gt;Yes, my computer seems to have completely died last night. It looks like bad RAM but I'm not sure. Here's what happens.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I start up, everything goes good. I log in to the machine, and KDE starts fine. But after running for about 5 minutes, apps start crashing then the whole system freezes. The screen just stops and halts right there. Sometimes all that's left on screen the desktop background; other times the whole desktop is there, frozen; other times a blank screen.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So I tried to do a hard reset, but it just keeps restarting and restarting without even showing the POST stuff to me. So I'm thinking it's a RAM problem, or maybe a PSU problem. I'm hoping it's not a CPU issue.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So I turn off and restart. Sometimes restarts fine and again runs for about 5 mins. Other times I get errors while trying to load kernel modules. Other times Linux and/or Windows just doesn't get past the loading stage. So I have to turn off, wait a few seconds then start up again.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I have tried messing the RAM BIOS settings, playing with CAS Latency, even cranking up the voltage a bit. But nothing seems to work. I've tried disconnecting the Linux drive, runing only the Windows drive, and vice versa. I've tried turning off (in BIOS) and disconnecting all USB devices. I even tried cleaning the dust out. Nothing works, not even kicking it. ;)&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I should also note that the case has good cooling and the CPU runs at a cool 47C and the system at 42C, on average.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So, do you guys have any ideas on what it might be? I have another PSU to test with, but no more DDR RAM or Athlon CPU to test with. So if you have any advice, please let me know.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;So now I sit here on this 1GHz, 128MB SDRAM scrapped together system, runing an Ubuntu Live CD, writing about my poor little computer. :( I guess I'll start with a MEMTEST.&lt;/p&gt;</content></entry>

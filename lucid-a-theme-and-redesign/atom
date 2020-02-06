@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Lucid, A Theme And Redesign</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/lucid-a-theme-and-redesign"/><link rel="edit" href="https://mattread.com/lucid-a-theme-and-redesign/atom"/><id>http://www.mattread.com/archives/2004/12/lucid-a-theme-and-redesign/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:00:00-05:00</app:edited><published>2004-12-10T13:12:08-05:00</published><category term="announcements"/><content type="html">&lt;p&gt;Say hello to Lucid, my new WordPress theme. It's still in "alpha" mode, as they say, but I thought I would give you all a preview of what it's going to be. So let's call it Lucid v0.9-alpha-6. &lt;/p&gt;
+
+&lt;p&gt;Lucid is actually more than just a theme, it's a collection of plugins and scripts, to completely style and run your site. There are many features within Lucid, but I'll just tease you for now, and tell you all about them when the official release comes out. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;There's still some stuff that i need to add, like an archive page for category views, etc., a search page, and I still need to refine some of the scripts it uses. But an official release will be out before Christmas.&lt;/p&gt;
+
+&lt;p&gt;Here is a list of some stuff I can think of right now:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;del datetime="2004-12-20T12:17:0605:00"&gt;Lock down height of the blue header to 125px.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-11T03:33:1205:00"&gt;Create archive page.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-11T03:33:1205:00"&gt;Create search page.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-19T01:08:4205:00"&gt;Make all tags non-site specific.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-11T03:33:1205:00"&gt;Get a better bullet for lists.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-19T01:08:4205:00"&gt;Style &lt;code&gt;&amp;lt;ol&amp;gt; &amp;lt;code&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;img&amp;gt;&amp;lt;b-quote&amp;gt;&lt;/code&gt;&lt;/del&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-19T01:08:4205:00"&gt;Refine "sections" script.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-11T03:33:1205:00"&gt;Add comment script.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-11T03:33:1205:00"&gt;Add and style admin bar.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-19T01:08:4205:00"&gt;Add "back-to-top" links.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del datetime="2004-12-20T12:17:0605:00"&gt;Style comments lists.&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Fix comment error script.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And that's what I can think of now. But if you see any problems or have any suggestions, please leave a comment on this post. And please let me know what you think about it, your opinions are always welcome, positive or not.&lt;/p&gt;
+</content></entry>

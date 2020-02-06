@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:articles/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2008-04-19T23:57:01-04:00</updated><link rel="alternate" href="https://mattread.com/tag/articles"/><link rel="self" href="https://mattread.com/tag/articles/atom"/><entry><title>WordPress is not PHP</title><link rel="alternate" href="https://mattread.com/wordpress-is-not-php"/><link rel="edit" href="https://mattread.com/wordpress-is-not-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=193</id><updated>2008-04-19T23:57:01-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:50:25-04:00</app:edited><published>2005-04-21T17:47:55-04:00</published><category term="web-design"/><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;There have many concerns and question about the template system used in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. Mostly the concerns are with n00bs and the complications of PHP. &#x201C;I want to change this and that, but don&amp;#8217;t know PHP&#x201D;. I hear this a lot. But the thing is, you don&amp;#8217;t need to know PHP to change the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt; in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2&gt;The Template System&lt;/h2&gt;
+
+&lt;p&gt;Lets&amp;#8217; start with &#x201C;&lt;a href="http://codex.wordpress.org/The_Loop"&gt;the Loop&lt;/a&gt;&#x201D; as we call it. Probably the most confusing part of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; for a non-programmer. The Loop looks like this:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+     //Template Section 1: post content Template Tags go here
+
+&lt;?php endwhile; else: ?&gt;;
+
+    //Template Section2: no posts found stuff here.
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It may look complicated, but it&amp;#8217;s actually quite simple. In &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;, all the posts information will be displayed. Within that section we will put all the posts &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and our HTML to format them. In &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, we will display a message telling the user no posts were found, if we find none to meet their criteria. &lt;/p&gt;
+
+&lt;h3&gt;Template Section 1: The Posts&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#8217;ll start with outputting the post tile. Simply add in the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_title() ?&amp;gt;&lt;/code&gt;. That will output the title of the post. &lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s output the date of the post. Simply add the date&amp;#8217;s &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_date() ?&amp;gt;&lt;/code&gt;. That outputs the date of the post.&lt;/p&gt;
+
+&lt;p&gt;We will also, of coarse, need the content of the actual post. Simply, again, add the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_content() ?&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together with some HTML:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;div class="post"&gt;
+    &lt;h2&gt; &lt;?php the_title() ?&gt; &lt;/h2&gt;
+    &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+    &lt;?php the_content() ?&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And there&amp;#8217;s our simple template. Now let&amp;#8217;s add some more.&lt;/p&gt;
+
+&lt;p&gt;First let&amp;#8217;s add a link to the post, permalink as it&amp;#8217;s called, on the title. We get the actual URL, something like &lt;code class="html"&gt;http://mysite.com/archives/2004/09/post-title/&lt;/code&gt;, with the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_permalink() ?&amp;gt;&lt;/code&gt;. We will need to put that in our &lt;code class="html"&gt;&amp;lt;a href=&#x201D;&#x201D;&amp;gt;&lt;/code&gt; HTML tag.&lt;/p&gt;
+
+&lt;p&gt;We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;, &lt;code class="html"&gt;&amp;lt;?php link_pages('&amp;lt;p&amp;gt;','&amp;lt;/p&amp;gt;') ?&amp;gt;&lt;/code&gt;. Now here&amp;#8217;s another confusion people have. We&amp;#8217;ve added in, what programmers would call, arguments to our &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. That is, we&amp;#8217;ve added in &lt;code class="html"&gt;'&amp;lt;p&amp;gt;', '&amp;lt;/p&amp;gt;'&lt;/code&gt; to the brackets of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. In this case we are just saying, if there are pages to link, output the page links with a &lt;code class="html"&gt;&amp;lt;p&amp;gt;&lt;/code&gt; at the start, and a &lt;code class="html"&gt;&amp;lt;/p&amp;gt;&lt;/code&gt; at the end. Hence, enclosing it all in HTML paragraph tags. Most &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; have different arguments you can pass to them, causing them to format their output differently.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s add in our new tags.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;div class=&#x201D;post&#x201D;&gt;
+  &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+  &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+  &lt;?php the_content() ?&gt;
+
+  &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now we have a fully functional Posts section, &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;. Let&amp;#8217;s move on to &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Template Section 2: No Posts Found&lt;/h3&gt;
+
+&lt;p&gt;For our &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&amp;#8217;s use the following simple HTML:&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together.&lt;/p&gt;
+
+&lt;h3&gt;Complete Template&lt;/h3&gt;
+
+&lt;p&gt;Putting all we learned above together, we get a nice simple &lt;a href="http://codex.wordpress.org/The_Loop"&gt;Loop&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+    &lt;div class=&#x201D;post&#x201D;&gt;
+        &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+        &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+        &lt;?php the_content() ?&gt;
+
+        &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+    &lt;/div&gt;
+
+&lt;?php endwhile; else: ?&gt;
+
+    &lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we have done no PHP coding, just some simple HTML with &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; Template Tags added in.&lt;/p&gt;
+
+&lt;p&gt;Obviously this is not a complete template, as we have no header and footer containing all the &lt;code class="html"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;body&amp;gt;&lt;/code&gt; tags. But with some simple HTML and more &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and no PHP, we can easily add all that is needed for a complete HTML document. That&amp;#8217;s right, an HTML document, not a PHP script.&lt;/p&gt;
+
+&lt;p&gt;As we can see &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is not PHP. &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &amp;#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&amp;#8217;t know why, &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; is extremely easy and requires no knowledge of PHP at all.&lt;/p&gt;
+
+&lt;p&gt;Changing the format and style of your &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. &lt;/p&gt;
+
+&lt;p&gt;However, as with any software, there is room for improvement.&lt;/p&gt;
+
+&lt;h2&gt;Improving Templates&lt;/h2&gt;
+
+&lt;p&gt;One of the problems with the &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template System&lt;/a&gt;, in my opinion, is the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;, or theme, itself. Specifically the sidebar, with all the &lt;code class="html"&gt;is_*()&lt;/code&gt; functions. We shouldn&amp;#8217;t expect a novice &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; user to understand what these functions mean. I would suggest removing all the &lt;code class="html"&gt;if(is_*())&lt;/code&gt; statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see with the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see is with some of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;. Such as &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt;. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, &lt;code class="html"&gt;&amp;lt;?php blog_name() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_description() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_url() ?&amp;gt;&lt;/code&gt;, etc., to maintain consistency. For some of the less used information, charset, version, etc., the &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt; tag would be fine.&lt;/p&gt;
+
+&lt;p&gt;And some of the other advanced &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; in use in the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, like &lt;code class="html"&gt;&amp;lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&amp;gt;&lt;/code&gt;, should be simplified to not contain all those arguments. Maybe use &lt;code class="html"&gt;&amp;lt;?php wp_list_cats() ?&amp;gt;&lt;/code&gt; where all those settings would be set in the admin area.&lt;/p&gt;
+
+&lt;p&gt;It would also be nice to try to simplify the loop, although I can&amp;#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.&lt;/p&gt;
+
+&lt;p&gt;The point I&amp;#8217;m trying making is to take the PHP out of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, as much as possible, so users don&amp;#8217;t get confused and think they need PHP skills to modify the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Those are just my thoughts on the matter.&lt;/p&gt;
+
+&lt;p&gt;If you need any help with your templates, or would like to learn more about the monkey, I&amp;#8217;d be glad to help out. Just &lt;a href="/contact/"&gt;drop me a line&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Faking Two Column Text</title><link rel="alternate" href="https://mattread.com/faking-two-column-text"/><link rel="edit" href="https://mattread.com/faking-two-column-text/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=214</id><updated>2008-04-17T21:55:49-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:58:33-04:00</app:edited><published>2005-10-12T11:32:32-04:00</published><category term="web-design"/><category term="web-applications"/><category term="articles"/><category term="internet"/><content type="html">&lt;p&gt;One of the many exciting features of CSS 3 is the ability to create columnar text. In this article I will show you a way to fake two column text with a little Javascript. &lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;First off we need to stipulate that this hack will only work with textual information contained in HTML paragraph tags (&amp;#060;p&amp;#062;&amp;#060;/p&amp;#062;).&lt;/p&gt;
+
+&lt;p&gt;To use the script all you need to do is &lt;a href="#download"&gt;download the script&lt;/a&gt; and include it in the head of your document.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;script type="text/javascript" src="two-col.js"&gt;&lt;/script&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To designate which text will be columnar we will put it in a layer with an id attribute of &amp;#8220;two-col&amp;#8221; like below. And that&amp;#8217;s all you need to do to use the script.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;div id="two-col"&gt;
+    &lt;p&gt;The information here will be displayed as two columns.
+    This will be the first of two Paragraphs&lt;/p&gt;
+    &lt;p&gt;Here is the second paragraph in our columnar
+    data.&lt;/p&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;The Script And The Problems&lt;/h3&gt;
+
+&lt;p&gt;The script works by grabbing all the HTML inside the &amp;#8220;two-col&amp;#8221; element and splitting into an array, by spaces, using javascripts built in split function. Then we loop through our new array and place half the words in the left column and the other half in the right column. Of coarse splitting the HTML in half causes a few problems. &lt;/p&gt;
+
+&lt;p&gt;First, if a tag is located in the middle of the data, it can split that tag in two. This is quite bad but can be overcome by formatting the content so it doesn&amp;#8217;t occur. Maybe in a latter version of the script I&amp;#8217;ll try to address this problem.&lt;/p&gt;
+
+&lt;p&gt;Second, because we are spiltting the content into two, we end up spiltting a paragraph into two paragraphs, creating a new paragraph out of part of the original. This is unfortunate but necessary for proper styling with CSS.&lt;/p&gt;
+
+&lt;p&gt;But if everything works right we get our two column text.&lt;/p&gt;
+
+&lt;h3&gt;Example of Two Column Text&lt;/h3&gt;
+
+&lt;div id="two-col"&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse imperdiet, erat quis tempus euismod, mi quam faucibus nibh, ac ullamcorper erat velit in nisl. In eget elit. Sed pede quam, eleifend facilisis, lobortis a, sagittis non, eros. Aliquam erat volutpat.&lt;/p&gt;
+
+&lt;p&gt;Praesent mauris magna, laoreet id, venenatis in, suscipit vitae, nisl. Aenean rutrum convallis nunc. Suspendisse pharetra placerat felis. In eget ipsum pretium nunc dignissim aliquet. Nulla ligula. Sed nulla lorem, dapibus in, malesuada sed, ultrices id, nunc. &lt;/p&gt;
+
+&lt;p&gt;Proin feugiat neque a orci. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec dolor id neque aliquet mattis. Mauris leo eros, elementum eget, varius ultricies, vehicula non, lorem. Nam eget neque id lacus imperdiet tincidunt. Aliquam eu augue.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Free MP3 Encoding on Windows Media Player XP</title><link rel="alternate" href="https://mattread.com/free-mp3-encoding-wmp"/><link rel="edit" href="https://mattread.com/free-mp3-encoding-wmp/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/03/free-mp3-encoding-wmp/</id><updated>2007-06-09T04:51:19-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-10-09T14:14:07-04:00</app:edited><published>2004-03-04T21:04:22-05:00</published><category term="articles"/><content type="html">&lt;p&gt;The information in this article applies only to: Microsoft Windows Media Player for Windows XP &lt;/p&gt;
+
+&lt;p&gt;Windows Media Player for Windows XP has MP3 encoding plug-in support. To enable the Windows Media Player to encode MP3 files, you must download and install a compatible MP3 encoder. Windows Media Player supports only Audio Compression Manager (ACM) functions to communicate with the MP3 encoders. Therefore, the codec must be an ACM codec. I use the Fraunhaufer Pro ACM MP3 Codec. you can get it, like all other files, from my site.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;MP3 Compression Only. Windows Media Player for Windows XP supports only plugging in an MP3 encoder. Using any other compression creates invalid MP3 files. Therefore, the only compression support that is provided by the codec is for MP3. The codec accept only raw data and output-compressed data. &lt;/p&gt;
+
+&lt;p&gt;Windows does already come with the Fraunhaufer Standard ACM MP3 Codec (L3CODECA.ACM) but it only supports very low bitrates, unacceptable for music. So get the good one from my site.&lt;/p&gt;
+
+&lt;h3&gt;Installation &lt;/h3&gt;
+
+&lt;p&gt;Thanks to &lt;a href="http://www.impactmediaworks.com/"&gt;Justin Leoni&lt;/a&gt; there is now an &lt;a href="http://www.impactmediaworks.com/files/imp3-setup.exe"&gt;installer&lt;/a&gt; that does all the work for you. Or, to do it the manual way, continue reading.&lt;/p&gt;
+
+&lt;p&gt;All you need to do after obtaining the ACM Codec is to copy your Preferred Codec (L3CODECP.ACM, LAMEACM.ACM, etc.) to the windows system32 directory, &#x201C;c:/windows/system32/&#x201D;. Thats the simple part, but don&amp;#8217;t worry the rest is easy. Now we edit that registry.&lt;/p&gt;
+
+&lt;p&gt;You must have administrator rights on the computer to change any of the registry settings. But before we do that we need to know a few things. &lt;/p&gt;
+
+&lt;h3&gt;A Few things about MP3&lt;/h3&gt;
+
+&lt;p&gt;Every MP3 files has two settings, the Bit Rate and The Sample Rate.&lt;/p&gt;
+
+&lt;p&gt;The Bit Rate is measured in kilobytes per second (KBps). Everyone who has heard of MP3&amp;#8217;s knows about this. Higher quality music has higher bit rates. eg. most MP3&amp;#8217;s on the internet are encoded at 96 - 128 kBps, this is lower quality but has quite small file sizes and is good for sharing over the internet. Higher quality MP3&amp;#8217;s generally use 192 kBps, This is what I like because it gives a good balance between quality and size. And those audiophiles amongst us use 256 kBps or higher.&lt;/p&gt;
+
+&lt;p&gt;The second Thing is the Sample Rate. This is the frequency at which the music is recorded. I&amp;#8217;m no audio engineer but the higher this value is, the more &amp;#8220;analog-like&amp;#8221; (better) your music will be. CD&amp;#8217;s are recorded at 44.1 Kilohertz (kHz) (1kHz = 1000 cycles/second). Music off of your DVD Movies is recorded at 48 kHz. And the new DVD Audio is encoded at 96 kHz, and in my opinion sounds just as good as a high quality vinyl record.&lt;/p&gt;
+
+&lt;p&gt;Now that we know this lets make a few decisions. If we set our Codec Settings for 96 kHz, it sounds cool, but is a wast since we are using lossy compression and CD&amp;#8217;s are at best recorded at 44.1 kHz. So our first decision is to use a sample rate of 48 kHz. You say, why not 44.1, well, why not 48. Not much difference there.&lt;/p&gt;
+
+&lt;p&gt;Our second decision is to choose FOUR bitrates. Windows Media Player XP only supports four different bitrates. I find that the good choice here is 96, 128, 192, and 256 kBps. You&amp;#8217;ll probably only use one, so just pick what you like best, then pick one higher and one lower. You&amp;#8217;ll have to play around here to find out what your codec supports. As I say though, I know the Fraunhaufer supports 128, 192, and 256 kBps @ 48 kHz, it gives a good range.&lt;/p&gt;
+
+&lt;p&gt;Also note the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;1 kHz = 1000 Hz&lt;/li&gt;
+  &lt;li&gt;1 kBps = 1000 Bps&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Editing the Registry&lt;/h3&gt;
+
+&lt;p class="warning"&gt;&lt;strong&gt;WARNING:&lt;/strong&gt; If you use Registry Editor incorrectly, you may cause serious problems that may require you to reinstall your operating system. Microsoft cannot guarantee that you can solve problems that result from using Registry Editor incorrectly. Use Registry Editor at your own risk. Blah, Blah, Blah, Lets Hack&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;The following registry key should be created:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE/Software/Microsoft/MediaPlayer/Settings/MP3Encoding&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following values may be set:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; DWORD value: LowRate (datarate)
+ DWORD value: LowRateSample (Sample)
+ DWORD value: MediumRate (datarate)
+ DWORD value: MediumRateSample (Sample)
+ DWORD value: MediumHighRate (datarate)
+ DWORD value: MediumHighRateSample (Sample)
+ DWORD value: HighRate (datarate)
+ DWORD value: HighRateSample (Sample)
+ String: PreferredCodecName (codec name)
+ String: PreferredCodecPath (codec path)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Don&amp;#8217;t worry I&amp;#8217;ll walk you through it. First we need to start the registry editor. Just go the the Start Menu, click Run, the type &amp;#8220;regedit&amp;#8221; and click enter.&lt;/p&gt;
+
+&lt;h4&gt;Creating The Key&lt;/h4&gt;
+
+&lt;p&gt;Now navigate to &lt;code&gt;HKEY_LOCAL_MACHINE/Software/Microsoft/MediaPlayer/Settings&lt;/code&gt;, just like exploring your folders, and create a new key in that folder called &amp;#8220;MP3Encoding&amp;#8221;. To create a new key click on the settings folder then go, Edit -&gt; new -&gt; key, and name it &amp;#8220;MP3Encoding&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/user/files/Freemp3_key.jpg" class="center"&gt;&lt;/p&gt;
+
+&lt;h4&gt;Creating The DWORD Values&lt;/h4&gt;
+
+&lt;p&gt;Now open the folder &amp;#8220;MP3Encoding&amp;#8221; and create a &amp;#8220;DWORD value&amp;#8221; named &amp;#8220;LowRate&amp;#8221;. Create it the same way as the &amp;#8220;key&amp;#8221; but go, Edit -&gt; new -&gt; DWORD value. Also create a &amp;#8220;DWORD value&amp;#8221; named LowRateSample the same way. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/user/files/Freemp3_dword.jpg" class="center"&gt;&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;&lt;img src="/user/files/Freemp3_both.jpg" class="center"&gt;&lt;figcaption&gt;both are entered&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;Now Double Click on the LowRate DWORD value, and set the value data to the lowest bit rate you selected earlier. ie. if you chose 96 kBps then enter 96000 in value data. Everything you enter is in terms of Bps. And enter it as a Decimal NOT Hexadecimal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/user/files/Freemp3_rate.jpg" class="center"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now repeat the same process for the &amp;#8220;LowRateSample&amp;#8221; using 48000 as your value data. Everything you enter is in terms of Hz. And again as a Decimal NOT Hexadecimal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/user/files/Freemp3_sample.jpg" class="center"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now repeat the same for MediumRate, MediumRateSample, MediumHighRate, MediumHighRateSample, HighRate and HighRateSample.&lt;/p&gt;
+
+&lt;h4&gt;Creating The Strings&lt;/h4&gt;
+
+&lt;p&gt;Now you have to create two strings &amp;#8220;PreferredCodecName&amp;#8221; and &amp;#8220;PreferredCodecPath&amp;#8221;. You should know how to create a string now, same as DWORD but choose string. The PreferredCodecName is the name of the encoder that will show on Windows Media Player. You use what ever you want. The PreferredCodecPath must be set to &amp;#8220;C:&amp;#92;WINDOWS&amp;#92;system32&amp;#92;L3CODECP.ACM&amp;#8221;, or what ever the filename of your codec is.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;&lt;img src="/user/files/Freemp3_done.jpg" class="center"&gt;&lt;figcaption&gt;you should have something like this when your done&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p class="note"&gt;&lt;strong&gt;Note &lt;/strong&gt;that the value for PreferredCodec is limited to 255 characters. The PreferredCodecPath key must contain the fully-qualified path to the location of the codec as well as the file name of the codec. &lt;/p&gt;
+
+&lt;h3&gt;Finally&lt;/h3&gt;
+
+&lt;p&gt;Just go in to the Windows Media Player options, were you are able to choose the encoder (ie. WMA Losless &amp;#8230; ), and you should see your new encoder there with the bitrate settings your setup earlier.&lt;/p&gt;
+
+&lt;ul class="download"&gt;
+&lt;li&gt;&lt;a href="/user/files/l3codecp.zip"&gt;L3CODECP &lt;i class="icon-box-add"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>PNG Images, A MSIE Fix</title><link rel="alternate" href="https://mattread.com/png-background-fix"/><link rel="edit" href="https://mattread.com/png-background-fix/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/08/png-background-fix/</id><updated>2007-04-06T14:58:22-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:00:57-05:00</app:edited><published>2004-08-08T21:57:23-04:00</published><category term="articles"/><content type="html">&lt;p&gt;This small and easy script will fix the problem with transparent backgrounds in Portable Network Graphics (PNG) in Microsoft Internet Explorer (MSIE). It uses a small script, which you call in your Cascading Style Sheet (CSS) with a behavior attribute.  Note that this will only work for images defined with the img tag, and will not work for CSS backgrounds.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h3&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;You might be asking yourself, &amp;#8220;why would a Linux guy like Matt care about MSIE?&amp;#8221;. Well, the short answer is, 52% of the viewers of this website use MSIE, so we all have to account for it&amp;#8217;s shortcomings. &lt;/p&gt;
+
+&lt;p&gt;MSIE has always had problems rendering PNG images properly. The issue is with alpha channels in transparent PNG images. MSIE, in all it&amp;#8217;s glory, displays the transparent background as a solid gray or black background. &lt;/p&gt;
+
+&lt;p&gt;Microsoft (M$) has been promising to fix this issue for about five years now, but has yet to do so. There is a &lt;a href="http://www.petitiononline.com/msiepng/petition.html"&gt;petition&lt;/a&gt; to force M$ to fix the problem, so please go sign the &lt;a href="http://www.petitiononline.com/msiepng/petition.html"&gt;petition&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, let&amp;#8217;s get started. &lt;/p&gt;
+
+&lt;h3&gt;Configuration&lt;/h3&gt;
+
+&lt;p&gt;There is only two small files on the tweak, and some small CSS to implement. &lt;/p&gt;
+
+&lt;p&gt;First, upload the file, &lt;code&gt;blank.gif&lt;/code&gt;, to a directory of your choosing. Now open up &lt;code&gt;pngbehavior.htc&lt;/code&gt; and change the path of &lt;code&gt;blank.gif&lt;/code&gt; to were you uploaded it, and make sure you use an absolute path here. So if you uploaded to the directory /images/ then it would be:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;line 29:    var blankSrc = "/images/blank.gif";
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Second, after saving, upload the file, &lt;code&gt;pngbehavior.htc&lt;/code&gt;, to a directory of your choosing. Remember the directory, because we will need it later. &lt;/p&gt;
+
+&lt;p&gt;Then, we need to set a CSS &amp;#8220;class&amp;#8221; or &amp;#8220;id&amp;#8221; for the images, to define them in CSS. Or we can use some other way to define them in our CSS. &lt;/p&gt;
+
+&lt;h3&gt;Using the Script&lt;/h3&gt;
+
+&lt;p&gt;I think the easiest way to show you how to use this tweak is with examples. so here are a four examples to get you started. &lt;/p&gt;
+
+&lt;h4&gt;Example 1&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div id="article"&amp;gt; 
+  &amp;lt;img src="image.png" alt="image" width="20" height="20" /&amp;gt; 
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#article img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  } 
+
+NOTE: The #article img CSS will define all images in the "article" &amp;lt;div&amp;gt;.
+Consult your CSS manual for more information.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the behavior attribute. This attribute calls the script which fixes the background problems. I hope you remembered the path to the script, as this is where you put it.  &lt;/p&gt;
+
+&lt;p&gt;Second, notice the padding of 0. YOU NEED TO HAVE THIS, since the script replaces the image with a CSS background, and any padding will cause the image to be enlarged and distorted. &lt;/p&gt;
+
+&lt;p&gt;Finally, notice the XHTML above. The &amp;#8220;height&amp;#8221; and &amp;#8220;width&amp;#8221; attribute are defined. YOU ALSO NEED THIS, since without it the script will not know what size the image is, and the image will be distorted. &lt;/p&gt;
+
+&lt;p&gt;Now that I&amp;#8217;ve shown you the basics the next three examples will elaborated on them. &lt;/p&gt;
+
+&lt;h4&gt;Example 2&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" width="20" height="20" class="png" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.png { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The behavior and padding CSS attributes are as before, and the image XHTML has the &amp;#8220;height&amp;#8221; and &amp;#8220;width&amp;#8221; defined as well. &lt;/p&gt;
+
+&lt;h4&gt;Example 3&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" width="20" height="20" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example we have not defined any &amp;#8220;class&amp;#8221; or &amp;#8220;id&amp;#8221;, nor have we got it in a defining &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;. The beauty of this script is that, if the image is not a PNG, such as JPG, GIF, etc., it will not apply anything to the image, just leave it alone. &lt;/p&gt;
+
+&lt;p&gt;So, in our CSS, we will just define all images to use the behavior. Again notice the behavior, padding, height and width as in example 1. &lt;/p&gt;
+
+&lt;h4&gt;Example 4&lt;/h4&gt;
+
+&lt;p&gt;Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src="image.png" alt="iamge" class="png" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For this XHTML we will need the following CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.png { 
+  behavior: url( path/to/pngbehavior.htc );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;padding: 0; 
+   height: 20px; 
+   width 20px; 
+   } &lt;/p&gt;
+
+&lt;p&gt;Wait, you say, you told me I needed to have the height and width in the XHTML. Well, I lied, you will notice that I am defining the width and height in the CSS. Either way, CSS or XHTML, will work. This method is good for multiple instances of the same image, like the comment icons on my home page. And notice that the other attributes are the same. &lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Now that I&amp;#8217;ve shown you many ways of using this tweak, you should have no problem&amp;#8217;s implementing it on your site. Should you have any changes, problems or suggestion, please leave a comment on this post. &lt;/p&gt;
+
+&lt;p&gt;One last thing to note. The behavior attribute is invalid CSS, so it will invalidate your CSS, duh. However, the behavior attribute is only recognized by MSIE, and will not affect your CSS layout in other browsers like FireFox.&lt;/p&gt;
+
+&lt;h3&gt;Download and License&lt;/h3&gt;
+
+&lt;p&gt;See the blue box below for download and license information.&lt;/p&gt;
+</content></entry><entry><title>Preview Drafts Plugin 1.1</title><link rel="alternate" href="https://mattread.com/preview-drafts-plugin"/><link rel="edit" href="https://mattread.com/preview-drafts-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=201</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-06-14T19:50:52-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;Introducing the Preview Drafts Plugin version 1.1. This little plugin will allow you preview any Post or Draft in your current theme. The post/draft MUST be saved, as a post or a draft, before you can preview it. I had released this plugin earlier, but never mentioned it here, so I decided to update it a bit.&lt;/p&gt;
+</content></entry><entry><title>Auto Links Discovery Plugin 0.1</title><link rel="alternate" href="https://mattread.com/auto-links-discovery-plugin"/><link rel="edit" href="https://mattread.com/auto-links-discovery-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=199</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-06-06T17:41:31-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will try to automatically fill in the information (title, description, URI&amp;#8217;s) of new sites you add to the WordPress Link Manager. Simply enter in the URI, click go, and the plugin will try to find a RSS feed. From the RSS feed it will get the Site Name, Description, URI, and RSS URI. If it can&amp;#8217;t find the RSS feed, then it will just get the HTML title of the site.&lt;/p&gt;
+</content></entry><entry><title>More Smilies Plugin 1.2</title><link rel="alternate" href="https://mattread.com/more-smilies-plugin"/><link rel="edit" href="https://mattread.com/more-smilies-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/04/more-smilies-plugin/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:32-05:00</app:edited><published>2005-04-18T17:32:40-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;I wrote this plug-in because I didn&amp;#8217;t like the default WordPress smilies :-), and thought it would be great if we could have &amp;#8220;packages&amp;#8221; of smilies that you could choose from. So here it is, a plug-in that allows you to choose between different sets of smilies. Hopefully there will be many people that do up some great smilies packages. 8-) &lt;/p&gt;
+</content></entry><entry><title>Spam Karma 2 Stats 1.2</title><link rel="alternate" href="https://mattread.com/spam-karma-2-stats"/><link rel="edit" href="https://mattread.com/spam-karma-2-stats/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/spam-karma-2-stats/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:33-05:00</app:edited><published>2005-03-18T18:41:41-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will add the &lt;a href="http://unknowngenius.com/blog/wordpress/spam-karma/dev/"&gt;Spam Karma 2&lt;/a&gt;  spam count message, as Spam Karma 1 did, to the footer of your page. For the default message, all that is required is the installation of the plugin, but you can customize the message. &lt;/p&gt;
+</content></entry><entry><title>Custom Query String Plugin 2.2</title><link rel="alternate" href="https://mattread.com/custom-query-string-plugin"/><link rel="edit" href="https://mattread.com/custom-query-string-plugin/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/custom-query-string-plugin/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:34-05:00</app:edited><published>2005-03-13T16:52:35-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin, only for WP 1.5, will allow you to set the number posts to show for all the different &amp;#8220;query views&amp;#8221; and each your categories in WordPress. You can choose how many posts or days, and what to order them by, for any of the queries and/or categories. All this easily set from an options page within the admin area. &lt;/p&gt;
+
+&lt;p&gt;Find out more at the &lt;a href="http://mattread.com/projects/custom-query-string-plugin/"&gt;project page&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>WP Admin Bar 2.2</title><link rel="alternate" href="https://mattread.com/wp-admin-bar-20"/><link rel="edit" href="https://mattread.com/wp-admin-bar-20/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/wp-admin-bar-20/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:35-05:00</app:edited><published>2005-03-11T15:43:42-05:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;&lt;a href="/projects/wp-plugins/wp-admin-bar-20/"&gt;This plugin&lt;/a&gt; will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in.&lt;/p&gt;
+</content></entry><entry><title>Referrer Karma Stats 1.3</title><link rel="alternate" href="https://mattread.com/rk-stats"/><link rel="edit" href="https://mattread.com/rk-stats/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/03/rk-stats/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:35-05:00</app:edited><published>2005-03-02T15:34:18-05:00</published><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;I wrote this small plugin to output the total number of blocked referrers from &lt;a href="http://unknowngenius.com/blog/wordpress/ref-karma/"&gt;Referrer Karma&lt;/a&gt;. It is a very small and easy plugin and will only require the addition of a small template tag. The plugin will also add a link to the RK setup page within the WordPress admin area. &lt;/p&gt;
+</content></entry><entry><title>Playstation 2 Disc Read Error Fix</title><link rel="alternate" href="https://mattread.com/ps2-disc-read-error-fix"/><link rel="edit" href="https://mattread.com/ps2-disc-read-error-fix/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/01/ps2-disc-read-error-fix/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:02:08-05:00</app:edited><published>2004-01-06T07:37:54-05:00</published><category term="articles"/><category term="hardware"/><content type="html">&lt;p&gt;I found this article over at Tweak3D.net. It will guide you through the complete proccess of repairing that annoying disc read error that sometimes happens to older PS2&amp;#8217;s. I&amp;#8217;ve had good results, and so have many others. Let me know how it goes for you&lt;/p&gt;
+
+&lt;blockquote cite="http://www.tweak3d.net/tutorials/hardware-repair/playstation-2-repair"&gt;&lt;p&gt;This guide will walk you through the process of repairing a malfunctioning Playstation 2 or one that gives you Disc Read Errors (called &amp;#8220;DRE&amp;#8221; from here on). I have tested this process on two Playstation 2s now and it completely fixed the errors both were experiencing. The model # was SCPH-30001 on both units, but the process should be the same for others. &lt;!--more--&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;You can read the entire article over at &lt;a href="http://www.tweak3d.net/articles/ps2repair/"&gt;Tweek3D.net&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Fix Your Blurry Monitor or TV</title><link rel="alternate" href="https://mattread.com/blurry-monitor-fix"/><link rel="edit" href="https://mattread.com/blurry-monitor-fix/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/12/blurry-monitor-fix/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:48:31-04:00</app:edited><published>2004-06-05T08:31:45-04:00</published><category term="articles"/><category term="hardware"/><content type="html">&lt;p&gt;I found this article on TweakHardware.com. It will walk you through adjusting the focus on that old computer monitor. It will also help you adjust the color and brightness of your monitor. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;blockquote cite="http://www.tweakhardware.com"&gt;&lt;p&gt;Many monitors display an unnecessarily bad picture quality. Several older monitors suffer from showing a very dark and blurry image. But it doesn&amp;#8217;t have to be this way! With a little knowledge and a couple of screwdrivers, we can make adjustments to achieve a sharper and/or brighter image.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The process is quite simple, but requires you to take the back cover off of your monitor. This is usually very simple and requires only a small screw driver. The guide on Tweak Hardware will walk you through the complete process.&lt;/p&gt;
+
+&lt;p class="warning"&gt;&lt;strong&gt;Warning:&lt;/strong&gt; This tweak, if not done properly, can cause serious injury and possibly &lt;b&gt;death&lt;/b&gt; to you and your monitor. Use at your own risk&lt;/p&gt;
+
+&lt;h2&gt;My Experience&lt;/h2&gt;
+
+&lt;p&gt;I have done this to my old Magitronic monitor and it worked great. My monitor went from a blurry piece of garbage to a monitor that looked almost brand new. The process was a bit different on my monitor, the focus and brightness potentiometers were located in different positions, but worked exactly the same. I would not recommend playing with the color potentiometers unless it&amp;#8217;s really screwed up. &lt;/p&gt;
+
+&lt;p&gt;After fixing my monitor, I thought I would try it on my old TV, and it worked the same way. My TV was really screwed up and the colors were way off, so I adjusted the color potentiometers and finally got it to work. It takes very long to get the color right, since there&amp;#8217;s three adjustments, red, green and blue, so expect to take some time if you plan on adjusting the color. And also try many source for testing the color. ie. DVD, Video Game, VHS, Satellite, Regular TV, etc. &lt;/p&gt;
+
+&lt;p&gt;To just adjust the focus and brightness it took me about 20 minutes, after I figured everything out, so why not fix your broken computer monitor or TV for free. &lt;/p&gt;
+
+&lt;h2&gt;Link to the Article&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://web.archive.org/web/20030217070144/http://www.tweakhardware.com/guide/tweakmonitor/" rel="external"&gt;tweakhardware.com/guide/tweakmonitor/&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>WordPress Admin Bar Plugin vo.5</title><link rel="alternate" href="https://mattread.com/wp-admin-bar"/><link rel="edit" href="https://mattread.com/wp-admin-bar/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://www.mattread.com/archives/2004/12/wordpress-admin-bar-plugin-vo5/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-23T16:33:23-04:00</app:edited><published>2004-09-13T08:26:31-04:00</published><category term="wordpress"/><category term="articles"/><content type="html">&lt;p&gt;This plugin will add a bar at the top of your template file with links to the admin sections of WordPress. However it will only add this bar for users that are logged in and have a user level equal to, or above 1.&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p class="note"&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;a href="http://mattread.com/archives/2005/03/wp-admin-bar-20/"&gt;Version 2&lt;/a&gt; of this plugin is now available for WordPress 1.5. For WordPress 1.2 use this version.&lt;/p&gt;
+
+&lt;h3&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;To install the script just unpack the archive (link below) and upload the file &lt;code&gt;admin-bar.php&lt;/code&gt; to the plugins folder. Then activate the plugin in the admin area. Then add the following code JUST AFTER THE &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag in your template (&lt;code&gt;index.php&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;&lt;?php admin_bar(); ?&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s it, easy isn&amp;#8217;t? Damn, WordPress is good.&lt;/p&gt;
+
+&lt;p&gt;Actually, that&amp;#8217;s not quite it. If you have removed the &lt;code&gt;wp_head();&lt;/code&gt; function from the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; of your XHTML, then read read the following Style Sheet section, if not skip the Style Sheet section.&lt;/p&gt;
+
+&lt;h3&gt;Style Sheet&lt;/h3&gt;
+
+&lt;p&gt;To get the admin bar to display properly, I have added some CSS to the plugin. If you have removed the &lt;code&gt;wp_head();&lt;/code&gt; function from the &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; however, the CSS won&amp;#8217;t be added. So you will have to add it yourself. The admin bar is contained in a list, &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; and has the id &lt;code&gt;#admin&lt;/code&gt;. So you could write your own CSS or use, or modify, the following default CSS:&lt;/p&gt;
+
+&lt;pre class="highlight css"&gt;#admin {
+z-index: 20;
+width: 100%;
+margin: 0;
+background: #666;
+border-bottom: 2px solid #fff;
+color: #fff;
+font-size: 12px;
+font-family: verdana, sans-serif;
+text-align: center;
+}
+
+#admin li {
+display: inline;
+padding: 5px;
+}
+
+#admin li a {
+color: #eee;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+#admin li a:hover {
+color: #bbb;
+text-decoration: none;
+}&lt;/pre&gt;
+
+&lt;p&gt;And after adding that CSS your done and ready to use the plugin. Have fun.&lt;/p&gt;
+
+&lt;h3&gt;Features&lt;/h3&gt;
+
+&lt;p&gt;The following is a list of links shown for the different user levels.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;level 10: Write, Edit, Links, Users, Profile, Options and Admin Area&lt;/li&gt;
+&lt;li&gt;level 5: Write, Edit, Links, Users, Profile and Admin Area&lt;/li&gt;
+&lt;li&gt;level 4: Write, Edit, Users, Profile and Admin Area&lt;/li&gt;
+&lt;li&gt;level 1: Write, Edit, Profile and Admin Area&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you are view a single post the &amp;#8220;Edit&amp;#8221; link will appear as &amp;#8220;Edit This Post&amp;#8221; and take you to the edit section for that post. &amp;#8220;Admin Area&amp;#8221; is just a link to the default section, Write.&lt;/p&gt;
+
+&lt;h3&gt;Future Plans&lt;/h3&gt;
+
+&lt;p&gt;I&amp;#8217;m thinking that I will add a link to the Categories admin, and when your are viewing posts in a category, link to the edit category. I&amp;#8217;m also thinking of adding a notice for when new comments have been made.&lt;/p&gt;
+
+&lt;p&gt;If you have any ideas for the admin bar please leave a comment below. Thanks.&lt;/p&gt;
+</content></entry></feed>

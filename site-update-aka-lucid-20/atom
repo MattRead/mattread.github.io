@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Site Update (aka Lucid 2.0)</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/site-update-aka-lucid-20"/><link rel="edit" href="https://mattread.com/site-update-aka-lucid-20/atom"/><id>http://mattread.com/?p=209</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:31-05:00</app:edited><published>2005-06-20T07:12:18-04:00</published><category term="life"/><content type="html">&lt;p&gt;I've updated the look and feel of this site a bit. Not much has changed, but the colours are much nicer now. You'll also notice the brand new header. Let me tell you about a couple of the features. &lt;!--more--&gt; &lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;I've added, what I call, header modules. Click on the Contact, or Options link and you'll see them load right in front of you in the header. It's all done with Ajax, and won't work in IE. But does anyone really use IE anymore? I would like to hear any opinions you have about the usability/functionality of this, leave me a comment.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;There is also the RSS News Ticker in the header (that dark blue bar). Click on the arrow link and type in the URI of any RSS feed you want to display there. It will save your settings in a cookie so each time you visit, it remebers your last choice. This is really more of an experiment than actually something useful. But still "neat".&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Also, all of my plugins now have a permanent page in the &lt;a href="/projects/" title="View all fo my coding projects."&gt;Projects section&lt;/a&gt;. Now you can easily find any and all of my plugins.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;And as the title implies, this may be released as lucid 2.0. Just maybe.&lt;/p&gt;</content></entry>

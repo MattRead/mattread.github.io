@@ -1,0 +1,643 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:atom/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2016-03-11T23:43:40-05:00</updated><link rel="alternate" href="https://mattread.com/"/><link rel="self" href="https://mattread.com/atom/1"/><link rel="first" href="https://mattread.com/atom/1/page/1" type="application/atom+xml" title="First Page"/><link rel="next" href="https://mattread.com/atom/1/page/2" type="application/atom+xml" title="Next Page"/><link rel="last" href="https://mattread.com/atom/1/page/9" type="application/atom+xml" title="Last Page"/><entry><title>New PGP/GnuPG Key</title><link rel="alternate" href="https://mattread.com/new-gpg-key"/><link rel="edit" href="https://mattread.com/new-gpg-key/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2016:new-gpg-key/1457757554</id><updated>2016-03-11T23:43:40-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2016-03-23T19:21:23-04:00</app:edited><published>2016-03-11T23:37:11-05:00</published><content type="html">&lt;p&gt;I revoked my previous &lt;a href="http://pgp.mit.edu/pks/lookup?op=get&amp;amp;search=0xD404D2C00676CEF9"&gt;old key&lt;/a&gt; and generate a &lt;a href="http://pgp.mit.edu/pks/lookup?op=vindex&amp;amp;search=0x9B8E27DC9A5F62E1"&gt;new one&lt;/a&gt;. You can download my new PGP Public Key below. While you&amp;#8217;re at it, send me an email to &lt;a href="&amp;#109;&amp;#97;&amp;#x69;l&amp;#116;&amp;#x6f;&amp;#x3a;m&amp;#97;&amp;#x74;&amp;#x74;&amp;#64;&amp;#109;&amp;#x61;&amp;#x74;&amp;#116;&amp;#114;&amp;#x65;&amp;#x61;&amp;#100;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;"&gt;m&amp;#97;&amp;#x74;&amp;#x74;&amp;#64;&amp;#109;&amp;#x61;&amp;#x74;&amp;#116;&amp;#114;&amp;#x65;&amp;#x61;&amp;#100;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt; with your public key and/or certificate.&lt;/p&gt;
+
+&lt;ul class="download"&gt;
+&lt;li&gt;&lt;a href="/user/files/matt@mattread.com.asc"&gt;GPG Public Key &lt;i class="icon-key"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;md5sum: &lt;code&gt;c0b0c396d8f70bfcddb2f710c0bee336  matt@mattread.com.asc&lt;/code&gt;&lt;/p&gt;
+</content></entry><entry><title>hConsole: A Live Habari Console</title><link rel="alternate" href="https://mattread.com/hconsole-a-live-habari-debugging-console"/><link rel="edit" href="https://mattread.com/hconsole-a-live-habari-debugging-console/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2013:hconsole-a-live-habari-debugging-console/1359403524</id><updated>2013-10-03T10:55:19-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-10-07T20:20:34-04:00</app:edited><published>2013-10-02T14:54:06-04:00</published><category term="habari"/><category term="code"/><content type="html">&lt;p&gt;If you have ever written code before, you&amp;#8217;ve come across a situation where you needed to debug or test something simple in your code. Doing this with a Command Line Interpreter is quite simple. Type your code, see what comes out. But when it comes to web applications, it&amp;#8217;s a little harder. There are &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; requests, Sessions, Cookies, and a Webserver involved. This is where &lt;a href="https://github.com/habari-extras/hconsole" title="hConsole github repo"&gt;hConsole&lt;/a&gt; comes in.&lt;/p&gt;
+
+&lt;p&gt;hConsole is a live &lt;a href="https://habariproject.org/en/" title="Habari Project's main site"&gt;Habari&lt;/a&gt; console, or command line, that allows you to evaluate your code directly in your Habari installation, with all the &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; request, Sessions, etc. there. You can access the entire Habari core, even trigger plugin actions and filters, and view the live result on screen.&lt;/p&gt;
+
+&lt;p&gt;Once installed, you simply click on the hConsole button in the bottom right of your screen to bring up the console. In the console you can evaluate any &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; code and utilize the entire Habari base. You can also execute &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;, to query your Habari&amp;#8217;s database directly (Tip: press &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;Q&lt;/kbd&gt; to run code without the mouse).&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;a href="//farm9.staticflickr.com/8099/8590516105_9d9462457c_b.jpg" class="fancybox"&gt;&lt;img alt="hconsole_php" src="//farm9.static.flickr.com/8099/8590516105_9d9462457c.jpg" class="card center"&gt;&lt;/a&gt; 
+&lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt; Using the debug area to output code.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h3&gt;Debugging &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; and Habari&lt;/h3&gt;
+
+&lt;p&gt;hConsole has 2 parts; A debug section, for outputting variables and such (&lt;code&gt;Utils::debug()&lt;/code&gt; comes in handy here), and the ability to trigger plugin hooks and affect the output of, say, post titles. There is also an option to &lt;code&gt;htmlspecialchars()&lt;/code&gt; the output of the debugging code if you wanted to output &lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; tags, for example. Let&amp;#8217;s look at two basic examples:&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+$test = "this is a test";
+echo $test;
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 1&lt;/b&gt; A simple Debug echo&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;The code in example 1 will simply echo the variable &lt;code&gt;$test&lt;/code&gt; above the command line in hConsole; The so called &amp;#8220;Debug Area&amp;#8221;. We can also implement plugin hooks.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+filter_post_title_out {
+    function boo ($title)
+    {
+        return $title . ' Boo!';
+    }
+}
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 2&lt;/b&gt; Filtering Post Titles&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;The code in example 2 will register the function &lt;code&gt;boo()&lt;/code&gt; to the &lt;code&gt;post_title_out&lt;/code&gt; filter. Function &lt;code&gt;boo()&lt;/code&gt; then appends &lt;code&gt;" Boo!"&lt;/code&gt; to all post titles for the page you are looking at. We can also combine the two and have debug output along will running filters or actions.&lt;/p&gt;
+
+&lt;p&gt;Of course these are very simple examples of what can be done with hConsole. In the real world it becomes a very powerful tool.&lt;/p&gt;
+
+&lt;h3&gt;Debugging With hConsole&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#8217;s look at an example of a real debugging situation where hConsole came in handy. When trying to debug Habari&amp;#8217;s internal Cron system it&amp;#8217;s hard to tell why it&amp;#8217;s failing when &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; is set to use &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt;. Recently &lt;a href="http://skippy.net" title="Scott's website"&gt;Scott&lt;/a&gt; was having an issue with a local install, where crons weren&amp;#8217;t running.&lt;/p&gt;
+
+&lt;p&gt;The issue comes from the fact that Habari makes an asynchronous &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; call to itself to trigger all the Cronjobs to run. So you never actually see any errors from this, and when &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt; throws an exception, nothing is in the logs. So to test why Scott&amp;#8217;s crons where not running he used hConsole.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+$cronurl = URL::get( 'cron',array( 'asyncronous' =&gt; Utils::crypt( Options::get( 'public-GUID' ) ) ) );
+$request = new RemoteRequest( $cronurl, 'GET', 100 );
+$request-&gt;execute();
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 3&lt;/b&gt; Making a request to the cron.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;In example 3 we run the cron trigger using hConsole with a longer timeout so we can see what is happening. And Scott was able to get the error &lt;code&gt;Exception: CURL Error 60: SSL certificate problem, verify that the CA ...&lt;/code&gt;. He was then able to add his  &lt;abbr title="Secure Socket layer"&gt;SSL&lt;/abbr&gt; certificate chain to his Apache config so &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt; accepted the certificate, and crons ran smoothly.&lt;/p&gt;
+
+&lt;h3&gt;Debugging &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;&lt;/h3&gt;
+
+&lt;p&gt;hConsole will also let you directly run &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt; statements on your database. It will even substitute proper table names when using &amp;#8220;curly brackets&amp;#8221;, like &lt;code&gt;{posts}&lt;/code&gt; becomes &lt;code&gt;habari__posts&lt;/code&gt;, or whatever you chose during install. You can run any database query by simply checking the &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt; checkbox, and the results will output in a nicely formatted table.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight sql"&gt;
+select * from {posts} limit 3;
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 4&lt;/b&gt; SQL selecting the 3 most recent posts.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;And the results from running example 4 show in a nice tabular format so we can easily see what&amp;#8217;s in our database.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;a href="//farm9.static.flickr.com/8506/8591609336_bf476f433f_b.jpg" class="fancybox"&gt;&lt;img alt="hconsole_sql" src="//farm9.static.flickr.com/8506/8591609336_bf476f433f.jpg" class="center card"&gt;&lt;/a&gt;
+&lt;figcaption&gt;&lt;b&gt;Figure 2&lt;/b&gt; Results of selecting the 3 most recent posts.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also, of course, run other statements, such as delete, update, show tables, etc. All statements will output their results, or show an error if there are troubles.&lt;/p&gt;
+
+&lt;h2&gt;Developer&amp;#8217;s Best Friend&lt;/h2&gt;
+
+&lt;p&gt;As you can see hConsole is the plugin and theme developers best friend. Whether you are debugging a core Habari issue, or simply looking at the contents of an object. You can pretty much debug and test any code you need to; &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt;, &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;, and Habari.&lt;/p&gt;
+
+&lt;ul class="download"&gt;
+&lt;li&gt;&lt;a href="https://github.com/habari-extras/hconsole/archive/master.zip"&gt;hConsole Master &lt;i class="icon-box-add"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/habari-extras/hconsole"&gt;GitHub Repo &lt;i class="icon-github"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>The Garden, 2013</title><link rel="alternate" href="https://mattread.com/garden-2013"/><link rel="edit" href="https://mattread.com/garden-2013/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2013:garden-2013/1371593965</id><updated>2013-06-18T19:41:07-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-24T10:56:56-04:00</app:edited><published>2013-06-18T18:18:54-04:00</published><category term="garden"/><category term="vegetables"/><content type="html">&lt;p&gt;The garden this year is coming along nicely; We planted Tomatoes, Lettuce, Green Beans, Beans, Green Peppers, Carrots, Swiss Chard, Green Onions, and Cucumbers. We also planted Chives, and Cilantro, two of my favourite herbs.&lt;a href="//farm3.staticflickr.com/2808/9078570513_829b6f0f06_c.jpg" title="DSC00771 by MattRead, on Flickr" class="fancybox" rel="garden"&gt;&lt;img src="//farm3.staticflickr.com/2808/9078570513_829b6f0f06_m.jpg" width="240" height="180" alt="DSC00771" class="card right"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We started a little too early (mid May) and the green peppers and tomatoes never came up, so I got some &amp;#8220;pre-started&amp;#8221; ones from the Home Depot. They seem to be doing well. The green onions never really took off, but about 5 or so have come up. Next year I think I&amp;#8217;ll start the green peppers, green onions and tomatoes inside, then move them outside at the end of May.&lt;/p&gt;
+
+&lt;div class="gallery"&gt;
+&lt;a class="fancybox" rel="garden" href="//farm6.staticflickr.com/5525/9078637827_9ec8a0191c_c.jpg" title="DSC00775 by MattRead, on Flickr"&gt;&lt;img src="//farm6.staticflickr.com/5525/9078637827_9ec8a0191c_s.jpg" width="75" height="75" alt="DSC00775"&gt;&lt;/a&gt;
+
+&lt;a href="//farm6.staticflickr.com/5328/9078622919_2e07caecae_c.jpg" title="DSC00774 by MattRead, on Flickr"&gt;&lt;img src="//farm6.staticflickr.com/5328/9078622919_2e07caecae_s.jpg" width="75" height="75" alt="DSC00774"&gt;&lt;/a&gt;
+
+&lt;a class="fancybox" rel="garden" href="//farm4.staticflickr.com/3827/9078609343_6703bb48ca_c.jpg" title="DSC00773 by MattRead, on Flickr"&gt;&lt;img src="//farm4.staticflickr.com/3827/9078609343_6703bb48ca_s.jpg" width="75" height="75" alt="DSC00773"&gt;&lt;/a&gt;
+
+&lt;a class="fancybox" rel="garden" href="//farm4.staticflickr.com/3793/9078584795_597676305a_c.jpg" title="DSC00772 by MattRead, on Flickr"&gt;&lt;img src="//farm4.staticflickr.com/3793/9078584795_597676305a_s.jpg" width="75" height="75" alt="DSC00772"&gt;&lt;/a&gt;
+
+&lt;a class="fancybox" rel="garden" href="//farm8.staticflickr.com/7386/9078668569_9ed004c078_c.jpg" title="DSC00777 by MattRead, on Flickr"&gt;&lt;img src="//farm8.staticflickr.com/7386/9078668569_9ed004c078_s.jpg" width="75" height="75" alt="DSC00777"&gt;&lt;/a&gt;
+
+&lt;a class="fancybox" rel="garden" href="//farm3.staticflickr.com/2888/9080921078_1803718b47_c.jpg" title="DSC00779 by MattRead, on Flickr"&gt;&lt;img src="//farm3.staticflickr.com/2888/9080921078_1803718b47_s.jpg" width="75" height="75" alt="DSC00779"&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I also wanted to plant some fruit. We have wild raspberries in the back, and i was thinking of doing a &amp;#8220;domestic&amp;#8221; blueberry and raspberry patch. But I was also thinking of trying cherry trees, or apple trees, or maybe even orange trees (you need at least two for them to grow fruit, I&amp;#8217;m told). If you&amp;#8217;ve got any advise on growing fruit in the northern part of the world, let me know.&lt;/p&gt;
+
+&lt;p&gt;I know, I need to weed the garden.&lt;/p&gt;
+</content></entry><entry><title>Rest In Peace, Jasper</title><link rel="alternate" href="https://mattread.com/rest-in-peace-jasper"/><link rel="edit" href="https://mattread.com/rest-in-peace-jasper/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2013:rest-in-peace-jasper/1361457499</id><updated>2013-02-21T09:38:19-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-26T12:55:00-04:00</app:edited><published>2013-02-21T09:38:19-05:00</published><category term="jasper"/><category term="photo"/><content type="html">&lt;p class="center"&gt;I will miss you greatly. Thank you for always being there.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="//farm1.staticflickr.com/1/572742_09da443b84_z_d.jpg?zz=1" class="fancybox"&gt;&lt;img alt="Jasper - Light" src="//farm1.static.flickr.com/1/572742_09da443b84.jpg" class="card center"&gt;&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><title>Thinking About Passwords</title><link rel="alternate" href="https://mattread.com/thinking-about-passwords"/><link rel="edit" href="https://mattread.com/thinking-about-passwords/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:www.mattread.com,2012:thinking-about-passwords/1352935899</id><updated>2012-11-15T13:00:18-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-18T10:57:23-04:00</app:edited><published>2012-11-14T18:25:12-05:00</published><category term="email"/><category term="security"/><category term="password"/><content type="html">&lt;p&gt;The other day I was thinking about passwords and the &amp;#8220;forgot password&amp;#8221; links that are common on websites today. I got to thinking just how many passwords I have and how many I forget.&lt;/p&gt;
+
+&lt;p&gt;I use a different password for pretty much every site I belong to. I have a simple algorithm I can do in my head to remember that password (usually). But does it matter? Do multiple passwords really provide you with any added security?&lt;/p&gt;
+
+&lt;p class="pull-quote"&gt;Your entire online life is protected only by your email password, and identified by your email address&lt;/p&gt;
+
+&lt;p&gt;With the advent of the &amp;#8220;forgot password link&amp;#8221; that will email you a reset link, there is really only one password that is the key to every account you have. Your email password. If you got my email password you could gain access to &lt;strong&gt;all&lt;/strong&gt; my accounts on the internet. All you have to do is reset my password, check my email, and bob&amp;#8217;s your uncle.&lt;/p&gt;
+
+&lt;p&gt;Email addresses today are actually used as the single point of identification, if you really think about it. But at the same time, your email address is your &lt;abbr title="Single Sign On"&gt;SSO&lt;/abbr&gt; security key. With access to your email you have access to all accounts that implement the &amp;#8220;forgot password link&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;Any site that I&amp;#8217;ve seen that implements the &amp;#8220;forgot password&amp;#8221; feature, only requires you to click a link in your email. There is no other stage of identification required, with the exception of my online banking. The bank requires I call in and identify myself via my address, my Date of Birth, etc.&lt;/p&gt;
+
+&lt;p&gt;So why aren&amp;#8217;t other sites doing this? Obviously you can&amp;#8217;t have a call in to an agent, too many expenses for that. But why not have some other personal information stored to identify the person that clicked that link. As I wrote that last sentence, I realized how much of a privacy concern that would be. Especially after reading about so many DB dumps on &lt;a href="http://arstechnica.com/"&gt;Ars&lt;/a&gt; recently.&lt;/p&gt;
+
+&lt;p&gt;It comes down to a single password, a single email address. Your entire online life is protected only by your email password, and identified by your email address. The two most important things you have online.&lt;/p&gt;
+
+&lt;p&gt;Would you be willing to provide additional personal information to some random site? If you think about it, you already provide your email address, the thing that identifies you to each and every site out there. How much more info is required to properly secure your identification? Is a single email address enough?&lt;/p&gt;
+
+&lt;p&gt;I think I&amp;#8217;ll go change my email password right now.&lt;/p&gt;
+</content></entry><entry><title>My Poor Little Car is Dead</title><link rel="alternate" href="https://mattread.com/my-poor-little-car-is-dead"/><link rel="edit" href="https://mattread.com/my-poor-little-car-is-dead/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2012:my-poor-little-car-is-dead/1338230146</id><updated>2012-05-28T20:33:44-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T12:28:30-04:00</app:edited><published>2012-05-28T13:31:20-04:00</published><category term="car"/><content type="html">&lt;p&gt;My 2003 Pontiac Sunfire Sedan, which has served me for the past 5 years, finally decided to quit. At 300,000 km, I would say it did a pretty good job for me. And at this point, It&amp;#8217;s not worth spending the $800 to get fixed.&lt;/p&gt;
+
+&lt;p&gt;So, I&amp;#8217;m on the hunt for a small truck. A Ford Ranger would be perfect, and would be my ideal vehicle. But a Mini Van has come for $2,500 and I&amp;#8217;m seriously considering it. I &lt;strong&gt;never&lt;/strong&gt; thought I would consider buying a mini van. But if you think about, it gets better gas mileage than the truck, can carry pretty much anything the small truck could, and I can put a hitch on it to pull a trailer.&lt;/p&gt;
+
+&lt;p&gt;But I don&amp;#8217;t want to be a &amp;#8220;Soccer Mom&amp;#8221;, so I think I&amp;#8217;ll be sticking with a small truck. I got a line on a Chevy S-10 in my price range. I&amp;#8217;ll let you know what I decide.&lt;/p&gt;
+</content></entry><entry><title>Bill-C11, An Act to Amend Copyright</title><link rel="alternate" href="https://mattread.com/bill-c11-an-act-to-amend-the-copyright-act"/><link rel="edit" href="https://mattread.com/bill-c11-an-act-to-amend-the-copyright-act/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2012:bill-c11-an-act-to-amend-the-copyright-act/1328622135</id><updated>2012-02-07T08:42:15-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:08-05:00</app:edited><published>2012-02-07T08:42:15-05:00</published><category term="copyright"/><category term="c-11"/><category term="government"/><content type="html">&lt;p&gt;I received a response from the &lt;a href="http://www.ndp.ca/" title="New Democrat Party"&gt;NDP&lt;/a&gt; regarding Bill C-11. Basically it is a Canadian version of the American&amp;#8217;s &lt;abbr title="Digital Millenium Copyright Act"&gt;DMCA&lt;/abbr&gt;. Should this bill pass it would make me a pirate for copying all my CD&amp;#8217;s into &lt;abbr title="Free Loseless Audio Codec"&gt;FLAC&lt;/abbr&gt; files on my computer; Not only that, but anyone who circumvented &amp;#8220;digital locks&amp;#8221; to make copies for personal use would be breaking the law.&lt;/p&gt;
+
+&lt;p&gt;So on Linux watching a DVD using the free decoding libraries (libdvdcss2) you would be performing a criminal act. Many of you don&amp;#8217;t know this, but if you watch a DVD on your computer you paid royalties to the movie industry to do so when you bought your DVD player software. Furthermore, if you use free ones, like &lt;a href="http://www.videolan.org/vlc/" title="Video Lan Player"&gt;VLC&lt;/a&gt;, you would now be breaking the law and would be prosecuted in Criminal Court.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;It&amp;#8217;s good to see at least the &lt;a href="http://www.ndp.ca/" title="New Democrat Party"&gt;NDP&lt;/a&gt; is taking a stance against this specific part of the Bill, and is actually, it seams, listening to the &lt;strong&gt;people&lt;/strong&gt;. Too bad they form a minority in the House of Commons. Here is their response:&lt;/p&gt;
+
+&lt;blockquote cite="Nycole.Turmel@parl.gc.ca"&gt;
+&lt;p&gt;Thank you for taking the time to write regarding Bill C-11, An Act to amend
+the Copyright Act. We appreciate having the benefit of your comments and the
+opportunity to let you know more about our work on a number of these
+legislative concerns.&lt;/p&gt;
+
+&lt;p&gt;New Democrats want updated copyright laws to balance the rights of artists,
+consumers and rights-holders. We believe that Canada needs effective
+legislation to ensure artists&#x2019; royalties are protected; long-distance
+education opportunities aren&#x2019;t hindered; and that young people aren&#x2019;t
+subject to unfair, expensive fines.&lt;/p&gt;
+
+&lt;p&gt;That&#x2019;s why we will not be supporting Bill C-11 unless the government is
+willing to amend the digital lock provisions and restore royalty provisions
+for artists. The blanket provisions for digital locks will allow corporate
+interests to decide what legal rights you may or may not exercise. This
+unbalanced approach will ultimately hurt artists, educators and consumers.&lt;/p&gt;
+
+&lt;p&gt;New Democrats also think that it is time to strike a balance in Canada&#x2019;s
+copyright law that will properly recognize the cultural community for its
+valuable contributions to our society. Going forward, we will continue to
+work hard to improve this bill and press the Harper government to adopt the
+best copyright laws for the 21st century. &lt;/p&gt;
+
+&lt;p&gt;Please find below a letter from NDP Copyright and Digital Issues critic
+Charlie Angus that further explains our position on Bill C-11.&lt;/p&gt;
+
+&lt;p&gt;Again, thank you for taking the time to register your views.&lt;/p&gt;
+
+&lt;p&gt;Sincerely,&lt;/p&gt;
+
+&lt;p&gt;Nycole Turmel, M.P.&lt;br&gt;
+Interim Leader of the Official Opposition&lt;br&gt;
+New Democratic Party of Canada&lt;/p&gt;
+
+&lt;p&gt;Charlie Angus, M.P.&lt;br&gt;
+NDP Copyright and Digital Issues Critic&lt;/p&gt;
+&lt;/blockquote&gt;
+</content></entry><entry><title>Canadian Dad</title><link rel="alternate" href="https://mattread.com/canadian-dad"/><link rel="edit" href="https://mattread.com/canadian-dad/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2012:canadian-dad/1328545588</id><updated>2012-02-06T11:26:28-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:08-05:00</app:edited><published>2012-02-06T11:26:28-05:00</published><category term="dad"/><content type="html">&lt;p&gt;My cousin has got his &lt;a href="http://canadiandad.com/" title="Canadian Dad"&gt;new blog&lt;/a&gt; up and running. It&amp;#8217;s a new site &lt;a href="http://canadiandad.com/about-me/" title="About Canadian Dad"&gt;about his life as a Dad&lt;/a&gt;. He definately does more blogging than me, so I thought I would link him a bit. He&amp;#8217;s going to be doing &lt;a href="http://canadiandad.com/category/httpcanadiandad-comreviewsgiveaways/" title="Candian Dad Reviews"&gt;reviews &lt;/a&gt;and &lt;a href="http://canadiandad.com/category/httpcanadiandad-comreviewsgiveaways-2/" title="Canadian Dad Giveaways"&gt;giveaways&lt;/a&gt;. Apparently he&amp;#8217;s got some products coming up, for free, to review then give away. There is already a chance to win a &lt;a href="http://canadiandad.com/win-a-25-marks-work-warehouse-gift-card/"&gt;$25 Gift Certificate from Marks&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s looking to be a good read, so &lt;a href="http://canadiandad.com/" title="Canadian Dad"&gt;head over&lt;/a&gt; and give him some traffic, eh?&lt;/p&gt;
+</content></entry><entry><title>Ephyboy, The Epiphany Tomboy&#xA0;Extension</title><link rel="alternate" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1"/><link rel="edit" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2010:ephyboy-the-epiphany-tomboy-extension/1284168962</id><updated>2011-12-27T01:12:10-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-24T09:08:09-04:00</app:edited><published>2010-09-10T21:36:02-04:00</published><category term="code"/><category term="epiphany"/><category term="tomboy"/><content type="html">&lt;p&gt;Back in the day when I used to use &lt;a href="http://getfirefox.com"&gt;Firefox&lt;/a&gt;, I fell in love with the &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/8276/"&gt;Tomfox extension&lt;/a&gt;. It
+allowed you to create a new &lt;a href="http://projects.gnome.org/tomboy/"&gt;Tomboy&lt;/a&gt; note using the currently selected text of the webpage you
+were browsing, using the title for the title of the note and referencing the url as the source. This
+was great for me to document all the code and Linux commands I&amp;#8217;d find scattered around the net.&lt;/p&gt;
+
+&lt;p&gt;Eventually, though, I got tired of &lt;a href="http://getfirefox.com"&gt;Firefox&lt;/a&gt;, especially it&amp;#8217;s load times, and switched to
+&lt;a href="http://www.chromium.org/"&gt;Chromium&lt;/a&gt;. You guessed it, &lt;a href="http://www.chromium.org/"&gt;Chromium&lt;/a&gt; sucked too. So back to &lt;a href="http://projects.gnome.org/epiphany/"&gt;Epiphany&lt;/a&gt; I went, and with the
+2.30 version it is really quite a nice little browser.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://projects.gnome.org/epiphany/"&gt;Epiphany&lt;/a&gt; extensions are now done with &lt;a href="http://live.gnome.org/Seed"&gt;Seed&lt;/a&gt;, the GTK javascript bindings, making it really
+easy to write new extensions. Plus, it has almost a complete GTK implementation via GObject
+Introspection. So getting my tomboy note maker dohicky back was really not that hard &amp;#8212;aside from
+the lack of documentation. And thus, &lt;a href="http://github.com/MattRead/Ephyboy"&gt;Ephyboy&lt;/a&gt; is born. It&amp;#8217;s really quite simple:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://github.com/MattRead/Ephyboy/downloads"&gt;Download&lt;/a&gt; the tarball, or zip.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://github.com/MattRead/Ephyboy/wiki"&gt;Install&lt;/a&gt; the extension.&lt;/li&gt;
+&lt;li&gt;Enable the extension (&lt;em&gt;no restart required!&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;Select some text to add in your note.&lt;/li&gt;
+&lt;li&gt;Hit &lt;kbd&gt;CTRL+Shift+B&lt;/kbd&gt;; Or, add the Tomboy Note button to the toolbar and click the button.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The extension will then create your note and open your note in &lt;a href="http://projects.gnome.org/tomboy/"&gt;Tomboy&lt;/a&gt; for review and/or further
+editing.&lt;/p&gt;
+
+&lt;p&gt;There is one thing to note. The extension works by making a DBus call to Tomboy to create the note
+so you have to have Tomboy open and connected to the bus for this to work. Usually not a problem
+as I have Tomboy start on log in.&lt;/p&gt;
+</content></entry><entry><title>Why Playoff Hockey Is Better Than Sex</title><link rel="alternate" href="https://mattread.com/why-playoff-hockey-is-better-than-sex-1"/><link rel="edit" href="https://mattread.com/why-playoff-hockey-is-better-than-sex-1/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2009:why-playoff-hockey-is-better-than-sex/1260899984</id><updated>2011-12-27T01:11:06-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:09-05:00</app:edited><published>2009-12-15T13:00:29-05:00</published><category term="none"/><content type="html">&lt;p&gt;I always knew Hockey was important, just never realized how important; It&amp;#8217;s better than sex! From an Email I received:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;It&amp;#8217;s legal to play hockey professionally.&lt;/li&gt;
+&lt;li&gt;The puck is always hard.&lt;/li&gt;
+&lt;li&gt;Protective equipment is reusable and you don&amp;#8217;t even have to wash it.&lt;/li&gt;
+&lt;li&gt;It lasts a full hour.&lt;/li&gt;
+&lt;li&gt;You know you&amp;#8217;re finished when the buzzer sounds.&lt;/li&gt;
+&lt;li&gt;Your parents cheer when you score.&lt;/li&gt;
+&lt;li&gt;Periods only last 20 minutes.&lt;/li&gt;
+&lt;li&gt;You can count on it at least twice a week.&lt;/li&gt;
+&lt;li&gt;You can tell your friends about it afterwards.&lt;/li&gt;
+&lt;li&gt;A two-on-one or three-on-one is not uncommon.&lt;/li&gt;
+&lt;/ol&gt;
+</content></entry><entry><title>Matt Read, Weblog: Oceanus v3</title><link rel="alternate" href="https://mattread.com/matt-read-weblog-oceanus-v3"/><link rel="edit" href="https://mattread.com/matt-read-weblog-oceanus-v3/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2010:matt-read-weblog-oceanus-v3/1275956231</id><updated>2010-06-07T20:32:30-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-09-26T12:54:14-04:00</app:edited><published>2010-06-07T20:32:30-04:00</published><category term="oceanus"/><category term="theme"/><content type="html">&lt;p&gt;Version 3.0 of my theme, Oceanus, is now live. This time I went all out space age with CSS fonts and CSS text effects, like text-shadow and opacity. Inspired mostly by &lt;a href="http://chrisjdavis.org/" title="Sillyness Spelled Wrong Intentionally"&gt;Chris J. Davis&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="//www.flickr.com/photos/47293812@N00/4680652414"&gt;&lt;img src="//farm5.static.flickr.com/4010/4680652414_9182a5d55e_m.jpg" class="card right"&gt;&lt;/a&gt;I also went for HTML5, which, obviously, required a little MSIE hack. I found the semantics of HTML5 well thought out; Can&amp;#8217;t wait till it becomes reality, especially the audio/video stuff. Goodbye Flash!&lt;/p&gt;
+
+&lt;p&gt;You&amp;#8217;ll notice the pinstripe background, which may make it harder to read, but this time I went for beauty over usability. Yes, I committed a sin, don&amp;#8217;t hate me please. I&amp;#8217;ve played with some transparent containers for the content,  but I think it looks better as is. Although, I still have a fluid layout and flexible font sizes.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve also implemented a &amp;#8220;notification area&amp;#8221; at the top. Logged out, you will see the extra panes that include the less used stuff, that I would call clutter. Logged in, some additional things appear, like alerts for when you have comments awaiting moderation, etc. Sort of an admin bar built in.&lt;/p&gt;
+
+&lt;p&gt;When I get all the code sorted out, and the options pages going, I plan on releasing this revision of the theme. But don&amp;#8217;t hold your breath.&lt;/p&gt;
+</content></entry><entry><title>Why You Should Never Trust Plugins</title><link rel="alternate" href="https://mattread.com/why-you-should-never-trust-plugin-authors"/><link rel="edit" href="https://mattread.com/why-you-should-never-trust-plugin-authors/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2009:why-you-should-never-trust-plugin-authors/1261079779</id><updated>2009-12-18T22:35:23-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:09-05:00</app:edited><published>2009-12-17T14:36:16-05:00</published><category term="security"/><content type="html">&lt;p&gt;I apologize for this, but thought it would be fun. I hacked my own site! I must be good! I did this using an exploit found in a plugin for Habari. I plan on fixing this plugin very soon. If you are worried use my &lt;a href="/contact"&gt;Contact Form&lt;/a&gt; to contact me about it, and I&amp;#8217;ll let you know which plugin it is. Even better, if you feel like fixing something, let me know and you can fix it for me :D.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 2:&lt;/strong&gt; This has &lt;a href="http://habariproject.org/en/potential-security-issue-with-the-autosave-plugin"&gt;now been fixed&lt;/a&gt; in the &lt;a href="http://habariproject.org/dist/plugins/autosave/autosave-0.6-0.1.2.zip"&gt;AutoSave plugin&lt;/a&gt;. The exploit could allow any cracker to post to the vulnerable site without being an authenticated user. So if any anyone is using AutoSave, you should &lt;strong&gt;&lt;a href="http://habariproject.org/dist/plugins/autosave/autosave-0.6-0.1.2.zip"&gt;update now&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+</content></entry><entry><title>GMail, Almost Perfect</title><link rel="alternate" href="https://mattread.com/gmail-almost-perfect"/><link rel="edit" href="https://mattread.com/gmail-almost-perfect/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2009:gmail-almost-perfect/1234317674</id><updated>2009-02-10T21:12:42-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-10T19:56:35-04:00</app:edited><published>2009-02-10T21:12:42-05:00</published><category term="gmail"/><category term="email"/><content type="html">&lt;p&gt;One of the great things about &lt;a href="https://www.google.com/a/"&gt;Google Apps for Domains&lt;/a&gt; is they run a mail server for you, and you get the GMail web interface for email. Not only that, but you get a fully functional IMAP server as well.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, GMail has a few annoyances.&lt;/p&gt;
+
+&lt;h3&gt;GPG&lt;/h3&gt;
+
+&lt;p&gt;The first annoyance is the lack of support for &lt;a href="http://www.gnupg.org/"&gt;GPG&lt;/a&gt;. Fortunately this is easily overcome with the use of &lt;a href="http://getfiregpg.org/"&gt;FireGPG&lt;/a&gt; extension for &lt;a href="http://www.mozilla.com/en-US/firefox/"&gt;FireFox&lt;/a&gt;. FireGPG provides a simple easy interface for using GPG, including, but not limited to, digitally signing emails, encrypting email and attachments, and GPGAuth.&lt;/p&gt;
+
+&lt;p&gt;If your not into GMail, FireGPG can also support &lt;a href="http://roundcube.net/"&gt;Rouncube Webmail&lt;/a&gt;. It also provides an easy mechanism to import GPG Keys, you know those big hash like things people paste on their sites; with one click you can import them.&lt;/p&gt;
+
+&lt;h3&gt;Fixed-Width Fonts&lt;/h3&gt;
+
+&lt;p&gt;The other major annoyance, which I find extremely annoying, is GMail displays all emails in a variable-width font instead of fixed-width. There is a &amp;#8220;labs&amp;#8221; feature that gives a toggle switch to change to fixed-width font, but you cannot make it the default. Fortuantely, again, &lt;a href="http://www.mozilla.com/en-US/firefox/"&gt;FireFox&lt;/a&gt; comes to the rescue, with it&amp;#8217;s &amp;#8220;user defined style sheets&amp;#8221;. With only a couple of lines of CSS you can haz your email in fixed-width fonts.&lt;/p&gt;
+
+&lt;p&gt;User style sheets are located your &lt;a href="http://www.mozilla.com/en-US/firefox/"&gt;FireFox&lt;/a&gt; profile directory, and is named userContent.css. Any CSS you put in the file will be applied to each and every site you visit, so we  can use it to get back our fonts. In Ubuntu it&amp;#8217;s located at &lt;var&gt;~/.mozilla/firefox/xxx.default/chrome/userContent.css&lt;/var&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just add the following to that file:&lt;/p&gt;
+
+&lt;pre class="highlight css"&gt;
+/* GMail fixed-width font: see http://3cx.org/item/34 */
+
+div.msg div.mb, div.ArwC7c {
+    font-family: monospace !important;
+    font-size: 12px !important;
+}
+
+div.yxEQwb {
+    display: none;
+}
+
+div.ckChnd textarea, textarea.tb {
+    font-family: monospace !important;
+    font-size: 12px !important;
+}
+
+td.ct {
+    font-family: monospace !important;
+    font-size: 12px !important;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;This will give you fixed-width fonts for all plain text emails, in the old and new, GMail interface, and it will hide those annoying &amp;#8220;Sponsored Links&amp;#8221;. Also, it will give you fixed-width fonts on &lt;a href="http://groups.google.com/"&gt;Google Groups&lt;/a&gt;. Awesomeness!&lt;/p&gt;
+
+&lt;h3&gt;Customizing GMail With Labs&lt;/h3&gt;
+
+&lt;p&gt;In the &lt;a href="http://gmailblog.blogspot.com/2008/06/introducing-gmail-labs.html"&gt;GMail Labs&lt;/a&gt; section there are a bunch of goodies to be had. My favorites are Tasks, Advanced IMAP Control, and Navbar drag and drop.&lt;/p&gt;
+
+&lt;p&gt;Tasks are very simple. It gives you a little pop-out at the bottom for which you can add tasks, mark them as completed, link them to corresponding emails, etc. Lovely little TODO list keeper.&lt;/p&gt;
+
+&lt;p&gt;Advanced IMAP Controls gives you the ability to &lt;q&gt;Choose which labels show up in IMAP, turn off message auto-expunging, or trash messages when they&amp;#8217;re deleted from IMAP&lt;/q&gt;. I love being able to choose which label/folders IMAP can use.&lt;/p&gt;
+
+&lt;p&gt;Pretty simple, title says it all. You can drag around all the little gadgets to the order of your choosing.&lt;/p&gt;
+
+&lt;h3&gt;GMail Almost Rocks&lt;/h3&gt;
+
+&lt;p&gt;As long as you have &lt;a href="http://www.mozilla.com/en-US/firefox/"&gt;FireFox&lt;/a&gt;, the GMail web interface is almost a complete replacement for those old and clumsy desktop mail apps. Hopefully we&amp;#8217;ll see some cool new Labs features roll out, like plain text/fixed-width only email ;).&lt;/p&gt;
+
+&lt;p&gt;As long as I don&amp;#8217;t have to maintain a mail server, I&amp;#8217;m happy with GMail.&lt;/p&gt;
+</content></entry><entry><title>A Bold Move To OpenID</title><link rel="alternate" href="https://mattread.com/a-bold-move-to-openid"/><link rel="edit" href="https://mattread.com/a-bold-move-to-openid/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:a-bold-move-to-openid/1229095297</id><updated>2008-12-12T10:21:37-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-10-08T18:55:04-04:00</app:edited><published>2008-12-12T10:24:58-05:00</published><category term="comments"/><category term="openid"/><category term="spam"/><category term="identity"/><content type="html">&lt;p&gt;After deleting thousands of spam comments every week, I got fed up. I went looking for a way to eliminate spam all together. There are many different approaches that work at completely destroying spam bots A Honey Pot, &lt;a href="http://svn.habariproject.org/habari-extras/plugins/spamhoneypot/"&gt;a Habari plugin&lt;/a&gt; by &lt;a href="http://seancoates.com/"&gt;Sean Coates&lt;/a&gt;, that adds a CSS hidden field that only bots would fill in; encoding the &amp;#8220;action&amp;#8221; URL, and input elements names and ids of the submitting form, a technique used by &lt;a href="http://gsnedders.com"&gt;Prof. Sneddy&lt;/a&gt;, killing all spam bots which don&amp;#8217;t use an HTML parser (which is all of them). There are others, but those are two that I find work reliably.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt="OpenID Logo" src="//mattread.com/user/files/openid.png" class="right"&gt;&lt;/p&gt;
+
+&lt;p&gt;The above mentioned methods, however, do not provide any way to authenticate the identity of the submitting comment author. In comes &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt;. Using &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt; to authenticate that the commenter is who they say they are, allows us to ensure that only valid comments are submitted. Since I haven&amp;#8217;t seen a spam bot with an &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt;, this will absolutely stop them in their tracks.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt; also allows to use heuristics to determine which &lt;a href="http://openid.net/"&gt;OpenIDs&lt;/a&gt; can be trusted, and which can be blacklisted. Since every commenter has a unique authenticated &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt;, we can reliably trust repeat commenters and push their comments through the moderation queue; at the same time, not trust blacklisted &lt;a href="http://openid.net/"&gt;OpenIDs&lt;/a&gt;, deleting them immediately, without needing any human interaction to &lt;em&gt;reliably&lt;/em&gt; do so.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve decide to jump head first into the deep end, and only allow comments to be submitted using an OpenID Identifier. This means, that if you want submit a comment on my site, you &lt;em&gt;must&lt;/em&gt; have an &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt;. There are many people who do not have an &lt;a href="http://openid.net/"&gt;OpenID&lt;/a&gt; yet, but for your protection, and mine, I would highly recommend you go out and get one now.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href="https://pip.verisignlabs.com/"&gt;Verisign&amp;#8217;s &lt;abbr title="Personal Identity Portal"&gt;PIP&lt;/abbr&gt;&lt;/a&gt; service for my OpenID provider. The service is still in &amp;#8220;beta&amp;#8221; (whatever that means nowadays) but I would highly recommend it. They even provide phishing detection, and &amp;#8220;Strong Authentication&amp;#8221; methods, including Browser Certificates, and their &lt;a href="https://idprotect.verisign.com/learnmore.v"&gt;VIP Credetial&lt;/a&gt;. Go sign up!&lt;/p&gt;
+</content></entry><entry><title>Javascript Prototype Behaviour in PHP</title><link rel="alternate" href="https://mattread.com/javascript-prototype-behaviour-in-php"/><link rel="edit" href="https://mattread.com/javascript-prototype-behaviour-in-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:javascript-prototype-behaviour-in-php/1222664109</id><updated>2008-09-29T00:55:09-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-20T12:43:28-04:00</app:edited><published>2008-09-29T02:01:57-04:00</published><category term="code"/><category term="php"/><category term="javascript"/><category term="prototype"/><content type="html">&lt;p&gt;One of the &amp;#8220;neat&amp;#8221; things in Javascript is you are able to dynamically add or change methods of a class and automatically update every instance of that class. Some of the things I usually find useful are adding to the String class, like so:&lt;/p&gt;
+
+&lt;pre class="highlight javascript"&gt;
+&lt;![CDATA[
+String.prototype.htmlSpecialChars = function() {
+    return this.replace(/\&lt;/g,'&lt;').replace(/\&gt;/g,'&gt;');
+}
+String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, '');
+}
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour to a certain extent using my &amp;#8220;neat&amp;#8221; little &lt;a href="https://gist.github.com/576295"&gt;Prototype&lt;/a&gt; class. With this Prototype class we can dynamically add properties and methods to any class, and they will be inherited by all instances of that class.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s look at the following &amp;#8220;normal&amp;#8221; PHP code.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+class Person extends Prototype
+{
+    public $name;
+    public $gender;
+   
+    public function gender()
+    {
+        printf("%s is %s\n", $this-&gt;name, $this-&gt;gender);
+    }
+}
+
+$matt = new Person;
+$matt-&gt;name = 'Matt';
+$matt-&gt;gender = 'male';
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, there is nothing magical or out-of-the-ordinary going on here. We just instantiate the Person class and setup some properties. Calling the &lt;code&gt;gender()&lt;/code&gt; method outputs a nice little string for us.&lt;/p&gt;
+
+&lt;p&gt;However, you see that the Person class is actually a child of the Prototype class. This will allow us to do some of that &amp;#8220;neat&amp;#8221; Javascript stuff. Using Prototype, let us expand the Person class to add an &lt;code&gt;$age&lt;/code&gt; property and an &lt;code&gt;age()&lt;/code&gt; method to output a nice string. Like so:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_property('age');
+Person::add_method('age', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;age = 28;
+$matt-&gt;age();
+
+// Matt is a 28 year old male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now all instances of Person inherit the &lt;code&gt;$age&lt;/code&gt; property and &lt;code&gt;age()&lt;/code&gt; method. So we can create a new Person, Susie, and this object will now have the age stuff.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+$susie = new Person;
+$susie-&gt;name = 'Susie';
+$susie-&gt;gender = 'female';
+$susie-&gt;age = 21;
+$susie-&gt;age();
+
+// Susie is a 21 year old female
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;One limitation of the Prototype class though, is you cannot overload a current method. So the following code, that attempts to overload the &lt;code&gt;gender()&lt;/code&gt; method, will not work.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;There are also many, many, many other problems with this Prototype class. Some of which are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &amp;#8216;$this&amp;#8217; keyword is reserved, so it actually does a string replace and uses &amp;#8216;$self&amp;#8217; instead.&lt;/li&gt;
+&lt;li&gt;You cannot access/add new methods or properties statically (until PHP 5.3 with __callStatic()).&lt;/li&gt;
+&lt;li&gt;It uses create_function, so every &amp;#8220;method&amp;#8221; is actually defined in the global namespace.&lt;/li&gt;
+&lt;li&gt;Iteration does not work, although it could possibly be done with Iterator, Countable, et al.&lt;/li&gt;
+&lt;li&gt;You cannot reference static variables/methods in your add method.&lt;/li&gt;
+&lt;li&gt;You cannot share methods between classes.&lt;/li&gt;
+&lt;li&gt;And so on and so forth&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This class was just an experiment to see if it was at all possible to implement something like Javascript&amp;#8217;s prototype behaviour in PHP with out using the &lt;a href="http://pecl.php.net/package/runkit"&gt;Runkit PECL extension&lt;/a&gt;. I had no intention of actually making this usable in production, for many reasons ;), although it was fun.&lt;/p&gt;
+</content></entry><entry><title>Persistent Static Variables</title><link rel="alternate" href="https://mattread.com/persistent-static-variables-across-instances-in-php"/><link rel="edit" href="https://mattread.com/persistent-static-variables-across-instances-in-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:persistent-static-variables-across-instances-in-php/1213249473</id><updated>2008-06-12T01:44:33-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:57:47-04:00</app:edited><published>2008-06-12T01:26:40-04:00</published><category term="code"/><category term="php"/><content type="html">&lt;p&gt;Wait, What? Yeah that&amp;#8217;s what I thought too. Still no Idea what I&amp;#8217;m talking about? Well, let&amp;#8217;s take a look at the following code. Let&amp;#8217;s call it &amp;#8220;fred&amp;#8221;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+class foo {
+    function bar( $b = 0 )
+    {
+        static $a = 0;
+        if ( $b ) {
+            $a = $b;
+        }   
+         echo $a;
+    }
+}
+
+$faz = new foo;
+$faz-&gt;bar(3);
+$baz = new foo;
+$baz-&gt;bar();
+foo::bar();
+foo:bar(1); 
+$faz-&gt;bar();
+&lt;/pre&gt;
+
+&lt;p&gt;The code above, named &amp;#8220;fred&amp;#8221;, basically creates a static variable &lt;code&gt;$a&lt;/code&gt; inside the function &lt;code&gt;foo()&lt;/code&gt;. When you call &lt;code&gt;foo(0)&lt;/code&gt; it outputs the value of &lt;code&gt;$a&lt;/code&gt;. When you call &lt;code&gt;foo('x')&lt;/code&gt; , where x can be anything, it updates the value of &lt;code &gt;$a&lt;/code&gt; with &lt;code&gt;'x'&lt;/code&gt;, and outputs the new result.&lt;/p&gt;
+
+&lt;p&gt;Now, what would expect &amp;#8220;fred&amp;#8221; to output? If your like me, then you are completely wrong. &amp;#8220;fred&amp;#8221; will actually output the following code.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+/*
+Actual Outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 3
+foo::bar();      ==&gt; 3
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 1
+ 
+Expected outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 0
+foo::bar();      ==&gt; 0
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 3
+*/
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Yes, that&amp;#8217;s what I said at the start, &amp;#8220;Persistent Static Variables Across Instances&amp;#8221;. The static variable &lt;code&gt;$a&lt;/code&gt; actually persists across the two instances of foo that &amp;#8220;fred&amp;#8221; created, and even into the static method call. This was completely unexpected, at least by me. So I&amp;#8217;ll ask, does anyone know if this is actually the expected behaviour, and why it is or is not?&lt;/p&gt;
+</content></entry><entry><title>Find My Easter Egg</title><link rel="alternate" href="https://mattread.com/find-my-easter-egg"/><link rel="edit" href="https://mattread.com/find-my-easter-egg/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/archives/2005/12/find-my-easter-egg/</id><updated>2008-05-08T23:28:12-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-20T19:57:12-04:00</app:edited><published>2005-12-01T16:33:22-05:00</published><category term="web-applications"/><content type="html">&lt;p&gt;A while ago I remember reading about an easter egg in &lt;a href="http://haveamint.com"&gt;Mint&lt;/a&gt;. You type in a secret code and receive a special prize, or something.&lt;/p&gt;
+
+&lt;p&gt;I thought it sounded neat. And we all know neat stuff is, well, neat. Anyway, I started to create my own easter egg, and came up with this &lt;a href="https://gist.github.com/MattRead/5209607"&gt;&amp;#8220;neat&amp;#8221; little script&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;HINT: jibby&lt;/p&gt;
+</content></entry><entry><title>WordPress is not PHP</title><link rel="alternate" href="https://mattread.com/wordpress-is-not-php"/><link rel="edit" href="https://mattread.com/wordpress-is-not-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=193</id><updated>2008-04-19T23:57:01-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-05-02T14:50:25-04:00</app:edited><published>2005-04-21T17:47:55-04:00</published><category term="web-design"/><category term="wordpress"/><category term="web-applications"/><category term="articles"/><content type="html">&lt;p&gt;There have many concerns and question about the template system used in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. Mostly the concerns are with n00bs and the complications of PHP. &#x201C;I want to change this and that, but don&amp;#8217;t know PHP&#x201D;. I hear this a lot. But the thing is, you don&amp;#8217;t need to know PHP to change the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt; in &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt;. &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h2&gt;The Template System&lt;/h2&gt;
+
+&lt;p&gt;Lets&amp;#8217; start with &#x201C;&lt;a href="http://codex.wordpress.org/The_Loop"&gt;the Loop&lt;/a&gt;&#x201D; as we call it. Probably the most confusing part of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; for a non-programmer. The Loop looks like this:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+     //Template Section 1: post content Template Tags go here
+
+&lt;?php endwhile; else: ?&gt;;
+
+    //Template Section2: no posts found stuff here.
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;It may look complicated, but it&amp;#8217;s actually quite simple. In &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;, all the posts information will be displayed. Within that section we will put all the posts &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and our HTML to format them. In &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, we will display a message telling the user no posts were found, if we find none to meet their criteria. &lt;/p&gt;
+
+&lt;h3&gt;Template Section 1: The Posts&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#8217;ll start with outputting the post tile. Simply add in the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_title() ?&amp;gt;&lt;/code&gt;. That will output the title of the post. &lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s output the date of the post. Simply add the date&amp;#8217;s &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_date() ?&amp;gt;&lt;/code&gt;. That outputs the date of the post.&lt;/p&gt;
+
+&lt;p&gt;We will also, of coarse, need the content of the actual post. Simply, again, add the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_content() ?&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together with some HTML:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;div class="post"&gt;
+    &lt;h2&gt; &lt;?php the_title() ?&gt; &lt;/h2&gt;
+    &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+    &lt;?php the_content() ?&gt;
+&lt;/div&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;And there&amp;#8217;s our simple template. Now let&amp;#8217;s add some more.&lt;/p&gt;
+
+&lt;p&gt;First let&amp;#8217;s add a link to the post, permalink as it&amp;#8217;s called, on the title. We get the actual URL, something like &lt;code class="html"&gt;http://mysite.com/archives/2004/09/post-title/&lt;/code&gt;, with the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt; &lt;code class="html"&gt;&amp;lt;?php the_permalink() ?&amp;gt;&lt;/code&gt;. We will need to put that in our &lt;code class="html"&gt;&amp;lt;a href=&#x201D;&#x201D;&amp;gt;&lt;/code&gt; HTML tag.&lt;/p&gt;
+
+&lt;p&gt;We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;, &lt;code class="html"&gt;&amp;lt;?php link_pages('&amp;lt;p&amp;gt;','&amp;lt;/p&amp;gt;') ?&amp;gt;&lt;/code&gt;. Now here&amp;#8217;s another confusion people have. We&amp;#8217;ve added in, what programmers would call, arguments to our &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. That is, we&amp;#8217;ve added in &lt;code class="html"&gt;'&amp;lt;p&amp;gt;', '&amp;lt;/p&amp;gt;'&lt;/code&gt; to the brackets of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tag&lt;/a&gt;. In this case we are just saying, if there are pages to link, output the page links with a &lt;code class="html"&gt;&amp;lt;p&amp;gt;&lt;/code&gt; at the start, and a &lt;code class="html"&gt;&amp;lt;/p&amp;gt;&lt;/code&gt; at the end. Hence, enclosing it all in HTML paragraph tags. Most &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; have different arguments you can pass to them, causing them to format their output differently.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;#8217;s add in our new tags.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;div class=&#x201D;post&#x201D;&gt;
+  &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+  &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+  &lt;?php the_content() ?&gt;
+
+  &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now we have a fully functional Posts section, &lt;a href="#ex1"&gt;Template Section 1&lt;/a&gt;. Let&amp;#8217;s move on to &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Template Section 2: No Posts Found&lt;/h3&gt;
+
+&lt;p&gt;For our &lt;a href="#ex1"&gt;Template Section 2&lt;/a&gt;, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&amp;#8217;s use the following simple HTML:&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;#8217;s put it all together.&lt;/p&gt;
+
+&lt;h3&gt;Complete Template&lt;/h3&gt;
+
+&lt;p&gt;Putting all we learned above together, we get a nice simple &lt;a href="http://codex.wordpress.org/The_Loop"&gt;Loop&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+&lt;?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?&gt;
+
+    &lt;div class=&#x201D;post&#x201D;&gt;
+        &lt;h2&gt; &lt;a href=&#x201D;&lt;?php the_permalink() ?&gt;&#x201D;&gt; &lt;?php the_title() ?&gt; &lt;/a&gt; &lt;/h2&gt;
+        &lt;p&gt; &lt;?php the_date() ?&gt; &lt;/p&gt;
+
+        &lt;?php the_content() ?&gt;
+
+        &lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;
+    &lt;/div&gt;
+
+&lt;?php endwhile; else: ?&gt;
+
+    &lt;p&gt;Sorry, no posts could be found to match your criteria.&lt;/p&gt;
+
+&lt;?php endif; ?&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we have done no PHP coding, just some simple HTML with &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; Template Tags added in.&lt;/p&gt;
+
+&lt;p&gt;Obviously this is not a complete template, as we have no header and footer containing all the &lt;code class="html"&gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;body&amp;gt;&lt;/code&gt; tags. But with some simple HTML and more &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;, and no PHP, we can easily add all that is needed for a complete HTML document. That&amp;#8217;s right, an HTML document, not a PHP script.&lt;/p&gt;
+
+&lt;p&gt;As we can see &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is not PHP. &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &amp;#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&amp;#8217;t know why, &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; is extremely easy and requires no knowledge of PHP at all.&lt;/p&gt;
+
+&lt;p&gt;Changing the format and style of your &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. &lt;/p&gt;
+
+&lt;p&gt;However, as with any software, there is room for improvement.&lt;/p&gt;
+
+&lt;h2&gt;Improving Templates&lt;/h2&gt;
+
+&lt;p&gt;One of the problems with the &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; &lt;a href="http://codex.wordpress.org/Templates"&gt;Template System&lt;/a&gt;, in my opinion, is the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt;, or theme, itself. Specifically the sidebar, with all the &lt;code class="html"&gt;is_*()&lt;/code&gt; functions. We shouldn&amp;#8217;t expect a novice &lt;a href="http://wordpress.org"&gt;WordPress&lt;/a&gt; user to understand what these functions mean. I would suggest removing all the &lt;code class="html"&gt;if(is_*())&lt;/code&gt; statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see with the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Template&lt;/a&gt; is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.&lt;/p&gt;
+
+&lt;p&gt;Another problem I see is with some of the &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt;. Such as &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt;. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, &lt;code class="html"&gt;&amp;lt;?php blog_name() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_description() ?&amp;gt;&lt;/code&gt;, &lt;code class="html"&gt;&amp;lt;?php blog_url() ?&amp;gt;&lt;/code&gt;, etc., to maintain consistency. For some of the less used information, charset, version, etc., the &lt;code class="html"&gt;&amp;lt;?php bloginfo() ?&amp;gt;&lt;/code&gt; tag would be fine.&lt;/p&gt;
+
+&lt;p&gt;And some of the other advanced &lt;a href="http://codex.wordpress.org/Template_Tags"&gt;Template Tags&lt;/a&gt; in use in the default &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, like &lt;code class="html"&gt;&amp;lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&amp;gt;&lt;/code&gt;, should be simplified to not contain all those arguments. Maybe use &lt;code class="html"&gt;&amp;lt;?php wp_list_cats() ?&amp;gt;&lt;/code&gt; where all those settings would be set in the admin area.&lt;/p&gt;
+
+&lt;p&gt;It would also be nice to try to simplify the loop, although I can&amp;#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.&lt;/p&gt;
+
+&lt;p&gt;The point I&amp;#8217;m trying making is to take the PHP out of the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;, as much as possible, so users don&amp;#8217;t get confused and think they need PHP skills to modify the &lt;a href="http://codex.wordpress.org/Templates"&gt;Templates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Those are just my thoughts on the matter.&lt;/p&gt;
+
+&lt;p&gt;If you need any help with your templates, or would like to learn more about the monkey, I&amp;#8217;d be glad to help out. Just &lt;a href="/contact/"&gt;drop me a line&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>Faking Two Column Text</title><link rel="alternate" href="https://mattread.com/faking-two-column-text"/><link rel="edit" href="https://mattread.com/faking-two-column-text/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>http://mattread.com/?p=214</id><updated>2008-04-17T21:55:49-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:58:33-04:00</app:edited><published>2005-10-12T11:32:32-04:00</published><category term="web-design"/><category term="web-applications"/><category term="articles"/><category term="internet"/><content type="html">&lt;p&gt;One of the many exciting features of CSS 3 is the ability to create columnar text. In this article I will show you a way to fake two column text with a little Javascript. &lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;First off we need to stipulate that this hack will only work with textual information contained in HTML paragraph tags (&amp;#060;p&amp;#062;&amp;#060;/p&amp;#062;).&lt;/p&gt;
+
+&lt;p&gt;To use the script all you need to do is &lt;a href="#download"&gt;download the script&lt;/a&gt; and include it in the head of your document.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;script type="text/javascript" src="two-col.js"&gt;&lt;/script&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To designate which text will be columnar we will put it in a layer with an id attribute of &amp;#8220;two-col&amp;#8221; like below. And that&amp;#8217;s all you need to do to use the script.&lt;/p&gt;
+
+&lt;pre class="highlight html"&gt;
+&lt;![CDATA[
+&lt;div id="two-col"&gt;
+    &lt;p&gt;The information here will be displayed as two columns.
+    This will be the first of two Paragraphs&lt;/p&gt;
+    &lt;p&gt;Here is the second paragraph in our columnar
+    data.&lt;/p&gt;
+&lt;/div&gt;
+]]&gt;
+&lt;/pre&gt;
+
+&lt;h3&gt;The Script And The Problems&lt;/h3&gt;
+
+&lt;p&gt;The script works by grabbing all the HTML inside the &amp;#8220;two-col&amp;#8221; element and splitting into an array, by spaces, using javascripts built in split function. Then we loop through our new array and place half the words in the left column and the other half in the right column. Of coarse splitting the HTML in half causes a few problems. &lt;/p&gt;
+
+&lt;p&gt;First, if a tag is located in the middle of the data, it can split that tag in two. This is quite bad but can be overcome by formatting the content so it doesn&amp;#8217;t occur. Maybe in a latter version of the script I&amp;#8217;ll try to address this problem.&lt;/p&gt;
+
+&lt;p&gt;Second, because we are spiltting the content into two, we end up spiltting a paragraph into two paragraphs, creating a new paragraph out of part of the original. This is unfortunate but necessary for proper styling with CSS.&lt;/p&gt;
+
+&lt;p&gt;But if everything works right we get our two column text.&lt;/p&gt;
+
+&lt;h3&gt;Example of Two Column Text&lt;/h3&gt;
+
+&lt;div id="two-col"&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse imperdiet, erat quis tempus euismod, mi quam faucibus nibh, ac ullamcorper erat velit in nisl. In eget elit. Sed pede quam, eleifend facilisis, lobortis a, sagittis non, eros. Aliquam erat volutpat.&lt;/p&gt;
+
+&lt;p&gt;Praesent mauris magna, laoreet id, venenatis in, suscipit vitae, nisl. Aenean rutrum convallis nunc. Suspendisse pharetra placerat felis. In eget ipsum pretium nunc dignissim aliquet. Nulla ligula. Sed nulla lorem, dapibus in, malesuada sed, ultrices id, nunc. &lt;/p&gt;
+
+&lt;p&gt;Proin feugiat neque a orci. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer nec dolor id neque aliquet mattis. Mauris leo eros, elementum eget, varius ultricies, vehicula non, lorem. Nam eget neque id lacus imperdiet tincidunt. Aliquam eu augue.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Pasteosaurus</title><link rel="alternate" href="https://mattread.com/pasteosaurus"/><link rel="edit" href="https://mattread.com/pasteosaurus/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2007:pasteosaurus/1184599039</id><updated>2008-04-17T21:31:22-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-25T22:00:08-04:00</app:edited><published>2007-07-16T04:17:19-04:00</published><category term="design"/><category term="paste"/><content type="html">&lt;p&gt;&lt;a href="http://jimwhimpey.com/" title="The Jim Whimpey Weblog"&gt;Jim Whimpey&lt;/a&gt; and &lt;a href="http://brisbanecreative.com.au/"&gt;Brisbane Creative&lt;/a&gt; bring you &lt;a href="http://pasteosaurus.com/"&gt;Pasteosaurus&lt;/a&gt;. The new PHP pastebin on the block, based on the OSS code from &lt;a href="pastebin.com"&gt;Pastebin.com&lt;/a&gt;. The entire systme and codebase was almost completely rewritten by Jim, in aim of simplifying the entire system.&lt;/p&gt;
+
+&lt;p&gt;As &lt;a href="http://jimwhimpey.com/blog/2007/pasteosaurus-and-an-incredible-photographic-journal/"&gt;Jim says&lt;/a&gt; on his blog, &lt;q cite="http://jimwhimpey.com/blog/2007/pasteosaurus-and-an-incredible-photographic-journal/"&gt;Every piece of junk I wasn&#x2019;t using from pastebin has been removed, including DB fields and every file has been reorganised and rewritten in cleaner, smaller and more easily read code. This means it&#x2019;s now much easier for me to add features, which I&#x2019;ve already done!&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;It is quite a lovely pastebin, much faster and cleaner than most of those other big ones. The design is simple yet beautiful; I love to see red and pink in a design. And with the use of &lt;a href="http://geshi.org/"&gt;Geshi&lt;/a&gt;, the syntax highlighting works quite well.&lt;/p&gt;
+
+&lt;p&gt;Of course, being a good OSS citizen, the code available for download via the link at the bottom of every page. So let&amp;#8217;s not pastebin anymore, let&amp;#8217;s Pasteosaurus!&lt;/p&gt;
+</content></entry></feed>

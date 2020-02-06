@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>WP Mailing Lists RSS Feeds</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/wp-mailing-lists-rss-feeds"/><link rel="edit" href="https://mattread.com/wp-mailing-lists-rss-feeds/atom"/><id>http://mattread.com/archives/2006/01/wp-mailing-lists-rss-feeds/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:22-05:00</app:edited><published>2006-01-30T07:09:29-05:00</published><category term="life"/><content type="html">&lt;p&gt;I subscribe to the WP Hackers mailing list, but found my email client wasn't the greatest for reading the list. And I didn't feel like subscribing to all the other lists just to keep up with things. So I hacked together a nice script to create RSS feeds out of the WordPress mailing lists. It updates every hour, so there's no need to grab it every 5 minutes ;).&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;It works for all the lists by simply pointing your RSS reader to &lt;code&gt;http://mattread.com/wp-lists/feed/[list-name]/&lt;/code&gt;. Here is a list of the lists:&lt;/p&gt;&#xD;
+&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-hackers/"&gt;wp-hackers&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-docs/"&gt;wp-docs&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-forums/"&gt;wp-forums&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-testers/"&gt;wp-testers&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-svn/"&gt;wp-svn&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-polygots/"&gt;wp-polygots&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;a href="http://mattread.com/wp-lists/feed/wp-pro/"&gt;wp-pro&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;/ul&gt;</content></entry>

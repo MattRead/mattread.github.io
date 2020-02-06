@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<rsd xmlns="http://archipelago.phrasewise.com/rsd" version="1.0"><service><engineName>Habari</engineName><engineLink>http://www.habariproject.org/</engineLink><homePageLink>https://mattread.com</homePageLink><apis><api name="Atom" preferred="true" apiLink="https://mattread.com/atom/1" blogID="1"/><api name="metaWeblog" preferred="false" apiLink="https://mattread.com/xmlrpc" blogID="1"/></apis></service></rsd>

@@ -1,0 +1,147 @@
+#twitter_litte time a {
+	font-size: 18px;
+	line-height: 30px;
+	color: #bbb;
+}
+
+#flickrfeed {
+	margin: 1.5em 0 0;
+	padding: 0;
+}
+
+#flickrfeed li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#flickrfeed li img {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #222;
+}
+
+ul#meta_links li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+ul#meta_links {
+	margin: 1em 0;
+	padding: 0;
+	text-align: center;
+}
+
+ul#meta_links li:after {
+	content: " \00B7 ";
+	padding: 0 .3em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+}
+
+ul#meta_links li:last-child:after {
+	content: "";
+}
+
+#tag_archives {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.875em;
+	line-height: 1.875;
+	font-size: .8em;
+	font-weight: 300;
+}
+
+#tag_archives li {
+	display: inline;
+	margin: 0;
+}
+
+#tag_archives li a:after {
+	content: ",";
+}
+
+#tag_archives li:last-child a:after {
+	content: "";
+}
+
+form#searchform p {
+	text-align: center;
+}
+
+form#searchform input[type=text] {
+	width: 60%;
+	border-radius: 15px 0 0 15px;
+	padding: 6px 15px;
+}
+
+form#searchform input[type=submit] {
+	background: #042D3C;
+	background-image: none;
+	filter: none;
+	color: #eee;
+	border-radius: 0 15px 15px 0;
+	padding: 6px 1.5em;
+	margin: 0;
+}
+
+nav.site form#searchform {
+	display: none;
+	padding: 0;
+	width: 150px;
+	margin: 0;
+}
+
+#sform i {
+	font-size: 16px;
+}
+
+nav.site form#searchform p {
+	margin: 0;
+	padding: 0;
+}
+
+nav.site form#searchform input[type=submit] {
+	display: none;
+}
+
+nav.site form#searchform input[type=text] {
+	border-radius: 11px;
+	height: 22px;
+	padding: 1px 10px;
+	margin: 6px 0 0;
+	border: 1px solid #aaa;
+	background: #fcfcfc;
+	box-shadow: none;
+	width: 100%;
+	font-size: 12px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.gsc table, .gsc th, .gsc td {
+	border: none;
+}
+
+.flattr {
+	float: right;
+}
+
+.flattr img {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.at-comment-reply p {
+	margin-bottom: 0;
+	text-align: right;
+}
+
+.markdown-cheat {
+	margin-top: -30px;
+}

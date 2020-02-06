@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Quick Escape</title>
+<link type="text/css" media="screen" rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro">
+<style>
+	body {
+		margin: 0;
+		padding: 1em 5em;
+		font: 300 20px/1.5 'Source Sans Pro', sans-serif;
+		word-spacing: 0.1em;
+		color: #222;
+		word-wrap: break-word;
+		background: #fcfcfc;
+	}
+
+	nav.navnav {
+		font-size: .8em;
+		color: #777;
+	}
+
+	h1, h2, h3, h4, h5 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: normal;
+	}
+	pre, code {
+		font-family: 'Source Code Pro', monospace;
+		font-size: 16px;
+	}
+</style>
+<nav class="navnav">Navigation:
+	<a href="example-youtube-embed.html">&larr; Previous
+		Example</a> | 	<a href="examples.html">&uarr; More Examples</a>
+	 | <a href="example-imdb-api.html">Next
+		Example &rarr;</a>	</nav>
+
+<h1>Quick Escape Done Right</h1>
+
+<p>Demonstrates a quick escape link with and without a <code>onclick="document.write('loading...')"</code> to quickly hide the page, then redirect.</p>
+
+<h2>Without <code>document.write</code></h2>
+<p>Notice the delay of loading the next page with this link.</p>
+<p><a href="http://www.theweathernetwork.com/weather/canada/ontario/ottawa">Quick Escape</a></p>
+
+<h2>With <code>document.write</code></h2>
+<p>Notice the page is instantly hidden with a loding message until the next page shows up. Here we also use <code>window.location.replace();</code> so the previous URL is not in history (no back button).</p>
+<p><a href="http://www.theweathernetwork.com/weather/canada/ontario/ottawa" onclick="document.write('<blink>Loading Weather...</blink>');window.location.replace('http://www.theweathernetwork.com/weather/canada/ontario/ottawa');return false;">Quick Escape</a></p>
+</html>

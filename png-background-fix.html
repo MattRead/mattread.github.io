@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+
+<!-- Mirrored from mattread.com/png-background-fix by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>PNG Images, A MSIE Fix - Matt Read, Weblog</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="generator" content="Habari 0.10-alpha">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+
+	<script>
+		var HABARI_URL = "index.html";
+		var CONQUISTADOR_URL = "user/themes/conquistador/index.html";
+		var CONQUISTADOR_USE_FANCYBOX = true;
+	</script>
+	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
+<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="Shortcut Icon" href="favicon.ico">
+<link rel="copyright" href="copyright.html">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-887070-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-887070-1');
+</script>
+<link rel="prev" href="a-little-update.html"><link rel="next" href="nmc-chats-with-matt.html"><link rel="home" href="index.html">
+<meta name="keywords" content="articles">
+<meta name="description" content="This small and easy script will fix the problem with transparent backgrounds in Portable Network Graphics (PNG) in Microsoft Internet Explorer (MSIE). It uses a small script, which you call in y…" >
+<meta name="robots" content="index, follow" >
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="png-background-fix/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
+<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
+
+<!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
+<![endif]--></head>
+<body class="display_entry entry-372" itemscope itemtype="http://schema.org/Blog">
+<div class="wrap">
+	<p itemprop="name" class="mast">
+		<a itemprop="url" href="index.html">
+			Matt Read, Weblog		</a>
+		<meta itemprop="description" content="It says little, does less, means  nothing.">
+	</p>
+
+	<nav class="site" id="top">
+		<label for="show-menu" class="show-menu"><span class="icon-menu"></span>Show Menu</label>
+		<input type="checkbox" id="show-menu">
+		<ol ><li class="inactive" id="main-menu_279"><a href="archives.html">Archives</a></li>
+<li class="inactive" id="main-menu_254"><a href="examples.html">Examples</a></li>
+<li class="inactive" id="main-menu_243"><a href="about.html">About</a></li>
+<li class="inactive" id="main-menu_292"><a href="https://keybase.io/mattread/key.asc">GPG</a></li>
+</ol><form method="get" id="searchform" action="https://mattread.com/search"><p><input type="text" id="s" name="criteria" value=""><input type="submit" id="searchsubmit" value="Search"></p></form>	</nav>
+	<div style="clear:both"></div>
+	<div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<header id="post-372" class="post post-372 type-entry status-published tag-articles">
+		<h1 itemprop="name">PNG Images, A MSIE Fix</h1>
+		<meta content="https://mattread.com/png-background-fix" itemprop="url">
+		<meta itemprop="interactionCount" content="UserComments:1">
+		<p>
+			<meta itemprop="dateModified" content="2013-03-08T23:00:57-05:00">
+<time itemprop="datePublished" datetime="2004-08-08T21:57:23-04:00">
+	Published August 8<sup>th</sup>, 2004</time>
+
+		</p>
+
+		<p>&#x2766;</p>
+	</header>
+	<div itemprop="articleBody">
+		<p>This small and easy script will fix the problem with transparent backgrounds in Portable Network Graphics (PNG) in Microsoft Internet Explorer (MSIE). It uses a small script, which you call in your Cascading Style Sheet (CSS) with a behavior attribute.  Note that this will only work for images defined with the img tag, and will not work for CSS backgrounds.<!--more--></p>
+
+<h3>Background</h3>
+
+<p>You might be asking yourself, &#8220;why would a Linux guy like Matt care about MSIE?&#8221;. Well, the short answer is, 52% of the viewers of this website use MSIE, so we all have to account for it&#8217;s shortcomings. </p>
+
+<p>MSIE has always had problems rendering PNG images properly. The issue is with alpha channels in transparent PNG images. MSIE, in all it&#8217;s glory, displays the transparent background as a solid gray or black background. </p>
+
+<p>Microsoft (M$) has been promising to fix this issue for about five years now, but has yet to do so. There is a <a href="http://www.petitiononline.com/msiepng/petition.html">petition</a> to force M$ to fix the problem, so please go sign the <a href="http://www.petitiononline.com/msiepng/petition.html">petition</a>.</p>
+
+<p>So, let&#8217;s get started. </p>
+
+<h3>Configuration</h3>
+
+<p>There is only two small files on the tweak, and some small CSS to implement. </p>
+
+<p>First, upload the file, <code>blank.gif</code>, to a directory of your choosing. Now open up <code>pngbehavior.htc</code> and change the path of <code>blank.gif</code> to were you uploaded it, and make sure you use an absolute path here. So if you uploaded to the directory /images/ then it would be:</p>
+
+<pre><code>line 29:    var blankSrc = "/images/blank.gif";
+</code></pre>
+
+<p>Second, after saving, upload the file, <code>pngbehavior.htc</code>, to a directory of your choosing. Remember the directory, because we will need it later. </p>
+
+<p>Then, we need to set a CSS &#8220;class&#8221; or &#8220;id&#8221; for the images, to define them in CSS. Or we can use some other way to define them in our CSS. </p>
+
+<h3>Using the Script</h3>
+
+<p>I think the easiest way to show you how to use this tweak is with examples. so here are a four examples to get you started. </p>
+
+<h4>Example 1</h4>
+
+<p>Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:</p>
+
+<pre><code>&lt;div id="article"&gt; 
+  &lt;img src="image.png" alt="image" width="20" height="20" /&gt; 
+&lt;/div&gt;
+</code></pre>
+
+<p>For this XHTML we will need the following CSS:</p>
+
+<pre><code>#article img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  } 
+
+NOTE: The #article img CSS will define all images in the "article" &lt;div&gt;.
+Consult your CSS manual for more information.
+</code></pre>
+
+<p>Notice the behavior attribute. This attribute calls the script which fixes the background problems. I hope you remembered the path to the script, as this is where you put it.  </p>
+
+<p>Second, notice the padding of 0. YOU NEED TO HAVE THIS, since the script replaces the image with a CSS background, and any padding will cause the image to be enlarged and distorted. </p>
+
+<p>Finally, notice the XHTML above. The &#8220;height&#8221; and &#8220;width&#8221; attribute are defined. YOU ALSO NEED THIS, since without it the script will not know what size the image is, and the image will be distorted. </p>
+
+<p>Now that I&#8217;ve shown you the basics the next three examples will elaborated on them. </p>
+
+<h4>Example 2</h4>
+
+<p>Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:</p>
+
+<pre><code>&lt;img src="image.png" alt="iamge" width="20" height="20" class="png" /&gt;
+</code></pre>
+
+<p>For this XHTML we will need the following CSS:</p>
+
+<pre><code>.png { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+</code></pre>
+
+<p>The behavior and padding CSS attributes are as before, and the image XHTML has the &#8220;height&#8221; and &#8220;width&#8221; defined as well. </p>
+
+<h4>Example 3</h4>
+
+<p>Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:</p>
+
+<pre><code>&lt;img src="image.png" alt="iamge" width="20" height="20" /&gt;
+</code></pre>
+
+<p>For this XHTML we will need the following CSS:</p>
+
+<pre><code>img { 
+  behavior: url( path/to/pngbehavior.htc ); 
+  padding: 0; 
+  }
+</code></pre>
+
+<p>In this example we have not defined any &#8220;class&#8221; or &#8220;id&#8221;, nor have we got it in a defining <code>&lt;div&gt;</code>. The beauty of this script is that, if the image is not a PNG, such as JPG, GIF, etc., it will not apply anything to the image, just leave it alone. </p>
+
+<p>So, in our CSS, we will just define all images to use the behavior. Again notice the behavior, padding, height and width as in example 1. </p>
+
+<h4>Example 4</h4>
+
+<p>Here is the Extensible Hyper Text Mark-up Language (XHTML) for this example:</p>
+
+<pre><code>&lt;img src="image.png" alt="iamge" class="png" /&gt;
+</code></pre>
+
+<p>For this XHTML we will need the following CSS:</p>
+
+<pre><code>.png { 
+  behavior: url( path/to/pngbehavior.htc );
+</code></pre>
+
+<p>padding: 0; 
+   height: 20px; 
+   width 20px; 
+   } </p>
+
+<p>Wait, you say, you told me I needed to have the height and width in the XHTML. Well, I lied, you will notice that I am defining the width and height in the CSS. Either way, CSS or XHTML, will work. This method is good for multiple instances of the same image, like the comment icons on my home page. And notice that the other attributes are the same. </p>
+
+<h3>Conclusion</h3>
+
+<p>Now that I&#8217;ve shown you many ways of using this tweak, you should have no problem&#8217;s implementing it on your site. Should you have any changes, problems or suggestion, please leave a comment on this post. </p>
+
+<p>One last thing to note. The behavior attribute is invalid CSS, so it will invalidate your CSS, duh. However, the behavior attribute is only recognized by MSIE, and will not affect your CSS layout in other browsers like FireFox.</p>
+
+<h3>Download and License</h3>
+
+<p>See the blue box below for download and license information.</p>
+	</div>
+
+	<div class="bar">
+	<p class="meta">PNG Images, A MSIE Fix was written by
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	    <span itemprop="name">
+	    	            <a href="author/matt-read.html">Matt Read</a>.
+	    	    </span>
+		<img itemprop="image"
+			alt="Gravatar for Matt Read"
+			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
+			class="gravatar">
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+	</span>
+</p>
+
+	<nav>
+		<p class="meta">
+			Tags: <span itemprop="keywords"><a href="tag/articles.html" rel="tag">articles</a></span>
+		</p>
+	</nav>
+<nav class="posts">
+	<p class="meta">
+					<a href="nmc-chats-with-matt.html"
+			   title="NuclearMoose Chats With Matt Mullenweg"><i class="icon-arrow-left2"></i> Next Post</a> &nbsp;|&nbsp;
+							<a href="a-little-update.html"
+			   title="A little Update">Previous Post <i
+					class="icon-arrow-right2"></i></a>
+			</p>
+</nav>
+</div>
+		<section id="comments">
+		<h3 id="comments">Comments</h3>
+					<p class="meta">The opinions expressed in comments are entirely the responsibility of the various contributors. While I will do everything within reason to ensure that they are not defamatory, I accept no liability for them or the content of links included in them.</p>
+		
+		<article id="comment-2501"
+		class="comment type-comment status-approved "
+		itemscope itemtype="http://schema.org/Comment">
+	
+	<meta itemprop="about" content="PNG Images, A MSIE Fix">
+	<header>
+		<p>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img class="gravatar" itemprop="image"
+				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
+				     alt="Gravatar for Anonymous">
+				<span itemprop="name">Anonymous</span>
+			</span>
+			<small>(<a href="#comment-2501"
+			           title="Permanent link to this comment">#2501</a>)
+			</small>
+			<br>
+			<time itemprop="dateCreated"
+				datetime="2006-07-10T22:27:15-04:00">July 10<sup>th</sup>, 2006</time>
+		</p>
+	</header>
+	<div itemprop="text">
+					<p>groovy</p>
+			</div>
+</article>
+	</section>
+
+</div>
+	<section>
+		<h2>Related Posts</h2>
+			<ul class="posts" id="post-list">
+		<li id="post-371" class="post post-371 type-entry status-published tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-10-09T14:14:07-04:00">
+<time itemprop="datePublished" datetime="2004-03-04T21:04:22-05:00">
+	04 Mar 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="free-mp3-encoding-wmp.html" itemprop="url"
+							title="Entry: Free MP3 Encoding on Windows Media Player XP">
+			Free MP3 Encoding on Windows Media Player XP</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="free-mp3-encoding-wmp.html#comments"
+		   title="37 Comments">
+			<span class="icon-bubble"></span> 37		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-333" class="post post-333 type-entry status-published tag-web-design tag-web-applications tag-articles tag-internet" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-22T10:58:33-04:00">
+<time itemprop="datePublished" datetime="2005-10-12T11:32:32-04:00">
+	12 Oct 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="faking-two-column-text.html" itemprop="url"
+							title="Entry: Faking Two Column Text">
+			Faking Two Column Text</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="faking-two-column-text.html#comments"
+		   title="1 Comment">
+			<span class="icon-bubble"></span> 1		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-339" class="post post-339 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:32-05:00">
+<time itemprop="datePublished" datetime="2005-06-06T17:41:31-04:00">
+	06 Jun 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="auto-links-discovery-plugin.html" itemprop="url"
+							title="Entry: Auto Links Discovery Plugin 0.1">
+			Auto Links Discovery Plugin 0.1</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="auto-links-discovery-plugin.html#comments"
+		   title="11 Comments">
+			<span class="icon-bubble"></span> 11		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-346" class="post post-346 type-entry status-published tag-wordpress tag-articles" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T22:58:34-05:00">
+<time itemprop="datePublished" datetime="2005-03-13T16:52:35-05:00">
+	13 Mar 2005</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="custom-query-string-plugin.html" itemprop="url"
+							title="Entry: Custom Query String Plugin 2.2">
+			Custom Query String Plugin 2.2</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="custom-query-string-plugin.html#comments"
+		   title="65 Comments">
+			<span class="icon-bubble"></span> 65		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+<li id="post-366" class="post post-366 type-entry status-published tag-articles tag-hardware" itemprop="blogPost" itemscope
+    itemtype="http://schema.org/BlogPosting">
+	<meta itemprop="dateModified" content="2013-03-08T23:02:08-05:00">
+<time itemprop="datePublished" datetime="2004-01-06T07:37:54-05:00">
+	06 Jan 2004</time>
+
+	<span itemprop="name">
+		
+	<i class="icon-blog" title="Type: Entry"></i>
+		<a href="ps2-disc-read-error-fix.html" itemprop="url"
+							title="Entry: Playstation 2 Disc Read Error Fix">
+			Playstation 2 Disc Read Error Fix</a>
+	</span>
+			<a itemprop="interactionCount" class="comment-count" href="ps2-disc-read-error-fix.html#comments"
+		   title="239 Comments">
+			<span class="icon-bubble"></span> 239		</a>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<meta itemprop="name" content="Matt Read">
+</span>
+</li>
+	</ul>
+
+	</section>
+
+<footer>
+	<div id="totop"></div>
+	<div>
+	Copyright &copy; 2003 Matt Read</div>
+<div class="social">
+	<a href="atom/1" title="RSS Feed" class="feed"><i
+			class="icon-feed3"></i><b>RSS Feed</b></a>
+			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
+			<i class="icon-twitter2"></i><b>twitter</b></a>
+			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<i class="icon-lastfm2"></i><b>lastfm</b></a>
+			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<i class="icon-flickr3"></i><b>flickr</b></a>
+			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
+			<i class="icon-vimeo2"></i><b>vimeo</b></a>
+			<a href="https://plus.google.com/108587268856593448663/posts" title="Google+" class="googleplus">
+			<i class="icon-googleplus2"></i><b>googleplus</b></a>
+			<a href="https://github.com/MattRead" title="Github" class="github">
+			<i class="icon-github5"></i><b>github</b></a>
+	</div>
+
+	<script  src="../ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  src="user/themes/conquistador/js/site-min.js"></script>
+</footer>
+</div></body>
+
+<!-- Mirrored from mattread.com/png-background-fix by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:21:34 GMT -->
+</html>

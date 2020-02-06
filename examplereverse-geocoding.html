@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<title>Reverse Geocoding</title>
+<link type="text/css" media="screen" rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro">
+<style>
+	body {
+		margin: 0;
+		padding: 1em 5em;
+		font: 300 20px/1.5 'Source Sans Pro', sans-serif;
+		word-spacing: 0.1em;
+		color: #222;
+		word-wrap: break-word;
+		background: #fcfcfc;
+	}
+
+	nav.navnav {
+		font-size: .8em;
+		color: #777;
+	}
+
+	h1, h2, h3, h4, h5 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: normal;
+	}
+	pre, code {
+		font-family: 'Source Code Pro', monospace;
+		font-size: 16px;
+	}
+</style>
+<nav class="navnav">Navigation:
+	<a href="example-canadian-flag-in-css.html">&larr; Previous
+		Example</a> | 	<a href="examples.html">&uarr; More Examples</a>
+		</nav>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script type="text/javascript"> 
+  var geocoder;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+} 
+//Get the latitude and the longitude;
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+	document.getElementById('geo').innerHTML ='<p><b>Results:</b></p><p>'+lat +', '+ lng;
+    codeLatLng(lat, lng)
+}
+
+function errorFunction(){
+    alert("Geocoder failed");
+}
+
+  function initialize() {
+    geocoder = new google.maps.Geocoder();
+
+
+
+  }
+
+  function codeLatLng(lat, lng) {
+
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      console.log(results)
+        if (results[1]) {
+         //formatted address
+        document.getElementById('geo').innerHTML = document.getElementById('geo').innerHTML +'<p>'+results[0].formatted_address;
+        //find country name
+             for (var i=0; i<results[0].address_components.length; i++)="" {="" for="" (var="" b="0;b<results[0].address_components[i].types.length;b++)" //there="" are="" different="" types="" that="" might="" hold="" a="" city="results[0].address_components[i];" admin_area_lvl_1="" usually="" does="" in="" come="" cases="" looking="" sublocality="" type="" will="" be="" more="" appropriate="" if="" (results[0].address_components[i].types[b]="=" "locality")="" //this="" is="" the="" object="" you="" break;="" }="" "administrative_area_level_1")="" province="results[0].address_components[i];" "country")="" country="results[0].address_components[i];" //city="" data="" document.getelementbyid('geo').innerhtml="document.getElementById('geo').innerHTML" +'<p="">'+city.long_name + ", " + province.short_name + ", " + country.short_name;
+
+
+        } else {
+          alert("No results found");
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
+    });
+  }
+</script> 
+
+<!-- Mirrored from mattread.com/examplereverse-geocoding by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:22:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<body onload="initialize()">
+
+<h1>Reverse Geocoding</h1>
+
+<p>Code will get your Lattitude/Longitude, and City and Address</p>
+
+<div id="geo"><blink><b>loading ...</b></blink></div>
+
+<!-- Mirrored from mattread.com/examplereverse-geocoding by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 17:22:15 GMT -->
+</html>

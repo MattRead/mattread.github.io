@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Where Has All The Content Gone?</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/where-has-all-the-content-gone"/><link rel="edit" href="https://mattread.com/where-has-all-the-content-gone/atom"/><id>http://mattread.com/archives/2006/08/where-has-all-the-content-gone/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:58:11-04:00</app:edited><published>2006-08-12T05:34:51-04:00</published><category term="announcements"/><content type="html">&lt;p&gt;I would like to apologise to all of you who came here looking for documentation, plugins, or just a read. It seems that I screwed up when trying to add, what I call, "quick admin links" to posts. It's just some links that allow you to delete/edit comments and/or posts. Unfortunately I did the following with the "the_content" filter:&lt;/p&gt;&#xD;
+&#xD;
+&lt;pre class="highlight php"&gt;&#xD;
+&lt;![CDATA[&#xD;
+if (!current_user_can('edit_post', $post-&gt;ID)) {&#xD;
+	return;&#xD;
+}&#xD;
+]]&gt;&#xD;
+&lt;/pre&gt;&#xD;
+&#xD;
+&lt;p&gt;Of course, that meant that all of you who were not logged in to my site, could not see any post nor comment contents, while I could see them just fine. And this brings up a good point. When using filters, remember to return the original content passed to your function, or you'll end up like me, contentless. ;)&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Here's what I should have done and now have done:&lt;/p&gt;&#xD;
+&#xD;
+&lt;pre class="highlight php"&gt;&#xD;
+&lt;![CDATA[&#xD;
+if (!current_user_can('edit_post', $post-&gt;ID)) {&#xD;
+	return $content;&#xD;
+}&#xD;
+]]&gt;&#xD;
+&lt;/pre&gt;&#xD;
+&#xD;
+&lt;p&gt;Again, sorry to all who came looking for content. :)&lt;/p&gt;</content></entry>

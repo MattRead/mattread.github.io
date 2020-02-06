@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Why can't IE do it right?</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/why-cant-ie-do-it-right"/><link rel="edit" href="https://mattread.com/why-cant-ie-do-it-right/atom"/><id>http://www.mattread.com/weblog/why-cant-ie-do-it-right/</id><updated>2007-04-06T14:58:24-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T23:01:24-05:00</app:edited><published>2004-06-19T14:01:16-04:00</published><category term="life"/><content type="html">&lt;p&gt;You'll notice on my site that the category icons on the right of each post are "png" files with a transparent background. However, if you use IE, you won't notice this because microsoft are retards. They've been promising that they would get IE to render png's properly for about six years now, and have yet to do so. So if any of you are using IE then go and get &lt;a href="http://www.mozilla.org/firefox" rel="external"&gt;Mozilla Firefox&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; I have implemented a small hack to fix this problem. I am currently working on an article for the tweaks section and will have it up soon. Stay tunned. &lt;/p&gt;
+
+&lt;p&gt;Also please visit the following link to sign the petition to force Microsoft to display PNG images properly. &lt;br /&gt;
+&lt;a href="http://www.petitiononline.com/msiepng/petition.html" rel="external"&gt;http://www.petitiononline.com/msiepng/petition.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As far as Microsoft goes, they can kiss my harry little ASS.&lt;/p&gt;
+</content></entry>

@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://www.habariproject.org/" version="0.10-alpha">Habari</generator><id>tag:mattread.com,2020-02-06:code/8570b76d965d9aabc07ffb82b7ac6c3a35ed2dea</id><title>Matt Read, Weblog</title><subtitle>It says little, does less, means  nothing.</subtitle><updated>2013-10-03T10:55:19-04:00</updated><link rel="alternate" href="https://mattread.com/tag/code"/><link rel="self" href="https://mattread.com/tag/code/atom"/><entry><title>hConsole: A Live Habari Console</title><link rel="alternate" href="https://mattread.com/hconsole-a-live-habari-debugging-console"/><link rel="edit" href="https://mattread.com/hconsole-a-live-habari-debugging-console/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2013:hconsole-a-live-habari-debugging-console/1359403524</id><updated>2013-10-03T10:55:19-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2014-10-07T20:20:34-04:00</app:edited><published>2013-10-02T14:54:06-04:00</published><category term="habari"/><category term="code"/><content type="html">&lt;p&gt;If you have ever written code before, you&amp;#8217;ve come across a situation where you needed to debug or test something simple in your code. Doing this with a Command Line Interpreter is quite simple. Type your code, see what comes out. But when it comes to web applications, it&amp;#8217;s a little harder. There are &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; requests, Sessions, Cookies, and a Webserver involved. This is where &lt;a href="https://github.com/habari-extras/hconsole" title="hConsole github repo"&gt;hConsole&lt;/a&gt; comes in.&lt;/p&gt;
+
+&lt;p&gt;hConsole is a live &lt;a href="https://habariproject.org/en/" title="Habari Project's main site"&gt;Habari&lt;/a&gt; console, or command line, that allows you to evaluate your code directly in your Habari installation, with all the &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; request, Sessions, etc. there. You can access the entire Habari core, even trigger plugin actions and filters, and view the live result on screen.&lt;/p&gt;
+
+&lt;p&gt;Once installed, you simply click on the hConsole button in the bottom right of your screen to bring up the console. In the console you can evaluate any &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; code and utilize the entire Habari base. You can also execute &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;, to query your Habari&amp;#8217;s database directly (Tip: press &lt;kbd&gt;ctrl&lt;/kbd&gt;+&lt;kbd&gt;Q&lt;/kbd&gt; to run code without the mouse).&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;a href="//farm9.staticflickr.com/8099/8590516105_9d9462457c_b.jpg" class="fancybox"&gt;&lt;img alt="hconsole_php" src="//farm9.static.flickr.com/8099/8590516105_9d9462457c.jpg" class="card center"&gt;&lt;/a&gt; 
+&lt;figcaption&gt;&lt;b&gt;Figure 1&lt;/b&gt; Using the debug area to output code.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;h3&gt;Debugging &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; and Habari&lt;/h3&gt;
+
+&lt;p&gt;hConsole has 2 parts; A debug section, for outputting variables and such (&lt;code&gt;Utils::debug()&lt;/code&gt; comes in handy here), and the ability to trigger plugin hooks and affect the output of, say, post titles. There is also an option to &lt;code&gt;htmlspecialchars()&lt;/code&gt; the output of the debugging code if you wanted to output &lt;abbr title="Hyper Text Markup Language"&gt;HTML&lt;/abbr&gt; tags, for example. Let&amp;#8217;s look at two basic examples:&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+$test = "this is a test";
+echo $test;
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 1&lt;/b&gt; A simple Debug echo&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;The code in example 1 will simply echo the variable &lt;code&gt;$test&lt;/code&gt; above the command line in hConsole; The so called &amp;#8220;Debug Area&amp;#8221;. We can also implement plugin hooks.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+filter_post_title_out {
+    function boo ($title)
+    {
+        return $title . ' Boo!';
+    }
+}
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 2&lt;/b&gt; Filtering Post Titles&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;The code in example 2 will register the function &lt;code&gt;boo()&lt;/code&gt; to the &lt;code&gt;post_title_out&lt;/code&gt; filter. Function &lt;code&gt;boo()&lt;/code&gt; then appends &lt;code&gt;" Boo!"&lt;/code&gt; to all post titles for the page you are looking at. We can also combine the two and have debug output along will running filters or actions.&lt;/p&gt;
+
+&lt;p&gt;Of course these are very simple examples of what can be done with hConsole. In the real world it becomes a very powerful tool.&lt;/p&gt;
+
+&lt;h3&gt;Debugging With hConsole&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;#8217;s look at an example of a real debugging situation where hConsole came in handy. When trying to debug Habari&amp;#8217;s internal Cron system it&amp;#8217;s hard to tell why it&amp;#8217;s failing when &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt; is set to use &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt;. Recently &lt;a href="http://skippy.net" title="Scott's website"&gt;Scott&lt;/a&gt; was having an issue with a local install, where crons weren&amp;#8217;t running.&lt;/p&gt;
+
+&lt;p&gt;The issue comes from the fact that Habari makes an asynchronous &lt;abbr title="HyperText Transfer Protocol"&gt;HTTP&lt;/abbr&gt; call to itself to trigger all the Cronjobs to run. So you never actually see any errors from this, and when &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt; throws an exception, nothing is in the logs. So to test why Scott&amp;#8217;s crons where not running he used hConsole.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight php"&gt;
+$cronurl = URL::get( 'cron',array( 'asyncronous' =&gt; Utils::crypt( Options::get( 'public-GUID' ) ) ) );
+$request = new RemoteRequest( $cronurl, 'GET', 100 );
+$request-&gt;execute();
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 3&lt;/b&gt; Making a request to the cron.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;In example 3 we run the cron trigger using hConsole with a longer timeout so we can see what is happening. And Scott was able to get the error &lt;code&gt;Exception: CURL Error 60: SSL certificate problem, verify that the CA ...&lt;/code&gt;. He was then able to add his  &lt;abbr title="Secure Socket layer"&gt;SSL&lt;/abbr&gt; certificate chain to his Apache config so &lt;abbr title="Client URLs"&gt;CURL&lt;/abbr&gt; accepted the certificate, and crons ran smoothly.&lt;/p&gt;
+
+&lt;h3&gt;Debugging &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;&lt;/h3&gt;
+
+&lt;p&gt;hConsole will also let you directly run &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt; statements on your database. It will even substitute proper table names when using &amp;#8220;curly brackets&amp;#8221;, like &lt;code&gt;{posts}&lt;/code&gt; becomes &lt;code&gt;habari__posts&lt;/code&gt;, or whatever you chose during install. You can run any database query by simply checking the &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt; checkbox, and the results will output in a nicely formatted table.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;pre class="highlight sql"&gt;
+select * from {posts} limit 3;
+&lt;/pre&gt;
+&lt;figcaption&gt;&lt;b&gt;Example 4&lt;/b&gt; SQL selecting the 3 most recent posts.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;And the results from running example 4 show in a nice tabular format so we can easily see what&amp;#8217;s in our database.&lt;/p&gt;
+
+&lt;div&gt;&lt;figure&gt;
+&lt;a href="//farm9.static.flickr.com/8506/8591609336_bf476f433f_b.jpg" class="fancybox"&gt;&lt;img alt="hconsole_sql" src="//farm9.static.flickr.com/8506/8591609336_bf476f433f.jpg" class="center card"&gt;&lt;/a&gt;
+&lt;figcaption&gt;&lt;b&gt;Figure 2&lt;/b&gt; Results of selecting the 3 most recent posts.&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/div&gt;
+
+&lt;p&gt;You can also, of course, run other statements, such as delete, update, show tables, etc. All statements will output their results, or show an error if there are troubles.&lt;/p&gt;
+
+&lt;h2&gt;Developer&amp;#8217;s Best Friend&lt;/h2&gt;
+
+&lt;p&gt;As you can see hConsole is the plugin and theme developers best friend. Whether you are debugging a core Habari issue, or simply looking at the contents of an object. You can pretty much debug and test any code you need to; &lt;abbr title="PHP: Hypertext Preprocessor"&gt;PHP&lt;/abbr&gt;, &lt;abbr title="Structured Query Language"&gt;SQL&lt;/abbr&gt;, and Habari.&lt;/p&gt;
+
+&lt;ul class="download"&gt;
+&lt;li&gt;&lt;a href="https://github.com/habari-extras/hconsole/archive/master.zip"&gt;hConsole Master &lt;i class="icon-box-add"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/habari-extras/hconsole"&gt;GitHub Repo &lt;i class="icon-github"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Ephyboy, The Epiphany Tomboy&#xA0;Extension</title><link rel="alternate" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1"/><link rel="edit" href="https://mattread.com/ephyboy-the-epiphany-tomboy-extension-1/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2010:ephyboy-the-epiphany-tomboy-extension/1284168962</id><updated>2011-12-27T01:12:10-05:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-24T09:08:09-04:00</app:edited><published>2010-09-10T21:36:02-04:00</published><category term="code"/><category term="epiphany"/><category term="tomboy"/><content type="html">&lt;p&gt;Back in the day when I used to use &lt;a href="http://getfirefox.com"&gt;Firefox&lt;/a&gt;, I fell in love with the &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/8276/"&gt;Tomfox extension&lt;/a&gt;. It
+allowed you to create a new &lt;a href="http://projects.gnome.org/tomboy/"&gt;Tomboy&lt;/a&gt; note using the currently selected text of the webpage you
+were browsing, using the title for the title of the note and referencing the url as the source. This
+was great for me to document all the code and Linux commands I&amp;#8217;d find scattered around the net.&lt;/p&gt;
+
+&lt;p&gt;Eventually, though, I got tired of &lt;a href="http://getfirefox.com"&gt;Firefox&lt;/a&gt;, especially it&amp;#8217;s load times, and switched to
+&lt;a href="http://www.chromium.org/"&gt;Chromium&lt;/a&gt;. You guessed it, &lt;a href="http://www.chromium.org/"&gt;Chromium&lt;/a&gt; sucked too. So back to &lt;a href="http://projects.gnome.org/epiphany/"&gt;Epiphany&lt;/a&gt; I went, and with the
+2.30 version it is really quite a nice little browser.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://projects.gnome.org/epiphany/"&gt;Epiphany&lt;/a&gt; extensions are now done with &lt;a href="http://live.gnome.org/Seed"&gt;Seed&lt;/a&gt;, the GTK javascript bindings, making it really
+easy to write new extensions. Plus, it has almost a complete GTK implementation via GObject
+Introspection. So getting my tomboy note maker dohicky back was really not that hard &amp;#8212;aside from
+the lack of documentation. And thus, &lt;a href="http://github.com/MattRead/Ephyboy"&gt;Ephyboy&lt;/a&gt; is born. It&amp;#8217;s really quite simple:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://github.com/MattRead/Ephyboy/downloads"&gt;Download&lt;/a&gt; the tarball, or zip.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://github.com/MattRead/Ephyboy/wiki"&gt;Install&lt;/a&gt; the extension.&lt;/li&gt;
+&lt;li&gt;Enable the extension (&lt;em&gt;no restart required!&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;Select some text to add in your note.&lt;/li&gt;
+&lt;li&gt;Hit &lt;kbd&gt;CTRL+Shift+B&lt;/kbd&gt;; Or, add the Tomboy Note button to the toolbar and click the button.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The extension will then create your note and open your note in &lt;a href="http://projects.gnome.org/tomboy/"&gt;Tomboy&lt;/a&gt; for review and/or further
+editing.&lt;/p&gt;
+
+&lt;p&gt;There is one thing to note. The extension works by making a DBus call to Tomboy to create the note
+so you have to have Tomboy open and connected to the bus for this to work. Usually not a problem
+as I have Tomboy start on log in.&lt;/p&gt;
+</content></entry><entry><title>Javascript Prototype Behaviour in PHP</title><link rel="alternate" href="https://mattread.com/javascript-prototype-behaviour-in-php"/><link rel="edit" href="https://mattread.com/javascript-prototype-behaviour-in-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:javascript-prototype-behaviour-in-php/1222664109</id><updated>2008-09-29T00:55:09-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-04-20T12:43:28-04:00</app:edited><published>2008-09-29T02:01:57-04:00</published><category term="code"/><category term="php"/><category term="javascript"/><category term="prototype"/><content type="html">&lt;p&gt;One of the &amp;#8220;neat&amp;#8221; things in Javascript is you are able to dynamically add or change methods of a class and automatically update every instance of that class. Some of the things I usually find useful are adding to the String class, like so:&lt;/p&gt;
+
+&lt;pre class="highlight javascript"&gt;
+&lt;![CDATA[
+String.prototype.htmlSpecialChars = function() {
+    return this.replace(/\&lt;/g,'&lt;').replace(/\&gt;/g,'&gt;');
+}
+String.prototype.trim = function() {
+    return this.replace(/^\s+|\s+$/g, '');
+}
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Obviously we cannot do this in PHP, and why would we, right? However we can emulate this behaviour to a certain extent using my &amp;#8220;neat&amp;#8221; little &lt;a href="https://gist.github.com/576295"&gt;Prototype&lt;/a&gt; class. With this Prototype class we can dynamically add properties and methods to any class, and they will be inherited by all instances of that class.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s look at the following &amp;#8220;normal&amp;#8221; PHP code.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+class Person extends Prototype
+{
+    public $name;
+    public $gender;
+   
+    public function gender()
+    {
+        printf("%s is %s\n", $this-&gt;name, $this-&gt;gender);
+    }
+}
+
+$matt = new Person;
+$matt-&gt;name = 'Matt';
+$matt-&gt;gender = 'male';
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now, there is nothing magical or out-of-the-ordinary going on here. We just instantiate the Person class and setup some properties. Calling the &lt;code&gt;gender()&lt;/code&gt; method outputs a nice little string for us.&lt;/p&gt;
+
+&lt;p&gt;However, you see that the Person class is actually a child of the Prototype class. This will allow us to do some of that &amp;#8220;neat&amp;#8221; Javascript stuff. Using Prototype, let us expand the Person class to add an &lt;code&gt;$age&lt;/code&gt; property and an &lt;code&gt;age()&lt;/code&gt; method to output a nice string. Like so:&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_property('age');
+Person::add_method('age', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;age = 28;
+$matt-&gt;age();
+
+// Matt is a 28 year old male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Now all instances of Person inherit the &lt;code&gt;$age&lt;/code&gt; property and &lt;code&gt;age()&lt;/code&gt; method. So we can create a new Person, Susie, and this object will now have the age stuff.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+$susie = new Person;
+$susie-&gt;name = 'Susie';
+$susie-&gt;gender = 'female';
+$susie-&gt;age = 21;
+$susie-&gt;age();
+
+// Susie is a 21 year old female
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;One limitation of the Prototype class though, is you cannot overload a current method. So the following code, that attempts to overload the &lt;code&gt;gender()&lt;/code&gt; method, will not work.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+Person::add_method('gender', 'printf("%s is a %d year old %s\n", $this-&gt;name, $this-&gt;age, $this-&gt;gender);');
+
+$matt-&gt;gender();
+
+// Matt is male
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;There are also many, many, many other problems with this Prototype class. Some of which are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &amp;#8216;$this&amp;#8217; keyword is reserved, so it actually does a string replace and uses &amp;#8216;$self&amp;#8217; instead.&lt;/li&gt;
+&lt;li&gt;You cannot access/add new methods or properties statically (until PHP 5.3 with __callStatic()).&lt;/li&gt;
+&lt;li&gt;It uses create_function, so every &amp;#8220;method&amp;#8221; is actually defined in the global namespace.&lt;/li&gt;
+&lt;li&gt;Iteration does not work, although it could possibly be done with Iterator, Countable, et al.&lt;/li&gt;
+&lt;li&gt;You cannot reference static variables/methods in your add method.&lt;/li&gt;
+&lt;li&gt;You cannot share methods between classes.&lt;/li&gt;
+&lt;li&gt;And so on and so forth&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This class was just an experiment to see if it was at all possible to implement something like Javascript&amp;#8217;s prototype behaviour in PHP with out using the &lt;a href="http://pecl.php.net/package/runkit"&gt;Runkit PECL extension&lt;/a&gt;. I had no intention of actually making this usable in production, for many reasons ;), although it was fun.&lt;/p&gt;
+</content></entry><entry><title>Persistent Static Variables</title><link rel="alternate" href="https://mattread.com/persistent-static-variables-across-instances-in-php"/><link rel="edit" href="https://mattread.com/persistent-static-variables-across-instances-in-php/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.com,2008:persistent-static-variables-across-instances-in-php/1213249473</id><updated>2008-06-12T01:44:33-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-22T10:57:47-04:00</app:edited><published>2008-06-12T01:26:40-04:00</published><category term="code"/><category term="php"/><content type="html">&lt;p&gt;Wait, What? Yeah that&amp;#8217;s what I thought too. Still no Idea what I&amp;#8217;m talking about? Well, let&amp;#8217;s take a look at the following code. Let&amp;#8217;s call it &amp;#8220;fred&amp;#8221;.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+class foo {
+    function bar( $b = 0 )
+    {
+        static $a = 0;
+        if ( $b ) {
+            $a = $b;
+        }   
+         echo $a;
+    }
+}
+
+$faz = new foo;
+$faz-&gt;bar(3);
+$baz = new foo;
+$baz-&gt;bar();
+foo::bar();
+foo:bar(1); 
+$faz-&gt;bar();
+&lt;/pre&gt;
+
+&lt;p&gt;The code above, named &amp;#8220;fred&amp;#8221;, basically creates a static variable &lt;code&gt;$a&lt;/code&gt; inside the function &lt;code&gt;foo()&lt;/code&gt;. When you call &lt;code&gt;foo(0)&lt;/code&gt; it outputs the value of &lt;code&gt;$a&lt;/code&gt;. When you call &lt;code&gt;foo('x')&lt;/code&gt; , where x can be anything, it updates the value of &lt;code &gt;$a&lt;/code&gt; with &lt;code&gt;'x'&lt;/code&gt;, and outputs the new result.&lt;/p&gt;
+
+&lt;p&gt;Now, what would expect &amp;#8220;fred&amp;#8221; to output? If your like me, then you are completely wrong. &amp;#8220;fred&amp;#8221; will actually output the following code.&lt;/p&gt;
+
+&lt;pre class="highlight php"&gt;
+&lt;![CDATA[
+/*
+Actual Outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 3
+foo::bar();      ==&gt; 3
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 1
+ 
+Expected outputs:
+$faz-&gt;bar(3); ==&gt; 3
+$baz-&gt;bar();  ==&gt; 0
+foo::bar();      ==&gt; 0
+foo:bar(1);     ==&gt; 1
+$faz-&gt;bar();   ==&gt; 3
+*/
+]]&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Yes, that&amp;#8217;s what I said at the start, &amp;#8220;Persistent Static Variables Across Instances&amp;#8221;. The static variable &lt;code&gt;$a&lt;/code&gt; actually persists across the two instances of foo that &amp;#8220;fred&amp;#8221; created, and even into the static method call. This was completely unexpected, at least by me. So I&amp;#8217;ll ask, does anyone know if this is actually the expected behaviour, and why it is or is not?&lt;/p&gt;
+</content></entry><entry><title>Drunken Monkey Labs</title><link rel="alternate" href="https://mattread.com/drunken-monkey-labs"/><link rel="edit" href="https://mattread.com/drunken-monkey-labs/atom"/><author><name>Matt Read</name><uri>https://mattread.com</uri></author><id>tag:mattread.ca,2007:drunken-monkey-labs/1175994082</id><updated>2007-04-07T09:01:22-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:19-05:00</app:edited><published>2007-04-07T14:01:22-04:00</published><category term="drunken-monkey"/><category term="projects"/><category term="code"/><content type="html">&lt;p&gt;I would like to introduce &lt;a href="http://drunkenmonkey.org"&gt;Drunken Monkey Labs&lt;/a&gt;. My new site to host and support all of my coding and web projects. This site will become solely my personal blog. Simplifying the orginizational aspects of the site and truly making mattread.* the personal site of Matt Read, me, as it says.&lt;/p&gt;
+
+&lt;p&gt;If you are looking for any of my projects, formely hosted here, check &lt;a href="http://drunkenmonkey.org"&gt;Drunken Monkey Labs&lt;/a&gt; and expect to see some pretty cool stuff coming out of the labs.&lt;/p&gt;
+</content></entry></feed>

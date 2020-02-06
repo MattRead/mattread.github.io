@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<entry xmlns="http://www.w3.org/2005/Atom"><title>Introducing Installer, Almost</title><author><name>Matt Read</name></author><link rel="alternate" href="https://mattread.com/introducing-installer-almost"/><link rel="edit" href="https://mattread.com/introducing-installer-almost/atom"/><id>http://mattread.com/archives/2006/01/introducing-installer-almost/</id><updated>2007-04-06T14:58:21-04:00</updated><app:edited xmlns:app="http://www.w3.org/2007/app">2013-03-08T22:58:25-05:00</app:edited><published>2006-01-18T08:25:57-05:00</published><category term="life"/><content type="html">&lt;p&gt;Well, my next plugin is here, almost. Installer is a plugin that will install plugins or themes, that are in a "zip" format, from a local or remote location. All you have to do is install this plugin, the old way, then just enter in the URI to the package you want to install and it installs it. All with one click.&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;However, this is an unofficial official release :). That is, the plugin is still in an early beta version and requires some more testing. But right now is pretty stable. So if you want, install it, test it and let me know of any bugs. After, or if, we find any bugs I'll release the official version. I'd really like to know if it works on a windows server (I suspect it won't).&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Also let me know of any design/usability concerns you have. I haven't put much thought into this area so any feedback would be greatly appreciated!&lt;/p&gt;&#xD;
+&#xD;
+&lt;p&gt;Get &lt;a href="/dropbox/installer.zip"&gt;Installer Beta&lt;/a&gt; now!&lt;/p&gt;</content></entry>
