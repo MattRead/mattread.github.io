@@ -58,6 +58,7 @@ body div.wrap {
 	max-width: 700px;
 	margin: 0 auto;
 	padding: 1.5em 1em 3em;
+	background: url(../../../files/archived.png) no-repeat right 20px;
 }
 
 body.display_404 {
