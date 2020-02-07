@@ -2,7 +2,7 @@
 <html>
 <title>Quick Escape</title>
 <link type="text/css" media="screen" rel="stylesheet"
-      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro">
+      href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Source+Code+Pro">
 <style>
 	body {
 		margin: 0;
@@ -40,9 +40,9 @@
 
 <h2>Without <code>document.write</code></h2>
 <p>Notice the delay of loading the next page with this link.</p>
-<p><a href="http://www.theweathernetwork.com/weather/canada/ontario/ottawa">Quick Escape</a></p>
+<p><a href="//www.theweathernetwork.com/weather/canada/ontario/ottawa">Quick Escape</a></p>
 
 <h2>With <code>document.write</code></h2>
 <p>Notice the page is instantly hidden with a loding message until the next page shows up. Here we also use <code>window.location.replace();</code> so the previous URL is not in history (no back button).</p>
-<p><a href="http://www.theweathernetwork.com/weather/canada/ontario/ottawa" onclick="document.write('<blink>Loading Weather...</blink>');window.location.replace('http://www.theweathernetwork.com/weather/canada/ontario/ottawa');return false;">Quick Escape</a></p>
+<p><a href="//www.theweathernetwork.com/weather/canada/ontario/ottawa" onclick="document.write('<blink>Loading Weather...</blink>');window.location.replace('http://www.theweathernetwork.com/weather/canada/ontario/ottawa');return false;">Quick Escape</a></p>
 </html>

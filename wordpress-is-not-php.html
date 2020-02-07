@@ -16,7 +16,7 @@
 		var CONQUISTADOR_USE_FANCYBOX = true;
 	</script>
 	<meta name="verify-v1" content="xSimSi8n9M7MqFEaRhgNt3smByGje0Iki3S45666/jQ=">
-<link rel="license" title="license" href="http://creativecommons.org/licenses/by-sa/2.5/ca/">
+<link rel="license" title="license" href="//creativecommons.org/licenses/by-sa/2.5/ca/">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="Shortcut Icon" href="favicon.ico">
 <link rel="copyright" href="copyright.html">
@@ -34,7 +34,7 @@
 <meta name="description" content="There have many concerns and question about the template system used in WordPress. Mostly the concerns are with n00bs and the complications of PHP. “I want to …" >
 <meta name="robots" content="index, follow" >
 <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="wordpress-is-not-php/atom"><link rel="service" type="application/atomsvc+xml" title="Atom Publishing Protocol" href="atom"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="rsd">
-<link type="text/css" media="screen" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
+<link type="text/css" media="screen" rel="stylesheet" href="//fonts.googleapis.com/css?family=Halant%3A300,400,600%7CSource+Sans+Pro%3A400%7CSource+Code+Pro%3A400,600%7CLondrina+Sketch%7CLobster%7CPT+Serif%7CRock+Salt">
 <link type="text/css" media="screen" rel="stylesheet" href="user/themes/conquistador/css/screen-min.css">
 
 <!--[if lt IE 9]><script  src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.js"></script>
@@ -71,11 +71,11 @@
 		<p>&#x2766;</p>
 	</header>
 	<div itemprop="articleBody">
-		<p>There have many concerns and question about the template system used in <a href="http://wordpress.org/">WordPress</a>. Mostly the concerns are with n00bs and the complications of PHP. “I want to change this and that, but don&#8217;t know PHP”. I hear this a lot. But the thing is, you don&#8217;t need to know PHP to change the <a href="http://codex.wordpress.org/Templates">Templates</a> in <a href="http://wordpress.org/">WordPress</a>. <!--more--></p>
+		<p>There have many concerns and question about the template system used in <a href="//wordpress.org/">WordPress</a>. Mostly the concerns are with n00bs and the complications of PHP. “I want to change this and that, but don&#8217;t know PHP”. I hear this a lot. But the thing is, you don&#8217;t need to know PHP to change the <a href="//codex.wordpress.org/Templates">Templates</a> in <a href="//wordpress.org/">WordPress</a>. <!--more--></p>
 
 <h2>The Template System</h2>
 
-<p>Lets&#8217; start with “<a href="http://codex.wordpress.org/The_Loop">the Loop</a>” as we call it. Probably the most confusing part of the <a href="http://codex.wordpress.org/Templates">Template</a> for a non-programmer. The Loop looks like this:</p>
+<p>Lets&#8217; start with “<a href="//codex.wordpress.org/The_Loop">the Loop</a>” as we call it. Probably the most confusing part of the <a href="//codex.wordpress.org/Templates">Template</a> for a non-programmer. The Loop looks like this:</p>
 
 <pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> the_post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
 &nbsp;
@@ -87,15 +87,15 @@
 &nbsp;
 <span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endif</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
 
-<p>It may look complicated, but it&#8217;s actually quite simple. In <a href="#ex1">Template Section 1</a>, all the posts information will be displayed. Within that section we will put all the posts <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>, and our HTML to format them. In <a href="#ex1">Template Section 2</a>, we will display a message telling the user no posts were found, if we find none to meet their criteria. </p>
+<p>It may look complicated, but it&#8217;s actually quite simple. In <a href="#ex1">Template Section 1</a>, all the posts information will be displayed. Within that section we will put all the posts <a href="//codex.wordpress.org/Template_Tags">Template Tags</a>, and our HTML to format them. In <a href="#ex1">Template Section 2</a>, we will display a message telling the user no posts were found, if we find none to meet their criteria. </p>
 
 <h3>Template Section 1: The Posts</h3>
 
-<p>We&#8217;ll start with outputting the post tile. Simply add in the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_title() ?&gt;</code>. That will output the title of the post. </p>
+<p>We&#8217;ll start with outputting the post tile. Simply add in the <a href="//codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_title() ?&gt;</code>. That will output the title of the post. </p>
 
-<p>Now let&#8217;s output the date of the post. Simply add the date&#8217;s <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_date() ?&gt;</code>. That outputs the date of the post.</p>
+<p>Now let&#8217;s output the date of the post. Simply add the date&#8217;s <a href="//codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_date() ?&gt;</code>. That outputs the date of the post.</p>
 
-<p>We will also, of coarse, need the content of the actual post. Simply, again, add the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_content() ?&gt;</code>.</p>
+<p>We will also, of coarse, need the content of the actual post. Simply, again, add the <a href="//codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_content() ?&gt;</code>.</p>
 
 <p>Now let&#8217;s put it all together with some HTML:</p>
 
@@ -108,9 +108,9 @@
 
 <p>And there&#8217;s our simple template. Now let&#8217;s add some more.</p>
 
-<p>First let&#8217;s add a link to the post, permalink as it&#8217;s called, on the title. We get the actual URL, something like <code class="html">http://mysite.com/archives/2004/09/post-title/</code>, with the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_permalink() ?&gt;</code>. We will need to put that in our <code class="html">&lt;a href=””&gt;</code> HTML tag.</p>
+<p>First let&#8217;s add a link to the post, permalink as it&#8217;s called, on the title. We get the actual URL, something like <code class="html">http://mysite.com/archives/2004/09/post-title/</code>, with the <a href="//codex.wordpress.org/Template_Tags">Template Tag</a> <code class="html">&lt;?php the_permalink() ?&gt;</code>. We will need to put that in our <code class="html">&lt;a href=””&gt;</code> HTML tag.</p>
 
-<p>We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>, <code class="html">&lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;</code>. Now here&#8217;s another confusion people have. We&#8217;ve added in, what programmers would call, arguments to our <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>. That is, we&#8217;ve added in <code class="html">'&lt;p&gt;', '&lt;/p&gt;'</code> to the brackets of the <a href="http://codex.wordpress.org/Template_Tags">Template Tag</a>. In this case we are just saying, if there are pages to link, output the page links with a <code class="html">&lt;p&gt;</code> at the start, and a <code class="html">&lt;/p&gt;</code> at the end. Hence, enclosing it all in HTML paragraph tags. Most <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> have different arguments you can pass to them, causing them to format their output differently.</p>
+<p>We also want to add in links to each page of our post, next page, previous page, etc.. We simply call another <a href="//codex.wordpress.org/Template_Tags">Template Tag</a>, <code class="html">&lt;?php link_pages('&lt;p&gt;','&lt;/p&gt;') ?&gt;</code>. Now here&#8217;s another confusion people have. We&#8217;ve added in, what programmers would call, arguments to our <a href="//codex.wordpress.org/Template_Tags">Template Tag</a>. That is, we&#8217;ve added in <code class="html">'&lt;p&gt;', '&lt;/p&gt;'</code> to the brackets of the <a href="//codex.wordpress.org/Template_Tags">Template Tag</a>. In this case we are just saying, if there are pages to link, output the page links with a <code class="html">&lt;p&gt;</code> at the start, and a <code class="html">&lt;/p&gt;</code> at the end. Hence, enclosing it all in HTML paragraph tags. Most <a href="//codex.wordpress.org/Template_Tags">Template Tags</a> have different arguments you can pass to them, causing them to format their output differently.</p>
 
 <p>Now let&#8217;s add in our new tags.</p>
 
@@ -129,13 +129,13 @@
 
 <p>For our <a href="#ex1">Template Section 2</a>, the no post found section, all we need to do is put in a message to tell the user nothing was found, to meet their criteria. Whether it was a search or a mis-typed URL. So let&#8217;s use the following simple HTML:</p>
 
-<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>Sorry, no posts could be found to match your criteria.<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="http://december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span></pre>
+<pre class="html geshicode" style="font-family:monospace;"><span style="color: #009900;">&lt;<a href="//december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span>Sorry, no posts could be found to match your criteria.<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><a href="//december.com/html/4/element/p.html"><span style="color: #000000; font-weight: bold;">p</span></a>&gt;</span></pre>
 
 <p>Now let&#8217;s put it all together.</p>
 
 <h3>Complete Template</h3>
 
-<p>Putting all we learned above together, we get a nice simple <a href="http://codex.wordpress.org/The_Loop">Loop</a> <a href="http://codex.wordpress.org/Templates">Template</a>.</p>
+<p>Putting all we learned above together, we get a nice simple <a href="//codex.wordpress.org/The_Loop">Loop</a> <a href="//codex.wordpress.org/Templates">Template</a>.</p>
 
 <pre class="php geshicode" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> <span style="color: #b1b100;">while</span> <span style="color: #009900;">&#40;</span> have_posts<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#41;</span> <span style="color: #339933;">:</span> the_post<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span>
 &nbsp;
@@ -154,29 +154,29 @@
 &nbsp;
 <span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">endif</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre>
 
-<p>As you can see, we have done no PHP coding, just some simple HTML with <a href="http://wordpress.org/">WordPress</a> Template Tags added in.</p>
+<p>As you can see, we have done no PHP coding, just some simple HTML with <a href="//wordpress.org/">WordPress</a> Template Tags added in.</p>
 
-<p>Obviously this is not a complete template, as we have no header and footer containing all the <code class="html">&lt;html&gt;&lt;head&gt;&lt;body&gt;</code> tags. But with some simple HTML and more <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>, and no PHP, we can easily add all that is needed for a complete HTML document. That&#8217;s right, an HTML document, not a PHP script.</p>
+<p>Obviously this is not a complete template, as we have no header and footer containing all the <code class="html">&lt;html&gt;&lt;head&gt;&lt;body&gt;</code> tags. But with some simple HTML and more <a href="//codex.wordpress.org/Template_Tags">Template Tags</a>, and no PHP, we can easily add all that is needed for a complete HTML document. That&#8217;s right, an HTML document, not a PHP script.</p>
 
-<p>As we can see <a href="http://wordpress.org/">WordPress</a> is not PHP. <a href="http://wordpress.org/">WordPress</a> is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&#8217;t know why, <a href="http://wordpress.org/">WordPress</a> has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> is extremely easy and requires no knowledge of PHP at all.</p>
+<p>As we can see <a href="//wordpress.org/">WordPress</a> is not PHP. <a href="//wordpress.org/">WordPress</a> is powered by PHP, but uses a simple template system, easily modified by even the most novice of users. None of that complicated Perl code like MT has &#8230; Yes, believe it or not, MT is also powered by a complicated programming language. The only difference is marketing. MT has been marketed as having simple templates with no programming skills needed. However, somehow, and I don&#8217;t know why, <a href="//wordpress.org/">WordPress</a> has gotten a rap of being complicated and only for the hardcore programmers out there. But as we can see, using the <a href="//codex.wordpress.org/Template_Tags">Template Tags</a> is extremely easy and requires no knowledge of PHP at all.</p>
 
-<p>Changing the format and style of your <a href="http://codex.wordpress.org/Templates">Template</a> is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. </p>
+<p>Changing the format and style of your <a href="//codex.wordpress.org/Templates">Template</a> is as easy as using a little HTML, CSS and Template Tags. Just like other Weblog systems out there. </p>
 
 <p>However, as with any software, there is room for improvement.</p>
 
 <h2>Improving Templates</h2>
 
-<p>One of the problems with the <a href="http://wordpress.org/">WordPress</a> <a href="http://codex.wordpress.org/Templates">Template System</a>, in my opinion, is the default <a href="http://codex.wordpress.org/Templates">Template</a>, or theme, itself. Specifically the sidebar, with all the <code class="html">is_*()</code> functions. We shouldn&#8217;t expect a novice <a href="http://wordpress.org/">WordPress</a> user to understand what these functions mean. I would suggest removing all the <code class="html">if(is_*())</code> statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.</p>
+<p>One of the problems with the <a href="//wordpress.org/">WordPress</a> <a href="//codex.wordpress.org/Templates">Template System</a>, in my opinion, is the default <a href="//codex.wordpress.org/Templates">Template</a>, or theme, itself. Specifically the sidebar, with all the <code class="html">is_*()</code> functions. We shouldn&#8217;t expect a novice <a href="//wordpress.org/">WordPress</a> user to understand what these functions mean. I would suggest removing all the <code class="html">if(is_*())</code> statements in place of a simple sidebar with just the essentials. Say, Search, Pages, Archives, Categories, Links, Meta information and take out all the complicated if statements and includes.</p>
 
-<p>Another problem I see with the default <a href="http://codex.wordpress.org/Templates">Template</a> is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.</p>
+<p>Another problem I see with the default <a href="//codex.wordpress.org/Templates">Template</a> is the CSS in the header. I think all CSS should be contained in the style sheets themselves. Again remove the if statements. When a user wants to modify the CSS it seems logical to have just the simple CSS in one place, to easily modify.</p>
 
-<p>Another problem I see is with some of the <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a>. Such as <code class="html">&lt;?php bloginfo() ?&gt;</code>. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, <code class="html">&lt;?php blog_name() ?&gt;</code>, <code class="html">&lt;?php blog_description() ?&gt;</code>, <code class="html">&lt;?php blog_url() ?&gt;</code>, etc., to maintain consistency. For some of the less used information, charset, version, etc., the <code class="html">&lt;?php bloginfo() ?&gt;</code> tag would be fine.</p>
+<p>Another problem I see is with some of the <a href="//codex.wordpress.org/Template_Tags">Template Tags</a>. Such as <code class="html">&lt;?php bloginfo() ?&gt;</code>. Instead of having one function to display some necessary information, like blog name, description, url, etc., why not have specific tags for the highly used information. Like say, <code class="html">&lt;?php blog_name() ?&gt;</code>, <code class="html">&lt;?php blog_description() ?&gt;</code>, <code class="html">&lt;?php blog_url() ?&gt;</code>, etc., to maintain consistency. For some of the less used information, charset, version, etc., the <code class="html">&lt;?php bloginfo() ?&gt;</code> tag would be fine.</p>
 
-<p>And some of the other advanced <a href="http://codex.wordpress.org/Template_Tags">Template Tags</a> in use in the default <a href="http://codex.wordpress.org/Templates">Templates</a>, like <code class="html">&lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&gt;</code>, should be simplified to not contain all those arguments. Maybe use <code class="html">&lt;?php wp_list_cats() ?&gt;</code> where all those settings would be set in the admin area.</p>
+<p>And some of the other advanced <a href="//codex.wordpress.org/Template_Tags">Template Tags</a> in use in the default <a href="//codex.wordpress.org/Templates">Templates</a>, like <code class="html">&lt;?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?&gt;</code>, should be simplified to not contain all those arguments. Maybe use <code class="html">&lt;?php wp_list_cats() ?&gt;</code> where all those settings would be set in the admin area.</p>
 
 <p>It would also be nice to try to simplify the loop, although I can&#8217;t see any way of doing that now, to use as little actual PHP, like if else statements, as possible. Also take out the else, for when no posts are found, and always use the 404 template file.</p>
 
-<p>The point I&#8217;m trying making is to take the PHP out of the <a href="http://codex.wordpress.org/Templates">Templates</a>, as much as possible, so users don&#8217;t get confused and think they need PHP skills to modify the <a href="http://codex.wordpress.org/Templates">Templates</a>.</p>
+<p>The point I&#8217;m trying making is to take the PHP out of the <a href="//codex.wordpress.org/Templates">Templates</a>, as much as possible, so users don&#8217;t get confused and think they need PHP skills to modify the <a href="//codex.wordpress.org/Templates">Templates</a>.</p>
 
 <p>Those are just my thoughts on the matter.</p>
 
@@ -193,7 +193,7 @@
 			alt="Gravatar for Matt Read"
 			src="http://www.gravatar.com/avatar/82e8f5f668f2c451184763dc57bc8868?d=mm&amp;s=60&amp;r=g"
 			class="gravatar">
-		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="http://www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="http://www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="http://drunkenmonkey.org/">websites</a>.
+		Matt is the owner of this site and primary author. He also <a href="https://twitter.com/MattRead">tweets</a>, posts <a href="//www.flickr.com/photos/MattRead">photos</a>, stars in <a href="https://vimeo.com/mattrread">videos</a>, listens to <a href="//www.last.fm/user/MattRead">music</a>, makes <a href="https://github.com/MattRead">software</a>, develops <a href="https://habariproject.org/en/">Habari</a>, and creates <a href="//drunkenmonkey.org/">websites</a>.
 	</span>
 </p>
 
@@ -227,7 +227,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/17c53d8ff21d8cfac0be9ab9ee313f2c?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Kyle J Tomka">
-				<span itemprop="name"><a href="http://www.doccenterinc.com/">Kyle J Tomka</a></span>
+				<span itemprop="name"><a href="//www.doccenterinc.com/">Kyle J Tomka</a></span>
 			</span>
 			<small>(<a href="#comment-24171"
 			           title="Permanent link to this comment">#24171</a>)
@@ -245,7 +245,7 @@
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://photomatt.net/2005/04/21/not-php/" rel="external">
+		<a href="//photomatt.net/2005/04/21/not-php/" rel="external">
 			Photo Matt &raquo; Not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T01:38:43-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -264,7 +264,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/4ba51bca9dcc94af549b917d274d6801?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Mark J">
-				<span itemprop="name"><a href="http://txfx.net/">Mark J</a></span>
+				<span itemprop="name"><a href="//txfx.net/">Mark J</a></span>
 			</span>
 			<small>(<a href="#comment-1831"
 			           title="Permanent link to this comment">#1831</a>)
@@ -289,7 +289,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/2901348998f0c6827bfd439c6e07aa23?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Robert Deaton">
-				<span itemprop="name"><a href="http://somethingunpredictable.com/">Robert Deaton</a></span>
+				<span itemprop="name"><a href="//somethingunpredictable.com/">Robert Deaton</a></span>
 			</span>
 			<small>(<a href="#comment-1832"
 			           title="Permanent link to this comment">#1832</a>)
@@ -336,7 +336,7 @@
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.clydeshome.net/wordpress/wordpress-is-not-php/" rel="external">
+		<a href="//www.clydeshome.net/wordpress/wordpress-is-not-php/" rel="external">
 			Colorado Contemplations - Journal  &raquo; Blog Archive   &raquo; WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T02:27:19-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -380,7 +380,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/5f89d3df08b8dedac1a0fde900a586db?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Roger Benningfield">
-				<span itemprop="name"><a href="http://admin.support.journurl.com/">Roger Benningfield</a></span>
+				<span itemprop="name"><a href="//admin.support.journurl.com/">Roger Benningfield</a></span>
 			</span>
 			<small>(<a href="#comment-1836"
 			           title="Permanent link to this comment">#1836</a>)
@@ -438,7 +438,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/9c3a444649c030ce5b8a4be6ea608291?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for BoBB">
-				<span itemprop="name"><a href="http://myeurotrip.org/">BoBB</a></span>
+				<span itemprop="name"><a href="//myeurotrip.org/">BoBB</a></span>
 			</span>
 			<small>(<a href="#comment-1838"
 			           title="Permanent link to this comment">#1838</a>)
@@ -463,7 +463,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for centripetalforces.com">
-				<span itemprop="name"><a href="http://centripetalforces.com/2005/04/22/unleashing-the-power-of-wordpress/">centripetalforces.com</a></span>
+				<span itemprop="name"><a href="//centripetalforces.com/2005/04/22/unleashing-the-power-of-wordpress/">centripetalforces.com</a></span>
 			</span>
 			<small>(<a href="#comment-1839"
 			           title="Permanent link to this comment">#1839</a>)
@@ -492,7 +492,7 @@
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/a8527fa4be0bc9af18d31c3f9616d938?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Indranil">
-				<span itemprop="name"><a href="http://troidus.com/">Indranil</a></span>
+				<span itemprop="name"><a href="//troidus.com/">Indranil</a></span>
 			</span>
 			<small>(<a href="#comment-1840"
 			           title="Permanent link to this comment">#1840</a>)
@@ -518,7 +518,7 @@ You’ve done a great job.  <img class="habari-smiley" alt=":D" src="user/plugin
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d4deec9d7e3dd1898b193ac47efb8ccb?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Florian Jung">
-				<span itemprop="name"><a href="http://www.bistr-o-mathik.org/">Florian Jung</a></span>
+				<span itemprop="name"><a href="//www.bistr-o-mathik.org/">Florian Jung</a></span>
 			</span>
 			<small>(<a href="#comment-1841"
 			           title="Permanent link to this comment">#1841</a>)
@@ -558,9 +558,9 @@ You’ve done a great job.  <img class="habari-smiley" alt=":D" src="user/plugin
 	<div itemprop="text">
 					<p>Matt,</p>
 
-<p>I think your dismissal of MT templates’ perceived ease-of-use as pure “marketing” smoke and mirrors is incorrect.  MT indeed has a full separate and well-documented <a href="http://www.sixapart.com/movabletype/docs/mtmanual_tags.html#template%20tags">template “language”</a>.  An MT user could go his entire life, creating and customizing templates, without ever encountering Perl or even knowing Perl is under the hood.</p>
+<p>I think your dismissal of MT templates’ perceived ease-of-use as pure “marketing” smoke and mirrors is incorrect.  MT indeed has a full separate and well-documented <a href="//www.sixapart.com/movabletype/docs/mtmanual_tags.html#template%20tags">template “language”</a>.  An MT user could go his entire life, creating and customizing templates, without ever encountering Perl or even knowing Perl is under the hood.</p>
 
-<p>Yes, MT templates have <a href="http://www.sixapart.com/movabletype/docs/mttags#tag%20syntax">a syntax of their own</a> that may need to be picked up, but it’s like HTML: angle brackets and attributes.  (example: )  Not hard for HTML authors to see the similarity between this and html tags.  And that’s why it’s easier to learn.</p>
+<p>Yes, MT templates have <a href="//www.sixapart.com/movabletype/docs/mttags#tag%20syntax">a syntax of their own</a> that may need to be picked up, but it’s like HTML: angle brackets and attributes.  (example: )  Not hard for HTML authors to see the similarity between this and html tags.  And that’s why it’s easier to learn.</p>
 
 <p>As mentioned earlier, the WordPress template tags <em>are</em> function calls.  For a novice user who’s never programmed before, the syntax is completely alien.  Open and close parens, commas between arguments,  what an ‘argument’ even is, if statements.</p>
 			</div>
@@ -576,7 +576,7 @@ You’ve done a great job.  <img class="habari-smiley" alt=":D" src="user/plugin
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/33ae983c72db97d93df45a6290d3f436?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Ozh">
-				<span itemprop="name"><a href="http://planetozh.com/">Ozh</a></span>
+				<span itemprop="name"><a href="//planetozh.com/">Ozh</a></span>
 			</span>
 			<small>(<a href="#comment-1843"
 			           title="Permanent link to this comment">#1843</a>)
@@ -629,7 +629,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for The NEW Powell3D Weblog">
-				<span itemprop="name"><a href="http://powell3d.com/wp/wordpress/2005/04/22/cloudy-layer-over-the-blogosphere/">The NEW Powell3D Weblog</a></span>
+				<span itemprop="name"><a href="//powell3d.com/wp/wordpress/2005/04/22/cloudy-layer-over-the-blogosphere/">The NEW Powell3D Weblog</a></span>
 			</span>
 			<small>(<a href="#comment-1845"
 			           title="Permanent link to this comment">#1845</a>)
@@ -649,7 +649,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.derbumi.de/?p=21" rel="external">
+		<a href="//www.derbumi.de/?p=21" rel="external">
 			:) derBumi.de :: Michael Bumann  &raquo; Templates for Wordpress		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T09:42:15-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -661,7 +661,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.bloggingpro.com/archives/2005/04/22/wordpress-is-not-php-help-for-beginners/" rel="external">
+		<a href="//www.bloggingpro.com/archives/2005/04/22/wordpress-is-not-php-help-for-beginners/" rel="external">
 			&nbsp; WordPress Is Not PHP, Help For Beginners&nbsp;by&nbsp;Blogging Pro		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T11:18:52-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -673,7 +673,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.40annibuttati.it/index.php/archives/2005/04/22/wordpress-php/" rel="external">
+		<a href="//www.40annibuttati.it/index.php/archives/2005/04/22/wordpress-php/" rel="external">
 			40 anni buttati  &raquo; Blog Archive   &raquo; WordPress &#38; PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T11:39:41-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -717,7 +717,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/81717a172b6918071fbea1a52483294b?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Dougal Campbell">
-				<span itemprop="name"><a href="http://dougal.gunters.org/">Dougal Campbell</a></span>
+				<span itemprop="name"><a href="//dougal.gunters.org/">Dougal Campbell</a></span>
 			</span>
 			<small>(<a href="#comment-1850"
 			           title="Permanent link to this comment">#1850</a>)
@@ -735,7 +735,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://eachman.com/2005/04/22/back-away-from-the-keyboard/" rel="external">
+		<a href="//eachman.com/2005/04/22/back-away-from-the-keyboard/" rel="external">
 			eachman.com  &raquo; Archive   &raquo; Back away from the keyboard		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T12:06:48-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -747,7 +747,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.everytomorrow.org/archives/2005/04/22/but-i-dont-know-any-php/" rel="external">
+		<a href="//www.everytomorrow.org/archives/2005/04/22/but-i-dont-know-any-php/" rel="external">
 			Every Tomorrow &raquo; But I don&#8217;t know any PHP!		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T12:30:40-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -766,7 +766,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/ebb27f9ee0883c03767d38c17db41aee?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for rob">
-				<span itemprop="name"><a href="http://pwnt.co.uk/blog/">rob</a></span>
+				<span itemprop="name"><a href="//pwnt.co.uk/blog/">rob</a></span>
 			</span>
 			<small>(<a href="#comment-1853"
 			           title="Permanent link to this comment">#1853</a>)
@@ -791,7 +791,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/4a995d76463c3fb25e589f29b9ebc9aa?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Andy">
-				<span itemprop="name"><a href="http://www.cssdev.com/">Andy</a></span>
+				<span itemprop="name"><a href="//www.cssdev.com/">Andy</a></span>
 			</span>
 			<small>(<a href="#comment-1854"
 			           title="Permanent link to this comment">#1854</a>)
@@ -809,7 +809,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.norbeck.org/lyle/technical/?p=15" rel="external">
+		<a href="//www.norbeck.org/lyle/technical/?p=15" rel="external">
 			Lyle Schofield Technical Journal  &raquo; Blog Archive   &raquo; WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T13:25:30-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -821,7 +821,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.viewfinderdesign.co.uk/archive/23/templates-for-beginners/" rel="external">
+		<a href="//www.viewfinderdesign.co.uk/archive/23/templates-for-beginners/" rel="external">
 			Viewfinder Design  &raquo; Blog Archive   &raquo; Templates for Beginners		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T14:04:04-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -892,7 +892,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/afe7acd32d014da2efcd6ee49d29ecc9?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for the absent student">
-				<span itemprop="name"><a href="http://not-that-ugly.co.uk/">the absent student</a></span>
+				<span itemprop="name"><a href="//not-that-ugly.co.uk/">the absent student</a></span>
 			</span>
 			<small>(<a href="#comment-1863"
 			           title="Permanent link to this comment">#1863</a>)
@@ -910,7 +910,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.robinsblog.com/?p=89" rel="external">
+		<a href="//www.robinsblog.com/?p=89" rel="external">
 			Take My Advice - I&#8217;m Not Using It!  &raquo; Blog Archive   &raquo; CSS Three Column Liquid Layout		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T17:05:37-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -949,7 +949,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://wrc.os42.com/?p=177" rel="external">
+		<a href="//wrc.os42.com/?p=177" rel="external">
 			WordPress Reference Centre &raquo; WP and PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-22T19:50:37-04:00">April 22<sup>nd</sup>, 2005</time>
@@ -961,7 +961,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://netzgeschaedigt.de/?p=398" rel="external">
+		<a href="//netzgeschaedigt.de/?p=398" rel="external">
 			weblog_netzgeschaedigt v2.1 &raquo; WordPress individualisieren		</a><br>
 		<time class="meta"
 		      datetime="2005-04-23T04:01:09-04:00">April 23<sup>rd</sup>, 2005</time>
@@ -973,7 +973,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://log.mapendoz.com/2005/04/23/word-press-is-not-a-php/" rel="external">
+		<a href="//log.mapendoz.com/2005/04/23/word-press-is-not-a-php/" rel="external">
 			Echalicious &raquo; Word Press is not a PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-23T08:10:22-04:00">April 23<sup>rd</sup>, 2005</time>
@@ -992,7 +992,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/767fc9c115a1b989744c755db47feb60?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Matt">
-				<span itemprop="name"><a href="http://photomatt.net/">Matt</a></span>
+				<span itemprop="name"><a href="//photomatt.net/">Matt</a></span>
 			</span>
 			<small>(<a href="#comment-1872"
 			           title="Permanent link to this comment">#1872</a>)
@@ -1010,7 +1010,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.daveschalkboard.com/index.php/archives/2005/04/23/expressionengine-maintanence-subscription/" rel="external">
+		<a href="//www.daveschalkboard.com/index.php/archives/2005/04/23/expressionengine-maintanence-subscription/" rel="external">
 			Dave&#8217;s Chalkboard &raquo; ExpressionEngine Maintanence Subscription		</a><br>
 		<time class="meta"
 		      datetime="2005-04-23T14:58:38-04:00">April 23<sup>rd</sup>, 2005</time>
@@ -1022,7 +1022,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.netlexfrance.com/wordpress/?p=11" rel="external">
+		<a href="//www.netlexfrance.com/wordpress/?p=11" rel="external">
 			Netlex News &raquo;  WordPress Theme : tutorials		</a><br>
 		<time class="meta"
 		      datetime="2005-04-23T15:21:12-04:00">April 23<sup>rd</sup>, 2005</time>
@@ -1058,14 +1058,14 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 
 <p>Shayne, That would prolly have been a better title, but I like the sound of mine better.</p>
 
-<p>Anonymous, the navigation is using PhotoMatt’s <a href="http://photomatt.net/scripts/intellimenu">Intelligent Menus</a> Script. It’s quite lovely.</p>
+<p>Anonymous, the navigation is using PhotoMatt’s <a href="//photomatt.net/scripts/intellimenu">Intelligent Menus</a> Script. It’s quite lovely.</p>
 			</div>
 </article>
 <article id="comment-1877"
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://tsb.blogdns.org/?p=11" rel="external">
+		<a href="//tsb.blogdns.org/?p=11" rel="external">
 			Tech.Sports.Beer &raquo; WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-24T02:03:03-04:00">April 24<sup>th</sup>, 2005</time>
@@ -1084,7 +1084,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Ben's Blog">
-				<span itemprop="name"><a href="http://www.franske.com/blogs/bensblog.php/2005/04/24/learn_to_write_templates_for_wordpress">Ben's Blog</a></span>
+				<span itemprop="name"><a href="//www.franske.com/blogs/bensblog.php/2005/04/24/learn_to_write_templates_for_wordpress">Ben's Blog</a></span>
 			</span>
 			<small>(<a href="#comment-1878"
 			           title="Permanent link to this comment">#1878</a>)
@@ -1111,7 +1111,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/605ef287fca1ba24fe1eef490b1b0fdd?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for jerome">
-				<span itemprop="name"><a href="http://vapourtrails.ca/">jerome</a></span>
+				<span itemprop="name"><a href="//vapourtrails.ca/">jerome</a></span>
 			</span>
 			<small>(<a href="#comment-1879"
 			           title="Permanent link to this comment">#1879</a>)
@@ -1135,7 +1135,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://home.jumpb.com/bBlog/?p=32" rel="external">
+		<a href="//home.jumpb.com/bBlog/?p=32" rel="external">
 			Life @ 15 Frames / Second  &raquo; Blog Archive   &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-24T06:52:03-04:00">April 24<sup>th</sup>, 2005</time>
@@ -1147,7 +1147,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://arteliance.blogsome.com/2005/04/24/top-links-050416-23/" rel="external">
+		<a href="//arteliance.blogsome.com/2005/04/24/top-links-050416-23/" rel="external">
 			Arteliance  :: Top Links 05.04.16 - 23 :: April :: 2005		</a><br>
 		<time class="meta"
 		      datetime="2005-04-24T16:50:54-04:00">April 24<sup>th</sup>, 2005</time>
@@ -1159,7 +1159,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.teeth.com.pk/blog/2005/04/25/guide-how-to-tweak-wordpress-template/" rel="external">
+		<a href="//www.teeth.com.pk/blog/2005/04/25/guide-how-to-tweak-wordpress-template/" rel="external">
 			Teeth Maestro &raquo; Guide : How to tweak WordPress Template		</a><br>
 		<time class="meta"
 		      datetime="2005-04-24T18:34:31-04:00">April 24<sup>th</sup>, 2005</time>
@@ -1178,7 +1178,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/6724823440e4e98014f91f07911bbab9?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for b">
-				<span itemprop="name"><a href="http://www.borru.c-f-h.com/sl">b</a></span>
+				<span itemprop="name"><a href="//www.borru.c-f-h.com/sl">b</a></span>
 			</span>
 			<small>(<a href="#comment-1884"
 			           title="Permanent link to this comment">#1884</a>)
@@ -1230,7 +1230,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://benjoblog.weblogs.us/2005/04/24/a-busy-weekend/" rel="external">
+		<a href="//benjoblog.weblogs.us/2005/04/24/a-busy-weekend/" rel="external">
 			The Benjo Blog  &raquo; Blog Archive   &raquo; A Busy Weekend		</a><br>
 		<time class="meta"
 		      datetime="2005-04-25T03:15:17-04:00">April 25<sup>th</sup>, 2005</time>
@@ -1249,7 +1249,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/84d47c318f70d217b0f5940a06635312?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for James">
-				<span itemprop="name"><a href="http://groupofzero.com/">James</a></span>
+				<span itemprop="name"><a href="//groupofzero.com/">James</a></span>
 			</span>
 			<small>(<a href="#comment-1888"
 			           title="Permanent link to this comment">#1888</a>)
@@ -1267,7 +1267,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://ree.blogsome.com/2005/04/25/links-for-2005-04-25/" rel="external">
+		<a href="//ree.blogsome.com/2005/04/25/links-for-2005-04-25/" rel="external">
 			Ree&#8217;s geekblog  :: links for 2005-04-25 :: April :: 2005		</a><br>
 		<time class="meta"
 		      datetime="2005-04-26T17:37:14-04:00">April 26<sup>th</sup>, 2005</time>
@@ -1279,7 +1279,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.jarkolicious.com/probes/2005/04/27/wordpress-is-not-php/" rel="external">
+		<a href="//www.jarkolicious.com/probes/2005/04/27/wordpress-is-not-php/" rel="external">
 			jarkolicious  &raquo; probes   &raquo; Wordpress Is Not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-26T23:42:26-04:00">April 26<sup>th</sup>, 2005</time>
@@ -1298,7 +1298,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/670fa1550ec985667c0ef1c75f4c5ae2?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Jauhari">
-				<span itemprop="name"><a href="http://nurtria.info/">Jauhari</a></span>
+				<span itemprop="name"><a href="//nurtria.info/">Jauhari</a></span>
 			</span>
 			<small>(<a href="#comment-1896"
 			           title="Permanent link to this comment">#1896</a>)
@@ -1325,7 +1325,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/db19573fc388ff9e1a88f7f1d3aeb874?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Root">
-				<span itemprop="name"><a href="http://atthe404.com/">Root</a></span>
+				<span itemprop="name"><a href="//atthe404.com/">Root</a></span>
 			</span>
 			<small>(<a href="#comment-1897"
 			           title="Permanent link to this comment">#1897</a>)
@@ -1345,7 +1345,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://wp-blogger.com/blog/?p=12" rel="external">
+		<a href="//wp-blogger.com/blog/?p=12" rel="external">
 			Nothing fancy &raquo; WP not PHP ?		</a><br>
 		<time class="meta"
 		      datetime="2005-04-27T11:18:51-04:00">April 27<sup>th</sup>, 2005</time>
@@ -1364,7 +1364,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d077048a6ef73cda47b26d59dc83e78f?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Dante">
-				<span itemprop="name"><a href="http://dantecubed.com/">Dante</a></span>
+				<span itemprop="name"><a href="//dantecubed.com/">Dante</a></span>
 			</span>
 			<small>(<a href="#comment-1902"
 			           title="Permanent link to this comment">#1902</a>)
@@ -1382,7 +1382,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.burningriverstudio.com/2005/04/28/more-wordpress-goodness/" rel="external">
+		<a href="//www.burningriverstudio.com/2005/04/28/more-wordpress-goodness/" rel="external">
 			Burning River Studio  &raquo; Blog Archive   &raquo; More WordPress Goodness		</a><br>
 		<time class="meta"
 		      datetime="2005-04-28T10:59:01-04:00">April 28<sup>th</sup>, 2005</time>
@@ -1401,7 +1401,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for A Whole Lotta Nothing">
-				<span itemprop="name"><a href="http://a.wholelottanothing.org/2005/04/links_for_20050_94.html">A Whole Lotta Nothing</a></span>
+				<span itemprop="name"><a href="//a.wholelottanothing.org/2005/04/links_for_20050_94.html">A Whole Lotta Nothing</a></span>
 			</span>
 			<small>(<a href="#comment-1914"
 			           title="Permanent link to this comment">#1914</a>)
@@ -1421,7 +1421,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://heybate.com/wp/index.php?p=104" rel="external">
+		<a href="//heybate.com/wp/index.php?p=104" rel="external">
 			Heybate.com - As Regular As Fibre &raquo; WordPress and PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-04-30T00:23:38-04:00">April 30<sup>th</sup>, 2005</time>
@@ -1433,7 +1433,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://trevorsnyder.info/?p=103" rel="external">
+		<a href="//trevorsnyder.info/?p=103" rel="external">
 			the will to exist &raquo; Blog Archive  &raquo; WordPress templates demystified		</a><br>
 		<time class="meta"
 		      datetime="2005-05-02T14:10:38-04:00">May 2<sup>nd</sup>, 2005</time>
@@ -1452,7 +1452,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/dac9aed2406b1673027d7fb6291a5482?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Petros Dimitriadis">
-				<span itemprop="name"><a href="http://www.petrosdimitriadis.com/">Petros Dimitriadis</a></span>
+				<span itemprop="name"><a href="//www.petrosdimitriadis.com/">Petros Dimitriadis</a></span>
 			</span>
 			<small>(<a href="#comment-1929"
 			           title="Permanent link to this comment">#1929</a>)
@@ -1463,14 +1463,14 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 		</p>
 	</header>
 	<div itemprop="text">
-					<p>this article is quite useful as well <a href="http://www.urbangiraffe.com/category/software/wordpress/">http://www.urbangiraffe.com/category/software/wordpress/</a></p>
+					<p>this article is quite useful as well <a href="//www.urbangiraffe.com/category/software/wordpress/">http://www.urbangiraffe.com/category/software/wordpress/</a></p>
 			</div>
 </article>
 <article id="comment-1941"
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.leonieke.net/2005/05/08/no-1/" rel="external">
+		<a href="//www.leonieke.net/2005/05/08/no-1/" rel="external">
 			[MoK] leonieke.net  &raquo; Blog Archive   &raquo; No. 1		</a><br>
 		<time class="meta"
 		      datetime="2005-05-08T17:47:17-04:00">May 8<sup>th</sup>, 2005</time>
@@ -1489,7 +1489,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/9d272b6ed628adfd7abec004d398ab32?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Denis de Bernardy">
-				<span itemprop="name"><a href="http://www.semiologic.com/">Denis de Bernardy</a></span>
+				<span itemprop="name"><a href="//www.semiologic.com/">Denis de Bernardy</a></span>
 			</span>
 			<small>(<a href="#comment-1944"
 			           title="Permanent link to this comment">#1944</a>)
@@ -1502,14 +1502,14 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 	<div itemprop="text">
 					<p>WordPress is way too complicated for the average user. I tend to second Jerome’s comment… No user in his right mind should ever need to configure a function to customize his WordPress install.</p>
 
-<p>Consider these <a href="http://www.semiologic.com/2005/04/22/10-free-tips-to-make-wordpress-more-usable/">insights on improving WordPress’ usability</a>.</p>
+<p>Consider these <a href="//www.semiologic.com/2005/04/22/10-free-tips-to-make-wordpress-more-usable/">insights on improving WordPress’ usability</a>.</p>
 			</div>
 </article>
 <article id="comment-1948"
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.webmercial.dk/hvad-nu.htm" rel="external">
+		<a href="//www.webmercial.dk/hvad-nu.htm" rel="external">
 			Webmercial.dk - Pushing the envelope of connectivity since 2001		</a><br>
 		<time class="meta"
 		      datetime="2005-05-11T14:55:07-04:00">May 11<sup>th</sup>, 2005</time>
@@ -1521,7 +1521,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://s87381935.onlinehome.us/?p=21" rel="external">
+		<a href="//s87381935.onlinehome.us/?p=21" rel="external">
 			SeattleBound  &raquo; Blog Archive   &raquo; Upgrade/Downgrade		</a><br>
 		<time class="meta"
 		      datetime="2005-05-12T05:05:31-04:00">May 12<sup>th</sup>, 2005</time>
@@ -1533,7 +1533,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://bingu.net/blog/?p=122" rel="external">
+		<a href="//bingu.net/blog/?p=122" rel="external">
 			冰古Blog  &raquo; Blog Archive   &raquo; 有关wordpress theme的Tips 和 hack		</a><br>
 		<time class="meta"
 		      datetime="2005-05-13T07:25:41-04:00">May 13<sup>th</sup>, 2005</time>
@@ -1552,7 +1552,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/102a95e30e0ffaedd8122264edadb195?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Ron Pemberton">
-				<span itemprop="name"><a href="http://ronpemberton.com/">Ron Pemberton</a></span>
+				<span itemprop="name"><a href="//ronpemberton.com/">Ron Pemberton</a></span>
 			</span>
 			<small>(<a href="#comment-1969"
 			           title="Permanent link to this comment">#1969</a>)
@@ -1577,7 +1577,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for templaterie blog">
-				<span itemprop="name"><a href="http://blog.templaterie.de/wordpress/?p=10">templaterie blog</a></span>
+				<span itemprop="name"><a href="//blog.templaterie.de/wordpress/?p=10">templaterie blog</a></span>
 			</span>
 			<small>(<a href="#comment-1977"
 			           title="Permanent link to this comment">#1977</a>)
@@ -1597,7 +1597,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.hotelblues.com/wp/2005/06/02/wp-link/" rel="external">
+		<a href="//www.hotelblues.com/wp/2005/06/02/wp-link/" rel="external">
 			Hotelblues.com  &raquo; Blog Archive   &raquo; WP Link		</a><br>
 		<time class="meta"
 		      datetime="2005-06-02T07:38:57-04:00">June 2<sup>nd</sup>, 2005</time>
@@ -1616,7 +1616,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/ce749e7ad26c869f3efaa52d1206bc8a?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Fish Cakes">
-				<span itemprop="name"><a href="http://boilerhouseblog.com/fishcakes/">Fish Cakes</a></span>
+				<span itemprop="name"><a href="//boilerhouseblog.com/fishcakes/">Fish Cakes</a></span>
 			</span>
 			<small>(<a href="#comment-1989"
 			           title="Permanent link to this comment">#1989</a>)
@@ -1634,7 +1634,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://kawebspy.kawebspynet.com/2005/06/blog/wordpress-template-basic-tutorial.html" rel="external">
+		<a href="//kawebspy.kawebspynet.com/2005/06/blog/wordpress-template-basic-tutorial.html" rel="external">
 			Ka Webspy Personal Blog &raquo; WordPress Template Basic Tutorial		</a><br>
 		<time class="meta"
 		      datetime="2005-06-08T03:15:31-04:00">June 8<sup>th</sup>, 2005</time>
@@ -1646,7 +1646,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://blog.ekjl.com/?p=7" rel="external">
+		<a href="//blog.ekjl.com/?p=7" rel="external">
 			ee-kay-jay-el		</a><br>
 		<time class="meta"
 		      datetime="2005-06-22T11:56:08-04:00">June 22<sup>nd</sup>, 2005</time>
@@ -1658,7 +1658,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.lukemcomber.com/?p=66" rel="external">
+		<a href="//www.lukemcomber.com/?p=66" rel="external">
 			Luke McOmber  &raquo; Blog Archive   &raquo; Wordpress 1.5 cont.		</a><br>
 		<time class="meta"
 		      datetime="2005-07-04T01:41:31-04:00">July 4<sup>th</sup>, 2005</time>
@@ -1670,7 +1670,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://studyweb.blogsome.com/2005/06/20/referrence-for-studying-vietwordpress/" rel="external">
+		<a href="//studyweb.blogsome.com/2005/06/20/referrence-for-studying-vietwordpress/" rel="external">
 			study web first days  :: referrence for studying VietWordpress :: June :: 2005		</a><br>
 		<time class="meta"
 		      datetime="2005-07-06T00:13:44-04:00">July 6<sup>th</sup>, 2005</time>
@@ -1682,7 +1682,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://jolene.moved.in/blog/?p=3" rel="external">
+		<a href="//jolene.moved.in/blog/?p=3" rel="external">
 			Whatever the Pink Marshmallow says&#8230;.. &raquo; Goory brains.		</a><br>
 		<time class="meta"
 		      datetime="2005-07-12T04:12:45-04:00">July 12<sup>th</sup>, 2005</time>
@@ -1726,7 +1726,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/b2c58fe50a1dfa565db5577cc9824330?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Tim">
-				<span itemprop="name"><a href="http://tim.textdriven.com/">Tim</a></span>
+				<span itemprop="name"><a href="//tim.textdriven.com/">Tim</a></span>
 			</span>
 			<small>(<a href="#comment-2060"
 			           title="Permanent link to this comment">#2060</a>)
@@ -1778,7 +1778,7 @@ Time permitting you could extend it to a more complete series of tutorials, don�
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/fd28e3112b554ca5b04a6bfe0002f30c?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Andr">
-				<span itemprop="name"><a href="http://neodrom.ru/">Andr</a></span>
+				<span itemprop="name"><a href="//neodrom.ru/">Andr</a></span>
 			</span>
 			<small>(<a href="#comment-2066"
 			           title="Permanent link to this comment">#2066</a>)
@@ -1824,7 +1824,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.tuning.co.in/15/done-messing-up-wp-design" rel="external">
+		<a href="//www.tuning.co.in/15/done-messing-up-wp-design" rel="external">
 			Fine tuning the world :) &raquo; Done messing up Wp design. ;-)		</a><br>
 		<time class="meta"
 		      datetime="2005-08-26T13:52:48-04:00">August 26<sup>th</sup>, 2005</time>
@@ -1836,7 +1836,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://wrc.os42.com/?p=200" rel="external">
+		<a href="//wrc.os42.com/?p=200" rel="external">
 			WordPress Reference Centre &raquo; WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-08-31T17:19:33-04:00">August 31<sup>st</sup>, 2005</time>
@@ -1848,7 +1848,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://wordpr.ectio.us/tutorials/wordpress-is-not-php/" rel="external">
+		<a href="//wordpr.ectio.us/tutorials/wordpress-is-not-php/" rel="external">
 			WordPress is not PHP at WordPr.ectio.us		</a><br>
 		<time class="meta"
 		      datetime="2005-09-26T12:01:23-04:00">September 26<sup>th</sup>, 2005</time>
@@ -1860,7 +1860,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://toskae.naezip.net/wordpress/?p=5" rel="external">
+		<a href="//toskae.naezip.net/wordpress/?p=5" rel="external">
 			twisted.. 5th &raquo; Blog Archive &raquo; 템플릿 태그		</a><br>
 		<time class="meta"
 		      datetime="2005-09-28T09:22:23-04:00">September 28<sup>th</sup>, 2005</time>
@@ -1872,7 +1872,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://wordpress.eekhout.net/2005/10/17/matte28099s-googly-site-wordpress-is-not-php/" rel="external">
+		<a href="//wordpress.eekhout.net/2005/10/17/matte28099s-googly-site-wordpress-is-not-php/" rel="external">
 			Skate fate! &raquo; Blog Archive &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-10-17T05:51:33-04:00">October 17<sup>th</sup>, 2005</time>
@@ -1884,7 +1884,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.poluz.net/blog/2005/10/in-dirittura-darrivo/" rel="external">
+		<a href="//www.poluz.net/blog/2005/10/in-dirittura-darrivo/" rel="external">
 			poluz live? &raquo; In dirittura d&#8217;arrivo		</a><br>
 		<time class="meta"
 		      datetime="2005-10-26T13:30:55-04:00">October 26<sup>th</sup>, 2005</time>
@@ -1896,7 +1896,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://shadows.os42.com/index.php/archives/wordpress-is-not-php" rel="external">
+		<a href="//shadows.os42.com/index.php/archives/wordpress-is-not-php" rel="external">
 			Shadows &raquo; Blog Archive &raquo; WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-11-24T16:52:14-05:00">November 24<sup>th</sup>, 2005</time>
@@ -1908,7 +1908,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://shadows.os42.com/index.php/archives/wp-and-php" rel="external">
+		<a href="//shadows.os42.com/index.php/archives/wp-and-php" rel="external">
 			Shadows &raquo; Blog Archive &raquo; WP and PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-11-24T17:13:43-05:00">November 24<sup>th</sup>, 2005</time>
@@ -1920,7 +1920,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.dlbaobei.com/?p=9" rel="external">
+		<a href="//www.dlbaobei.com/?p=9" rel="external">
 			编程猪鸡的Geek生活 &raquo; The Loop		</a><br>
 		<time class="meta"
 		      datetime="2005-11-30T11:27:32-05:00">November 30<sup>th</sup>, 2005</time>
@@ -1964,7 +1964,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for ECTIO">
-				<span itemprop="name"><a href="http://ectio.us/node/138447">ECTIO</a></span>
+				<span itemprop="name"><a href="//ectio.us/node/138447">ECTIO</a></span>
 			</span>
 			<small>(<a href="#comment-2162"
 			           title="Permanent link to this comment">#2162</a>)
@@ -1984,7 +1984,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://incoherently.net/archives/2005/04/22/unleashing-the-power-of-wordpress/" rel="external">
+		<a href="//incoherently.net/archives/2005/04/22/unleashing-the-power-of-wordpress/" rel="external">
 			incoherently surreal | Unleashing the power of WordPress		</a><br>
 		<time class="meta"
 		      datetime="2005-12-16T14:41:23-05:00">December 16<sup>th</sup>, 2005</time>
@@ -1996,7 +1996,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://birderboy.wordpress.com/2005/12/23/links-for-2005-12-23/" rel="external">
+		<a href="//birderboy.wordpress.com/2005/12/23/links-for-2005-12-23/" rel="external">
 			Nothing&#8217;s Sound &raquo; Blog Archive &raquo; links for 2005-12-23		</a><br>
 		<time class="meta"
 		      datetime="2005-12-23T04:19:39-05:00">December 23<sup>rd</sup>, 2005</time>
@@ -2008,7 +2008,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://stevelim.com/blog/?p=168" rel="external">
+		<a href="//stevelim.com/blog/?p=168" rel="external">
 			The Musings of Supersteve3d &raquo; Matt’s Googly Site - WordPress is not PHP		</a><br>
 		<time class="meta"
 		      datetime="2005-12-30T07:39:17-05:00">December 30<sup>th</sup>, 2005</time>
@@ -2052,7 +2052,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/1efdefbd4714412193d806176ae579e3?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Neebone">
-				<span itemprop="name"><a href="http://www.neebone.co.uk/">Neebone</a></span>
+				<span itemprop="name"><a href="//www.neebone.co.uk/">Neebone</a></span>
 			</span>
 			<small>(<a href="#comment-2206"
 			           title="Permanent link to this comment">#2206</a>)
@@ -2074,7 +2074,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.12il.net/?p=165" rel="external">
+		<a href="//www.12il.net/?p=165" rel="external">
 			12iL &raquo; Blog Archive &raquo; wordpress theme		</a><br>
 		<time class="meta"
 		      datetime="2006-01-18T01:48:24-05:00">January 18<sup>th</sup>, 2006</time>
@@ -2086,7 +2086,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.emilyrobbins.com/how-to-blog/wordpress-20-problems-for-google-adsense-users-and-a-workaround-314.htm" rel="external">
+		<a href="//www.emilyrobbins.com/how-to-blog/wordpress-20-problems-for-google-adsense-users-and-a-workaround-314.htm" rel="external">
 			WordPress 2.0 problems for google adsense users, and a workaround | How to Blog		</a><br>
 		<time class="meta"
 		      datetime="2006-01-30T20:49:53-05:00">January 30<sup>th</sup>, 2006</time>
@@ -2105,7 +2105,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/d794cf06e1e7acf07ab37db162fbce77?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Louis">
-				<span itemprop="name"><a href="http://www.ax697.org/">Louis</a></span>
+				<span itemprop="name"><a href="//www.ax697.org/">Louis</a></span>
 			</span>
 			<small>(<a href="#comment-2247"
 			           title="Permanent link to this comment">#2247</a>)
@@ -2125,7 +2125,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://kawebspy.kawebspynet.com/2005/06/08/wordpress-template-basic-tutorial/" rel="external">
+		<a href="//kawebspy.kawebspynet.com/2005/06/08/wordpress-template-basic-tutorial/" rel="external">
 			Ka Webspy &raquo; WordPress Template Basic Tutorial		</a><br>
 		<time class="meta"
 		      datetime="2006-02-07T02:20:48-05:00">February 7<sup>th</sup>, 2006</time>
@@ -2144,7 +2144,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/558975c958f46a26e9c5d6973c91ee4c?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Ivan Minic">
-				<span itemprop="name"><a href="http://www.burek.co.yu/">Ivan Minic</a></span>
+				<span itemprop="name"><a href="//www.burek.co.yu/">Ivan Minic</a></span>
 			</span>
 			<small>(<a href="#comment-2253"
 			           title="Permanent link to this comment">#2253</a>)
@@ -2180,7 +2180,7 @@ Please email me back a.s.a.p.
 		</p>
 	</header>
 	<div itemprop="text">
-					<p>I ran across <a href="http://www.alistapart.com/articles/holygrail">The Holy Grail of Layout</a> and want to use it to create a WordPress theme. I can handle the CSS but I’m really frustrated by the lack of a foundation of template pages to begin the customization. I can see that starting with the Default theme or the Classic theme will eventually lead to what I want but my question is: Isn’t there a set of foundation pages for developing a new theme? The Default theme is a double column within a single column and the Classic theme is the same. At many of the CSS sample sites, there are one column layouts, two column layouts, etc. Is there anything like that for WordPress? If so, where? Thanks, by the way, this was a marvelous article! (I have used PHP for some of my web sites so it does not scare me but your theme of it is NOT PHP was intriguing and you point was VERY well made.)</p>
+					<p>I ran across <a href="//www.alistapart.com/articles/holygrail">The Holy Grail of Layout</a> and want to use it to create a WordPress theme. I can handle the CSS but I’m really frustrated by the lack of a foundation of template pages to begin the customization. I can see that starting with the Default theme or the Classic theme will eventually lead to what I want but my question is: Isn’t there a set of foundation pages for developing a new theme? The Default theme is a double column within a single column and the Classic theme is the same. At many of the CSS sample sites, there are one column layouts, two column layouts, etc. Is there anything like that for WordPress? If so, where? Thanks, by the way, this was a marvelous article! (I have used PHP for some of my web sites so it does not scare me but your theme of it is NOT PHP was intriguing and you point was VERY well made.)</p>
 			</div>
 </article>
 <article id="comment-2270"
@@ -2194,7 +2194,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/5efa5991725149ecf514bc51ee90e2f6?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Robert">
-				<span itemprop="name"><a href="http://robertnelsononline.com/blog/">Robert</a></span>
+				<span itemprop="name"><a href="//robertnelsononline.com/blog/">Robert</a></span>
 			</span>
 			<small>(<a href="#comment-2270"
 			           title="Permanent link to this comment">#2270</a>)
@@ -2212,7 +2212,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+		<a href="//www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
 			지스토리 스튜디오 &raquo; Blog Archive &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
 		<time class="meta"
 		      datetime="2006-03-11T02:24:11-05:00">March 11<sup>th</sup>, 2006</time>
@@ -2224,7 +2224,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.gstory.com/2006/03/11/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+		<a href="//www.gstory.com/2006/03/11/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
 			지스토리 스튜디오 &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
 		<time class="meta"
 		      datetime="2006-03-11T05:13:01-05:00">March 11<sup>th</sup>, 2006</time>
@@ -2236,7 +2236,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
+		<a href="//www.gstory.com/2005/04/22/ec9b8ceb939ced9484eba088ec8aa4wordpressec9d98-template-tags/" rel="external">
 			지스토리 스튜디오 &raquo; Blog Archive &raquo; 워드프레스(WordPress)의 Template Tags		</a><br>
 		<time class="meta"
 		      datetime="2006-03-11T06:15:17-05:00">March 11<sup>th</sup>, 2006</time>
@@ -2255,7 +2255,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/f5df720e198d9b89d87a9548c0d39cce?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Natali">
-				<span itemprop="name"><a href="http://search.911cams.com/">Natali</a></span>
+				<span itemprop="name"><a href="//search.911cams.com/">Natali</a></span>
 			</span>
 			<small>(<a href="#comment-2295"
 			           title="Permanent link to this comment">#2295</a>)
@@ -2280,7 +2280,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/bedfee5ef390015888a11d71a43664bf?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for USTommyMC">
-				<span itemprop="name"><a href="http://ustommymc.net/">USTommyMC</a></span>
+				<span itemprop="name"><a href="//ustommymc.net/">USTommyMC</a></span>
 			</span>
 			<small>(<a href="#comment-2302"
 			           title="Permanent link to this comment">#2302</a>)
@@ -2300,7 +2300,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://ustommymc.net/2006/03/16/links-for-2006-03-17/" rel="external">
+		<a href="//ustommymc.net/2006/03/16/links-for-2006-03-17/" rel="external">
 			USTommyMC &raquo; Links: 2006-03-17		</a><br>
 		<time class="meta"
 		      datetime="2006-03-17T01:32:14-05:00">March 17<sup>th</sup>, 2006</time>
@@ -2319,7 +2319,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/f9cb67cda0dc3319e86e8ac7dec5716c?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Alan">
-				<span itemprop="name"><a href="http://www.musicismyworld.com/">Alan</a></span>
+				<span itemprop="name"><a href="//www.musicismyworld.com/">Alan</a></span>
 			</span>
 			<small>(<a href="#comment-2311"
 			           title="Permanent link to this comment">#2311</a>)
@@ -2368,7 +2368,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.irakrakow.com/wptips/2006/05/12/wordpress-is-not-php/" rel="external">
+		<a href="//www.irakrakow.com/wptips/2006/05/12/wordpress-is-not-php/" rel="external">
 			Stupid Wordpress Tricks &raquo; Wordpress Is Not PHP		</a><br>
 		<time class="meta"
 		      datetime="2006-05-14T15:02:21-04:00">May 14<sup>th</sup>, 2006</time>
@@ -2380,7 +2380,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://rukawa.name/wp/?p=985" rel="external">
+		<a href="//rukawa.name/wp/?p=985" rel="external">
 			지난 여름 &raquo; 워드프레스 스킨 수정		</a><br>
 		<time class="meta"
 		      datetime="2006-05-16T16:45:10-04:00">May 16<sup>th</sup>, 2006</time>
@@ -2392,7 +2392,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://iface.wordpress.com/2006/05/10/a-look-at-movable-type-vs-wordpress/" rel="external">
+		<a href="//iface.wordpress.com/2006/05/10/a-look-at-movable-type-vs-wordpress/" rel="external">
 			Abhijit Nadgouda @ iface &raquo; Blog Archive &raquo; A Look At Movable Type v/s Wordpress		</a><br>
 		<time class="meta"
 		      datetime="2006-05-17T15:23:37-04:00">May 17<sup>th</sup>, 2006</time>
@@ -2404,7 +2404,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://sanjeevn.wordpress.com/2006/06/07/links-for-2006-06-07/" rel="external">
+		<a href="//sanjeevn.wordpress.com/2006/06/07/links-for-2006-06-07/" rel="external">
 			Sanjeev.NET &raquo; Blog Archive &raquo; links for 2006-06-07		</a><br>
 		<time class="meta"
 		      datetime="2006-06-12T03:23:20-04:00">June 12<sup>th</sup>, 2006</time>
@@ -2416,7 +2416,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://www.alldugg.info/diggs/newbie-guide-to-changing-wordpress-templates/" rel="external">
+		<a href="//www.alldugg.info/diggs/newbie-guide-to-changing-wordpress-templates/" rel="external">
 			Newbie Guide to Changing WordPress Templates - The Digg Effect - Search for Diggs or get Dugg		</a><br>
 		<time class="meta"
 		      datetime="2006-06-14T05:09:32-04:00">June 14<sup>th</sup>, 2006</time>
@@ -2435,7 +2435,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/558975c958f46a26e9c5d6973c91ee4c?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Ivan Minic">
-				<span itemprop="name"><a href="http://www.burek.co.yu/">Ivan Minic</a></span>
+				<span itemprop="name"><a href="//www.burek.co.yu/">Ivan Minic</a></span>
 			</span>
 			<small>(<a href="#comment-2470"
 			           title="Permanent link to this comment">#2470</a>)
@@ -2453,7 +2453,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://llqoli.lifevine.org/?p=79" rel="external">
+		<a href="//llqoli.lifevine.org/?p=79" rel="external">
 			憐惜·零星 &raquo; 向导: 自定义 Wordpress 第一部分 [翻译]		</a><br>
 		<time class="meta"
 		      datetime="2006-07-18T22:19:39-04:00">July 18<sup>th</sup>, 2006</time>
@@ -2465,7 +2465,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://de.eugens-web.de/free-online-web-hosting/" rel="external">
+		<a href="//de.eugens-web.de/free-online-web-hosting/" rel="external">
 			Blog &raquo; Blog Archive &raquo; Free Online - Web - Hosting		</a><br>
 		<time class="meta"
 		      datetime="2006-08-02T18:50:33-04:00">August 2<sup>nd</sup>, 2006</time>
@@ -2477,7 +2477,7 @@ Please email me back a.s.a.p.
          class="comment type-pingback status-approved">
 	
 	<p>
-		<a href="http://llqoli.lifevine.org/?p=166" rel="external">
+		<a href="//llqoli.lifevine.org/?p=166" rel="external">
 			Qoli's Blog		</a><br>
 		<time class="meta"
 		      datetime="2006-09-15T07:27:46-04:00">September 15<sup>th</sup>, 2006</time>
@@ -2496,7 +2496,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/55c9cf715a2f706dca466f8a3e7951f3?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for Clair">
-				<span itemprop="name"><a href="http://clair.pinoyweb.net/">Clair</a></span>
+				<span itemprop="name"><a href="//clair.pinoyweb.net/">Clair</a></span>
 			</span>
 			<small>(<a href="#comment-2633"
 			           title="Permanent link to this comment">#2633</a>)
@@ -2521,7 +2521,7 @@ Please email me back a.s.a.p.
 				<img class="gravatar" itemprop="image"
 				     src="http://www.gravatar.com/avatar/1ccde4fde4e2796a74c3307730389c73?d=mm&amp;s=60&amp;r=g"
 				     alt="Gravatar for j4s0n">
-				<span itemprop="name"><a href="http://www.j4s0n.com/">j4s0n</a></span>
+				<span itemprop="name"><a href="//www.j4s0n.com/">j4s0n</a></span>
 			</span>
 			<small>(<a href="#comment-2636"
 			           title="Permanent link to this comment">#2636</a>)
@@ -2651,9 +2651,9 @@ Please email me back a.s.a.p.
 			class="icon-feed3"></i><b>RSS Feed</b></a>
 			<a href="https://twitter.com/MattRead" title="Twitter" class="twitter">
 			<i class="icon-twitter2"></i><b>twitter</b></a>
-			<a href="http://www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
+			<a href="//www.last.fm/user/MattRead" title="Last.fm" class="lastfm">
 			<i class="icon-lastfm2"></i><b>lastfm</b></a>
-			<a href="http://www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
+			<a href="//www.flickr.com/photos/MattRead" title="Flickr" class="flickr">
 			<i class="icon-flickr3"></i><b>flickr</b></a>
 			<a href="https://vimeo.com/mattrread" title="Vimeo" class="vimeo">
 			<i class="icon-vimeo2"></i><b>vimeo</b></a>
